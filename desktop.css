@@ -1,0 +1,178 @@
+html {
+    margin: px;
+    padding: 0px;
+    font-family: Verdana, Helvetica, sans-serif;
+    font-size:1em;
+    background-color:bisque;
+    
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+
+}
+
+/* ------------------    HEADER   ------------------- */
+
+#header {
+    background-color:burlywood;
+    padding:em;
+    min-height: 11em;
+}
+
+#logo {
+    display: block;
+    width: 10em;
+    float: left;
+    margin: 0.5em;
+}
+
+#box {
+    float: right;
+    align-content:center;
+    font-size: 0.8em;
+}
+#login {
+    margin:0.4em;
+    padding:0.3em;
+    float:left;
+    border-style:groove;
+    border-width: 0.1em;
+    border-color: blueviolet;
+    
+}
+
+#signin {
+    margin:0.4em;
+    padding:0.3em;
+    float:right;
+    border-style: groove;
+    border-width: 0.1em;
+    border-color:blueviolet;
+}
+
+#esci {
+    margin:0.4em;
+    padding:0.3em;
+    border-style:groove;
+    border-width: 0.1em;
+    border-color: blueviolet;
+}
+
+
+h1 {
+    padding-top: 1em;
+    text-align: center;
+    padding-left: 5.5em;
+    padding-right: 4em;
+}
+
+h2 {
+
+    text-align: center;
+    padding-left: 8em;
+    padding-right: 6em;
+}
+
+
+/* --------------------- MENU HOME ----------------------*/
+
+#menu {
+    list-style: none;
+    height: ;
+    text-align: center;
+    padding: 1em;
+}
+
+#menu li {
+    border-style:groove;
+    padding: 1em;
+    display: inline-block;
+    width: 40%;
+     
+}
+
+#AA {
+    background-color: azure
+}
+
+#AP {
+    background-color: cadetblue
+}
+
+
+/* ----------------------- BREADCRUMB ----------------------*/
+
+#breadcrumb {
+    border-top: 0.2em;
+    border-bottom: 0.2em;
+    border-bottom-style: inset;
+    border-top-style: inset;
+    border-color: brown;
+    height: 2em;
+    padding-bottom: 1em;
+    padding-left: 1em;
+}
+
+
+/* ----------------------- MENU area personale ----------------------*/
+
+#areaPersonale {
+    padding-right: 0.5em;
+    width: 15em;
+    border-color: black;
+    border-style: groove;
+    
+}
+#areaPersonale li{
+    list-style-image: url(IMG/arrow.svg);
+    
+    position: relative;
+    padding-bottom: 1em;
+    padding-top: 0.5em;
+}
+
+
+/* ----------------------- contenuto ----------------------*/
+
+#contenuto {
+    background-color: aliceblue;
+    
+}
+
+
+/* ----------------------- RICERCA ----------------------*/
+
+#ricerca {
+    margin-top: 4em;
+    margin-left: 20%;
+    margin-right: 20%;
+    border-style: inset;
+    border-color:darkslategrey;
+    border-width: 2px;
+    padding: 0.5em;
+    
+}
+
+#annunci{
+    list-style: none;
+    padding:0.2em;
+}
+
+#annunci li {
+    margin:0.1em;
+    border-style:inset;
+    border-color: black;
+    margin:0.5em;
+    padding:0.2em;
+}
+
+
+/* --------------------- FOOTER ----------------------*/
+
+#footer {
+    padding: 2em;
+    text-align: center;
+    font-size: 0.5em;
+}
