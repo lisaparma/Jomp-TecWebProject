@@ -94,11 +94,11 @@ h2 {
 }
 
 #AA {
-    background-color: azure
+    background-color: azure;
 }
 
 #AP {
-    background-color: cadetblue
+    background-color: cadetblue;
 }
 
 
@@ -119,15 +119,15 @@ h2 {
 /* ----------------------- MENU area personale ----------------------*/
 
 #areaPersonale {
-    padding-right: 0.5em;
+    float: left;
     width: 15em;
+    padding-right: 0.5em;
     border-color: black;
-    border-style: groove;
+    border-style:solid;
     
 }
 #areaPersonale li{
     list-style-image: url(IMG/arrow.svg);
-    
     position: relative;
     padding-bottom: 1em;
     padding-top: 0.5em;
@@ -137,6 +137,10 @@ h2 {
 /* ----------------------- contenuto ----------------------*/
 
 #contenuto {
+    padding:0.5em;
+    margin-left:15.8em;
+    height:20em;
+    border-style: groove;
     background-color: aliceblue;
     
 }
