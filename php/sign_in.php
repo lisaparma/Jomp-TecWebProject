@@ -3,16 +3,22 @@
 if(isset($_POST["submit"])){
 	try {
 	    $hostname = "localhost";
-	    $dbname = "db";
-	    $user = "admin";
-	    $pass = "password";
+	    $dbname = "tecweb";
+	    $user = "root";
+	    $pass = "";
 	    $db = new PDO ("mysql:host=$hostname;dbname=$dbname", $user, $pass);
-	    $db->setAttribute(PDO::ATTr_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        
+        $Username=$_POST["Username"];
+        $Password=$_POST["Password"];
+        $Nome=$_POST["Nome"];
+        $Cognome=$_POST["Cognome"];
+        $Email=$_POST["Email"];
 
-	    $sql = "INSERT INTO Utenti(Username, Password, Nome, Cognome, Email) VALUES('".$_POST["Username"]."','".$_POST["Password"]."','".$_POST["Nome"]."','".$_POST["Cognome"]."','".$_POST["Email"]."')";
+        $sql = "INSERT INTO utenti(Username, Password, Nome, Cognome, Email) VALUES('$Username', '$Password', '$Nome', '$Cognome', '$Email')";
 
 	    if($db->query($sql)) {
-	    	echo "<script type= 'text/javasript'>alert('Dati inseriti correttamente!');</script>";
+	    	echo "<script type= 'text/javascript'>alert('Dati inseriti correttamente!');</script>";
 	    }
 	    else{
 	    	"<script type= 'text/javascript'>alert('Dati non inseriti cotterramente.');</script>";
@@ -40,4 +46,4 @@ if(isset($_POST["submit"])){
 # 3) lo script apre la connessione al db e inserisce i dati nella tabella
 # 4) poi scrivi un'altra pagina php (lista conttatti) che apre la connessione al db, legge i dati dalle tabelle, li mostra in una tabella
 */
-?>
+?>*
