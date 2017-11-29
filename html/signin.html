@@ -1,6 +1,6 @@
 <!-- LOGIN -->
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it" >
-<link href="/css/desktop.css" rel="stylesheet" type="text/css" media="screen">
+<link href="../css/desktop.css" rel="stylesheet" type="text/css" media="screen">
 
 <head> 
     <title> Registrazione utente</title>
@@ -27,7 +27,7 @@
     
     <!-- ------------------------    FORM ISCRIZIONE   -------------------------- -->
     
-    <form action="/sign_in.php">
+    <form method="post" action="../php/sign_in.php">
         Nome: <br>
         <input type="text" name="nome" placeholder="Nome"> <br>
         
@@ -43,7 +43,7 @@
         Password: <br>
         <input type="text" name="password" placeholder="Password"> <br>
         <br>
-        <input type="submit" value="Registrati">
+        <input type="submit" value="Registrati" name="submit">
         
         
     </form>
