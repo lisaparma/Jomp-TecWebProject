@@ -1,6 +1,6 @@
 <!-- LOGIN -->
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it" >
-<link href="/css/desktop.css" rel="stylesheet" type="text/css" media="screen">
+<link href="../css/desktop.css" rel="stylesheet" type="text/css" media="screen">
 
 <head> 
     <title> Registrazione utente</title>
@@ -12,7 +12,7 @@
     <!-- -----------------------    HEADER   ------------------------ -->
     
     <div id="header">
-        <a href="/html/home.html">
+        <a href="home.html">
             <img id="logo" src="IMG/cerchio.gif" alt="Questo dovrebbe essere il nostro logo">
         </a>
 
@@ -27,23 +27,23 @@
     
     <!-- ------------------------    FORM ISCRIZIONE   -------------------------- -->
     
-    <form action="/php/sign_in.php">
-        Nome: <br>
-        <input type="text" name="name" placeholder="Nome"> <br>
+    <form method="post" action="../php/sign_in.php"> <!-- i titoletti vanno in label-->
+        Nome: <br />
+        <input type="text" name="Nome" placeholder="Nome"> <br /> <!-- placeholder non esiste in xhtml -->
         
-        Cognome: <br>
-        <input type="text" name="surname" placeholder="Cognome"> <br>
+        Cognome: <br />
+        <input type="text" name="Cognome" placeholder="Cognome"> <br />
         
-        Città: <br>
-        <input type="text" name="country" placeholder="Città"> <br>        
+        Email: <br />
+        <input type="text" name="Email" placeholder="Email"> <br />        
         
-        Username: <br>
-        <input type="text" name="username" placeholder="Username"> <br>
+        Username: <br />
+        <input type="text" name="Username" placeholder="Username"> <br />
         
-        Password: <br>
-        <input type="text" name="password" placeholder="Password"> <br>
-        <br>
-        <input type="submit" value="Registrati">
+        Password: <br />
+        <input type="text" name="Password" placeholder="Password"> <br />
+        <br />
+        <input type="submit" value="Registrati" name="submit">
         
         
     </form>
