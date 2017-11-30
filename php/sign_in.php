@@ -15,7 +15,7 @@ if(isset($_POST["submit"])){
         $Cognome=$_POST["Cognome"];
         $Email=$_POST["Email"];
 
-        $sql = "INSERT INTO utenti(Username, Password, Nome, Cognome, Email) VALUES('$Username', '$Password', '$Nome', '$Cognome', '$Email')";
+        $sql = "INSERT INTO Utenti(Username, Password, Nome, Cognome, Email) VALUES('$Username', '$Password', '$Nome', '$Cognome', '$Email')";
 
 	    if($db->query($sql)) {
 	    	echo "<script type= 'text/javascript'>alert('Dati inseriti correttamente!');</script>";
