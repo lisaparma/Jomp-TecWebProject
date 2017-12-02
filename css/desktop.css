@@ -1,28 +1,28 @@
-html {
-    margin: px;
+
+
+html, body {
+    margin: 0px;
     padding: 0px;
     font-family: Verdana, Helvetica, sans-serif;
     font-size:1em;
-    background-color:bisque;
+    background-color:white;
     
 }
 
-body {
-    margin: 0px;
-    padding: 0px;
-
-}
 
 /* ------------------    HEADER   ------------------- */
 
 #header {
-    background-color:burlywood;
-    padding:em;
+    background-color:darkseagreen;
     min-height: 11em;
+    margin: 0em;
+    border: 1px solid rgb(140,176,236);
+
+    
 }
 
 #logo {
-    display: block;
+    display:block;
     width: 10em;
     float: left;
     margin: 0.5em;
@@ -70,9 +70,10 @@ h2 {
 
 #menu {
     list-style: none;
-    height: ;
     text-align: center;
     padding: 1em;
+    border-style: none;
+    margin:0em;
 }
 
 #menu li {
@@ -138,7 +139,29 @@ h2 {
 /* ----------------------- RICERCA ----------------------*/
 
 #ricerca {
-    margin-top: 4em;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+#titolo {
+    float: left;
+    padding: 0.8em;
+    display: inline-block;
+}
+
+#regione {
+    padding: 0.8em;
+    display: inline-block;;
+}
+
+#tipologia {
+    padding: 0.8em;
+    display: inline-block;;
+}
+
+
+#listannunci {
+    margin-top: 1em;
     margin-left: 20%;
     margin-right: 20%;
     border-style: inset;

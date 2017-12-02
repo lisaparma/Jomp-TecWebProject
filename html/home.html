@@ -30,8 +30,7 @@
 <body>
     
     <!-- -----------------------    HEADER   ------------------------ -->
-    <div id="sfondo1"> </div>
-    
+
     <div id="header">
         <a href="home.html">
             <img id="logo" src="../IMG/cerchio.gif" alt="Questo dovrebbe essere il nostro logo">
@@ -46,8 +45,6 @@
         <h2> (tanto non lo troverai) </h2>
     </div>
     
-    <div id="sfondo2"> </div>
-        
         
         
     <!-- -------------------------    MENU   -------------------------- -->
@@ -61,15 +58,33 @@
         
     <!-- ------------------------    RICERCA   -------------------------- -->
     
-    <div id="listannunci">
-        <h3> Ricerca:</h3>
-        <div id="ricerca"> 
+    <div id="ricerca"> 
             <form action="" method="get">
-                <label for="titolo">Titolo:</label>
-                <input type="text" id="titolo" name="" tabindex="" value=""> <!--</input>-->
+                <fieldset>
+                    <legend>  Ricerca:</legend>
+                    
+                    <div id="titolo"> 
+                        <label for="titolo">Titolo:<br/></label>
+                        <input type="text" id="boxtitolo" name="" tabindex="" value=""> <!--</input>-->
+                    </div>
+                    
+                    <div id="regione"> 
+                        <label for="titolo">Regione:<br/></label>
+                        <input type="text" id="boxregione" name="" tabindex="" value=""> <!--</input>-->
+                    </div>
+                    
+                    <div id="tipologia"> 
+                        <label for="titolo">Tipologia:<br/></label>
+                        <input type="text" id="boxtipologia" name="" tabindex="" value=""> <!--</input>-->
+                    </div>
+                    
                 <input type="submit" id="cerca" value="Cerca" tabindex="">
+                </fieldset>
+                
             </form>
         </div>
+    
+    <div id="listannunci">
         <p> Ultimi annunci:</p>
         <ul id="annunci">
             <li> Annuncio 1 </li>
