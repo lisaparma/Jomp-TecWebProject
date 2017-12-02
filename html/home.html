@@ -4,9 +4,23 @@
     
     
 <head> 
-    <title> Nome da visualizzare in alto</title>
+    <title> Nome da visualizzare in alto </title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
-    <link href="../css/desktop.css" rel="stylesheet" type="text/css" media="screen">
+    <meta name="title" content="Nome da visualizzare"/>
+    <meta name="description" content="Descrizione"/>
+    <meta name="keywords" content="----"/>
+    <meta name="author" content="Lisa Parma, Sara Feltrin, Silvia Bazzeato"/>
+    <meta name="language" content="italian it"/>
+    <meta name="title" content="Nome da visualizzare"/>
+    <meta name="viewport" content="width=device-width"/>
+    
+    <link href="../css/desktop.css" rel="stylesheet" type="text/css" media="screen"/>
+    <!-- da fare -->
+    <link href="../css/print.css" rel="stylesheet" type="text/css" media="print"/>
+    
+    <!-- da scegliere -->
+    <link href="../IMG/cerchio.gif" rel="icon" type="image/x-icon"/>
+    <link href="../IMG/cerchio.gif" rel="shortcut icon" type="image/x-icon"/>
     
 </head> 
 
@@ -16,6 +30,7 @@
 <body>
     
     <!-- -----------------------    HEADER   ------------------------ -->
+    <div id="sfondo1"> </div>
     
     <div id="header">
         <a href="home.html">
@@ -31,7 +46,10 @@
         <h2> (tanto non lo troverai) </h2>
     </div>
     
-    
+    <div id="sfondo2"> </div>
+        
+        
+        
     <!-- -------------------------    MENU   -------------------------- -->
     
     <ul id="menu">
@@ -40,10 +58,18 @@
      </ul>
     
     
+        
     <!-- ------------------------    RICERCA   -------------------------- -->
     
-    <div id="ricerca">
+    <div id="listannunci">
         <h3> Ricerca:</h3>
+        <div id="ricerca"> 
+            <form action="" method="get">
+                <label for="titolo">Titolo:</label>
+                <input type="text" id="titolo" name="" tabindex="" value=""> <!--</input>-->
+                <input type="submit" id="cerca" value="Cerca" tabindex="">
+            </form>
+        </div>
         <p> Ultimi annunci:</p>
         <ul id="annunci">
             <li> Annuncio 1 </li>
@@ -56,6 +82,7 @@
 
     
     <!-- ------------------------    FOOTER   -------------------------- -->
+    </div>
     
     <div id="footer"> 
         <p> Questo è il footer, ci scriverò qualcosa di sensato un giorno.</p>
