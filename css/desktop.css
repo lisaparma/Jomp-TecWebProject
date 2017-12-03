@@ -16,21 +16,21 @@ html, body {
     background-color: #A9E8DC;
     min-height: 11em;
     margin: 0em;
-    border: 1px solid rgb(140,176,236);
+    border: 1px solid #A9E8DC;
     
     
 }
 
 #logo {
-    display:inline;
     height: 10em;
     float: left;
 }
 
 h1 {
     padding-top: 1.5em;
-
+    padding-left: 35%;
 }
+
 
 #box {
     float: right;
@@ -84,14 +84,8 @@ h1 {
 /* ----------------------- BREADCRUMB ----------------------*/
 
 #breadcrumb {
-    border-top: 0.2em;
-    border-bottom: 0.2em;
-    border-bottom-style: inset;
-    border-top-style: inset;
-    border-color: brown;
-    height: 2em;
-    padding-bottom: 1em;
-    padding-left: 1em;
+    padding-left: 2em;
+
 }
 
 
@@ -100,6 +94,8 @@ h1 {
 #areaPersonale {
     float: left;
     width: 14em;
+    height: 21em;
+    margin-left: 5px;
     border-color: black;
     border-style:solid;
     
@@ -117,9 +113,11 @@ h1 {
 
 #contenuto {
     padding:0.5em;
-    margin-left:14.3em;
+    margin-left:14.5em;
     height:20em;
-    border-style: groove;
+    border-style:solid;
+    border-color: black;
+    margin-right: 5px;
     background-color: aliceblue;
     
 }
