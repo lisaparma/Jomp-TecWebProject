@@ -32,17 +32,17 @@
     <!-- -----------------------    HEADER   ------------------------ -->
 
     <div id="header">
-        <a href="home.html">
-            <img id="logo" src="../IMG/cerchio.gif" alt="Questo dovrebbe essere il nostro logo">
-        </a>
-
         <div id="box">
             <p class="button" id="login">  <a href="login.html">Log In</a> </p>
             <p class="button" id="signin"> <a href="signin.html"> Sign In </a></p>
         </div>
         
-        <h1> Trova il lavoro dei sogni</h1>
-        <h2> (tanto non lo troverai) </h2>
+        <a href="home.html">
+            <img id="logo" src="../IMG/jomp.png" alt="logo scritta jomp con lente d'ingrandimento">
+        </a>
+        
+        <h1> Un salto nel lavoro</h1>
+
     </div>
     
         
@@ -50,8 +50,10 @@
     <!-- -------------------------    MENU   -------------------------- -->
     
     <ul id="menu">
-        <li id="AA"> <a href="homeAzienda.html"> Area Aziende </a> </li>
-         <li id="AP"> <a href="homeUtente.html"> Area Privati </a> </li>
+        <li id="AP"> <a href="homeAzienda.html"> Area Aziende </a> </li>
+        <li id="AA"> <a href="homeUtente.html"> Area Privati </a> </li>
+        <li> <a href="homeUtente.html"> menu </a> </li>
+        <li> <a href="homeUtente.html"> menu </a> </li>
      </ul>
     
     
@@ -60,7 +62,7 @@
     
     <div id="ricerca"> 
             <form action="" method="get">
-                <fieldset>
+                <fieldset id="fieldset">
                     <legend>  Ricerca:</legend>
                     
                     <div id="titolo"> 
@@ -75,7 +77,13 @@
                     
                     <div id="tipologia"> 
                         <label for="titolo">Tipologia:<br/></label>
-                        <input type="text" id="boxtipologia" name="" tabindex="" value=""> <!--</input>-->
+                        <select name="tipologia">
+                            <option value="" selected="selected"> Nessuna</option>
+                            <option value=""> Lavoro 1</option>
+                            <option value=""> Lavoro 2</option>
+                            <option value=""> Lavoro 3</option>
+                            
+                        </select>
                     </div>
                     
                 <input type="submit" id="cerca" value="Cerca" tabindex="">
@@ -87,11 +95,11 @@
     <div id="listannunci">
         <p> Ultimi annunci:</p>
         <ul id="annunci">
-            <li> Annuncio 1 </li>
-            <li> Annuncio 2 </li>
-            <li> Annuncio 3 </li>
-            <li> Annuncio 4 </li>
-            <li> Annuncio 5 </li>
+            <li> <h3> Annuncio 1</h3> <p> Descrizione</p></li>
+            <li> <h3> Annuncio 2</h3> <p> Descrizione</p> </li>
+            <li> <h3> Annuncio 3</h3> <p> Descrizione</p> </li>
+            <li> <h3> Annuncio 4</h3> <p> Descrizione</p> </li>
+            <li> <h3> Annuncio 5</h3> <p> Descrizione</p> </li>
         </ul>
     </div>
 

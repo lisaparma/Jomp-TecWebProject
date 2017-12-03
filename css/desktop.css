@@ -5,7 +5,7 @@ html, body {
     padding: 0px;
     font-family: Verdana, Helvetica, sans-serif;
     font-size:1em;
-    background-color:white;
+    background-color:azure;
     
 }
 
@@ -13,19 +13,23 @@ html, body {
 /* ------------------    HEADER   ------------------- */
 
 #header {
-    background-color:darkseagreen;
+    background-color: #A9E8DC;
     min-height: 11em;
     margin: 0em;
     border: 1px solid rgb(140,176,236);
-
+    
     
 }
 
 #logo {
-    display:block;
-    width: 10em;
+    display:inline;
+    height: 10em;
     float: left;
-    margin: 0.5em;
+}
+
+h1 {
+    padding-top: 1.5em;
+
 }
 
 #box {
@@ -51,45 +55,29 @@ html, body {
 }
 
 
-h1 {
-    padding-top: 1em;
-    text-align: center;
-    padding-left: 5.5em;
-    padding-right: 4em;
-}
 
-h2 {
-
-    text-align: center;
-    padding-left: 8em;
-    padding-right: 6em;
-}
 
 
 /* --------------------- MENU HOME ----------------------*/
 
 #menu {
-    list-style: none;
+    margin:0.5em;
+    padding:0em;
     text-align: center;
-    padding: 1em;
-    border-style: none;
-    margin:0em;
+    align-content: center;
+    
 }
 
 #menu li {
-    border-style:groove;
+    margin: 0em;
+    border: 1px;
+    border-style:solid;
     padding: 1em;
     display: inline-block;
-    width: 40%;
-     
-}
-
-#AA {
-    background-color: azure;
-}
-
-#AP {
+    width: 18%;
+    list-style: none;
     background-color: cadetblue;
+
 }
 
 
@@ -121,6 +109,7 @@ h2 {
     position: relative;
     padding-bottom: 1em;
     padding-top: 0.5em;
+
 }
 
 
@@ -139,25 +128,18 @@ h2 {
 /* ----------------------- RICERCA ----------------------*/
 
 #ricerca {
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 15%;
+    margin-right: 15%;
+    text-align: center;
+    
 }
 
-#titolo {
-    float: left;
+
+#titolo, #regione, #tipologia {
     padding: 0.8em;
     display: inline-block;
 }
 
-#regione {
-    padding: 0.8em;
-    display: inline-block;;
-}
-
-#tipologia {
-    padding: 0.8em;
-    display: inline-block;;
-}
 
 
 #listannunci {
