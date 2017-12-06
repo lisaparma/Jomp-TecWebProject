@@ -11,18 +11,33 @@ if(isset($_POST["submit"])){
         
         $Username=$_POST["Username"];
         $Password=$_POST["Password"];
+        $RipPassword=$_POST["RipPassword"];
         $Nome=$_POST["Nome"];
         $Cognome=$_POST["Cognome"];
         $Email=$_POST["Email"];
 
-        $sql = "INSERT INTO Utenti(Username, Password, Nome, Cognome, Email) VALUES('$Username', '$Password', '$Nome', '$Cognome', '$Email')";
+        //verifico i dati inseriti
+        if ($Username || $Password || $RipPassword|| $Nome || $Cognome || $Email) {
 
-	    if($db->query($sql)) {
-	    	echo "<script type= 'text/javascript'>alert('Dati inseriti correttamente!');</script>";
-	    }
-	    else{
-	    	"<script type= 'text/javascript'>alert('Dati non inseriti cotterramente.');</script>";
-	    }
+        	if($Password===$RipPassword) {
+
+        		$sql = "INSERT INTO Utenti(Username, Password, Nome, Cognome, Email) VALUES('$Username', '$Password', '$Nome', '$Cognome', '$Email')";
+
+			    if($db->query($sql)) {
+			   		echo "<script type= 'text/javascript'>alert('Dati inseriti correttamente!');</script>";
+			    }
+			    else{
+			    	echo"<script type= 'text/javascript'>alert('Dati non inseriti cotterramente.');</script>";
+			    }
+        	}
+	        else {
+	        	echo "<script type= 'text/javascript'>alert('La password scelta deve essere uguale in entrambi i campi');</script>";
+	        }
+		 }
+		 else {
+		 	echo "<script type= 'text/javascript'>alert('Inserisci tutti i dati per continuare la registrazione');</script>";
+
+        }
 
 	    //chiudo il database
 	    $db = null;
