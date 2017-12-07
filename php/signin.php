@@ -3,6 +3,7 @@
 
 require("structure.php");
 require("functionHome.php");
+require("functionDB.php");
 
 $title="Jomp - Sign In ";
 head($title);
@@ -13,25 +14,30 @@ headers();
 
 menuHome();
 
+//Mettere i tab index nei form e nei link
 echo "<form method='post' action='signin.php'> <!-- i titoletti vanno in label-->
-        Nome: <br />
-        <input type='text' name='Nome' placeholder='Nome'> <br /> <!-- placeholder non esiste in xhtml -->
         
-        Cognome: <br />
-        <input type='text' name='Cognome' placeholder='Cognome'> <br />
-        
-        Email: <br />
-        <input type='text' name='Email' placeholder='Email'> <br />        
-        
-        Username: <br />
-        <input type='text' name='Username' placeholder='Username'> <br />
-        
-        Password: <br />
-        <input type='text' name='Password' placeholder='Password'> <br />
-        <br />
+        Come vuoi registrarti? <br />
+        <input type='radio' id='azienda' name='tiporegistrazione' value='azienda' checked> <label for='azienda'>Azienda</label>
+        <input type='radio' id='utente' name='tiporegistrazione' value='utente'> <label for='utente'> Utente</label> <br/>
 
-        Ripeti password: <br />
-        <input type='text' name='RipPassword' placeholder='Password'> <br />
+        <label for='nome'> Nome: </label> <br/>
+        <input type='text' id='nome' name='Nome' placeholder='Nome'> <br /> <!-- placeholder non esiste in xhtml -->
+        
+        <label for='cognome'> Cognome </label> <br/>
+        <input type='text' id='cognome' name='Cognome' placeholder='Cognome'> <br />
+        
+        <label for='email'> E-mail: </label> <br/>
+        <input type='text' id='email' name='Email' placeholder='Email'> <br />        
+        
+        <label for='username'> Username: </label> <br/>
+        <input type='text' id='username' name='Username' placeholder='Username'> <br />
+        
+        <label for='password'> Password </label> <br/>
+        <input type='text' id='password' name='Password' placeholder='Password'> <br />
+
+        <label for='rippw'> Ripeti password </label> <br/>
+        <input type='text' id='rippw' name='RipPassword' placeholder='Password'> <br />
         <br />
 
         <input type='submit' value='Registrati' name='submit'>
@@ -42,12 +48,8 @@ echo "<form method='post' action='signin.php'> <!-- i titoletti vanno in label--
 
 if(isset($_POST["submit"])){
     try {
-        $hostname = "localhost";
-        $dbname = "tecweb";
-        $user = "root";
-        $pass = "";
-        $db = new PDO ("mysql:host=$hostname;dbname=$dbname", $user, $pass);
-        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        $db=openDB();
         
         $Username=$_POST["Username"];
         $Password=$_POST["Password"];
@@ -78,8 +80,7 @@ if(isset($_POST["submit"])){
             echo "<script type= 'text/javascript'>alert('Inserisci tutti i dati per continuare la registrazione');</script>";
         }
 
-        //chiudo il database
-        $db = null;
+        closeDB($db);
 
     } catch (PDOException $e) {
         echo "Errore: " . $e->getMessage();
