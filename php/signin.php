@@ -3,7 +3,7 @@
 
 require("structure.php");
 require("functionHome.php");
-require("functionDB.php");
+require("connect.php");
 
 $title="Jomp - Sign In ";
 head($title);
