@@ -35,10 +35,10 @@ echo "<div id=form>
                 <label for='username'> Username: </label> <br/>
                 <input type='text' id='username' name='Username' placeholder='Username'> <br />
                 
-                <label for='password'> Password </label> <br/>
+                <label for='password'> Password: </label> <br/>
                 <input type='password' id='password' name='Password' placeholder='Password'> <br />
 
-                <label for='rippw'> Ripeti password </label> <br/>
+                <label for='rippw'> Ripeti password: </label> <br/>
                 <input type='password' id='rippw' name='RipPassword' placeholder='Password'> <br />
                 <br />
 
