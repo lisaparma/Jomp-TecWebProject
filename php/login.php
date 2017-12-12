@@ -39,7 +39,7 @@ if(isset($_POST["submit"])){
             if($result->fetchColumn() > 0) {
                 session start();
                 $SESSION['login'] = $Username;
-                
+
                 header("location: UtDashboard.php");
 
             }

@@ -42,6 +42,8 @@ if(isset($_POST["continue"])){
     }
 }
 
+
+
 footer();
  
 echo "</body> \n </html>";
