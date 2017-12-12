@@ -95,7 +95,7 @@ if(isset($_POST["submit"])){
             $sql = "INSERT INTO Utenti(Username, Password, Nome, Cognome, Email) VALUES('$Username', '$Password', '$Nome', '$Cognome', '$Email')";
 
             $db->query($sql);
-            header("location: UtDashboard.php");
+            header("location: login.php");
 
         }
         else {

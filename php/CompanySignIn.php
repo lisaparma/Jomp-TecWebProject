@@ -94,7 +94,7 @@ if(isset($_POST["submit"])){
             $sql = "INSERT INTO Aziende(Nome, PIva, Email, Citta, Password) VALUES('$Name', '$PIva', '$Email', '$Citta', '$Password')";
 
             $db->query($sql);
-            header("location: AzDashboard.php");
+            header("location: login.php");
 
         }
         else {

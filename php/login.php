@@ -13,16 +13,19 @@ headers();
 menuHome();
 
 echo "<body>
-        <form method='post' action='login.php'> 
-                <label for='username'> Username o nome azienda: </label> <br/>
-                <input type='text' id='username' name='Username' placeholder='Username'> <br />
-                
-                <label for='password'> Password: </label> <br/>
-                <input type='password' id='password' name='Password' placeholder='Password'> <br />
+        <div id=form>
+            <div id=contentForm>
+                <form method='post' action='login.php'> 
+                    <label for='username'> Username o nome azienda: </label> <br/>
+                    <input type='text' id='username' name='Username' placeholder='Username'> <br />
+                    
+                    <label for='password'> Password: </label> <br/>
+                    <input type='password' id='password' name='Password' placeholder='Password'> <br />
 
-                <input type='submit' value='Entra' name='submit'>
-
-            </form>";
+                    <input type='submit' value='Entra' name='submit'>
+                </form>
+            </div>
+        </div>";
 
 function checkDataUser($Username, $Password) {
     $user = mysqli_query(openDB(),"SELECT Username, Password FROM Utenti WHERE Username='".$Username."' AND Password='".$Password."'");    
