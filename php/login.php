@@ -36,10 +36,14 @@ if(isset($_POST["submit"])){
         if ($Username && $Password ) {
             $sql = "SELECT  COUNT(*) FROM Utenti WHERE Username='$Username' AND Password='$Password'";
             $result=$db->query($sql);
-            if($result->fetchColumn() > 0) {
-                session start();
-                $SESSION['login'] = $Username;
-
+            
+            if($result->num_rows>0) {
+                session_start();
+                $sql = "SELECT * FROM Utenti WHERE Username='$Username' ";
+                $result=$db->query($sql);
+                $_SESSION["login"] = $result->fetch_array(MYSQLI_ASSOC);
+                
+                
                 header("location: UtDashboard.php");
 
             }
