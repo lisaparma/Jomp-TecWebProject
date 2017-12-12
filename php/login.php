@@ -37,7 +37,11 @@ if(isset($_POST["submit"])){
             $sql = "SELECT  COUNT(*) FROM Utenti WHERE Username='$Username' AND Password='$Password'";
             $result=$db->query($sql);
             if($result->fetchColumn() > 0) {
+                session start();
+                $SESSION['login'] = $Username;
+                
                 header("location: UtDashboard.php");
+
             }
             else{
                 echo"<script type= 'text/javascript'>alert('Utente non registrato');</script>";
