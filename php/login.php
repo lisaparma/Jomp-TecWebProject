@@ -14,7 +14,7 @@ menuHome();
 
 echo "<body>
         <form method='post' action='login.php'> 
-                <label for='username'> Username: </label> <br/>
+                <label for='username'> Username o nome azienda: </label> <br/>
                 <input type='text' id='username' name='Username' placeholder='Username'> <br />
                 
                 <label for='password'> Password: </label> <br/>
@@ -24,6 +24,44 @@ echo "<body>
 
             </form>";
 
+function checkDataUser($Username, $Password) {
+    $user = mysqli_query(openDB(),"SELECT Username, Password FROM Utenti WHERE Username='".$Username."' AND Password='".$Password."'");    
+    
+    $num_rows = mysqli_num_rows($user);
+
+    if($num_rows == 1) {        
+        return true;
+    }
+    return false;
+}
+
+
+function openSessionUser($Username) {
+    session_start();
+    $user = mysqli_query(openDB(), "SELECT * FROM Utenti WHERE Username='".$Username."'");
+    $_SESSION["login"] = $user->fetch_array(MYSQLI_ASSOC);
+}
+
+
+function checkDataCompany($Username, $Password) {
+    $company = mysqli_query(openDB(),"SELECT Nome, Password FROM Aziende WHERE Nome='".$Username."' AND Password='".$Password."'");
+
+    $num_rows = mysqli_num_rows($company);
+
+    if($num_rows == 1) {      
+        return true;
+    }
+    return false;
+}
+
+
+function openSessionCompany($Username) {
+    session_start();
+    $company = mysqli_query(openDB(), "SELECT * FROM Aziende WHERE Nome='".$Username."'"); 
+    $_SESSION["login"] = $company->fetch_array(MYSQLI_ASSOC);
+}
+
+
 if(isset($_POST["submit"])){
     try {
 
@@ -32,29 +70,21 @@ if(isset($_POST["submit"])){
         $Username=$_POST["Username"];
         $Password=$_POST["Password"];
 
-       
-        if ($Username && $Password ) {
-            $sql = "SELECT  COUNT(*) FROM Utenti WHERE Username='$Username' AND Password='$Password'";
-            $result=$db->query($sql);
-            
-            if($result->num_rows>0) {
-                session_start();
-                $sql = "SELECT * FROM Utenti WHERE Username='$Username' ";
-                $result=$db->query($sql);
-                $_SESSION["login"] = $result->fetch_array(MYSQLI_ASSOC);
-                
-                
-                header("location: UtDashboard.php");
+        //login per l'utente
+        if(checkDataUser($Username, $Password)) {
+            openSessionUser($Username);
+            header("location: UtDashboard.php");
+        }
 
-            }
-            else{
-                echo"<script type= 'text/javascript'>alert('Utente non registrato');</script>";
-            }
+        //login per l'azienda
+        if(checkDataCompany($Username, $Password)) {
+            openSessionCompany($Username);
+            header("location: AzDashboard.php");
         }
-        else {
-            echo "<script type= 'text/javascript'>alert('Inserisci tutti i dati per continuare');</script>";
+
+        else{
+            echo "<p>Attenzione! Username o Password non sono corretti.<p>";
         }
-        
 
 
         closeDB($db);
