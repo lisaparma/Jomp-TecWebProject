@@ -28,7 +28,8 @@ Descrizione text(150) NOT NULL
 
 DROP TABLE IF EXISTS Aziende;
 CREATE TABLE Aziende (
-Nome char(100) PRIMARY KEY, 
+Nome char(100) PRIMARY KEY,
+PIva int(11) NOT NULL, 
 Email char(255) NOT NULL,
 Citta char(20) NOT NULL,
 Password char(20) NOT NULL

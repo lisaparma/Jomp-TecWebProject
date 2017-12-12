@@ -22,10 +22,10 @@ function checkEmail($Email) {
     $num_rows = mysqli_num_rows($result);                                      //invio la query
 
 
-    if($num_rows != 0) {             //resultato non vuoto: email già esistente
-        return false;
+    if($num_rows == 0) {             //resultato non vuoto: email già esistente
+        return true;
     }
-    return true;
+    return false;
 }
 
 function checkUsername($Username) {
@@ -34,21 +34,18 @@ function checkUsername($Username) {
 
     $num_rows = mysqli_num_rows($result);
 
-    if($num_rows != 0) {
-        return false;
+    if($num_rows == 0) {
+        return true;
     }
-    return true;
+    return false;
 }
 
 function checkRepeatPassword($Password, $RipPassword) {
-    if($Password != $RipPassword) {
-        return false;
+    if($Password == $RipPassword) {
+        return true;
     }
-    return true;
+    return false;
 }
-
-
-
 
 //Mettere i tab index nei form e nei link
 echo "<div id=form>
@@ -113,7 +110,7 @@ if(isset($_POST["submit"])){
             }
 
             if(!checkRepeatPassword($Password, $RipPassword)) {
-                echo "<li>La password ripetuta non corrisponde alla precedente</li><br/>";
+                echo "<li>La password di verifica non corrisponde alla password scelta</li><br/>";
             }
             echo "</ul></div>";
 
