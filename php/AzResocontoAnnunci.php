@@ -8,7 +8,7 @@ head($title);
 
 echo "<body>";
 
-headers();
+loggerHeaders();
 
 $page="Resoconto annunci";
 breadcrumb($page);

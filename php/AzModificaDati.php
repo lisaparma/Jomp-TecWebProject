@@ -8,7 +8,7 @@ head($title);
 
 echo "<body>";
 
-headers();
+loggerHeaders();
 
 $page="Modifica dati";
 breadcrumb($page);

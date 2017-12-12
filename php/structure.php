@@ -1,8 +1,7 @@
 
 <?php
 
-function head($title)
-{
+function head($title) {
 	echo "<!DOCTYPE HTML PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
 			<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='it' lang='it' >
 
@@ -29,8 +28,7 @@ function head($title)
 
 
 
-function headers()
-{
+function headers() {
 	echo "<div id='header'>
 	        <div id='box'>
 	            <p class='button' id='login'>  <a href='login.php'>Log In</a> </p>
@@ -47,10 +45,25 @@ function headers()
 }
 
 
+function loggerHeaders(){
+	echo "<div id='loggerHeader'>
+	        <div id='box'>
+	            <p class='button' id='logout'>  <a href='home.php'>Log Out</a> </p>
+	        </div>
+	        
+	        <a href='home.php'>
+	            <img id='logo' src='../IMG/jomp.png' alt='logo scritta jomp con lente d&rsquo;ingrandimento'>
+	        </a>
+	        
+	        <h1> A jump in the job</h1>
+
+	    </div>" ;
+}
 
 
-function footer()
-{
+
+
+function footer() {
 	echo "<div id='footer'> 
         <p> Questo è il footer, ci scriverò qualcosa di sensato un giorno.</p>
     </div>" ;
