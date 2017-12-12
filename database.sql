@@ -7,11 +7,11 @@ DROP TABLE IF EXISTS Consultazioni;
 
 DROP TABLE IF EXISTS Utenti;
 CREATE TABLE Utenti (
-Username char(20) PRIMARY KEY,
-Password char(10) NOT NULL,
 Nome char(10), 
 Cognome char(10), 
 Email char(255) NOT NULL,
+Username char(20) PRIMARY KEY,
+Password char(20) NOT NULL,
 UNIQUE (Email)
 )ENGINE=InnoDB;
 
@@ -28,11 +28,10 @@ Descrizione text(150) NOT NULL
 
 DROP TABLE IF EXISTS Aziende;
 CREATE TABLE Aziende (
-Username char(20) PRIMARY KEY,
-Password char(10) NOT NULL,
-Nome char(10), 
-Email char(15) NOT NULL,
-Citta char(15) NOT NULL
+Nome char(100) PRIMARY KEY, 
+Email char(255) NOT NULL,
+Citta char(20) NOT NULL,
+Password char(20) NOT NULL
 )ENGINE=InnoDB;
 
 
@@ -40,7 +39,7 @@ DROP TABLE IF EXISTS Consultazioni;
 CREATE TABLE Consultazioni (
 NumConsult int(20) PRIMARY KEY AUTO_INCREMENT,
 CodUtente char(20) NOT NULL,
-CodAnnuncio int(10) NOT NULL,
+CodAnnuncio int(30) NOT NULL,
 FOREIGN KEY (CodUtente) REFERENCES Utenti(Username) ON DELETE CASCADE ON UPDATE CASCADE,
 FOREIGN KEY (CodAnnuncio) REFERENCES Annunci(Codice) ON DELETE CASCADE ON UPDATE CASCADE
 )ENGINE=InnoDB;
@@ -50,8 +49,8 @@ DROP TABLE IF EXISTS Inserzioni;
 CREATE TABLE Inserzioni (
 NumInser int(20) PRIMARY KEY AUTO_INCREMENT,
 CodAzienda char(20) NOT NULL,
-CodAnnuncio int(10) NOT NULL, 
-FOREIGN KEY (CodAzienda) REFERENCES Aziende(Username) ON DELETE CASCADE ON UPDATE CASCADE,
+CodAnnuncio int(30) NOT NULL, 
+FOREIGN KEY (CodAzienda) REFERENCES Aziende(Nome) ON DELETE CASCADE ON UPDATE CASCADE,
 FOREIGN KEY (CodAnnuncio) REFERENCES Annunci(Codice) ON DELETE CASCADE ON UPDATE CASCADE
 )ENGINE=InnoDB;
 
