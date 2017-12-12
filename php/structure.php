@@ -34,7 +34,7 @@ function headers()
 	echo "<div id='header'>
 	        <div id='box'>
 	            <p class='button' id='login'>  <a href='login.php'>Log In</a> </p>
-	            <p class='button' id='signin'> <a href='signin.php'> Sign In </a></p>
+	            <p class='button' id='signin'> <a href='signin.php'>Sign In</a></p>
 	        </div>
 	        
 	        <a href='home.php'>
