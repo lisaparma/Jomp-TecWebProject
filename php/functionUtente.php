@@ -1,5 +1,6 @@
 <?php
 
+
 function breadcrumb($page)
 {
 	echo"<div id='breadcrumb'>
@@ -43,10 +44,53 @@ function menu($page)
 
 function recap()
 {
+    if(isset($_SESSION['login']))
+       {        
+        $nome=$_SESSION["login"]['Nome'];
+        $cognome=$_SESSION["login"]['Cognome'];
+        $email=$_SESSION["login"]['Email'];
+        $username=$_SESSION["login"]['Username'];
+        $password=$_SESSION["login"]['Password'];
+        
+           echo" <div id='contenuto'>
+	        <h3> Benvenuto $nome!</h3>
+            
+           <div>
+           
+            <h4> I tuoi dati: </h4>
+            <form method='post' action='UserSignIn.php'> 
+
+                <label for='nome'> Nome: </label> <br/>
+                <input type='text' readonly='readonly' id='nome' value='$nome' name='Nome'><br /> 
+                
+                <label for='cognome'> Cognome </label> <br/>
+                <input type='text' readonly='readonly' id='cognome' value='$cognome' name='Cognome'><br />
+                
+                <label for='email'> E-mail: </label> <br/>
+                <input type='text' readonly='readonly' id='email' value='$email' name='Email'><br />        
+                
+                <label for='username'> Username: </label> <br/>
+                <input type='text' readonly='readonly' id='username' value='$username' name='Username' value=''>
+                <br />
+                
+                <label for='password'> Password: </label> <br/>
+                <input type='password' readonly='readonly' id='password' name='Password' value='$password'><br />
+                <br />
+
+                <input type='submit' value='Registrati' name='submit'>
+
+            </form>
+            </div>
+            </div>" ;
+            
+       }
+    else {
 	echo" <div id='contenuto'>
-	        <p> Ricapitoliamo tutti i dati importanti dell'azienda nome, annunci scritti, ecc..</p>
+	        <p> :'( </p>
 	    </div> " ;
+    }
 }
+  
 
 
 
@@ -70,5 +114,6 @@ function modificaDati()
 	        <p> modifichiamo i dati</p>
 	    </div> " ;
 }
+
 
 ?>
