@@ -22,7 +22,7 @@ Codice int(10) PRIMARY KEY AUTO_INCREMENT,
 Titolo char(20) NOT NULL,
 Tipo char(10) NOT NULL,
 Data timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-Descrizione text(150) NOT NULL
+Descrizione text(300) NOT NULL
 )ENGINE=InnoDB;
 
 

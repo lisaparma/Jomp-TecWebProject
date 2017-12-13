@@ -44,26 +44,6 @@ function headers() {
 	    </div>" ;
 }
 
-/*session_destroy();
-$msg = "LOG-OUT EFFETTUATO.";
-$msg = urlencode($msg); // non ci possono essere spazi nell'URL
-header("location: accesso.php?msg=$msg");
-exit();*/
-
-function loggerHeaders() {
-	echo "<div id='loggerHeader'>
-	        <div id='box'>
-	            <button type='button' id='logout' name='logout'><a href='logout.php'> Logout </a></button>
-	        </div>
-	        
-	        <a href='home.php'>
-	            <img id='logo' src='../IMG/jomp.png' alt='logo scritta jomp con lente d&rsquo;ingrandimento'>
-	        </a>
-	        
-	        <h1> A jump in the job</h1>
-
-	    </div>" ;
-}
 
 
 

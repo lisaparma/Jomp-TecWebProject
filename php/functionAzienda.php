@@ -50,13 +50,6 @@ function recap()
 
 
 
-function pubblicaAnnuncio() 
-{
-	echo" <div id='contenuto'>
-	        <p> Pubblichiamo un annuncio</p>
-	    </div> " ;
-}
-
 function resoconto()
 {
 	echo" <div id='contenuto'>
