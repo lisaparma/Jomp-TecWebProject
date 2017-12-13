@@ -3,7 +3,13 @@
 require("structure.php");
 require("functionAzienda.php");
 
+<<<<<<< HEAD
 $title="Pubblica Annuncio - Jomp";
+=======
+session_start();
+
+$title="Jomp - Pubblica annuncio";
+>>>>>>> aaace6f5f8cb4ba0fd1b7e4d4751677a9f400ed0
 head($title);
 
 echo "<body>";

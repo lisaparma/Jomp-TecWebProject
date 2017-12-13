@@ -1,14 +1,15 @@
 <?php
-session_start();
 require("structure.php");
 require("functionUtente.php");
+
+session_start();
 
 $title="Jomp - Dashboard Utente";
 head($title);
 
 echo "<body>";
 
-loggerHeaders();
+headers();
 
 $page="Dashboard";
 breadcrumb($page);

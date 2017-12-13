@@ -75,9 +75,7 @@ function recap()
                 
                 <label for='password'> Password: </label> <br/>
                 <input type='password' readonly='readonly' id='password' name='Password' value='$password'><br />
-                <br />
 
-                <input type='submit' value='Registrati' name='submit'>
 
             </form>
             </div>

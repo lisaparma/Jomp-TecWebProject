@@ -3,12 +3,14 @@
 require("structure.php");
 require("functionUtente.php");
 
+session_start();
+
 $title="Jomp - Cerca annuncio";
 head($title);
 
 echo "<body>";
 
-loggerHeaders();
+headers();
 
 $page="Cerca annuncio";
 breadcrumb($page);
