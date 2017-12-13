@@ -3,12 +3,14 @@
 require("structure.php");
 require("functionUtente.php");
 
+session_start();
+
 $title="Jomp - Annunci salvati";
 head($title);
 
 echo "<body>";
 
-loggerHeaders();
+headers();
 
 $page="Annunci salvati";
 breadcrumb($page);

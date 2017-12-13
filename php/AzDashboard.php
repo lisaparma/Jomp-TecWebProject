@@ -3,12 +3,14 @@
 require("structure.php");
 require("functionAzienda.php");
 
+session_start();
+
 $title="Jomp - Dashboard Azienda";
 head($title);
 
 echo "<body>";
 
-loggerHeaders();
+headers();
 
 $page="Dashboard";
 breadcrumb($page);

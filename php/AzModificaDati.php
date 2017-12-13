@@ -3,12 +3,14 @@
 require("structure.php");
 require("functionAzienda.php");
 
+session_start();
+
 $title="Jomp - Modifica dati";
 head($title);
 
 echo "<body>";
 
-loggerHeaders();
+headers();
 
 $page="Modifica dati";
 breadcrumb($page);
