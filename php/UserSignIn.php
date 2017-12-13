@@ -82,7 +82,6 @@ if(isset($_POST["submit"])){
     try {
 
         $db=openDB();
-        
         $Username=$_POST["Username"];
         $Password=$_POST["Password"];
         $RipPassword=$_POST["RipPassword"];
@@ -119,7 +118,7 @@ if(isset($_POST["submit"])){
         closeDB($db);
 
 
-    } catch (PDOException $e) {
+    } catch (Exception $e) {
         echo "Errore: " . $e->getMessage();
         die();
     }

@@ -12,11 +12,8 @@ function openDB() {
     	echo "Connessione fallita con MySqL: ".mysqli_connect_error();
     }
 
-    /*
-    $db 		= new PDO ("mysql:host=$hostname;dbname=$dbname", $user, $pass);
+    mysqli_set_charset($con,"utf8");
 
-    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-	*/
     return $con;
 
 }
