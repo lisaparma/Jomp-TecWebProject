@@ -2,22 +2,24 @@
 
 require("structure.php");
 require("functionAzienda.php");
+require("connect.php");
 
 session_start();
 
-$title="Jomp - Resoconto annunci";
+$title = "Resoconto annunci - Jomp";
 head($title);
 
 echo "<body>";
 
 headers();
 
-$page="Resoconto annunci";
+$page = "Resoconto annunci";
 breadcrumb($page);
 
 menu($page);
 
-resoconto(); // da fare
+adsList('all');
+
 
 footer();
  

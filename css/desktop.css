@@ -113,10 +113,7 @@ h1 {
     padding:0.5em;
     margin-left:14.5em;
     height:20em;
-    border-style:solid;
-    border-color: black;
     margin-right: 5px;
-    background-color: aliceblue;
     
 }
 
@@ -183,6 +180,16 @@ h1 {
 
 }
 
+
+/* --------------------- ADD ADS ----------------------*/
+
+#remove {
+    float: left;
+}
+
+#edit {
+    float: left;
+}
 
 
 /* --------------------- FOOTER ----------------------*/

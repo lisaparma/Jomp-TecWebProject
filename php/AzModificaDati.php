@@ -17,7 +17,7 @@ breadcrumb($page);
 
 menu($page);
 
-modificaDati(); // da fare
+editData(); // da fare
 
 footer();
  

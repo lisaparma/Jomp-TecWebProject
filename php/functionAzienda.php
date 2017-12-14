@@ -1,8 +1,9 @@
 <?php
 
+
 function breadcrumb($page)
 {
-	echo"<div id='breadcrumb'>
+	echo "<div id='breadcrumb'>
 	        <p> Ti trovi in: <span xml:lang='en'> <a href='home.php'>  Home</a> >> $page </span> </p>
 	    </div> " ;
 }
@@ -13,55 +14,149 @@ function menu($page)
 {
 	echo"<div id='areaPersonale'>
 	        <ul>
-	            <li> "; if($page==="Dashboard") { 
-	            			echo" Dashboard </li>";
-	            		} else { 
-	            			echo " <a href='AzDashboard.php'> Dashboard </a>  </li> "; 
-	            		} echo"
-	            <li> "; if($page==="Pubblica annuncio") { 
-	            			echo" Pubblica annuncio </li>";
-	            		} else { 
-	            			echo " <a href='AzPubblicaAnnuncio.php'> Pubblica annuncio </a>  </li> "; 
-	            		} echo"
-	            <li> "; if($page==="Resoconto annunci") { 
-	            			echo" Recosonto annunci </li>";
-	            		} else { 
-	            			echo " <a href='AzResocontoAnnunci.php'> Resoconto annunci </a>  </li> "; 
-	            		} echo"
-	            <li> "; if($page==="Modifica dati") { 
-	            			echo" Modifica dati </li>";
-	            		} else { 
-	            			echo " <a href='AzModificaDati.php'> Modifica dati </a>  </li> "; 
-	            		} echo"
-
-
+	            <li> "; 
+	            if($page === 'Dashboard') { 
+        			echo "Dashboard </li>";
+        		} else { 
+        			echo "<a href='AzDashboard.php'> Dashboard </a></li>"; 
+        		} 
+        		echo "<li>"; 
+        		if($page === "Pubblica annuncio") { 
+        			echo "Pubblica annuncio</li>";
+        		} else { 
+        			echo "<a href='AzPubblicaAnnuncio.php'>Pubblica annuncio</a></li>"; 
+        		} 
+        		echo "<li>"; 
+        		if($page === "Resoconto annunci") { 
+        			echo "Recosonto annunci</li>";
+        		} else { 
+        			echo "<a href='AzResocontoAnnunci.php'>Resoconto annunci</a></li>"; 
+        		} echo "<li>";
+        		if($page === "Modifica dati") { 
+        			echo "Modifica dati</li>";
+        		} else { 
+        			echo "<a href='AzModificaDati.php'>Modifica dati</a></li> "; 
+        		} 
+        		echo "
 	        </ul>
-	    </div> " ;
+	    </div>";
 }
 
 
 
-function recap()
-{
-	echo" <div id='contenuto'>
-	        <p> Ricapitoliamo tutti i dati importanti dell'azienda nome, annunci scritti, ecc..</p>
-	    </div> " ;
+function addAds() {
+	echo "<div id='contenuto'>
+	    	<form form method='post' action='AzPubblicaAnnuncio.php' accept-charset='utf-8'>
+	    		<h3>Inserisci annuncio: </h3>
+
+	    		<label for='title'> Titolo: </label>
+	            <input type='text' id='title' name='Title' placeholder='Titolo' required><br/> 
+
+	            <label for='type'> Tipologia: </label>
+	            <select name='Tipologia' required>
+	            	<option value='Amministrazione'> Amministrazione </option>
+	            	<option value='Assistenza'> Assistenza anziani e/o disabili </option>
+	            	<option value='Contabilità'> Contabilità </option>
+	            	<option value='Direzione'> Direzione </option>
+	            	<option value='Edilizia'> Edilizia </option>
+	            	<option value='Estetica'> Estetica </option>
+	            	<option value='Formazione'> Formazione </option>
+	            	<option value='Marketing'> Marketing </option>
+	            	<option value='Medicina'> Medicina </option>
+	            	<option value='Produzione'> Produzione </option>
+	            	<option value='Ristorazione'> Ristorazione </option>
+	            	<option value='Sicurezza'> Sicurezza </option> 
+	            	<option value='Altro'> Altro </option>
+	            </select>
+
+	            <p> Inserisci una breve descrizione del lavoro (max 300 caratteri): </p>
+	            <textarea name='Description' rows='5' cols='70' required></textarea><br/>
+
+	            <input type='submit' value='Inserisci' name='submit'>
+	    	</form>
+	    </div> ";
+
+	if(isset($_POST['submit'])) {
+		try {
+	        if(isset($_SESSION['login'])) {
+	    	    $db = openDB();
+
+	            $title = $_POST['Title'];
+	            $type = $_POST['Tipologia'];
+	            $description = $_POST['Description'];
+	            $day = time();
+	            $name = $_SESSION['login']['Nome'];
+
+	    	    $ad = "INSERT INTO Annunci(Titolo, Azienda, Tipologia, Orario, Descrizione) VALUES ('$title', '$name', '$type', '".date("d.m.Y", $day)."', '$description')";
+
+	    		if ($db->query($ad)) {
+    				header("location: AzResocontoAnnunci.php");
+				} 
+				else {
+    				echo "Errore";
+				}
+	   
+	        }
+	        else {
+	            echo "Connessione scaduta";     //BOZZA -> scrivere meglio l'errore
+	        }
+		}
+		catch (Exception $e) {
+	        echo "Errore: " . $e->getMessage();
+	        die();
+	    }
+	} 
 }
 
 
 
-function resoconto()
-{
-	echo" <div id='contenuto'>
-	        <p> facciamo un resoconto degli annunci</p>
-	    </div> " ;
+function adsList($select) {
+	if(isset($_SESSION['login'])) {
+		$name = $_SESSION['login']['Nome'];
+		$word = '';
+
+		if($select == 'all') {
+			$result = mysqli_query(openDB(), "SELECT * FROM Annunci WHERE Azienda='".$name."'");
+		}
+
+		if($select == 'lastAdded') {
+			$result = mysqli_query(openDB(), "SELECT * FROM Annunci WHERE Azienda='".$name."' LIMIT 3");
+			$word = 'ultimi';
+		}
+
+		if($result) {
+			echo "<p>Ecco i tuoi ".$word." annunci:</p>";
+			//stampo tutti gli annunci trovati
+			while($row = $result->fetch_array(MYSQLI_ASSOC)) {
+
+					echo "<div id='contenuto'>
+							<dl>
+								<dt>".$row['Titolo']."</dt>
+									<dd>Pubblicato il ".$row['Orario']."</br>
+									".$row['Descrizione']."</br>
+										<div id='options'>
+											<p class='button' id='edit'><a href=''>Modifica</a></p>
+					            			<p class='button' id='remove'><a href=''>Rimuovi</a></p>
+					            		</div>
+									</dd>
+								</dt>
+							</dl>
+						</div>";
+
+			}
+		}
+		else {
+			echo "Ancora nessun annuncio inserito";
+		}
+	}
 }
 
-function modificaDati() 
-{
-	echo" <div id='contenuto'>
+
+
+function editData() {
+	echo "<div id='contenuto'>
 	        <p> modifichiamo i dati</p>
-	    </div> " ;
+	    </div>";
 }
 
 ?>

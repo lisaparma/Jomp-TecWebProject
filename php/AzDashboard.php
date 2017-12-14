@@ -2,22 +2,23 @@
 
 require("structure.php");
 require("functionAzienda.php");
+require("connect.php");
 
 session_start();
 
-$title="Jomp - Dashboard Azienda";
+$title = "Dashboard Azienda - Jomp";
 head($title);
 
 echo "<body>";
 
 headers();
 
-$page="Dashboard";
+$page = "Dashboard";
 breadcrumb($page);
 
 menu($page);
 
-recap(); // da fare
+adsList('lastAdded');
 
 footer();
  

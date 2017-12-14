@@ -5,19 +5,19 @@ require("functionUtente.php");
 
 session_start();
 
-$title="Jomp - Annunci salvati";
+$title = "Annunci salvati - Jomp";
 head($title);
 
 echo "<body>";
 
 headers();
 
-$page="Annunci salvati";
+$page = "Annunci salvati";
 breadcrumb($page);
 
 menu($page);
 
-annunciSalvati(); // da fare
+adsSalved(); // da fare
 
 footer();
  

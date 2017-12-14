@@ -5,19 +5,19 @@ require("functionUtente.php");
 
 session_start();
 
-$title="Jomp - Cerca annuncio";
+$title = "Cerca annuncio - Jomp";
 head($title);
 
 echo "<body>";
 
 headers();
 
-$page="Cerca annuncio";
+$page = "Cerca annuncio";
 breadcrumb($page);
 
 menu($page);
 
-cerca(); // da fare
+search(); // da fare
 
 footer();
  

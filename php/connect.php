@@ -1,10 +1,10 @@
 <?php
 
 function openDB() {
-	$hostname	= "localhost";
-    $dbname 	= "database";
-    $user 		= "root";
-    $pass 		= "";
+	$hostname	= 'localhost';
+    $dbname 	= 'database';
+    $user 		= 'root';
+    $pass 		= '';
 
     $con = mysqli_connect($hostname, $user, $pass, $dbname);
 
@@ -12,7 +12,7 @@ function openDB() {
     	echo "Connessione fallita con MySqL: ".mysqli_connect_error();
     }
 
-    mysqli_set_charset($con,"utf8");
+    mysqli_set_charset($con,'utf8');
 
     return $con;
 
