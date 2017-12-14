@@ -51,6 +51,17 @@ function recap()
         $email=$_SESSION["login"]['Email'];
         $username=$_SESSION["login"]['Username'];
         $password=$_SESSION["login"]['Password'];
+        $sesso=$_SESSION["login"]['Sesso'];
+
+        $check1='';
+        $check2='';
+
+        if($sesso='M') 
+        	$check1='checked';
+        else 
+        	$check1='checked';
+
+
         
            echo" <div id='contenuto'>
 	        <h3> Benvenuto $nome!</h3>
@@ -58,26 +69,29 @@ function recap()
            <div>
            
             <h4> I tuoi dati: </h4>
-            <form method='post' action='UserSignIn.php'> 
+	            <form method='post' action='UserSignIn.php'> 
 
-                <label for='nome'> Nome: </label> <br/>
-                <input type='text' readonly='readonly' id='nome' value='$nome' name='Nome'><br /> 
-                
-                <label for='cognome'> Cognome </label> <br/>
-                <input type='text' readonly='readonly' id='cognome' value='$cognome' name='Cognome'><br />
-                
-                <label for='email'> E-mail: </label> <br/>
-                <input type='text' readonly='readonly' id='email' value='$email' name='Email'><br />        
-                
-                <label for='username'> Username: </label> <br/>
-                <input type='text' readonly='readonly' id='username' value='$username' name='Username' value=''>
-                <br />
-                
-                <label for='password'> Password: </label> <br/>
-                <input type='password' readonly='readonly' id='password' name='Password' value='$password'><br />
+	                <label for='nome'> Nome: </label> <br/>
+	                <input type='text' readonly='readonly' id='nome' value='$nome' name='Nome'><br /> 
+	                
+	                <label for='cognome'> Cognome </label> <br/>
+	                <input type='text' readonly='readonly' id='cognome' value='$cognome' name='Cognome'><br />
+	                
+	                <label for='email'> E-mail: </label> <br/>
+	                <input type='text' readonly='readonly' id='email' value='$email' name='Email'><br />        
+	                
+	                <label for='username'> Username: </label> <br/>
+	                <input type='text' readonly='readonly' id='username' value='$username' name='Username' value=''>
+	                <br />
+	                
+	                <label for='password'> Password: </label> <br/>
+	                <input type='password' readonly='readonly' id='password' name='Password' value='$password'><br />
 
+	                Sesso:
+	                <input type='radio' readonly='readonly' id='uomo' name='button' value='man' $check1> <label for='uomo'> Uomo </label>
+                    <input type='radio' readonly='readonly' id='donna' name='button' value='women' $check2> <label for='donna'> Donna</label> <br/>
 
-            </form>
+	            </form>
             </div>
             </div>" ;
             
