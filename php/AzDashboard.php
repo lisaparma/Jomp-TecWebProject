@@ -17,7 +17,7 @@ breadcrumb($page);
 
 menu($page);
 
-recap(); // da fare
+//recap(); // da fare
 
 footer();
  

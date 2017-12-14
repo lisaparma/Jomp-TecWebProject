@@ -5,6 +5,9 @@ require("functionHome.php");
 require("connect.php");
 
 $title="Jomp - Log In ";
+
+session_start();
+
 head($title);
 
 headers();
@@ -37,14 +40,6 @@ function checkDataUser($Username, $Password) {
     return false;
 }
 
-
-function openSessionUser($Username) {
-    session_start();
-    $user = mysqli_query(openDB(), "SELECT * FROM Utenti WHERE Username='".$Username."'");
-    $_SESSION["login"] = $user->fetch_array(MYSQLI_ASSOC);
-}
-
-
 function checkDataCompany($Username, $Password) {
     $company = mysqli_query(openDB(),"SELECT Nome, Password FROM Aziende WHERE Nome='".$Username."' AND Password='".$Password."'");
 
@@ -57,30 +52,26 @@ function checkDataCompany($Username, $Password) {
 }
 
 
-function openSessionCompany($Username) {
-    session_start();
-    $company = mysqli_query(openDB(), "SELECT * FROM Aziende WHERE Nome='".$Username."'"); 
-    $_SESSION["login"] = $company->fetch_array(MYSQLI_ASSOC);
-}
 
-
-if(isset($_POST["submit"])){
+if(isset($_POST['submit'])){
     try {
 
         $db=openDB();
         
-        $Username=$_POST["Username"];
-        $Password=$_POST["Password"];
+        $Username=$_POST['Username'];
+        $Password=$_POST['Password'];
 
         //login per l'utente
         if(checkDataUser($Username, $Password)) {
-            openSessionUser($Username);
+            $user = mysqli_query(openDB(), "SELECT * FROM Utenti WHERE Username='".$Username."'");
+            $_SESSION['login'] = $user->fetch_array(MYSQLI_ASSOC);
             header("location: UtDashboard.php");
         }
 
         //login per l'azienda
         if(checkDataCompany($Username, $Password)) {
-            openSessionCompany($Username);
+            $company = mysqli_query(openDB(), "SELECT * FROM Aziende WHERE Nome='".$Username."'"); 
+            $_SESSION['login'] = $company->fetch_array(MYSQLI_ASSOC);
             header("location: AzDashboard.php");
         }
 
