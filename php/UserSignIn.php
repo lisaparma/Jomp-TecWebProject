@@ -1,10 +1,11 @@
 <?php
 
+
 require("structure.php");
 require("functionHome.php");
 require("connect.php");
 
-$title="Jomp - Registrazione Utente";
+$title = "Registrazione Utente - Jomp";
 head($title);
 
 echo "<body>";
@@ -77,27 +78,27 @@ echo "<div id=form>
     </div>";
 
 
-if(isset($_POST["submit"])){
+if(isset($_POST['submit'])){
     try {
 
-        $db=openDB();
-        $Username=$_POST["Username"];
-        $Password=$_POST["Password"];
-        $RipPassword=$_POST["RipPassword"];
-        $Nome=$_POST["Nome"];
-        $Cognome=$_POST["Cognome"];
-        $Email=$_POST["Email"];
+        $db = openDB();
+        $Username = $_POST['Username'];
+        $Password = $_POST['Password'];
+        $RipPassword = $_POST['RipPassword'];
+        $Nome = $_POST['Nome'];
+        $Cognome = $_POST['Cognome'];
+        $Email = $_POST['Email'];
 
         //verifico i dati inseriti
         if(checkEmail($Email) && checkUsername($Username) && checkRepeatPassword($Password, $RipPassword)) {
-            $sql = "INSERT INTO Utenti(Username, Password, Nome, Cognome, Email) VALUES('$Username', '$Password', '$Nome', '$Cognome', '$Email')";
+            $sql = "INSERT INTO Utenti(Username, Password, Nome, Cognome, Email) VALUES ('$Username', '$Password', '$Nome', '$Cognome', '$Email')";
 
-            $db->query($sql);
+            $db -> query($sql);
             header("location: login.php");
 
         }
         else {
-            echo "<div id=errorList><p>Tentativo di registrazione fallito, sono sorti i seguenti errori: </p><br/>";
+            echo "<div id=errorList><p>Tentativo di registrazione fallito, sono sorti i seguenti errori:</p><br/>";
             echo "<ul>";
             if(!checkEmail($Email)) {
                 echo "<li>Email già presente, controlla di non essere già registrato</li><br/>";

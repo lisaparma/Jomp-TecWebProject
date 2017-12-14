@@ -10,7 +10,7 @@ function menuHome()
 	     </ul>" ;
 }
 
-function ricerca()
+function search()
 {
 	echo "<div id='ricerca'> 
 	        <form action='' method='get'>
@@ -46,7 +46,7 @@ function ricerca()
 }
 
 
-function ultimiAnnunci()
+function lastAds()
 {
 	echo "<div id='listannunci'>
 		    <p> Ultimi annunci:</p>

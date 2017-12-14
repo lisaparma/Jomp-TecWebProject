@@ -4,14 +4,14 @@ require("functionUtente.php");
 
 session_start();
 
-$title="Jomp - Dashboard Utente";
+$title = "Dashboard Utente - Jomp";
 head($title);
 
 echo "<body>";
 
 headers();
 
-$page="Dashboard";
+$page = "Dashboard";
 breadcrumb($page);
 
 menu($page);

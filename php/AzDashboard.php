@@ -5,7 +5,7 @@ require("functionAzienda.php");
 
 session_start();
 
-$title="Jomp - Dashboard Azienda";
+$title="Dashboard Azienda - Jomp";
 head($title);
 
 echo "<body>";

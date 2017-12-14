@@ -5,7 +5,7 @@ require("structure.php");
 require("functionHome.php");
 require("connect.php");
 
-$title="Jomp - Registrazione Azienda";
+$title = "Registrazione Azienda - Jomp";
 head($title);
 
 headers();
@@ -77,28 +77,28 @@ echo "<div id=form>
         </div>
     </div>";
 
-if(isset($_POST["submit"])){
+if(isset($_POST['submit'])){
     try {
 
-        $db=openDB();
+        $db = openDB();
         
-        $Name = $_POST["Name"];
-        $PIva = $_POST["PIva"];
-        $Email = $_POST["Email"];
-        $Citta = $_POST["City"];
-        $Password = $_POST["Password"];
-        $RepPassword = $_POST["RepPassword"];
+        $Name = $_POST['Name'];
+        $PIva = $_POST['PIva'];
+        $Email = $_POST['Email'];
+        $Citta = $_POST['City'];
+        $Password = $_POST['Password'];
+        $RepPassword = $_POST['RepPassword'];
 
         //verifico i dati inseriti
         if(checkName($Name) && checkPIva($PIva) && checkRepeatPassword($Password, $RepPassword)) {
-            $sql = "INSERT INTO Aziende(Nome, PIva, Email, Citta, Password) VALUES('$Name', '$PIva', '$Email', '$Citta', '$Password')";
+            $sql = "INSERT INTO Aziende(Nome, PIva, Email, Citta, Password) VALUES ('$Name', '$PIva', '$Email', '$Citta', '$Password')";
 
-            $db->query($sql);
+            $db -> query($sql);
             header("location: login.php");
 
         }
         else {
-            echo "<div id=errorList><p>Tentativo di registrazione fallito, sono sorti i seguenti errori: </p><br/>";
+            echo "<div id=errorList><p>Tentativo di registrazione fallito, sono sorti i seguenti errori:</p><br/>";
             echo "<ul>";
             if(!checkName($Name)) {
                 echo "<li>Azienda già presente, controlla di non essere già registrato</li><br/>";

@@ -1,4 +1,3 @@
-
 <?php
 
 function head($title) {
@@ -47,7 +46,7 @@ function headers() {
 	     
 	        <h1> A jump in the job</h1>
 
-	    </div>" ;
+	    </div>";
 }
 
 
@@ -57,7 +56,7 @@ function headers() {
 function footer() {
 	echo "<div id='footer'> 
         <p> Questo è il footer, ci scriverò qualcosa di sensato un giorno.</p>
-    </div>" ;
+    </div>";
 }
 
 ?>

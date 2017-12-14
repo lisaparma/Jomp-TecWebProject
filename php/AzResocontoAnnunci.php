@@ -6,20 +6,20 @@ require("connect.php");
 
 session_start();
 
-$title="Resoconto annunci - Jomp";
+$title = "Resoconto annunci - Jomp";
 head($title);
 
 echo "<body>";
 
 headers();
 
-$page="Resoconto annunci";
+$page = "Resoconto annunci";
 breadcrumb($page);
 
 menu($page);
 
 
-resoconto();
+adsList();
 
 
 footer();

@@ -3,7 +3,7 @@
 
 function breadcrumb($page)
 {
-	echo"<div id='breadcrumb'>
+	echo "<div id='breadcrumb'>
 	        <p> Ti trovi in: <span xml:lang='en'> <a href='home.php'>  Home</a> >> $page </span> </p>
 	    </div> " ;
 }
@@ -14,34 +14,36 @@ function menu($page)
 {
 	echo"<div id='areaPersonale'>
 	        <ul>
-	            <li> "; if($page==="Dashboard") { 
-	            			echo" Dashboard </li>";
-	            		} else { 
-	            			echo " <a href='AzDashboard.php'> Dashboard </a>  </li> "; 
-	            		} echo"
-	            <li> "; if($page==="Pubblica annuncio") { 
-	            			echo" Pubblica annuncio </li>";
-	            		} else { 
-	            			echo " <a href='AzPubblicaAnnuncio.php'> Pubblica annuncio </a>  </li> "; 
-	            		} echo"
-	            <li> "; if($page==="Resoconto annunci") { 
-	            			echo" Recosonto annunci </li>";
-	            		} else { 
-	            			echo " <a href='AzResocontoAnnunci.php'> Resoconto annunci </a>  </li> "; 
-	            		} echo"
-	            <li> "; if($page==="Modifica dati") { 
-	            			echo" Modifica dati </li>";
-	            		} else { 
-	            			echo " <a href='AzModificaDati.php'> Modifica dati </a>  </li> "; 
-	            		} echo"
-
-
+	            <li> "; 
+	            if($page === 'Dashboard') { 
+        			echo "Dashboard </li>";
+        		} else { 
+        			echo "<a href='AzDashboard.php'> Dashboard </a></li>"; 
+        		} 
+        		echo "<li>"; 
+        		if($page === "Pubblica annuncio") { 
+        			echo "Pubblica annuncio</li>";
+        		} else { 
+        			echo "<a href='AzPubblicaAnnuncio.php'>Pubblica annuncio</a></li>"; 
+        		} 
+        		echo "<li>"; 
+        		if($page === "Resoconto annunci") { 
+        			echo "Recosonto annunci</li>";
+        		} else { 
+        			echo "<a href='AzResocontoAnnunci.php'>Resoconto annunci</a></li>"; 
+        		} echo "<li>";
+        		if($page === "Modifica dati") { 
+        			echo "Modifica dati</li>";
+        		} else { 
+        			echo "<a href='AzModificaDati.php'>Modifica dati</a></li> "; 
+        		} 
+        		echo "
 	        </ul>
-	    </div> " ;
+	    </div>";
 }
 
 function addAds() {
-	echo" <div id='contenuto'>
+	echo "<div id='contenuto'>
 	    	<form form method='post' action='AzPubblicaAnnuncio.php' accept-charset='utf-8'>
 	    		<h3>Inserisci annuncio: </h3>
 
@@ -77,13 +79,13 @@ function addAds() {
 	        if(isset($_SESSION['login'])) {
 	    	    $db = openDB();
 
-	            $Title = $_POST['Title'];
-	            $Type = $_POST['Tipologia'];
-	            $Description = $_POST['Description'];
+	            $title = $_POST['Title'];
+	            $type = $_POST['Tipologia'];
+	            $description = $_POST['Description'];
 	            $day = time();
-	            $Name = $_SESSION['login']['Nome'];
+	            $name = $_SESSION['login']['Nome'];
 
-	    	    $ad = "INSERT INTO Annunci(Titolo, Azienda, Tipologia, Orario, Descrizione) VALUES('$Title', '$Name', '$Type', '".date("d.m.Y", $day)."', '$Description')";
+	    	    $ad = "INSERT INTO Annunci(Titolo, Azienda, Tipologia, Orario, Descrizione) VALUES ('$title', '$name', '$type', '".date("d.m.Y", $day)."', '$description')";
 
 	    		if ($db->query($ad)) {
     				header("location: AzResocontoAnnunci.php");
@@ -105,7 +107,7 @@ function addAds() {
 }
 
 
-function resoconto() {
+function adsList() {
 	if(isset($_SESSION['login'])) {
 		$name = $_SESSION['login']['Nome'];
 
@@ -113,23 +115,23 @@ function resoconto() {
 		$result = mysqli_query(openDB(), "SELECT * FROM Annunci WHERE Azienda='".$name."'");
 
 		if($result) {
-		//stampo tutti gli annunci trovati
+			echo "<p>Ecco i tuoi annunci:</p>";
+			//stampo tutti gli annunci trovati
 			while($row = $result->fetch_array(MYSQLI_ASSOC)) {
 
-					echo "<div id=content>
-							<p> Ecco i tuoi annunci: </p>
-								<dl>
-									<dt>'".$row['Titolo']."'</dt>
-										<dd>Pubblicato il '".$row['Orario']."'</br>
-										'".$row['Descrizione']."'</br>
-											<div id='options'>
-												<p class='button' id='edit'><a href=''>Modifica</a></p>
-						            			<p class='button' id='remove'><a href=''>Rimuovi</a></p>
-						            		</div>
-										</dd>
-									</dt>
-								</dl>
-							</div>";
+					echo "<div id='contenuto'>
+							<dl>
+								<dt>".$row['Titolo']."</dt>
+									<dd>Pubblicato il ".$row['Orario']."</br>
+									".$row['Descrizione']."</br>
+										<div id='options'>
+											<p class='button' id='edit'><a href=''>Modifica</a></p>
+					            			<p class='button' id='remove'><a href=''>Rimuovi</a></p>
+					            		</div>
+									</dd>
+								</dt>
+							</dl>
+						</div>";
 
 			}
 		}
@@ -139,10 +141,10 @@ function resoconto() {
 	}
 }
 
-function modificaDati() {
-	echo" <div id='contenuto'>
+function editData() {
+	echo "<div id='contenuto'>
 	        <p> modifichiamo i dati</p>
-	    </div> " ;
+	    </div>";
 }
 
 ?>

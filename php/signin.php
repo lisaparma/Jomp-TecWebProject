@@ -5,7 +5,7 @@ require("structure.php");
 require("functionHome.php");
 require("connect.php");
 
-$title="Jomp - Sign In ";
+$title="Sign In - Jomp";
 head($title);
 
 echo "<body>";
@@ -25,7 +25,7 @@ echo   "<div id=form>
             </div>
         </div>";
 
-if(isset($_POST["continue"])){
+if(isset($_POST['continue'])){
     try {
 
         $value = $_POST['button'];

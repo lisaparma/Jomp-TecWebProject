@@ -3,9 +3,9 @@
 
 function breadcrumb($page)
 {
-	echo"<div id='breadcrumb'>
-	        <p> Ti trovi in: <span xml:lang='en'> <a href='home.php'>  Home</a> >> $page </span> </p>
-	    </div> " ;
+	echo "<div id='breadcrumb'>
+	        <p>Ti trovi in: <span xml:lang='en'><a href='home.php'>Home</a> >>$page</span></p>
+	    </div>";
 }
 
 
@@ -14,30 +14,33 @@ function menu($page)
 {
 	echo"<div id='areaPersonale'>
 	        <ul>
-	            <li> "; if($page==="Dashboard") { 
-	            			echo" Dashboard </li>";
-	            		} else { 
-	            			echo " <a href='UtDashboard.php'> Dashboard </a>  </li> "; 
-	            		} echo"
-	            <li> "; if($page==="Cerca annuncio") { 
-	            			echo" Cerca annuncio </li>";
-	            		} else { 
-	            			echo " <a href='UtCercaAnnuncio.php'> Cerca annuncio </a>  </li> "; 
-	            		} echo"
-	            <li> "; if($page==="Annunci salvati") { 
-	            			echo" Annunci salvati </li>";
-	            		} else { 
-	            			echo " <a href='UtAnnunciSalvati.php'> Annunci salvati </a>  </li> "; 
-	            		} echo"
-	            <li> "; if($page==="Modifica dati") { 
-	            			echo" Modifica dati </li>";
-	            		} else { 
-	            			echo " <a href='UtModificaDati.php'> Modifica dati </a>  </li> "; 
-	            		} echo"
-
-
+	            <li>"; 
+	            if($page === 'Dashboard') { 
+	            	echo "Dashboard</li>";
+	            } else { 
+	            	echo "<a href='UtDashboard.php'>Dashboard</a></li>"; 
+	            } 
+	            echo"<li>";
+	           	if($page === 'Cerca annuncio') { 
+	            	echo "Cerca annuncio</li>";
+	            } else { 
+	            	echo "<a href='UtCercaAnnuncio.php'>Cerca annuncio</a></li>"; 
+	            }
+	            echo "<li>";
+	            if($page === 'Annunci salvati') { 
+	            	echo "Annunci salvati</li>";
+	            } else { 
+	            	echo "<a href='UtAnnunciSalvati.php'>Annunci salvati</a></li>"; 
+	            } 
+	            echo "<li>";
+	            if($page === 'Modifica dati') { 
+	            	echo "Modifica dati</li>";
+	            } else { 
+	            	echo "<a href='UtModificaDati.php'>Modifica dati</a></li>"; 
+	            } 
+	            echo "
 	        </ul>
-	    </div> " ;
+	    </div>";
 }
 
 
@@ -46,11 +49,11 @@ function recap()
 {
     if(isset($_SESSION['login']))
        {        
-        $nome=$_SESSION["login"]['Nome'];
-        $cognome=$_SESSION["login"]['Cognome'];
-        $email=$_SESSION["login"]['Email'];
-        $username=$_SESSION["login"]['Username'];
-        $password=$_SESSION["login"]['Password'];
+        $nome = $_SESSION["login"]['Nome'];
+        $cognome = $_SESSION["login"]['Cognome'];
+        $email = $_SESSION["login"]['Email'];
+        $username = $_SESSION["login"]['Username'];
+        $password = $_SESSION["login"]['Password'];
         
            echo" <div id='contenuto'>
 	        <h3> Benvenuto $nome!</h3>
@@ -83,34 +86,34 @@ function recap()
             
        }
     else {
-	echo" <div id='contenuto'>
-	        <p> :'( </p>
-	    </div> " ;
+	echo "<div id='contenuto'>
+	        <p>Sessione scaduta, procedere con la riutenticazione.</p>
+	    </div>";
     }
 }
   
 
 
 
-function cerca() 
+function search() 
 {
-	echo" <div id='contenuto'>
-	        <p> Pubblichiamo un annuncio</p>
-	    </div> " ;
+	echo "<div id='contenuto'>
+	        <p>Pubblichiamo un annuncio</p>
+	    </div>";
 }
 
-function annunciSalvati()
+function adsSalved()
 {
-	echo" <div id='contenuto'>
-	        <p> facciamo un resoconto degli annunci</p>
-	    </div> " ;
+	echo "<div id='contenuto'>
+	        <p>facciamo un resoconto degli annunci</p>
+	    </div>";
 }
 
-function modificaDati() 
+function editData() 
 {
-	echo" <div id='contenuto'>
-	        <p> modifichiamo i dati</p>
-	    </div> " ;
+	echo "<div id='contenuto'>
+	        <p>modifichiamo i dati</p>
+	    </div>";
 }
 
 

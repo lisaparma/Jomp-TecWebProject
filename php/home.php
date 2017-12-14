@@ -4,7 +4,7 @@
 require("structure.php");
 require("functionHome.php");
 
-$title="Jomp - Home ";
+$title = "Home - Jomp";
 head($title);
 
 echo "<body>";
@@ -13,9 +13,9 @@ headers();
 
 menuHome();
 
-ricerca();
+search();
 
-ultimiAnnunci();
+lastAds();
 
 footer();
  

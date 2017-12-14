@@ -5,7 +5,7 @@ require("functionAzienda.php");
 require("connect.php");
 
 
-$title="Pubblica Annuncio - Jomp";
+$title = "Pubblica Annuncio - Jomp";
 
 session_start();
 
@@ -15,7 +15,7 @@ echo "<body>";
 
 headers();
 
-$page="Pubblica annuncio";
+$page = "Pubblica annuncio";
 breadcrumb($page);
 
 menu($page);

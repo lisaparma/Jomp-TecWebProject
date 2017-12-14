@@ -5,19 +5,19 @@ require("functionUtente.php");
 
 session_start();
 
-$title="Jomp - Modifica dati";
+$title = "Modifica dati - Jomp";
 head($title);
 
 echo "<body>";
 
 headers();
 
-$page="Modifica dati";
+$page = "Modifica dati";
 breadcrumb($page);
 
 menu($page);
 
-modificaDati(); // da fare
+editData(); // da fare
 
 footer();
  
