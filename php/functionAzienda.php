@@ -42,6 +42,8 @@ function menu($page)
 	    </div>";
 }
 
+
+
 function addAds() {
 	echo "<div id='contenuto'>
 	    	<form form method='post' action='AzPubblicaAnnuncio.php' accept-charset='utf-8'>
@@ -107,15 +109,23 @@ function addAds() {
 }
 
 
-function adsList() {
+
+function adsList($select) {
 	if(isset($_SESSION['login'])) {
 		$name = $_SESSION['login']['Nome'];
+		$word = '';
 
-		//prendo tutti gli annunci della azienda loggata
-		$result = mysqli_query(openDB(), "SELECT * FROM Annunci WHERE Azienda='".$name."'");
+		if($select == 'all') {
+			$result = mysqli_query(openDB(), "SELECT * FROM Annunci WHERE Azienda='".$name."'");
+		}
+
+		if($select == 'lastAdded') {
+			$result = mysqli_query(openDB(), "SELECT * FROM Annunci WHERE Azienda='".$name."' LIMIT 3");
+			$word = 'ultimi';
+		}
 
 		if($result) {
-			echo "<p>Ecco i tuoi annunci:</p>";
+			echo "<p>Ecco i tuoi ".$word." annunci:</p>";
 			//stampo tutti gli annunci trovati
 			while($row = $result->fetch_array(MYSQLI_ASSOC)) {
 
@@ -140,6 +150,8 @@ function adsList() {
 		}
 	}
 }
+
+
 
 function editData() {
 	echo "<div id='contenuto'>

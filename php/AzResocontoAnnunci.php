@@ -18,8 +18,7 @@ breadcrumb($page);
 
 menu($page);
 
-
-adsList();
+adsList('all');
 
 
 footer();
