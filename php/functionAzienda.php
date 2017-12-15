@@ -206,7 +206,7 @@ function editCompanyData() {
 			            <input type='text' id='nome' value='$name' name='Nome'><br/> 
 			                
 	    				<label for='pIva'>Partita Iva: </label><br/>
-			            <input type='text' id='pIva' value='$pIva' name=PIva'><br/>
+			            <input type='text' id='pIva' value='$pIva' name='PIva'><br/>
 			                
 			            <label for='email'>E-mail: </label><br/>
 			            <input type='text' id='email' value='$email' name='Email'><br/>        
@@ -224,7 +224,19 @@ function editCompanyData() {
 	            </div>";
 //FINIREEEEE ->
 	            if(isset($_POST['edit'])) {
-	            	$update = "UPDATE Aziende SET Nome = $name, PIva =$pIva, e WHERE id=2";
+					$newName = $_POST['Nome'];
+					$newPIva = $_POST['PIva'];
+					$newEmail = $_POST['Email'];
+					$newCity = $_POST['City'];
+					$newPassword = $_POST['Password'];	
+
+	            	$update = "UPDATE Aziende SET Nome='".$newName."', PIva='".$newPIva."', Email='".$newEmail."', Citta='".$newCity."', Password='".$newPassword."'  WHERE Codice='".$id."'";
+	            	if(mysqli_query(openDB(), $update)) {
+	            		header("location: AzDashboard.php");
+	            	}
+	            	else {
+	            		echo "Errore nell'aggiornare i propri dati.";
+	            	}
 	            }
 
 		}
