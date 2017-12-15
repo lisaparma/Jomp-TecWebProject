@@ -37,7 +37,7 @@ function headers() {
 	}
 	else {
 		echo " 	<div id='box'>
-			            <p class='button' id='esci'>  <a href='home.php'>Log out</a> </p>
+			            <p class='button' id='esci'><a href='logout.php'>Log out</a></p>
 			        </div>";
 	}
 	echo "		<a href='home.php'>
