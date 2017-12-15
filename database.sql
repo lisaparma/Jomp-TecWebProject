@@ -23,18 +23,20 @@ Codice int(10) PRIMARY KEY AUTO_INCREMENT,
 Azienda char(100) NOT NULL,
 Titolo char(100) NOT NULL,
 Tipologia char(10) NOT NULL,
-Orario timestamp NOT NULL,
+Data timestamp DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 Descrizione text(300) NOT NULL 
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
 DROP TABLE IF EXISTS Aziende;
 CREATE TABLE Aziende (
-Nome char(100) PRIMARY KEY,
+Codice int(10) AUTO_INCREMENT,
+Nome char(100) NOT NULL,
 PIva int(11) NOT NULL, 
 Email char(255) NOT NULL,
 Citta char(20) NOT NULL,
-Password char(20) NOT NULL
+Password char(20) NOT NULL,
+PRIMARY KEY (Codice, Nome)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
