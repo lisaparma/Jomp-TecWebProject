@@ -74,7 +74,7 @@ if(isset($_POST['submit'])){
                 echo "<li>Partita IVA già presente, controlla di non essere già registrato o di avere inserito corretamente la sequenza di cifre</li><br/>";
             }
 
-            if(!checkRepeatPassword($Password, $RipPassword)) {
+            if(!checkRepeatPassword($Password, $RepPassword)) {
                 echo "<li>La password di verifica non corrisponde alla password scelta</li><br/>";
             }
             echo "</ul></div>";
