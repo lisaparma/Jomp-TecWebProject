@@ -84,10 +84,9 @@ function addAds() {
 	            $title = $_POST['Title'];
 	            $type = $_POST['Tipologia'];
 	            $description = $_POST['Description'];
-	            $day = time();
 	            $name = $_SESSION['login']['Nome'];
 
-	    	    $ad = "INSERT INTO Annunci(Titolo, Azienda, Tipologia, Orario, Descrizione) VALUES ('$title', '$name', '$type', '".date("d.m.Y", $day)."', '$description')";
+	    	    $ad = "INSERT INTO Annunci(Titolo, Azienda, Tipologia, Descrizione) VALUES ('$title', '$name', '$type', '$description')";
 
 	    		if ($db->query($ad)) {
     				header("location: AzResocontoAnnunci.php");
@@ -98,7 +97,7 @@ function addAds() {
 	   
 	        }
 	        else {
-	            echo "Connessione scaduta";     //BOZZA -> scrivere meglio l'errore
+	            echo "Connessione scaduta";    
 	        }
 		}
 		catch (Exception $e) {
@@ -113,7 +112,7 @@ function addAds() {
 function adsList($select) {
 	if(isset($_SESSION['login'])) {
 		$name = $_SESSION['login']['Nome'];
-		$word = '';
+		$word = $empty = '';
 
 		if($select == 'all') {
 			$result = mysqli_query(openDB(), "SELECT * FROM Annunci WHERE Azienda='".$name."'");
@@ -124,25 +123,29 @@ function adsList($select) {
 			$word = 'ultimi';
 		}
 
+		if(mysqli_num_rows($result) == 0) {
+			$empty = "Nessun annuncio ancora inserito.";
+		}
+
 		if($result) {
 			echo "<p>Ecco i tuoi ".$word." annunci:</p>";
 			//stampo tutti gli annunci trovati
+			echo $empty;
 			while($row = $result->fetch_array(MYSQLI_ASSOC)) {
-
-					echo "<div id='contenuto'>
-							<dl>
-								<dt>".$row['Titolo']."</dt>
-									<dd>Pubblicato il ".$row['Orario']."</br>
-									".$row['Descrizione']."</br>
-										<div id='options'>
-											<p class='button' id='edit'><a href=''>Modifica</a></p>
-					            			<p class='button' id='remove'><a href=''>Rimuovi</a></p>
-					            		</div>
-									</dd>
-								</dt>
-							</dl>
-						</div>";
-
+					
+				echo "<div id='contenuto'>
+						<dl>
+							<dt>".$row['Titolo']."</dt>
+							<dd>Pubblicato il ".$row['Data']."</br>
+								".$row['Descrizione']."</br>
+									<div id='options'>
+										<p class='button' id='edit'><a href=''>Modifica</a></p>
+				            			<p class='button' id='remove'><a href=''>Rimuovi</a></p>
+				            		</div>
+								</dd>
+							</dt>
+						</dl>
+					</div>";
 			}
 		}
 		else {
@@ -152,11 +155,103 @@ function adsList($select) {
 }
 
 
+function checkName($Name) {
+    $result = mysqli_query(openDB(),"SELECT Nome FROM Aziende WHERE Nome='".$Name."'");
 
-function editData() {
-	echo "<div id='contenuto'>
-	        <p> modifichiamo i dati</p>
-	    </div>";
+    $num_rows = mysqli_num_rows($result);
+
+    if($num_rows == 0) {
+        return true;
+    }
+    return false;
 }
 
+
+function checkPIva($PIva) {
+    $result = mysqli_query(openDB(),"SELECT PIva FROM Aziende WHERE PIva='".$PIva."'");
+
+    $num_rows = mysqli_num_rows($result);
+
+    if($num_rows == 0) {
+        return true;
+    }
+    return false;   
+}
+
+
+function checkRepeatPassword($Password, $RipPassword) {
+    if($Password == $RipPassword) {
+        return true;
+    }
+    return false;
+}
+
+
+
+function editCompanyData() {
+	try {
+		if(isset($_SESSION['login'])) {
+			$id = $_SESSION['login']['Codice'];
+			$name = $_SESSION['login']['Nome'];
+			$pIva = $_SESSION['login']['PIva'];
+			$email = $_SESSION['login']['Email'];
+			$city = $_SESSION['login']['Citta'];
+			$password = $_SESSION['login']['Password'];
+
+			echo "<div id='contenuto'>
+			        <h4> I tuoi dati: </h4>
+			        <form method='post' action='AzModificaDati.php'> 
+
+			            <label for='nome'>Nome: </label>
+			            <input type='text' id='nome' value='$name' name='Nome'><br/> 
+			                
+	    				<label for='pIva'>Partita Iva: </label>
+			            <input type='text' id='pIva' value='$pIva' name='PIva'><br/>
+			                
+			            <label for='email'>E-mail: </label>
+			            <input type='text' id='email' value='$email' name='Email'><br/>        
+			                
+			            <label for='city'>Città: </label>
+			            <input type='text' id='city' value='$city' name='City'><br/>
+			                
+			            <label for='password'> Password: </label>
+			            <input type='password' id='password' name='Password' value='$password'><br/>
+			            <br/>
+
+	                	<input type='submit' value='Modifica' name='edit'>
+
+			        </form>
+	            </div>";
+
+            if(isset($_POST['edit'])) {
+				$newName = $_POST['Nome'];
+				$newPIva = $_POST['PIva'];
+				$newEmail = $_POST['Email'];
+				$newCity = $_POST['City'];
+				$newPassword = $_POST['Password'];	
+
+				if($newName == $name && $newPIva == $pIva || $newName != $name && checkName($newName) || $newPIva != $pIva && checkPIva($newPIva)) {
+            		$update = "UPDATE Aziende SET Nome='".$newName."', PIva='".$newPIva."', Email='".$newEmail."', Citta='".$newCity."', Password='".$newPassword."'  WHERE Codice='".$id."'";
+
+	            	if(mysqli_query(openDB(), $update)) {
+	            		header("location: AzDashboard.php");
+	            	}
+	            	else {
+	            		echo "Errore nell'aggiornare i propri dati.";
+	            	}
+	            }
+
+	            if(!checkName($newName)) {
+	            	echo "Nome azienda già in uso.<br/>";
+	            }
+	            else {
+	            	echo "Partita iva già presente nel database";
+	            }
+            }
+		}
+	} catch (PDOException $e) {
+        echo "Errore: " . $e->getMessage();
+        die(); 
+    }
+}
 ?>

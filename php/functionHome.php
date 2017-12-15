@@ -46,18 +46,26 @@ function search()
 }
 
 
-function lastAds()
-{
-	echo "<div id='listannunci'>
-		    <p> Ultimi annunci:</p>
-		        <ul id='annunci'>
-		            <li> <h3> Annuncio 1</h3> <p> Descrizione</p></li>
-		            <li> <h3> Annuncio 2</h3> <p> Descrizione</p> </li>
-		            <li> <h3> Annuncio 3</h3> <p> Descrizione</p> </li>
-		            <li> <h3> Annuncio 4</h3> <p> Descrizione</p> </li>
-		            <li> <h3> Annuncio 5</h3> <p> Descrizione</p> </li>
-		        </ul>
-		    </div>" ;
+//prende gli ultimi 5 annunci che sonostati inseriti nel database
+function lastAds() {
+	$result = mysqli_query(openDB(), "SELECT * FROM Annunci LIMIT 5");
+
+	if($result) {
+		echo "<div id='listannunci'>
+		    	<p>Aggiunti di recente:</p>
+		    		<ul id='annunci'>";
+		while($row = $result->fetch_array(MYSQLI_ASSOC)) {
+			echo "<li><h3>".$row['Titolo']."</h3>
+						<p>Pubblicato il: ".$row['Data']."</p><br/>
+						<p>Descrizione:<br/><p>".$row['Descrizione']."</p>
+				</li>";
+		}	
+		echo "</ul>
+    			</div>" ;       
+	}
+	else {
+		echo "Ancora nessun annuncio è stato pubblicato";
+	}
 }
 
 ?>

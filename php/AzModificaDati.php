@@ -2,6 +2,7 @@
 
 require("structure.php");
 require("functionAzienda.php");
+require("connect.php");
 
 session_start();
 
@@ -17,7 +18,7 @@ breadcrumb($page);
 
 menu($page);
 
-editData(); // da fare
+editCompanyData(); 
 
 footer();
  

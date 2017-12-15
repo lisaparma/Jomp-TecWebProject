@@ -4,6 +4,7 @@
 require("structure.php");
 require("functionHome.php");
 require("connect.php");
+require("functionAzienda.php");
 
 $title = "Registrazione Azienda - Jomp";
 head($title);
@@ -11,41 +12,6 @@ head($title);
 headers();
 
 menuHome();
-
-/*
--checkName: verifica se l'azienda è già presente nel database;
--checkRepeatPassword: verifica che la password di controllo corrisponda alla password utente;
--checkPIva: controlla che nessun altra azienda presente nel database abbia quel codice di p. IVA;
--email può essere ripetuta poichè una persona potrebbe avere più aziende (quindi si dà la possibilità di registrarsi sempre con la stessa email)
-*/
-function checkName($Name) {
-    $result = mysqli_query(openDB(),"SELECT Nome FROM Aziende WHERE Nome='".$Name."'");
-
-    $num_rows = mysqli_num_rows($result);
-
-    if($num_rows == 0) {
-        return true;
-    }
-    return false;
-}
-
-function checkPIva($PIva) {
-    $result = mysqli_query(openDB(),"SELECT PIva FROM Aziende WHERE PIva='".$PIva."'");
-
-    $num_rows = mysqli_num_rows($result);
-
-    if($num_rows == 0) {
-        return true;
-    }
-    return false;   
-}
-
-function checkRepeatPassword($Password, $RipPassword) {
-    if($Password == $RipPassword) {
-        return true;
-    }
-    return false;
-}
 
 
 echo "<div id=form>
@@ -108,7 +74,7 @@ if(isset($_POST['submit'])){
                 echo "<li>Partita IVA già presente, controlla di non essere già registrato o di avere inserito corretamente la sequenza di cifre</li><br/>";
             }
 
-            if(!checkRepeatPassword($Password, $RipPassword)) {
+            if(!checkRepeatPassword($Password, $RepPassword)) {
                 echo "<li>La password di verifica non corrisponde alla password scelta</li><br/>";
             }
             echo "</ul></div>";
@@ -123,6 +89,7 @@ if(isset($_POST['submit'])){
         die();
     }
 }
+
 
 footer();
  
