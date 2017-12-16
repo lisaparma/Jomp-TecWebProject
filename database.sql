@@ -22,7 +22,7 @@ CREATE TABLE Annunci (
 Codice int(10) PRIMARY KEY AUTO_INCREMENT,
 Azienda char(100) NOT NULL,
 Titolo char(100) NOT NULL,
-Tipologia char(10) NOT NULL,
+Tipologia char(15) NOT NULL,
 Data timestamp DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 Descrizione text(300) NOT NULL 
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;

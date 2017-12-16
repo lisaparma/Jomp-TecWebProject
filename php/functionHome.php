@@ -13,36 +13,70 @@ function menuHome()
 function search()
 {
 	echo "<div id='ricerca'> 
-	        <form action='' method='get'>
+	        <form action='home.php' method='post'>
 	            <fieldset id='fieldset'>
 	                <legend>  Ricerca:</legend>
 
 	                <div id='titolo'> 
 	                    <label for='titolo'>Titolo:<br/></label>
-	                    <input type='text' id='boxtitolo' name='' tabindex='' value=''> <!--</input>-->
+	                    <input type='text' id='boxtitolo' name='Titolo' tabindex=''> <!--</input>-->
 	                </div>
 
 	                <div id='regione'> 
-	                    <label for='titolo'>Regione:<br/></label>
-	                    <input type='text' id='boxregione' name='' tabindex='' value=''> <!--</input>-->
+	                    <label for='citta'>Città:<br/></label>
+	                    <input type='text' id='boxcitta' name='Citta' tabindex=''> <!--</input>-->
 	                </div>
 
 	                <div id='tipologia'> 
 	                    <label for='titolo'>Tipologia:<br/></label>
-	                    <select name='tipologia'>
-	                        <option value='' selected='selected'> Nessuna</option>
-	                        <option value=''> Lavoro 1</option>
-	                        <option value=''> Lavoro 2</option>
-	                        <option value=''> Lavoro 3</option>
+	                    <select name='Tipologia'>
+	                        <option value='Amministrazione'> Amministrazione </option>
+                            <option value='Assistenza'> Assistenza anziani e/o disabili </option>
+                            <option value='Contabilità'> Contabilità </option>
+                            <option value='Direzione'> Direzione </option>
+                            <option value='Edilizia'> Edilizia </option>
+                            <option value='Estetica'> Estetica </option>
+                            <option value='Formazione'> Formazione </option>
+                            <option value='Marketing'> Marketing </option>
+                            <option value='Medicina'> Medicina </option>
+                            <option value='Produzione'> Produzione </option>
+                            <option value='Ristorazione'> Ristorazione </option>
+                            <option value='Sicurezza'> Sicurezza </option> 
+                            <option value='Altro' selected> Altro </option>
 
 	                    </select>
 	                </div>
 
-	            <input type='submit' id='cerca' value='Cerca' tabindex=''>
+	            <input type='submit' id='cerca' value='Cerca' tabindex='' name='cerca'>
 	            </fieldset>
 
 	        </form>
 	    </div>" ;
+    
+    if(isset($_POST['cerca'])) {
+        $citta=$_POST['Citta'];
+        $tip=$_POST['Tipologia'];
+        $result = mysqli_query(openDB(), "SELECT * FROM Annunci JOIN Aziende ON Aziende.Nome=Annunci.Azienda WHERE Tipologia='$tip' AND Citta='$citta'");
+        if($result) {
+            echo "<div id='listannunci'>
+                    <p>Risultati:</p>
+                        <ul id='annunci'>";
+                            while($row = mysqli_fetch_array($result, MYSQLI_BOTH)) {
+                                echo "<li><h3>".$row['Titolo']."</h3>
+                                        <p>Pubblicato il: ".$row['Data']."</p><br/>
+                                        <p>Descrizione:<br/><p>".$row['Descrizione']."</p>
+                                    </li>";
+            }	
+            echo "</ul>
+                    </div>" ;       
+        }
+        else {
+            echo "Nessun annuncio corrispondente";
+        }
+        return false;
+    }
+    else
+    return true;
 }
 
 

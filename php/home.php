@@ -14,9 +14,9 @@ headers();
 
 menuHome();
 
-search();
-
-lastAds();
+if(search()) {
+    lastAds();
+}
 
 footer();
  
