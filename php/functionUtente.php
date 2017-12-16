@@ -1,6 +1,5 @@
 <?php
-require("connect.php");
-$db=openDB();
+
 function breadcrumb($page)
 {
 	echo "<div id='breadcrumb'>
@@ -44,17 +43,24 @@ function menu($page)
 
 
 
-function recap()
+function recap() // da fare
 {
     if(isset($_SESSION['login'])){ 
-        $nome=$_SESSION["login"]['Nome'];
-        $cognome=$_SESSION["login"]['Cognome'];
+        $name=$_SESSION["login"]['Nome'];
+        $surname=$_SESSION["login"]['Cognome'];
         $email=$_SESSION["login"]['Email'];
         $username=$_SESSION["login"]['Username'];
         $password=$_SESSION["login"]['Password'];
-        $sesso=$_SESSION["login"]['Sesso'];
+        $sex=$_SESSION["login"]['Sesso'];
         echo"<div id='contenuto'>
-                <h3> Benvenuto $nome!</h3>
+                <h3> Benvenut";if($sex='f') echo"a "; else echo"o "; echo"$name!</h3>
+                <h4> Ricapitoliamo i tuoi dati:</h4>
+                <p> Nome: $name <br/> Cognome: $surname <br/> e-mail: $email <br/> Username: $username <br/> Sesso: ";
+                if($sex='f=')
+                    echo "donna";
+                else
+                    echo "uomo";
+        echo " <br/><p> Se vuoi modificare le tue informazioni personali <a href='UtModificaDati.php'>clicca qui </a></p>
             </div>" ;
             
        }
@@ -67,15 +73,15 @@ function recap()
   
 
 
-function search() 
+function search() //da fare
 {
 if(isset($_SESSION['login'])){ 
-        $nome=$_SESSION["login"]['Nome'];
-        $cognome=$_SESSION["login"]['Cognome'];
+        $name=$_SESSION["login"]['Nome'];
+        $surname=$_SESSION["login"]['Cognome'];
         $email=$_SESSION["login"]['Email'];
         $username=$_SESSION["login"]['Username'];
         $password=$_SESSION["login"]['Password'];
-        $sesso=$_SESSION["login"]['Sesso'];
+        $sex=$_SESSION["login"]['Sesso'];
         echo"<div id='contenuto'>
                 <h3> pubblica annuncio</h3>
             </div>" ;
@@ -90,15 +96,15 @@ if(isset($_SESSION['login'])){
 }
 
 
-function adsSalved()
+function adsSalved() //da fare
 {
     if(isset($_SESSION['login'])){ 
-        $nome=$_SESSION["login"]['Nome'];
-        $cognome=$_SESSION["login"]['Cognome'];
+        $name=$_SESSION["login"]['Nome'];
+        $surname=$_SESSION["login"]['Cognome'];
         $email=$_SESSION["login"]['Email'];
         $username=$_SESSION["login"]['Username'];
         $password=$_SESSION["login"]['Password'];
-        $sesso=$_SESSION["login"]['Sesso'];
+        $sex=$_SESSION["login"]['Sesso'];
         echo"<div id='contenuto'>
                 <h3> Annunci salvati</h3>
             </div>" ;
@@ -120,7 +126,6 @@ function checkEmail($email) {
     }
     return false;
 }
-
 function checkUsername($username) {
     $result = mysqli_query(openDB(),"SELECT * FROM Utenti WHERE Username='$username'");
     $num_rows = mysqli_num_rows($result);
@@ -131,8 +136,8 @@ function checkUsername($username) {
     
 }
 
-
-function editData() {
+function editData()
+{
     
 if(isset($_SESSION['login'])) {  
     $name=$_SESSION["login"]['Nome'];
@@ -240,6 +245,5 @@ else {
 } 
 }
 
-closeDB($db);
 
 ?>
