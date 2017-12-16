@@ -1,5 +1,4 @@
 <?php
-
 require("structure.php");
 require("functionUtente.php");
 
@@ -17,7 +16,8 @@ breadcrumb($page);
 
 menu($page);
 
-editData(); // da fare
+editData();
+
 
 footer();
  

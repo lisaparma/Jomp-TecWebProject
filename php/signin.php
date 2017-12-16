@@ -1,6 +1,5 @@
 <?php
 
-
 require("structure.php");
 require("functionHome.php");
 require("connect.php");
