@@ -82,7 +82,7 @@ function search()
 
 //prende gli ultimi 5 annunci che sonostati inseriti nel database
 function lastAds() {
-	$result = mysqli_query(openDB(), "SELECT * FROM Annunci LIMIT 5");
+	$result = mysqli_query(openDB(), "SELECT * FROM Annunci ORDER BY Data DESC LIMIT 5");
 
 	if($result) {
 		echo "<div id='listannunci'>
