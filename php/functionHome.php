@@ -1,7 +1,6 @@
 <?php
 
-function menuHome()
-{
+function menuHome() {
 	echo "<ul id='menu'>
 	        <li> <a href='AzDashboard.php'> Area Aziende </a> </li>
 	        <li> <a href='UtDashboard.php'> Area Privati </a> </li>
@@ -10,8 +9,8 @@ function menuHome()
 	     </ul>" ;
 }
 
-function search()
-{
+
+function search() {
 	echo "<div id='ricerca'> 
 	        <form action='home.php' method='post'>
 	            <fieldset id='fieldset'>
@@ -19,17 +18,18 @@ function search()
 
 	                <div id='titolo'> 
 	                    <label for='titolo'>Titolo:<br/></label>
-	                    <input type='text' id='boxtitolo' name='Titolo' tabindex=''> <!--</input>-->
+	                    <input type='text' id='boxtitolo' name='Title' tabindex=''> <!--</input>-->
 	                </div>
 
 	                <div id='regione'> 
 	                    <label for='citta'>Città:<br/></label>
-	                    <input type='text' id='boxcitta' name='Citta' tabindex=''> <!--</input>-->
+	                    <input type='text' id='boxcitta' name='City' tabindex=''> <!--</input>-->
 	                </div>
 
 	                <div id='tipologia'> 
 	                    <label for='titolo'>Tipologia:<br/></label>
-	                    <select name='Tipologia'>
+	                    <select name='Type'>
+	                    	<option disable selected value></option>
 	                        <option value='Amministrazione'> Amministrazione </option>
                             <option value='Assistenza'> Assistenza anziani e/o disabili </option>
                             <option value='Contabilità'> Contabilità </option>
@@ -42,7 +42,7 @@ function search()
                             <option value='Produzione'> Produzione </option>
                             <option value='Ristorazione'> Ristorazione </option>
                             <option value='Sicurezza'> Sicurezza </option> 
-                            <option value='Altro' selected> Altro </option>
+                            <option value='Altro'> Altro </option>
 
 	                    </select>
 	                </div>
@@ -54,9 +54,10 @@ function search()
 	    </div>" ;
     
     if(isset($_POST['cerca'])) {
-        $citta=$_POST['Citta'];
-        $tip=$_POST['Tipologia'];
-        $result = mysqli_query(openDB(), "SELECT * FROM Annunci JOIN Aziende ON Aziende.Nome=Annunci.Azienda WHERE Tipologia='$tip' AND Citta='$citta'");
+    	$title = $_POST['Title'];
+        $city=$_POST['City'];
+        $type=$_POST['Type'];
+        $result = mysqli_query(openDB(), "SELECT * FROM Annunci JOIN Aziende ON Aziende.Nome=Annunci.Azienda WHERE Titolo LIKE '%$title%' OR Tipologia='$type' OR Citta='$city'");
         if($result) {
             echo "<div id='listannunci'>
                     <p>Risultati:</p>
@@ -80,7 +81,7 @@ function search()
 }
 
 
-//prende gli ultimi 5 annunci che sonostati inseriti nel database
+//prende gli ultimi 5 annunci che sono stati inseriti nel database
 function lastAds() {
 	$result = mysqli_query(openDB(), "SELECT * FROM Annunci ORDER BY Data DESC LIMIT 5");
 
