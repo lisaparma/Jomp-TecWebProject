@@ -75,7 +75,7 @@ function recap() // da fare
 
 function search() //da fare
 {
-if(isset($_SESSION['login'])){ 
+    if(isset($_SESSION['login'])){ 
         $name=$_SESSION["login"]['Nome'];
         $surname=$_SESSION["login"]['Cognome'];
         $email=$_SESSION["login"]['Email'];
@@ -83,16 +83,52 @@ if(isset($_SESSION['login'])){
         $password=$_SESSION["login"]['Password'];
         $sex=$_SESSION["login"]['Sesso'];
         echo"<div id='contenuto'>
-                <h3> pubblica annuncio</h3>
-            </div>" ;
-            
-       }
-    else {
-	echo "<div id='contenuto'>
-	        <p>Sessione scaduta, procedere con la riutenticazione.</p>
-	    </div>";
-    }
-	
+               <h3> Annunci salvati</h3>";
+        
+        // Quando clicco Salva su un annuncio
+        if(isset($_POST['Salva'])){
+            $ad=$_POST['Salva'];
+            $query="INSERT INTO Consultazioni(Utente, CodAnnuncio) VALUES ('$username', '$ad')";
+            mysqli_query(openDB(), $query);
+        }
+        
+        // Quando clicco Salvato su un annuncio
+        if(isset($_POST['Salvato'])){
+            $ad=$_POST['Salvato'];
+            $query="DELETE FROM Consultazioni WHERE CodAnnuncio='$ad' AND Utente='$username'";
+            mysqli_query(openDB(), $query);
+        }
+        
+        // Stampa gli annunci 
+        $result = mysqli_query(openDB(), "SELECT * FROM Annunci ORDER BY Data DESC LIMIT 5");
+        if($result) {
+            echo "<div id='listannunci'>
+                    <p>Annunci recenti:</p>
+                        <ul id='annunci'>";
+            printAd($result, $username, 'UtCercaAnnuncio.php');
+            echo "  </ul>
+                </div>" ;       
+        }
+        else 
+            echo "Ancora nessun annuncio è stato pubblicato";
+
+        echo" </div>" ;
+        }
+        else {
+            echo "  <div id='contenuto'>
+                        <p>Sessione scaduta, procedere con la riutenticazione.</p>
+                    </div>";
+        }
+
+}
+
+function liked($username, $ad) {
+    $query="SELECT * from Consultazioni WHERE CodAnnuncio='$ad' AND Utente='$username'";
+    $result=mysqli_query(openDB(), $query);
+    if(mysqli_num_rows($result))
+        return true;
+    else 
+        return false;
 }
 
 
@@ -106,22 +142,64 @@ function adsSalved() //da fare
         $password=$_SESSION["login"]['Password'];
         $sex=$_SESSION["login"]['Sesso'];
         echo"<div id='contenuto'>
-                <h3> Annunci salvati</h3>
-            </div>" ;
-            
-       }
-    else {
-	echo "<div id='contenuto'>
-	        <p>Sessione scaduta, procedere con la riutenticazione.</p>
-	    </div>";
-    }
+               <h3> Annunci salvati</h3>";
+        
+        // Quando clicco Salva su un annuncio
+        if(isset($_POST['Salva'])){
+            $ad=$_POST['Salva'];
+            $query="INSERT INTO Consultazioni(Utente, CodAnnuncio) VALUES ('$username', '$ad')";
+            mysqli_query(openDB(), $query);
+        }
+        
+        // Quando clicco Salvato su un annuncio
+        if(isset($_POST['Salvato'])){
+            $ad=$_POST['Salvato'];
+            $query="DELETE FROM Consultazioni WHERE CodAnnuncio='$ad' AND Utente='$username'";
+            mysqli_query(openDB(), $query);
+        }
+        
+        
+        $result = mysqli_query(openDB(), "SELECT * FROM Consultazioni JOIN Annunci ON Consultazioni.CodAnnuncio=Annunci.Codice WHERE Consultazioni.Utente='$username'");
+        if($result) {
+            echo "<div id='listannunci'>
+                    <p>Annunci salvati:</p>
+                        <ul id='annunci'>";
+            printAd($result, $username, 'UtAnnunciSalvati.php');
+            echo "  </ul>
+                </div>" ;       
+        }
+        else 
+            echo "Nessun annuncio salvato";
+
+        echo" </div>" ;
+        }
+        else {
+            echo "  <div id='contenuto'>
+                        <p>Sessione scaduta, procedere con la riutenticazione.</p>
+                    </div>";
+        }   
 }
 
-
+function printAd($result, $username, $page){
+    while($row = $result->fetch_array(MYSQLI_ASSOC)) {
+                $id=$row['Codice'];
+                if(liked($username, $id))
+                    $like="Salvato";
+                else 
+                    $like="Salva";
+                echo "<li><h3>".$row['Titolo']."</h3>
+                        <p>Pubblicato il: ".$row['Data']."</p><br/>
+                        <p>Descrizione:<br/><p>".$row['Descrizione']."</p>
+                        <form method='post' action=$page>
+                            <button type='submit' name='$like' value='$id'>$like</button>
+                        </form>
+                    </li>";
+            }	
+}
 function checkEmail($email) {
     $result = mysqli_query(openDB(),"SELECT Username FROM Utenti WHERE Email='$email'");
     $num_rows = mysqli_num_rows($result);
-    if($num_rows == 0) {
+    if($num_rows == 1) {
         return true;
     }
     return false;
@@ -129,7 +207,7 @@ function checkEmail($email) {
 function checkUsername($username) {
     $result = mysqli_query(openDB(),"SELECT * FROM Utenti WHERE Username='$username'");
     $num_rows = mysqli_num_rows($result);
-    if($num_rows == 0) {
+    if($num_rows == 1) {
         return true;
     }
     return false;
@@ -204,8 +282,7 @@ if(isset($_SESSION['login'])) {
             }
             else{
                 if($newEmail == $email) {
-                    echo checkUsername($newUsername);
-                    if(checkUsername($newUsername)==1){
+                    if(checkUsername($newUsername)){
                         $sql = "UPDATE Utenti SET Nome='$newName', Cognome='$newSurname', Sesso='$newSex', Username='$newUsername', Password='$newPassword'  WHERE Email='$email'";
                     }
                     else {
