@@ -9,13 +9,6 @@ VALUES
 ('utente3', 'utente3', 'f', 'utente3@gmail.com', 'utente3', 'utente3'),
 ('utente4', 'utente4', 'm', 'utente4@gmail.com', 'utente4', 'utente4');
 
-INSERT INTO Annunci (Azienda, Titolo, Tipologia, Data, Descrizione)
-VALUES
-('azienda1', 'Cercasi cameriera', 'Ristorazione', '2017-07-13 21:14:14', 'Cercasi cameriera bella e con esperienza come Sara;)'),
-('azienda1', 'Cercasi commessa', 'Altro', '2017-03-22 06:12:34', 'Cercasi commessa, vanno bene anche le scimmie come Lisa'),
-('azienda2', 'Cercasi grafico', 'Marketing', '2014-02-28 11:54:00', 'Cercasi grafico in grado di disegnare omini stilizzati'),
-('azienda3', 'Cercasi ragazzo', 'Estetica', '2017-12-13 15:10:44', 'Cercasi ragazzo bellino che faccia massaggi e altro (if you know what i mean)');
-
 INSERT INTO Aziende (Nome, PIva, Email, Citta, Password)
 VALUES
 ('azienda1', '1231234521', 'azienda1@gmail.com', 'Padova', 'azienda1'),
@@ -23,5 +16,27 @@ VALUES
 ('azienda3', '2956384726', 'azienda3@gmail.com', 'Cornuda', 'azienda3'),
 ('azienda4', '5348797628', 'azienda4@gmail.com', 'Rovigo', 'azienda4');
 
-/*INSERT INTO Utenti (Nome, Cognome, Sesso, Email, Username, Password)
-VALUES*/
+INSERT INTO Tipo (Lavoro)
+VALUES
+('Amministrazione'),
+('Assistenza'),
+('Contabilità'),
+('Direzione'),
+('Edilizia'),
+('Estetica'),
+('Formazione'),
+('Marketing'),
+('Medicina'),
+('Produzione'),
+('Ristorazione'),
+('Sicurezza'),
+('Altro');
+
+INSERT INTO Annunci (Azienda, Titolo, Tipologia, Data, Descrizione)
+VALUES
+('azienda1', 'Cercasi cameriera', '11', '2017-07-13 21:14:14', 'Cercasi cameriera bella e con esperienza come Sara;)'),
+('azienda1', 'Cercasi commessa', '3', '2017-03-22 06:12:34', 'Cercasi commessa, vanno bene anche le scimmie come Lisa'),
+('azienda2', 'Cercasi grafico', '8', '2014-02-28 11:54:00', 'Cercasi grafico in grado di disegnare omini stilizzati'),
+('azienda3', 'Cercasi ragazzo', '13', '2017-12-13 15:10:44', 'Cercasi ragazzo bellino che faccia massaggi e altro (if you know what i mean)');
+
+

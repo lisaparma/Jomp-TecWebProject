@@ -81,7 +81,6 @@ if(isset($_POST['submit'])){
 
 
         closeDB($db);
-
     } catch (PDOException $e) {
         echo "Errore: " . $e->getMessage();
         die();

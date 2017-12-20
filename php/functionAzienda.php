@@ -1,8 +1,6 @@
 <?php
 
-
-function breadcrumb($page)
-{
+function breadcrumb($page) {
 	echo "<div id='breadcrumb'>
 	        <p> Ti trovi in: <span xml:lang='en'> <a href='home.php'>  Home</a> >> $page </span> </p>
 	    </div> " ;
@@ -10,8 +8,7 @@ function breadcrumb($page)
 
 
 
-function menu($page)
-{
+function menu($page) {
 	echo"<div id='areaPersonale'>
 	        <ul>
 	            <li> "; 
@@ -43,38 +40,46 @@ function menu($page)
 }
 
 
+function printWorkType($id) {
+	$result = mysqli_query(openDB(), "SELECT * FROM Tipo");
+
+	echo "<label for='type'> Tipologia: </label>
+	            <select id='type' name='Type' required>";
+	if($id == 'null') {
+		while($row = $result->fetch_array(MYSQLI_ASSOC)) {
+			echo "<option value=".$row['CodLavoro'].">".$row['Lavoro']."</option>";
+    	}	
+	}
+	else {
+		while($row = $result->fetch_array(MYSQLI_ASSOC)) {
+			$selected = ($id == $row['CodLavoro']) ? 'selected' : '';
+
+			echo "<option value='".$row['CodLavoro']."' $selected>".$row['Lavoro']."</option>";
+    	}		
+	}
+	echo $id;
+	echo "ciao";
+    echo "</select>";
+}
+
 
 function addAds() {
 	echo "<div id='contenuto'>
-	    	<form form method='post' action='AzPubblicaAnnuncio.php' accept-charset='utf-8'>
+	    	<form method='post' action='AzPubblicaAnnuncio.php' accept-charset='utf-8'>
 	    		<h3>Inserisci annuncio: </h3>
 
 	    		<label for='title'> Titolo: </label>
-	            <input type='text' id='title' name='Title' placeholder='Titolo' required><br/> 
+	            <input type='text' id='title' name='Title' placeholder='Titolo' required><br/>";
 
-	            <label for='type'> Tipologia: </label>
-	            <select name='Tipologia' required>
-	            	<option value='Amministrazione'> Amministrazione </option>
-	            	<option value='Assistenza'> Assistenza anziani e/o disabili </option>
-	            	<option value='Contabilità'> Contabilità </option>
-	            	<option value='Direzione'> Direzione </option>
-	            	<option value='Edilizia'> Edilizia </option>
-	            	<option value='Estetica'> Estetica </option>
-	            	<option value='Formazione'> Formazione </option>
-	            	<option value='Marketing'> Marketing </option>
-	            	<option value='Medicina'> Medicina </option>
-	            	<option value='Produzione'> Produzione </option>
-	            	<option value='Ristorazione'> Ristorazione </option>
-	            	<option value='Sicurezza'> Sicurezza </option> 
-	            	<option value='Altro'> Altro </option>
-	            </select>
-
+            	
+	printWorkType('null');     
+	echo "			
 	            <p> Inserisci una breve descrizione del lavoro (max 300 caratteri): </p>
 	            <textarea name='Description' rows='5' cols='70' required></textarea><br/>
 
 	            <input type='submit' value='Inserisci' name='submit'>
 	    	</form>
-	    </div> ";
+	    </div>";
 
 	if(isset($_POST['submit'])) {
 		try {
@@ -82,11 +87,12 @@ function addAds() {
 	    	    $db = openDB();
 
 	            $title = $_POST['Title'];
-	            $type = $_POST['Tipologia'];
+	            $id = $_POST['Type'];
+
 	            $description = $_POST['Description'];
 	            $name = $_SESSION['login']['Nome'];
 
-	    	    $ad = "INSERT INTO Annunci(Titolo, Azienda, Tipologia, Descrizione) VALUES ('$title', '$name', '$type', '$description')";
+	    	    $ad = "INSERT INTO Annunci(Titolo, Azienda, Tipologia, Descrizione) VALUES ('$title', '$name', '$id', '$description')";
 
 	    		if ($db->query($ad)) {
     				header("location: AzResocontoAnnunci.php");
@@ -107,52 +113,6 @@ function addAds() {
 	} 
 }
 
-
-
-function adsList($select) {
-	if(isset($_SESSION['login'])) {
-		$name = $_SESSION['login']['Nome'];
-		$word = $empty = '';
-
-		if($select == 'all') {
-			$result = mysqli_query(openDB(), "SELECT * FROM Annunci WHERE Azienda='".$name."'");
-		}
-
-		if($select == 'lastAdded') {
-			$result = mysqli_query(openDB(), "SELECT * FROM Annunci WHERE Azienda='".$name."' LIMIT 3");
-			$word = 'ultimi';
-		}
-
-		if(mysqli_num_rows($result) == 0) {
-			$empty = "Nessun annuncio ancora inserito.";
-		}
-
-		if($result) {
-			echo "<p>Ecco i tuoi ".$word." annunci:</p>";
-			//stampo tutti gli annunci trovati
-			echo $empty;
-			while($row = $result->fetch_array(MYSQLI_ASSOC)) {
-					
-				echo "<div id='contenuto'>
-						<dl>
-							<dt>".$row['Titolo']."</dt>
-							<dd>Pubblicato il ".$row['Data']."</br>
-								".$row['Descrizione']."</br>
-									<div id='options'>
-										<p class='button' id='edit'><a href=''>Modifica</a></p>
-				            			<p class='button' id='remove'><a href=''>Rimuovi</a></p>
-				            		</div>
-								</dd>
-							</dt>
-						</dl>
-					</div>";
-			}
-		}
-		else {
-			echo "Ancora nessun annuncio inserito";
-		}
-	}
-}
 
 
 function checkName($Name) {
@@ -254,4 +214,86 @@ function editCompanyData() {
         die(); 
     }
 }
+
+
+function adsList($select) {
+	//$edit = false;
+	if(isset($_SESSION['login'])) {
+		$name = $_SESSION['login']['Nome'];
+		$word = $empty = '';
+
+		if($select == 'all') {
+			$result = mysqli_query(openDB(), "SELECT * FROM Annunci WHERE Azienda='".$name."'");
+		}
+
+		if($select == 'lastAdded') {
+			$result = mysqli_query(openDB(), "SELECT * FROM Annunci WHERE Azienda='".$name."' LIMIT 3");
+			$word = 'ultimi';
+		}
+
+		if(mysqli_num_rows($result) == 0) {
+			$empty = "Nessun annuncio ancora inserito.";
+		}
+
+		if($result) {
+			echo "<p>Ecco i tuoi ".$word." annunci:</p>";
+			//stampo tutti gli annunci trovati
+			echo $empty;
+			while($row = $result->fetch_array(MYSQLI_ASSOC)) {
+				echo "<div id='contenuto'>
+						<dl>
+							<dt>".$row['Titolo']."</dt>
+							<dd>Pubblicato il ".$row['Data']."</br>
+								".$row['Descrizione']."</br>
+									<div id='options'>
+										<form method='post' action='AzModificaAnnuncio.php'>
+											<button value=".$row['Codice']." name='edit'>Modifica</button>
+					            			<button value='Rimuovi' name='delete'>Rimuovi</button>
+					            		</form>
+				            		</div>
+								</dd>
+							</dt>
+						</dl>
+					</div>";
+			}			
+		}
+		else {
+			echo "Ancora nessun annuncio inserito";
+		}
+	}
+}
+
+
+function editAd() {
+	if(isset($_POST['edit'])) {
+		$ad = $_POST['edit'];	
+		$sql = mysqli_query(openDB(), "SELECT * FROM Annunci WHERE Codice='".$ad."'");
+		$row = $sql->fetch_array(MYSQLI_ASSOC);
+
+		$title = $row['Titolo'];
+		$type = $row['Tipologia'];
+		$date = $row['Data'];
+		$description = $row['Descrizione'];
+
+		echo "<div id='contenuto'>
+	    	<form method='post' action='AzModificaAnnuncio.php' accept-charset='utf-8'>
+	    		<h3>Modifica l'annuncio: </h3>
+
+	    		<label for='title'> Titolo: </label>
+	            <input type='text' id='title' name='Title' value='$title' required><br/>"; 
+
+	    printWorkType($type);
+	    echo "
+	            <p> Inserisci una breve descrizione del lavoro (max 300 caratteri): </p>
+	            <textarea name='Description' rows='5' cols='70' required>$description</textarea><br/>
+
+	            <input type='submit' value='Aggiorna' name='submit'>
+	    	</form>
+	    </div>";
+	}
+	else {
+		echo "Problemi con il database";
+	}
+}
+
 ?>
