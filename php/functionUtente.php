@@ -82,8 +82,42 @@ function search() //da fare
         $username=$_SESSION["login"]['Username'];
         $password=$_SESSION["login"]['Password'];
         $sex=$_SESSION["login"]['Sesso'];
+        
+        
+        
         echo"<div id='contenuto'>
-               <h3> Annunci salvati</h3>";
+                <div id='ricerca'> 
+                    <form action='UtCercaAnnuncio.php' method='post'>
+                        <fieldset id='fieldset'>
+                            <legend>  Ricerca:</legend>
+
+                            <div id='titolo'> 
+                                <label for='titolo'>Titolo:<br/></label>
+                                <input type='text' id='boxtitolo' name='Title' tabindex=''> <!--</input>-->
+                            </div>
+
+                            <div id='regione'> 
+                                <label for='citta'>Città:<br/></label>
+                                <input type='text' id='boxcitta' name='City' tabindex=''> <!--</input>-->
+                            </div>
+
+                            <div id='tipologia'> 
+                                <label for='titolo'>Tipologia:<br/></label>
+                                <select name='Type'>
+                                    <option value='all' selected> TUTTE ";
+                                    $result = mysqli_query(openDB(), "SELECT * FROM Tipo");
+                                    while($row = $result->fetch_array(MYSQLI_ASSOC)) {
+                                        echo "<option value='".$row['CodLavoro']."'>".$row['Lavoro']."</option>";
+                                    }
+                            echo" 
+                                </select>
+                            </div>
+
+                        <input type='submit' id='cerca' value='Cerca' tabindex='' name='cerca'>
+                        </fieldset>
+
+                    </form>
+                </div>";
         
         // Quando clicco Salva su un annuncio
         if(isset($_POST['Salva'])){
@@ -100,18 +134,38 @@ function search() //da fare
         }
         
         // Stampa gli annunci 
-        $result = mysqli_query(openDB(), "SELECT * FROM Annunci ORDER BY Data DESC LIMIT 5");
-        if($result) {
+        
+        if(isset($_POST['cerca'])) {
+    	   $title = $_POST['Title'];
+            $city=$_POST['City'];
+            $type=$_POST['Type'];
+            $plus1="";
+            $plus2="";
+        
+            if($city)
+                $plus1=" AND Aziende.Citta='$city'";
+            if($type!='all')
+                $plus2=" AND Annunci.Tipologia='$type'";
+
+            $result = mysqli_query(openDB(), "SELECT * FROM Annunci JOIN Aziende ON Aziende.Nome=Annunci.Azienda WHERE Descrizione LIKE '%$title%' $plus1 $plus2");    
+        }
+        else {
+            $result = mysqli_query(openDB(), "SELECT * FROM Annunci ORDER BY Data DESC LIMIT 5");
+        }
+
+        if(mysqli_fetch_array($result, MYSQLI_BOTH)) {
             echo "<div id='listannunci'>
-                    <p>Annunci recenti:</p>
+                    <p>Annunci:</p>
                         <ul id='annunci'>";
             printAd($result, $username, 'UtCercaAnnuncio.php');
             echo "  </ul>
                 </div>" ;       
         }
-        else 
-            echo "Ancora nessun annuncio è stato pubblicato";
-
+        else
+            echo "Nessun annuncio corrispondente a questi parametri";
+        
+        
+        
         echo" </div>" ;
         }
         else {

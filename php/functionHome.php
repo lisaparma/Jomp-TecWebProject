@@ -61,7 +61,7 @@ function search() {
         $result = mysqli_query(openDB(), "SELECT * FROM Annunci JOIN Aziende ON Aziende.Nome=Annunci.Azienda WHERE Descrizione LIKE '%$title%' $plus1 $plus2");
         
         
-        if($result) {
+        if(mysqli_fetch_array($result, MYSQLI_BOTH)) {
             echo "<div id='listannunci'>
                     <p>Risultati:</p>
                         <ul id='annunci'>";
