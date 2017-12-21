@@ -1,4 +1,5 @@
 <?php
+
 require("structure.php");
 require("functionUtente.php");
 require("connect.php");

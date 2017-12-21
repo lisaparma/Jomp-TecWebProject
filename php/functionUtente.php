@@ -199,15 +199,15 @@ function printAd($result, $username, $page){
 function checkEmail($email) {
     $result = mysqli_query(openDB(),"SELECT Username FROM Utenti WHERE Email='$email'");
     $num_rows = mysqli_num_rows($result);
-    if($num_rows == 1) {
+    if($num_rows == 0) {
         return true;
     }
     return false;
 }
 function checkUsername($username) {
-    $result = mysqli_query(openDB(),"SELECT * FROM Utenti WHERE Username='$username'");
+    $result = mysqli_query(openDB(),"SELECT Username FROM Utenti WHERE Username='$username'");
     $num_rows = mysqli_num_rows($result);
-    if($num_rows == 1) {
+    if($num_rows == 0) {
         return true;
     }
     return false;
@@ -272,8 +272,9 @@ if(isset($_SESSION['login'])) {
             $newUsername= $_POST['Username'];
             $newPassword = $_POST['Password'];
             $newSex = $_POST['button'];
+            $sql="";
             if($newUsername == $username) {
-                if(checkEmail($newEmail)){
+                if(($newEmail!=$email && checkEmail($newEmail)) || ($newEmail==$email && !checkEmail($newEmail))){
                     $sql = "UPDATE Utenti SET Nome='$newName', Cognome='$newSurname',Sesso='$newSex', Email='$newEmail', Password='$newPassword' WHERE Username='$username'";
                 }
                 else {
@@ -282,7 +283,7 @@ if(isset($_SESSION['login'])) {
             }
             else{
                 if($newEmail == $email) {
-                    if(checkUsername($newUsername)){
+                    if(($newUsername!=$username && checkUsername($newUsername))||($newUsername==$username && !checkUsername($newUsername))){
                         $sql = "UPDATE Utenti SET Nome='$newName', Cognome='$newSurname', Sesso='$newSex', Username='$newUsername', Password='$newPassword'  WHERE Email='$email'";
                     }
                     else {
@@ -294,7 +295,7 @@ if(isset($_SESSION['login'])) {
                 }
             }
             
-            if(mysqli_query(openDB(), $sql)) {
+            if($sql && mysqli_query(openDB(), $sql)) {
                 $_SESSION["login"]['Nome']=$newName;
                 $_SESSION["login"]['Cognome']=$newSurname;
                 $_SESSION["login"]['Email']=$newEmail;
@@ -302,9 +303,6 @@ if(isset($_SESSION['login'])) {
                 $_SESSION["login"]['Password']=$newPassword;
                 $_SESSION["login"]['Sesso']=$newSex;
                 header("location: UtModificaDati.php");
-            }
-            else {
-                echo "Errore nell'aggiornare i propri dati.";
             }
 
         } 

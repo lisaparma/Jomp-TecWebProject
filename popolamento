@@ -4,7 +4,7 @@ RAPIDO POPOLAMENTO DEL DATABASE
 
 INSERT INTO Utenti (Nome, Cognome, Sesso, Email, Username, Password)
 VALUES
-('utente1', 'utente1', 'f', 'utente1@gmail.com', 'utente1', 'utente1'),
+('utente1', 'utente1', 'f', 'utente1@gmail.com', 'lisa', 'lisa'),
 ('utente2', 'utente2', 'm', 'utente2@gmail.com', 'utente2', 'utente2'),
 ('utente3', 'utente3', 'f', 'utente3@gmail.com', 'utente3', 'utente3'),
 ('utente4', 'utente4', 'm', 'utente4@gmail.com', 'utente4', 'utente4');
