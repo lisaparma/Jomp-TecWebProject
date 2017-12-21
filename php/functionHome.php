@@ -57,7 +57,14 @@ function search() {
     	$title = $_POST['Title'];
         $city=$_POST['City'];
         $type=$_POST['Type'];
-        $result = mysqli_query(openDB(), "SELECT * FROM Annunci JOIN Aziende ON Aziende.Nome=Annunci.Azienda WHERE Titolo LIKE '%$title%' OR Tipologia='$type' OR Citta='$city'");
+        
+        if($city) {
+            $result = mysqli_query(openDB(), "SELECT * FROM Annunci JOIN Aziende ON Aziende.Nome=Annunci.Azienda JOIN Tipo ON Tipo.CodLavoro=Annunci.Tipologia WHERE Descrizione LIKE '%$title%' AND Tipo.Lavoro='$type' AND Citta='$city'");
+        }
+        else {
+            $result = mysqli_query(openDB(), "SELECT * FROM Annunci JOIN Aziende ON Aziende.Nome=Annunci.Azienda JOIN Tipo ON Tipo.CodLavoro=Annunci.Tipologia WHERE Descrizione LIKE '%$title%' AND Tipo.Lavoro='$type'");
+        }
+        
         if($result) {
             echo "<div id='listannunci'>
                     <p>Risultati:</p>
