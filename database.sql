@@ -20,7 +20,7 @@ UNIQUE (Email)
 CREATE TABLE Tipo (
 CodLavoro int(10) AUTO_INCREMENT,
 Lavoro char(30) NOT NULL,
-PRIMARY KEY (CodLavoro, Lavoro)
+PRIMARY KEY (CodLavoro)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8; 
 
 
@@ -42,7 +42,7 @@ Titolo char(100) NOT NULL,
 Tipologia int(10) NOT NULL,
 Data timestamp DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 Descrizione text(300) NOT NULL,
-PRIMARY KEY (Codice, Tipologia),
+PRIMARY KEY (Codice),
 FOREIGN KEY (Tipologia) REFERENCES Tipo(CodLavoro) ON DELETE CASCADE ON UPDATE CASCADE
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 

@@ -29,21 +29,12 @@ function search() {
 	                <div id='tipologia'> 
 	                    <label for='titolo'>Tipologia:<br/></label>
 	                    <select name='Type'>
-	                    	<option disable selected value></option>
-	                        <option value='Amministrazione'> Amministrazione </option>
-                            <option value='Assistenza'> Assistenza anziani e/o disabili </option>
-                            <option value='Contabilità'> Contabilità </option>
-                            <option value='Direzione'> Direzione </option>
-                            <option value='Edilizia'> Edilizia </option>
-                            <option value='Estetica'> Estetica </option>
-                            <option value='Formazione'> Formazione </option>
-                            <option value='Marketing'> Marketing </option>
-                            <option value='Medicina'> Medicina </option>
-                            <option value='Produzione'> Produzione </option>
-                            <option value='Ristorazione'> Ristorazione </option>
-                            <option value='Sicurezza'> Sicurezza </option> 
-                            <option value='Altro'> Altro </option>
-
+                            <option value='all' selected> TUTTE ";
+                            $result = mysqli_query(openDB(), "SELECT * FROM Tipo");
+	                        while($row = $result->fetch_array(MYSQLI_ASSOC)) {
+                                echo "<option value='".$row['CodLavoro']."'>".$row['Lavoro']."</option>";
+                            }
+                    echo" 
 	                    </select>
 	                </div>
 
@@ -53,17 +44,22 @@ function search() {
 	        </form>
 	    </div>" ;
     
+    
+    
     if(isset($_POST['cerca'])) {
     	$title = $_POST['Title'];
         $city=$_POST['City'];
         $type=$_POST['Type'];
+        $plus1="";
+        $plus2="";
         
-        if($city) {
-            $result = mysqli_query(openDB(), "SELECT * FROM Annunci JOIN Aziende ON Aziende.Nome=Annunci.Azienda JOIN Tipo ON Tipo.CodLavoro=Annunci.Tipologia WHERE Descrizione LIKE '%$title%' AND Tipo.Lavoro='$type' AND Citta='$city'");
-        }
-        else {
-            $result = mysqli_query(openDB(), "SELECT * FROM Annunci JOIN Aziende ON Aziende.Nome=Annunci.Azienda JOIN Tipo ON Tipo.CodLavoro=Annunci.Tipologia WHERE Descrizione LIKE '%$title%' AND Tipo.Lavoro='$type'");
-        }
+        if($city)
+            $plus1=" AND Aziende.Citta='$city'";
+        if($type!='all')
+            $plus2=" AND Annunci.Tipologia='$type'";
+        
+        $result = mysqli_query(openDB(), "SELECT * FROM Annunci JOIN Aziende ON Aziende.Nome=Annunci.Azienda WHERE Descrizione LIKE '%$title%' $plus1 $plus2");
+        
         
         if($result) {
             echo "<div id='listannunci'>
