@@ -58,16 +58,16 @@ function search() {
         if($type!='all')
             $plus2=" AND Annunci.Tipologia='$type'";
         
-        $result = mysqli_query(openDB(), "SELECT * FROM Annunci JOIN Aziende ON Aziende.Nome=Annunci.Azienda WHERE Descrizione LIKE '%$title%' $plus1 $plus2");
+        $result = mysqli_query(openDB(), "SELECT * FROM Annunci JOIN Aziende ON Aziende.Nome=Annunci.Azienda WHERE Descrizione LIKE '%$title%' $plus1 $plus2 ORDER BY Data DESC");
         
         
-        if(mysqli_fetch_array($result, MYSQLI_BOTH)) {
+        if($result->num_rows) {
             echo "<div id='listannunci'>
                     <p>Risultati:</p>
                         <ul id='annunci'>";
                             while($row = mysqli_fetch_array($result, MYSQLI_BOTH)) {
                                 echo "<li><h3>".$row['Titolo']."</h3>
-                                        <p>Pubblicato il: ".$row['Data']."</p><br/>
+                                        <p>Pubblicato il: ".$row['Data']."</p>
                                         <p>Descrizione:<br/><p>".$row['Descrizione']."</p>
                                     </li>";
             }	
