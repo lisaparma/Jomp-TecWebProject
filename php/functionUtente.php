@@ -43,35 +43,6 @@ function menu($page)
 
 
 
-function recap() // da fare
-{
-    if(isset($_SESSION['login'])){ 
-        $name=$_SESSION["login"]['Nome'];
-        $surname=$_SESSION["login"]['Cognome'];
-        $email=$_SESSION["login"]['Email'];
-        $username=$_SESSION["login"]['Username'];
-        $password=$_SESSION["login"]['Password'];
-        $sex=$_SESSION["login"]['Sesso'];
-        echo"<div id='contenuto'>
-                <h3> Benvenut";if($sex='f') echo"a "; else echo"o "; echo"$name!</h3>
-                <h4> Ricapitoliamo i tuoi dati:</h4>
-                <p> Nome: $name <br/> Cognome: $surname <br/> e-mail: $email <br/> Username: $username <br/> Sesso: ";
-                if($sex='f=')
-                    echo "donna";
-                else
-                    echo "uomo";
-        echo " <br/><p> Se vuoi modificare le tue informazioni personali <a href='UtModificaDati.php'>clicca qui </a></p>
-            </div>" ;
-            
-       }
-    else {
-	echo "<div id='contenuto'>
-	        <p>Sessione scaduta, procedere con la riutenticazione.</p>
-	    </div>";
-    }
-}
-  
-
 
 function search() //da fare
 {
@@ -270,7 +241,6 @@ function checkUsername($username) {
 
 function editData()
 {
-    
 if(isset($_SESSION['login'])) {  
     $name=$_SESSION["login"]['Nome'];
     $surname=$_SESSION["login"]['Cognome'];
@@ -278,6 +248,7 @@ if(isset($_SESSION['login'])) {
     $username=$_SESSION["login"]['Username'];
     $password=$_SESSION["login"]['Password'];
     $sex=$_SESSION["login"]['Sesso'];
+    
     $check1='';
     $check2='';
 

@@ -3,6 +3,7 @@
 require("structure.php");
 require("functionHome.php");
 require("connect.php");
+require("classUtente.php");
 
 $title="Jomp - Log In ";
 
@@ -64,7 +65,8 @@ if(isset($_POST['submit'])){
         //login per l'utente
         if(checkDataUser($Username, $Password)) {
             $user = mysqli_query(openDB(), "SELECT * FROM Utenti WHERE Username='".$Username."'");
-            $_SESSION['login'] = $user->fetch_array(MYSQLI_ASSOC);
+            $login = $user->fetch_array(MYSQLI_ASSOC);
+            $_SESSION['login'] = new Utente($login);
             header("location: UtDashboard.php");
         }
 
