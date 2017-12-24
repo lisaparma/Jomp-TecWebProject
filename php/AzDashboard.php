@@ -1,8 +1,8 @@
 <?php
 
-require("structure.php");
-require("functionAzienda.php");
-require("connect.php");
+require_once("structure.php");
+require_once("functionAzienda.php");
+require_once("connect.php");
 
 session_start();
 

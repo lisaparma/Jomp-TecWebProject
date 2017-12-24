@@ -1,9 +1,9 @@
 <?php
 
-require("structure.php");
-require("functionUtente.php");
-require("connect.php");
-require("classUtente.php");
+require_once("structure.php");
+require_once("functionUtente.php");
+require_once("connect.php");
+require_once("classUtente.php");
 session_start();
 
 $title = "Dashboard Utente - Jomp";
@@ -13,14 +13,13 @@ echo "<body>";
 
 headers();
 
-$page = "Dashboard";
-breadcrumb($page);
-
-menu($page);
 
 # -------------------------------------------
 
 if(isset($_SESSION['login'])){
+    $page = "Dashboard";
+    breadcrumb($page);
+    menu($page);
     
     $user = $_SESSION['login'];
     

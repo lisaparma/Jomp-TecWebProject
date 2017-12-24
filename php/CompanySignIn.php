@@ -1,10 +1,10 @@
 <?php
 
 
-require("structure.php");
-require("functionHome.php");
-require("connect.php");
-require("functionAzienda.php");
+require_once("structure.php");
+require_once("functionHome.php");
+require_once("connect.php");
+require_once("functionAzienda.php");
 
 $title = "Registrazione Azienda - Jomp";
 head($title);

@@ -1,9 +1,9 @@
 <?php
 
-require("structure.php");
-require("functionUtente.php");
-require("connect.php");
-require("classUtente.php");
+require_once("structure.php");
+require_once("functionUtente.php");
+require_once("connect.php");
+require_once("classUtente.php");
 
 session_start();
 
@@ -14,19 +14,13 @@ echo "<body>";
 
 headers();
 
-$page = "Annunci salvati";
-breadcrumb($page);
-
-menu($page);
-
-# -------------------------------------------
-
-
-
 
 # -------------------------------------------
 
 if(isset($_SESSION['login'])){
+    $page = "Annunci salvati";
+    breadcrumb($page);
+    menu($page);
     
     $user = &$_SESSION['login'];
     

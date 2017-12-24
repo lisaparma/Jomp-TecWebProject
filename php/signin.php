@@ -1,8 +1,8 @@
 <?php
 
-require("structure.php");
-require("functionHome.php");
-require("connect.php");
+require_once("structure.php");
+require_once("functionHome.php");
+require_once("connect.php");
 
 $title="Sign In - Jomp";
 head($title);
