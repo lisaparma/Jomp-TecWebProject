@@ -21,19 +21,94 @@ menu($page);
 
 # -------------------------------------------
 
-search(); // da fare
 
 if(isset($_SESSION['login'])){
     
-    $user = $_SESSION['login'];
+    $user = &$_SESSION['login'];
     
+    // Stampa ricerca 
+    echo"<div id='contenuto'>
+                <div id='ricerca'> 
+                    <form action='UtCercaAnnuncio.php' method='post'>
+                        <fieldset id='fieldset'>
+                            <legend>  Ricerca:</legend>
+
+                            <div id='titolo'> 
+                                <label for='titolo'>Titolo:<br/></label>
+                                <input type='text' id='boxtitolo' name='Title' tabindex=''> <!--</input>-->
+                            </div>
+
+                            <div id='regione'> 
+                                <label for='citta'>Città:<br/></label>
+                                <input type='text' id='boxcitta' name='City' tabindex=''> <!--</input>-->
+                            </div>
+
+                            <div id='tipologia'> 
+                                <label for='titolo'>Tipologia:<br/></label>
+                                <select name='Type'>
+                                    <option value='all' selected> TUTTE ";
+                                    $result = mysqli_query(openDB(), "SELECT * FROM Tipo");
+                                    while($row = $result->fetch_array(MYSQLI_ASSOC)) {
+                                        echo "<option value='".$row['CodLavoro']."'>".$row['Lavoro']."</option>";
+                                    }
+                            echo" 
+                                </select>
+                            </div>
+
+                        <input type='submit' id='cerca' value='Cerca' tabindex='' name='cerca'>
+                        </fieldset>
+
+                    </form>
+                </div>";
     
+    // Quando clicco Salva su un annuncio
+    if(isset($_POST['Salva'])){
+        $ad=$_POST['Salva'];
+        $query="INSERT INTO Consultazioni(Utente, CodAnnuncio) VALUES ('".$user->getUsername()."', '$ad')";
+        mysqli_query(openDB(), $query);
+    }
+        
+    // Quando clicco Salvato su un annuncio
+    if(isset($_POST['Salvato'])){
+        $ad=$_POST['Salvato'];
+        $query="DELETE FROM Consultazioni WHERE CodAnnuncio='$ad' AND Utente='".$user->getUsername()."'";
+        mysqli_query(openDB(), $query);
+    }
+        
+    // Se clicco su CERCA
+    if(isset($_POST['cerca'])) {
+        $title = $_POST['Title'];
+        $city=$_POST['City'];
+        $type=$_POST['Type'];
+        $plus1="";
+        $plus2="";
+
+        if($city)
+            $plus1=" AND Aziende.Citta='$city'";
+        if($type!='all')
+            $plus2=" AND Annunci.Tipologia='$type'";
+
+        $result = mysqli_query(openDB(), "SELECT Annunci.Codice, Annunci.Titolo, Annunci.Descrizione, Annunci.Data FROM Annunci JOIN Aziende ON Aziende.Nome=Annunci.Azienda WHERE Descrizione LIKE '%$title%' $plus1 $plus2 ORDER BY Data DESC");    
+    }
+    else {
+        $result = mysqli_query(openDB(), "SELECT Annunci.Codice, Annunci.Titolo, Annunci.Descrizione, Annunci.Data FROM Annunci ORDER BY Data DESC LIMIT 5");
+    }
+
+    // Stampa gli annunci trovati
+    if($result->num_rows) {
+        echo "<div id='listannunci'>
+                <p>Annunci:</p>
+                    <ul id='annunci'>";
+        printAd($result, $user->getUsername(), 'UtCercaAnnuncio.php');
+        echo "      </ul>
+                </div>" ;       
+    }
+    else
+        echo "Nessun annuncio corrispondente a questi parametri";
+
     
-    
-    
-    
-    
-    
+    echo" </div>" ;
+
 }
 else{
     echo " <div id='contenuto'>
