@@ -41,7 +41,8 @@ if(isset($_POST['update'])) {
 if(isset($_SESSION['login'])) {
 	$name = $_SESSION['login']['Nome'];
 
-	$result = mysqli_query(openDB(), "SELECT * FROM Annunci WHERE Azienda='".$name."'");
+	//annunci elencati dal più recente al meno
+	$result = mysqli_query(openDB(), "SELECT * FROM Annunci WHERE Azienda='".$name."' ORDER BY Data DESC");
 
 	if(mysqli_num_rows($result) == 0) {
 		echo "Nessun annuncio ancora inserito.";
@@ -60,7 +61,7 @@ if(isset($_SESSION['login'])) {
 								<div id='options'>
 									<form method='post' action='AzModificaAnnuncio.php'>
 										<button value=".$row['Codice']." name='edit'>Modifica</button>
-				            			<button value='Rimuovi' name='delete'>Rimuovi</button>
+				            			<button value=".$row['Codice']." name='delete'>Rimuovi</button>
 				            		</form>
 			            		</div>
 							</dd>
