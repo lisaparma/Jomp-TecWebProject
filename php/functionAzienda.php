@@ -1,9 +1,16 @@
 <?php
 
 function breadcrumb($page) {
-	echo "<div id='breadcrumb'>
-	        <p> Ti trovi in: <span xml:lang='en'> <a href='home.php'>  Home</a> >> $page </span> </p>
-	    </div> " ;
+	if($page == 'Modifica annuncio') {
+		echo "<div id='breadcrumb'>
+	        <p> Ti trovi in: <span xml:lang='en'> <a href='home.php'>  Home</a> >> <a href='AzResocontoAnnunci'> Resoconto Annunci</a> >> $page </span> </p>
+	    </div> ";
+	}
+	else {
+		echo "<div id='breadcrumb'>
+		        <p> Ti trovi in: <span xml:lang='en'> <a href='home.php'>  Home</a> >> $page </span> </p>
+		    </div> " ;
+	}
 }
 
 
@@ -40,6 +47,7 @@ function menu($page) {
 }
 
 
+//usata sia del form per pubblicare annunci sia dal form per modificare uno specifico annuncio
 function printWorkType($id) {
 	$result = mysqli_query(openDB(), "SELECT * FROM Tipo");
 
@@ -63,58 +71,7 @@ function printWorkType($id) {
 }
 
 
-function addAds() {
-	echo "<div id='contenuto'>
-	    	<form method='post' action='AzPubblicaAnnuncio.php' accept-charset='utf-8'>
-	    		<h3>Inserisci annuncio: </h3>
-
-	    		<label for='title'> Titolo: </label>
-	            <input type='text' id='title' name='Title' placeholder='Titolo' required><br/>";
-
-            	
-	printWorkType('null');     
-	echo "			
-	            <p> Inserisci una breve descrizione del lavoro (max 300 caratteri): </p>
-	            <textarea name='Description' rows='5' cols='70' required></textarea><br/>
-
-	            <input type='submit' value='Inserisci' name='submit'>
-	    	</form>
-	    </div>";
-
-	if(isset($_POST['submit'])) {
-		try {
-	        if(isset($_SESSION['login'])) {
-	    	    $db = openDB();
-
-	            $title = $_POST['Title'];
-	            $id = $_POST['Type'];
-
-	            $description = $_POST['Description'];
-	            $name = $_SESSION['login']['Nome'];
-
-	    	    $ad = "INSERT INTO Annunci(Titolo, Azienda, Tipologia, Descrizione) VALUES ('$title', '$name', '$id', '$description')";
-
-	    		if ($db->query($ad)) {
-    				header("location: AzResocontoAnnunci.php");
-				} 
-				else {
-    				echo "Errore";
-				}
-	   
-	        }
-	        else {
-	            echo "Connessione scaduta";    
-	        }
-		}
-		catch (Exception $e) {
-	        echo "Errore: " . $e->getMessage();
-	        die();
-	    }
-	} 
-}
-
-
-
+//funzioni di verifica di specifichi campi dati
 function checkName($Name) {
     $result = mysqli_query(openDB(),"SELECT Nome FROM Aziende WHERE Nome='".$Name."'");
 
@@ -144,156 +101,6 @@ function checkRepeatPassword($Password, $RipPassword) {
         return true;
     }
     return false;
-}
-
-
-
-function editCompanyData() {
-	try {
-		if(isset($_SESSION['login'])) {
-			$id = $_SESSION['login']['Codice'];
-			$name = $_SESSION['login']['Nome'];
-			$pIva = $_SESSION['login']['PIva'];
-			$email = $_SESSION['login']['Email'];
-			$city = $_SESSION['login']['Citta'];
-			$password = $_SESSION['login']['Password'];
-
-			echo "<div id='contenuto'>
-			        <h4> I tuoi dati: </h4>
-			        <form method='post' action='AzModificaDati.php'> 
-
-			            <label for='nome'>Nome: </label>
-			            <input type='text' id='nome' value='$name' name='Nome'><br/> 
-			                
-	    				<label for='pIva'>Partita Iva: </label>
-			            <input type='text' id='pIva' value='$pIva' name='PIva'><br/>
-			                
-			            <label for='email'>E-mail: </label>
-			            <input type='text' id='email' value='$email' name='Email'><br/>        
-			                
-			            <label for='city'>Città: </label>
-			            <input type='text' id='city' value='$city' name='City'><br/>
-			                
-			            <label for='password'> Password: </label>
-			            <input type='password' id='password' name='Password' value='$password'><br/>
-			            <br/>
-
-	                	<input type='submit' value='Modifica' name='edit'>
-
-			        </form>
-	            </div>";
-
-            if(isset($_POST['edit'])) {
-				$newName = $_POST['Nome'];
-				$newPIva = $_POST['PIva'];
-				$newEmail = $_POST['Email'];
-				$newCity = $_POST['City'];
-				$newPassword = $_POST['Password'];	
-
-				if($newName == $name && $newPIva == $pIva || $newName != $name && checkName($newName) || $newPIva != $pIva && checkPIva($newPIva)) {
-            		$update = "UPDATE Aziende SET Nome='".$newName."', PIva='".$newPIva."', Email='".$newEmail."', Citta='".$newCity."', Password='".$newPassword."'  WHERE Codice='".$id."'";
-
-	            	if(mysqli_query(openDB(), $update)) {
-	            		header("location: AzDashboard.php");
-	            	}
-	            	else {
-	            		echo "Errore nell'aggiornare i propri dati.";
-	            	}
-	            }
-
-	            if(!checkName($newName)) {
-	            	echo "Nome azienda già in uso.<br/>";
-	            }
-	            else {
-	            	echo "Partita iva già presente nel database";
-	            }
-            }
-		}
-	} catch (PDOException $e) {
-        echo "Errore: " . $e->getMessage();
-        die(); 
-    }
-}
-
-
-function adsList($select) {
-	//$edit = false;
-	if(isset($_SESSION['login'])) {
-		$name = $_SESSION['login']['Nome'];
-		$word = $empty = '';
-
-		if($select == 'all') {
-			$result = mysqli_query(openDB(), "SELECT * FROM Annunci WHERE Azienda='".$name."'");
-		}
-
-		if($select == 'lastAdded') {
-			$result = mysqli_query(openDB(), "SELECT * FROM Annunci WHERE Azienda='".$name."' LIMIT 3");
-			$word = 'ultimi';
-		}
-
-		if(mysqli_num_rows($result) == 0) {
-			$empty = "Nessun annuncio ancora inserito.";
-		}
-
-		if($result) {
-			echo "<p>Ecco i tuoi ".$word." annunci:</p>";
-			//stampo tutti gli annunci trovati
-			echo $empty;
-			while($row = $result->fetch_array(MYSQLI_ASSOC)) {
-				echo "<div id='contenuto'>
-						<dl>
-							<dt>".$row['Titolo']."</dt>
-							<dd>Pubblicato il ".$row['Data']."</br>
-								".$row['Descrizione']."</br>
-									<div id='options'>
-										<form method='post' action='AzModificaAnnuncio.php'>
-											<button value=".$row['Codice']." name='edit'>Modifica</button>
-					            			<button value='Rimuovi' name='delete'>Rimuovi</button>
-					            		</form>
-				            		</div>
-								</dd>
-							</dt>
-						</dl>
-					</div>";
-			}			
-		}
-		else {
-			echo "Ancora nessun annuncio inserito";
-		}
-	}
-}
-
-
-function editAd() {
-	if(isset($_POST['edit'])) {
-		$ad = $_POST['edit'];	
-		$sql = mysqli_query(openDB(), "SELECT * FROM Annunci WHERE Codice='".$ad."'");
-		$row = $sql->fetch_array(MYSQLI_ASSOC);
-
-		$title = $row['Titolo'];
-		$type = $row['Tipologia'];
-		$date = $row['Data'];
-		$description = $row['Descrizione'];
-
-		echo "<div id='contenuto'>
-	    	<form method='post' action='AzModificaAnnuncio.php' accept-charset='utf-8'>
-	    		<h3>Modifica l'annuncio: </h3>
-
-	    		<label for='title'> Titolo: </label>
-	            <input type='text' id='title' name='Title' value='$title' required><br/>"; 
-
-	    printWorkType($type);
-	    echo "
-	            <p> Inserisci una breve descrizione del lavoro (max 300 caratteri): </p>
-	            <textarea name='Description' rows='5' cols='70' required>$description</textarea><br/>
-
-	            <input type='submit' value='Aggiorna' name='submit'>
-	    	</form>
-	    </div>";
-	}
-	else {
-		echo "Problemi con il database";
-	}
 }
 
 ?>

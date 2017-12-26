@@ -18,7 +18,7 @@ breadcrumb($page);
 
 menu($page);
 
-adsList('lastAdded');
+//SadsList('lastAdded');
 
 footer();
  
