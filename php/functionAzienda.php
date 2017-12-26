@@ -3,7 +3,7 @@
 function breadcrumb($page) {
 	if($page == 'Modifica annuncio') {
 		echo "<div id='breadcrumb'>
-	        <p> Ti trovi in: <span xml:lang='en'> <a href='home.php'>  Home</a> >> <a href='AzResocontoAnnunci'> Resoconto Annunci</a> >> $page </span> </p>
+	        <p> Ti trovi in: <span xml:lang='en'> <a href='home.php'>  Home</a> >> <a href='AzResocontoAnnunci.php'> Resoconto Annunci</a> >> $page </span> </p>
 	    </div> ";
 	}
 	else {

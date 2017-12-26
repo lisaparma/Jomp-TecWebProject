@@ -21,8 +21,23 @@ menu($page);
 
 # ------------------------------------------------------
 
+if(isset($_POST['update'])) {
+	$ad = $_POST['update']; 
+	$newTitle = $_POST['Title'];
+	$newType = $_POST['Type'];
+	$newDescr = $_POST['Description'];
 
-//$edit = false;
+	$up = "UPDATE Annunci SET Titolo = '".$newTitle."', Tipologia = '".$newType."', Descrizione ='".$newDescr."'  WHERE Codice='".$ad."'";
+
+	if(mysqli_query(openDB(), $up)) {
+		echo "Annuncio modificato con successo!";
+	}
+	else {
+		echo "Errore nell'aggiornare i propri dati.";
+	}
+}
+
+
 if(isset($_SESSION['login'])) {
 	$name = $_SESSION['login']['Nome'];
 
@@ -52,7 +67,8 @@ if(isset($_SESSION['login'])) {
 						</dt>
 					</dl>
 				</div>";
-		}			
+		}
+
 	}
 }
 
