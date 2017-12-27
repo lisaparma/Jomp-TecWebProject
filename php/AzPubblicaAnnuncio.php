@@ -44,9 +44,9 @@ echo "
 
 if(isset($_POST['submit'])) {
 	try {
-        if(isset($_SESSION['loginCompany'])) {
+        if(isset($_SESSION['login'])) {
     	    $db = openDB();
-            $company = $_SESSION['loginCompany'];
+            $company = $_SESSION['login'];
 
             $title = $_POST['Title'];
             $id = $_POST['Type'];

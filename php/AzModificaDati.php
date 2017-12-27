@@ -23,8 +23,8 @@ menu($page);
 # ------------------------------------------------------
 
 try {
-	if(isset($_SESSION['loginCompany'])) {
-		$company = &$_SESSION['loginCompany'];
+	if(isset($_SESSION['login'])) {
+		$company = &$_SESSION['login'];
 		$id = $company->getId();
 		$name = $company->getName();
 		$pIva = $company->getPIva();

@@ -8,7 +8,7 @@ class Azienda {
 	private $city;
 	private $password;
 
-	public function __costruct($login) {
+	public function __construct($login) {
 		$this->id = $login['Codice'];
 		$this->name = $login['Nome'];
 		$this->pIva = $login['PIva'];

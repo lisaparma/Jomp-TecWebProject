@@ -22,17 +22,6 @@ menu($page);
 
 # ------------------------------------------------------
 
-
-	//var_dump($_GET);
-/*if(isset($_POST['update'])) {
-	$newTitle = $_POST['Title'];
-	$newType = $_POST['Type'];
-	$newDescr = $_POST['Description'];
-
-
-	$update = "UPDATE Annunci SET Titolo = '".$newTitle."', Tipologia = '".$newType."', Descrizione ='".$newDescr."'  WHERE Codice='".$ad."'";
-	header("location: AzResocontoAnnunci.php");
-}*/
 if(isset($_POST['edit'])) {
 	$ad = $_POST['edit'];	
 	$sql = mysqli_query(openDB(), "SELECT * FROM Annunci WHERE Codice='".$ad."'");
