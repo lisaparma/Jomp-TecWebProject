@@ -10,32 +10,55 @@ function breadcrumb($page)
 
 function menu($page)
 {
-	echo"<div id='areaPersonale'>
-	        <ul>
-	            <li>"; 
-	            if($page === 'Dashboard') { 
-	            	echo "Dashboard</li>";
-	            } else { 
-	            	echo "<a href='UtDashboard.php'>Dashboard</a></li>"; 
-	            } 
+	echo"<div class='container'>
+	        <ul class='mcd-menu''>
+	            <li>";
+                if($page === 'Dashboard') 
+                       echo "<a id='this'> 
+					           <p>Dashboard</p>
+                            </a>
+                       </li>"; 
+                   else 
+                       echo "<a href='UtDashboard.php'> 
+					           <p>Dashboard</p>
+                            </a>
+                       </li>"; 
+    
 	            echo"<li>";
-	           	if($page === 'Cerca annuncio') { 
-	            	echo "Cerca annuncio</li>";
-	            } else { 
-	            	echo "<a href='UtCercaAnnuncio.php'>Cerca annuncio</a></li>"; 
-	            }
+                if($page === 'Cerca annuncio') 
+                       echo "<a id='this'> 
+					           <p>Cerca annuncio</p>
+                            </a>
+                       </li>"; 
+                   else 
+                       echo "<a href='UtCercaAnnuncio.php'> 
+					           <p>Cerca annuncio</p>
+                            </a>
+                       </li>"; 
+    
 	            echo "<li>";
-	            if($page === 'Annunci salvati') { 
-	            	echo "Annunci salvati</li>";
-	            } else { 
-	            	echo "<a href='UtAnnunciSalvati.php'>Annunci salvati</a></li>"; 
-	            } 
+                if($page === 'Annunci salvati') 
+                       echo "<a id='this'> 
+					           <p>Annunci salvati</p>
+                            </a>
+                       </li>"; 
+                   else 
+                       echo "<a href='UtAnnunciSalvati.php'> 
+					           <p>Annunci salvati</p>
+                            </a>
+                       </li>"; 
+   
 	            echo "<li>";
-	            if($page === 'Modifica dati') { 
-	            	echo "Modifica dati</li>";
-	            } else { 
-	            	echo "<a href='UtModificaDati.php'>Modifica dati</a></li>"; 
-	            } 
+                if($page === 'Modifica dati') 
+                       echo "<a id='this'> 
+					           <p>Modifica dati</p>
+                            </a>
+                       </li>"; 
+                   else 
+                       echo "<a href='UtModificaDati.php'> 
+					           <p>Modifica Dati</p>
+                            </a>
+                       </li>"; 
 	            echo "
 	        </ul>
 	    </div>";
