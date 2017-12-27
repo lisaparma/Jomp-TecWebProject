@@ -3,6 +3,7 @@
 require_once("structure.php");
 require_once("functionAzienda.php");
 require_once("connect.php");
+require_once("classAzienda.php");
 
 session_start();
 
@@ -22,13 +23,14 @@ menu($page);
 # ------------------------------------------------------
 
 try {
-	if(isset($_SESSION['login'])) {
-		$id = $_SESSION['login']['Codice'];
-		$name = $_SESSION['login']['Nome'];
-		$pIva = $_SESSION['login']['PIva'];
-		$email = $_SESSION['login']['Email'];
-		$city = $_SESSION['login']['Citta'];
-		$password = $_SESSION['login']['Password'];
+	if(isset($_SESSION['loginCompany'])) {
+		$company = &$_SESSION['loginCompany'];
+		$id = $company->getId();
+		$name = $company->getName();
+		$pIva = $company->getPIva();
+		$email = $company->getEmail();
+		$city = $company->getCity();
+		$password = $company->getPassword();
 
 		echo "<div id='contenuto'>
 		        <h4> I tuoi dati: </h4>

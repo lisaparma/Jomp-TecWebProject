@@ -4,6 +4,7 @@ require_once("structure.php");
 require_once("functionHome.php");
 require_once("connect.php");
 require_once("classUtente.php");
+require_once("classAzienda.php");
 
 $title="Jomp - Log In ";
 
@@ -73,7 +74,8 @@ if(isset($_POST['submit'])){
         //login per l'azienda
         if(checkDataCompany($Username, $Password)) {
             $company = mysqli_query(openDB(), "SELECT * FROM Aziende WHERE Nome='".$Username."'"); 
-            $_SESSION['login'] = $company->fetch_array(MYSQLI_ASSOC);
+            $login = $company->fetch_array(MYSQLI_ASSOC);
+            $_SESSION['loginCompany'] = new Azienda($login);
             header("location: AzDashboard.php");
         }
 

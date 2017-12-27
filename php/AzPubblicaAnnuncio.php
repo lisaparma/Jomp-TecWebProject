@@ -3,6 +3,7 @@
 require_once("structure.php");
 require_once("functionAzienda.php");
 require_once("connect.php");
+require_once("classAzienda.php");
 
 
 $title = "Pubblica Annuncio - Jomp";
@@ -43,14 +44,15 @@ echo "
 
 if(isset($_POST['submit'])) {
 	try {
-        if(isset($_SESSION['login'])) {
+        if(isset($_SESSION['loginCompany'])) {
     	    $db = openDB();
+            $company = $_SESSION['loginCompany'];
 
             $title = $_POST['Title'];
             $id = $_POST['Type'];
 
             $description = $_POST['Description'];
-            $name = $_SESSION['login']['Nome'];
+            $name = $company->getName();
 
     	    $ad = "INSERT INTO Annunci(Titolo, Azienda, Tipologia, Descrizione) VALUES ('$title', '$name', '$id', '$description')";
 

@@ -3,6 +3,7 @@
 require_once("structure.php");
 require_once("functionAzienda.php");
 require_once("connect.php");
+require_once("classAzienda.php");
 
 session_start();
 
@@ -38,8 +39,9 @@ if(isset($_POST['update'])) {
 }
 
 
-if(isset($_SESSION['login'])) {
-	$name = $_SESSION['login']['Nome'];
+if(isset($_SESSION['loginCompany'])) {
+	$company = $_SESSION['loginCompany'];
+	$name = $company->getName();
 
 	//annunci elencati dal più recente al meno
 	$result = mysqli_query(openDB(), "SELECT * FROM Annunci WHERE Azienda='".$name."' ORDER BY Data DESC");

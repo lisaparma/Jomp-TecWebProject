@@ -14,7 +14,6 @@ function breadcrumb($page) {
 }
 
 
-
 function menu($page) {
 	echo"<div id='areaPersonale'>
 	        <ul>
@@ -70,37 +69,5 @@ function printWorkType($id) {
     echo "</select>";
 }
 
-
-//funzioni di verifica di specifichi campi dati
-function checkName($Name) {
-    $result = mysqli_query(openDB(),"SELECT Nome FROM Aziende WHERE Nome='".$Name."'");
-
-    $num_rows = mysqli_num_rows($result);
-
-    if($num_rows == 0) {
-        return true;
-    }
-    return false;
-}
-
-
-function checkPIva($PIva) {
-    $result = mysqli_query(openDB(),"SELECT PIva FROM Aziende WHERE PIva='".$PIva."'");
-
-    $num_rows = mysqli_num_rows($result);
-
-    if($num_rows == 0) {
-        return true;
-    }
-    return false;   
-}
-
-
-function checkRepeatPassword($Password, $RipPassword) {
-    if($Password == $RipPassword) {
-        return true;
-    }
-    return false;
-}
 
 ?>
