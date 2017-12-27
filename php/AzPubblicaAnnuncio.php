@@ -45,7 +45,6 @@ echo "
 if(isset($_POST['submit'])) {
 	try {
         if(isset($_SESSION['login'])) {
-    	    $db = openDB();
             $company = $_SESSION['login'];
 
             $title = $_POST['Title'];
@@ -56,7 +55,7 @@ if(isset($_POST['submit'])) {
 
     	    $ad = "INSERT INTO Annunci(Titolo, Azienda, Tipologia, Descrizione) VALUES ('$title', '$name', '$id', '$description')";
 
-    		if ($db->query($ad)) {
+    		if (mysqli_query(openDB(), $ad)) {
 				header("location: AzResocontoAnnunci.php");
 			} 
 			else {

@@ -39,8 +39,8 @@ if(isset($_POST['update'])) {
 }
 
 
-if(isset($_SESSION['loginCompany'])) {
-	$company = $_SESSION['loginCompany'];
+if(isset($_SESSION['login'])) {
+	$company = $_SESSION['login'];
 	$name = $company->getName();
 
 	//annunci elencati dal più recente al meno
