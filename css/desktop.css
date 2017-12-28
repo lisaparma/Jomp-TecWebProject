@@ -87,9 +87,6 @@ h1 {
 
 /* ----------------------- BREADCRUMB ----------------------*/
 
-#breadcrumb {
-    padding-left: 2em;
-}
 
 #bc{
     margin: 5px;
@@ -141,14 +138,6 @@ h1 {
       border:none;
 }
 
-/* Ultimo elemento diverso
-#bc li:last-child a{
-    padding-right:15px;
-    border-radius(0 4px 4px 0);
-}
-#bc li:last-child a:after{
-    border:none;
-}*/
   
 
 #bc li a:before, #bc li a:after{
@@ -198,27 +187,10 @@ h1 {
 
 
 /* ----------------------- MENU area personale ----------------------*/
-
-#areaPersonale {
-    float: left;
-    width: 14em;
-    height: 21em;
-    margin-left: 5px;
-    border-color: black;
-    border-style:solid;
-    
-}
-#areaPersonale li{
-    list-style-image: url(../IMG/arrow.svg);
-    position: relative;
-    padding-bottom: 1em;
-    padding-top: 0.5em;
-}
-    
-/* nuovoooo */
+ 
 .container {
     display: block;
-    width: 20%;
+    width: 23%;
     float: left;
     margin-left: 5px;
 
@@ -239,7 +211,7 @@ h1 {
 .mcd-menu li a {
   display: block;
   text-decoration: none;
-  padding: 12px 20px;
+  padding: 8px 15px;
   color: #777;
   height: 36px;
   position: relative;
@@ -248,11 +220,14 @@ h1 {
 }
 
 .mcd-menu li a p {
-  display: block;
-  text-transform: uppercase;
-    text-align:center;
+    display: inline-block;
+    text-transform: uppercase;
+    text-align:left;
+    padding-left:3px;
 }
-
+.mcd-menu li a .logo {
+  display: inline-block;
+}
 /* quando passo sopra un link si colora*/
 .mcd-menu li:hover > a {
   color: #e67e22;
@@ -278,34 +253,36 @@ h1 {
 
 
 /* media queries per farlo responsive */
-@media only screen and (min-width: 960px) {
+@media only screen and (min-width: 980px) {
     .mcd-menu {
 		margin-left:10px;
 	}
-    #contenuto {
-        padding-left:25%;  
-    }
 }
 
-@media only screen and (min-width: 768px) and (max-width: 959px) {
+@media only screen and (min-width: 700px) and (max-width: 979px) {
     .mcd-menu {
 		width: 100%;
 	}
 	.mcd-menu li a {
-		height:30px;
+		height:40px;
 	}
 	.mcd-menu li a p {
 		font-size: 12px;
+        display: block;
+        text-align: center;
 	}
-    #contenuto {
-        padding-left:25%;  
-    }
+    .mcd-menu li a .logo {
+		display: block;
+        padding-left: 40%;
+	}
+    
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 699px) {
 	
 	.mcd-menu { 
 		width: 100%;
+        height:auto;
 	}
 	.mcd-menu li a { 
 		position: relative;
@@ -313,16 +290,18 @@ h1 {
 		height:20px;
 	}
 	.mcd-menu li a p { 
-		display:block;
-		font-size:10px;
-		padding:3px 0;
-		position:absolute;
-		bottom:0px;
-		left:0;
-		min-width:100%;
+		display:none;
 		font-weight:normal;
 		text-align:center;
 	}
+    .mcd-menu li a .logo {
+		display: block;
+        padding-left: 40%;
+	}
+    
+    .mcd-menu li:hover > a .logo {
+    display: none;
+    }
 	.mcd-menu li a:hover p,.mcd-menu li a:active p {
 		display:block;
 		font-size:10px;
@@ -334,14 +313,20 @@ h1 {
 		font-weight:normal;
 		text-align:center;
 	}
-    #contenuto {
-    padding-left:25%;  
-    }
 }
+
 @media only screen and (max-width: 360px) {
     .container{
         width: 72px;
     }
+    .mcd-menu li a .logo {
+		display: block;
+        padding-left: 20%;
+	}
+    .mcd-menu li:hover > a .logo {
+        display: none;
+    }
+
 }
 
 
@@ -372,6 +357,7 @@ h1 {
 #contenuto {
     display:block;
     margin-right: 5px;
+    padding-left: 28%;
     
 }
 
