@@ -20,6 +20,7 @@ breadcrumb($page);
 menu($page);
 
 $company = &$_SESSION['login'];
+echo"<div id='contenuto'>";
 echo "<p>Gentile ".$company->getName().", ecco un riassunto delle sue attività:</p><br/>
 		<p>Data iscrizione: ".$company->getDateEntry().";<br/>
 		<p>Numero totale di annunci inseriti: ".$company->getAdsNumber().";<br/>
@@ -28,7 +29,7 @@ echo "<p>Gentile ".$company->getName().", ecco un riassunto delle sue attività:
 
 
 
-
+echo"</div>";
 footer();
  
 echo "</body> \n </html>";
