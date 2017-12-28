@@ -4,8 +4,8 @@ function breadcrumb($page)
 {
 	echo "<ul id='bc'>
           <li><a href='home.php'> <img class='icon' src='../IMG/home.svg'></img> </a></li>
-          <li><a href=''><span class='icon'> </span> Area personale </a></li>
-          <li><a href=''><span class='icon'> </span> $page</a></li>
+          <li><a><span class='icon'> </span> Area personale </a></li>
+          <li><a><span class='icon'> </span> $page</a></li>
         </ul>";
 }
 
@@ -75,13 +75,14 @@ function printAd($result, $username, $page){
                     $like="Salvato";
                 else 
                     $like="Salva";
-                echo "<li><h3>".$row['Titolo']."</h3>
+                echo "<li id='card'><h3>".$row['Titolo']."</h3>
                         <p>Pubblicato il: ".$row['Data']."</p>
                         <p>Descrizione:<br/><p>".$row['Descrizione']."</p>
                         <form method='post' action=$page>
                             <button type='submit' name='$like' value='$id'>$like</button>
                         </form>
-                    </li>";
+                    </li>
+                    </br></br>";
             }	
 }
 function liked($username, $ad) {
