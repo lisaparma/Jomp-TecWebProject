@@ -13,15 +13,17 @@ function breadcrumb($page)
 function menu($page)
 {
 	echo"<div class='container'>
-	        <ul class='mcd-menu''>
+	        <ul class='mcd-menu'>
 	            <li>";
                 if($page === 'Dashboard') 
                        echo "<a id='this'> 
+                                <img class='logo' src='../IMG/dashboard.svg'>
 					           <p>Dashboard</p>
                             </a>
                        </li>"; 
                    else 
-                       echo "<a href='UtDashboard.php'> 
+                       echo "<a href='UtDashboard.php'>
+                                <img class='logo' src='../IMG/dashboard.svg'>
 					           <p>Dashboard</p>
                             </a>
                        </li>"; 
@@ -29,11 +31,13 @@ function menu($page)
 	            echo"<li>";
                 if($page === 'Cerca annuncio') 
                        echo "<a id='this'> 
+                            <img class='logo' src='../IMG/cerca.svg'>
 					           <p>Cerca annuncio</p>
                             </a>
                        </li>"; 
                    else 
                        echo "<a href='UtCercaAnnuncio.php'> 
+                                <img class='logo' src='../IMG/cerca.svg'>
 					           <p>Cerca annuncio</p>
                             </a>
                        </li>"; 
@@ -41,11 +45,13 @@ function menu($page)
 	            echo "<li>";
                 if($page === 'Annunci salvati') 
                        echo "<a id='this'> 
+                                <img class='logo' src='../IMG/like.svg'>
 					           <p>Annunci salvati</p>
                             </a>
                        </li>"; 
                    else 
                        echo "<a href='UtAnnunciSalvati.php'> 
+                                <img class='logo' src='../IMG/like.svg'>
 					           <p>Annunci salvati</p>
                             </a>
                        </li>"; 
@@ -53,11 +59,13 @@ function menu($page)
 	            echo "<li>";
                 if($page === 'Modifica dati') 
                        echo "<a id='this'> 
+                                <img class='logo' src='../IMG/edit.svg'>
 					           <p>Modifica dati</p>
                             </a>
                        </li>"; 
                    else 
                        echo "<a href='UtModificaDati.php'> 
+                                <img class='logo' src='../IMG/edit.svg'>
 					           <p>Modifica Dati</p>
                             </a>
                        </li>"; 
