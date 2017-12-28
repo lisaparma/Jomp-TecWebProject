@@ -4,14 +4,21 @@
 html, body {
     margin: 0px;
     padding: 0px;
-    font-family: Verdana, Helvetica, sans-serif;
+    font-family: LFTEtica,Helvetica Neue,Helvetica,Arial,sans-serif;
     font-size:1em;
-    background-color:white;
+    background-color:#EFEFEF;
+    align-content: center;
     
 }
 
+body {
+    display: block;
+    max-width: 1024px;
+    margin:auto;
+    background-color: #FFFFFF;
+    
+}
 /* ------------------    HEADER   ------------------- */
-
 #header {
     background-color: #A9E8DC;
     min-height: 11em;
@@ -82,7 +89,106 @@ h1 {
 
 #breadcrumb {
     padding-left: 2em;
+}
 
+#bc{
+    margin: 0px;
+    list-style:none;
+    display: block;
+    height: 40px;
+}
+
+#bc li{
+    float:left;
+}
+
+#bc li a{
+  color:#FFF;
+  display:block;
+  background: #3498db;
+  text-decoration: none;
+  position:relative;
+  height: 40px;
+  line-height:40px;
+  padding: 0 10px 0 5px;
+  text-align: center;
+  margin-right: 23px;
+}
+
+/*cambia colore ai pari*/
+#bc li:nth-child(even) a{
+    background-color: #2980b9;
+}
+#bc li:nth-child(even) a:before{
+  border-color:#2980b9;
+  border-left-color:transparent;
+ } 
+#bc li:nth-child(even) a:after{
+  border-left-color: #2980b9;
+}
+
+/* Primo elemento diverso*/
+#bc li:first-child a{
+    padding-left:15px;
+    border-radius(4px 0 0 4px);
+}
+#bc li:first-child a:before{
+      border:none;
+}
+
+/* Ultimo elemento diverso*/
+#bc li:last-child a{
+    padding-right:15px;
+    border-radius(0 4px 4px 0);
+}
+#bc li:last-child a:after{
+    border:none;
+}
+  
+
+#bc li a:before, #bc li a:after{
+    content: "";
+    position:absolute;
+    top: 0;
+    border:0 solid #3498db;
+    border-width:20px 10px;
+    width: 0;
+    height: 0;
+  }
+
+#bc li a:before{
+    left:-20px;
+    border-left-color:transparent;
+}
+
+#bc li a:after{
+    left:100%;
+    border-color:transparent;
+    border-left-color:#3498db;
+}
+
+/* cambio colore quando passo sopra*/
+#bc li a:hover{
+    background-color: #1abc9c;
+}       
+#bc li a:hover::before{
+  border-color:#1abc9c;
+  border-left-color:transparent;
+ }
+#bc li a:hover::after{
+  border-left-color:#1abc9c;
+}
+
+/* più scuro quando lo clicco*/
+#bc li a:active{
+    background-color: #16a085;
+}
+#bc li a:active::before{
+  border-color:#16a085;
+  border-left-color:transparent;
+}
+#bc li a:active::after{
+  border-left-color:#16a085;
 }
 
 

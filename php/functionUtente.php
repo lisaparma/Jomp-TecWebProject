@@ -2,9 +2,11 @@
 
 function breadcrumb($page)
 {
-	echo "<div id='breadcrumb'>
-	        <p>Ti trovi in: <span xml:lang='en'><a href='home.php'>Home</a> >>$page</span></p>
-	    </div>";
+	echo "<ul id='bc'>
+          <li><a href='home.php'> <img class='icon icon-home' src='../IMG/home.svg'></img> Home </a></li>
+          <li><a href=''><span class='icon icon-beaker'> </span> $page</a></li>
+          <li><a href=''><span class='icon icon-beaker'> </span> $page</a></li>
+        </ul>";
 }
 
 
