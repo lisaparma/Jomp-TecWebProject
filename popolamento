@@ -9,12 +9,12 @@ VALUES
 ('utente3', 'utente3', 'f', 'utente3@gmail.com', 'utente3', 'utente3'),
 ('utente4', 'utente4', 'm', 'utente4@gmail.com', 'utente4', 'utente4');
 
-INSERT INTO Aziende (Nome, PIva, Email, Citta, Password)
+INSERT INTO Aziende (Nome, PIva, Email, Citta, Iscrizione, Password)
 VALUES
-('azienda1', '1231234521', 'azienda1@gmail.com', 'Padova', 'azienda1'),
-('azienda2', '6783450652', 'azienda2@gmail.com', 'Vicenza', 'azienda2'),
-('azienda3', '2956384726', 'azienda3@gmail.com', 'Cornuda', 'azienda3'),
-('azienda4', '5348797628', 'azienda4@gmail.com', 'Rovigo', 'azienda4');
+('azienda1', '1231234521', 'azienda1@gmail.com', 'Padova', '2014-01-13 21:14:14','azienda1'),
+('azienda2', '6783450652', 'azienda2@gmail.com', 'Vicenza', '2015-03-22 15:09:34', 'azienda2'),
+('azienda3', '2956384726', 'azienda3@gmail.com', 'Cornuda', '2016-11-19 11:14:14', 'azienda3'),
+('azienda4', '5348797628', 'azienda4@gmail.com', 'Rovigo', '2017-07-13 21:14:14','azienda4');
 
 INSERT INTO Tipo (Lavoro)
 VALUES
