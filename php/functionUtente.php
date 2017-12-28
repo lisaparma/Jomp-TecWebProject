@@ -3,9 +3,9 @@
 function breadcrumb($page)
 {
 	echo "<ul id='bc'>
-          <li><a href='home.php'> <img class='icon icon-home' src='../IMG/home.svg'></img> Home </a></li>
-          <li><a href=''><span class='icon icon-beaker'> </span> $page</a></li>
-          <li><a href=''><span class='icon icon-beaker'> </span> $page</a></li>
+          <li><a href='home.php'> <img class='icon' src='../IMG/home.svg'></img> </a></li>
+          <li><a href=''><span class='icon'> </span> Area personale </a></li>
+          <li><a href=''><span class='icon'> </span> $page</a></li>
         </ul>";
 }
 

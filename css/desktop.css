@@ -92,10 +92,15 @@ h1 {
 }
 
 #bc{
-    margin: 0px;
+    margin: 5px;
+    padding-left: 0px;
     list-style:none;
     display: block;
     height: 40px;
+}
+
+#bc .icon{
+    padding-top: 5px;
 }
 
 #bc li{
@@ -136,14 +141,14 @@ h1 {
       border:none;
 }
 
-/* Ultimo elemento diverso*/
+/* Ultimo elemento diverso
 #bc li:last-child a{
     padding-right:15px;
     border-radius(0 4px 4px 0);
 }
 #bc li:last-child a:after{
     border:none;
-}
+}*/
   
 
 #bc li a:before, #bc li a:after{
