@@ -73,7 +73,7 @@ if(isset($_POST['submit'])){
 
         //login per l'azienda
         if(checkDataCompany($Username, $Password)) {
-            $company = mysqli_query(openDB(), "SELECT Nome FROM Aziende WHERE Nome='".$Username."'"); 
+            $company = mysqli_query(openDB(), "SELECT * FROM Aziende WHERE Nome='".$Username."'"); 
             $login = $company->fetch_array(MYSQLI_ASSOC);
             $_SESSION['login'] = new Azienda($login);
             header("location: AzDashboard.php");

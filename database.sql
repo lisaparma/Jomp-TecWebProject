@@ -30,7 +30,7 @@ Nome char(100) NOT NULL,
 PIva int(11) NOT NULL, 
 Email char(255) NOT NULL,
 Citta char(20) NOT NULL,
-Iscrizione timestamp DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+Iscrizione timestamp DEFAULT CURRENT_TIMESTAMP,
 Password char(20) NOT NULL,
 PRIMARY KEY (Codice, Nome)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
