@@ -475,3 +475,15 @@ h1 {
     float: left;
 }
 
+
+
+/* --------------------- SECTIONS ----------------------*/
+
+#section {
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align: justify;
+
+
+}
+

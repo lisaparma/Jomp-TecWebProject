@@ -2,7 +2,7 @@
 
 function menuHome() {
 	echo "<ul id='menu'>
-	        <li> <a href=''> Chi siamo </a> </li>";
+	        <li> <a href='sectionChiSiamo.php'> Chi siamo </a> </li>";
     if(isset($_SESSION['login'])) {
         if(get_class($_SESSION['login'])=='Utente')
 	        echo "<li> <a href='UtDashboard.php'> Area personale </a> </li>";
