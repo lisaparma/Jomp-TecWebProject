@@ -2,10 +2,18 @@
 
 function menuHome() {
 	echo "<ul id='menu'>
-	        <li> <a href='AzDashboard.php'> Area Aziende </a> </li>
-	        <li> <a href='UtDashboard.php'> Area Privati </a> </li>
-	        <li> <a href=''> boh </a> </li>
-	        <li> <a href=''> boh </a> </li>
+	        <li> <a href='sectionChiSiamo.php'> Chi siamo </a> </li>";
+    if(isset($_SESSION['login'])) {
+        if(get_class($_SESSION['login'])=='Utente')
+	        echo "<li> <a href='UtDashboard.php'> Area personale </a> </li>";
+        else
+            echo "<li> <a href='AzDashboard.php'> Area personale </a> </li>";
+    }
+    else
+        echo "<li> <a href='login.php'> Login </a> </li>";
+    echo "
+	        <li> <a href=''> Aziende partner </a> </li>
+	        <li> <a href=''> Aree professionali </a> </li>
 	     </ul>" ;
 }
 
@@ -66,10 +74,16 @@ function search() {
                     <p>Risultati:</p>
                         <ul id='annunci'>";
                             while($row = mysqli_fetch_array($result, MYSQLI_BOTH)) {
-                                echo "<li><h3>".$row['Titolo']."</h3>
-                                        <p>Pubblicato il: ".$row['Data']."</p>
-                                        <p>Descrizione:<br/><p>".$row['Descrizione']."</p>
-                                    </li>";
+                                echo "</br></br>
+                                    <li id='fogli'>
+                                        <div id='foglio'>
+                                            <h3>".$row['Titolo']."</h3>
+                                            <p>Pubblicato il: ".$row['Data']."</p>
+                                            <p>Descrizione:<br/><p>".$row['Descrizione']."</p>
+                                        </div>
+                                    </li>
+                                    </br>
+                                    </br>";
             }	
             echo "</ul>
                     </div>" ;       
@@ -93,10 +107,17 @@ function lastAds() {
 		    	<p>Aggiunti di recente:</p>
 		    		<ul id='annunci'>";
 		while($row = $result->fetch_array(MYSQLI_ASSOC)) {
-			echo "<li><h3>".$row['Titolo']."</h3>
+			echo "</br></br>
+                <li id='fogli'>
+                    <div id='foglio'>
+                        <h3>".$row['Titolo']."</h3>
 						<p>Pubblicato il: ".$row['Data']."</p><br/>
 						<p>Descrizione:<br/><p>".$row['Descrizione']."</p>
-				</li>";
+                    </div>
+				</li>
+                </br>
+                </br>"
+                ;
 		}	
 		echo "</ul>
     			</div>" ;       

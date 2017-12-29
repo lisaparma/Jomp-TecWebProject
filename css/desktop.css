@@ -1,14 +1,28 @@
+
+/* ---------------------------------------------------------------------------------- */
+/* --------------------------------- PARTI COMUNI ----------------------------------- */
+
 html, body {
     margin: 0px;
     padding: 0px;
-    font-family: Verdana, Helvetica, sans-serif;
+    font-family: LFTEtica,Helvetica Neue,Helvetica,Arial,sans-serif;
     font-size:1em;
-    background-color: #e6d1b8;
+
+    background-color:#EFEFEF;
+    align-content: center;
+
+
 }
 
+body {
+    display: block;
+    max-width: 1024px;
+    margin:auto;
+    background-color: #FFFFFF;
 
+    
+}
 /* ------------------    HEADER   ------------------- */
-
 #header {
     background-color: #896859;
     min-height: 11em;
@@ -38,6 +52,16 @@ h1 {
 }
 
 .button {
+
+    margin:0.4em;
+    padding:0.3em;
+    border-style:groove;
+    border-width: 0.1em;
+    border-color: black;
+}
+
+#login {
+
     float:left;  
     background-color: #d4d3d3;
     border-style: solid;
@@ -49,8 +73,14 @@ h1 {
     width: 25%;
 }
 
+
+#signin {
+    float:left;
+}
+
 .button a:link {
     text-decoration-line: none;
+
 }
 
 /* --------------------- MENU HOME ----------------------*/
@@ -89,19 +119,247 @@ h1 {
 
 /* ----------------------- BREADCRUMB ----------------------*/
 
-#breadcrumb {
-    margin: 0 0 2em 0;
-    background-color: #f0e331; 
-    padding: 0.1em 2em;
+
+#bc{
+    margin: 5px;
+    padding-left: 0px;
+    list-style:none;
+    display: block;
+    height: 40px;
+
+}
+
+#bc .icon{
+    padding-top: 5px;
+}
+
+#bc li{
+    float:left;
+}
+
+#bc li a{
+  color:#FFF;
+  display:block;
+  background: #3498db;
+  text-decoration: none;
+  position:relative;
+  height: 40px;
+  line-height:40px;
+  padding: 0 10px 0 5px;
+  text-align: center;
+  margin-right: 23px;
+}
+
+/*cambia colore ai pari*/
+#bc li:nth-child(even) a{
+    background-color: #2980b9;
+}
+#bc li:nth-child(even) a:before{
+  border-color:#2980b9;
+  border-left-color:transparent;
+ } 
+#bc li:nth-child(even) a:after{
+  border-left-color: #2980b9;
+}
+
+/* Primo elemento diverso*/
+#bc li:first-child a{
+    padding-left:15px;
+    border-radius(4px 0 0 4px);
+}
+#bc li:first-child a:before{
+      border:none;
+}
+
+  
+
+#bc li a:before, #bc li a:after{
+    content: "";
+    position:absolute;
+    top: 0;
+    border:0 solid #3498db;
+    border-width:20px 10px;
+    width: 0;
+    height: 0;
+  }
+
+#bc li a:before{
+    left:-20px;
+    border-left-color:transparent;
+}
+
+#bc li a:after{
+    left:100%;
+    border-color:transparent;
+    border-left-color:#3498db;
+}
+
+/* cambio colore quando passo sopra*/
+#bc li a:hover{
+    background-color: #1abc9c;
+}       
+#bc li a:hover::before{
+  border-color:#1abc9c;
+  border-left-color:transparent;
+ }
+#bc li a:hover::after{
+  border-left-color:#1abc9c;
+}
+
+/* più scuro quando lo clicco*/
+#bc li a:active{
+    background-color: #16a085;
+}
+#bc li a:active::before{
+  border-color:#16a085;
+  border-left-color:transparent;
+}
+#bc li a:active::after{
+  border-left-color:#16a085;
 }
 
 
 /* ----------------------- MENU area personale ----------------------*/
-
-#areaPersonale {
+ 
+.container {
+    display: block;
+    width: 23%;
     float: left;
-    width: 14em;
-    height: 21em;
+
+    margin-left: 5px;
+
+}
+
+
+.mcd-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background: #FFF;
+  border-radius: 2px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  width: 100%;
+}
+
+.mcd-menu li a {
+  display: block;
+  text-decoration: none;
+  padding: 8px 15px;
+  color: #777;
+  height: 36px;
+  position: relative;
+  border-bottom: 1px solid #EEE;
+
+}
+
+.mcd-menu li a p {
+    display: inline-block;
+    text-transform: uppercase;
+    text-align:left;
+    padding-left:3px;
+}
+.mcd-menu li a .logo {
+  display: inline-block;
+}
+/* quando passo sopra un link si colora*/
+.mcd-menu li:hover > a {
+  color: #e67e22;
+}
+
+/* bordo nella pagina in cui sono*/
+.mcd-menu li #this {
+  position: relative;
+  color: #e67e22;
+  border:0;
+  /*border-top: 4px solid #e67e22;
+  border-bottom: 4px solid #e67e22;
+  margin-top: -4px;*/
+  box-shadow: 0 0 5px #DDD;
+  -moz-box-shadow: 0 0 5px #DDD;
+  -webkit-box-shadow: 0 0 5px #DDD;
+  border-left: 4px solid #e67e22;
+  border-right: 4px solid #e67e22;
+  margin: 0 -4px;
+
+}
+
+
+
+/* media queries per farlo responsive */
+@media only screen and (min-width: 980px) {
+    .mcd-menu {
+		margin-left:10px;
+	}
+}
+
+@media only screen and (min-width: 700px) and (max-width: 979px) {
+    .mcd-menu {
+		width: 100%;
+	}
+	.mcd-menu li a {
+		height:40px;
+	}
+	.mcd-menu li a p {
+		font-size: 12px;
+        display: block;
+        text-align: center;
+	}
+    .mcd-menu li a .logo {
+		display: block;
+        padding-left: 40%;
+	}
+    
+}
+
+@media only screen and (max-width: 699px) {
+	
+	.mcd-menu { 
+		width: 100%;
+        height:auto;
+	}
+	.mcd-menu li a { 
+		position: relative;
+		padding: 12px 16px;
+		height:20px;
+	}
+	.mcd-menu li a p { 
+		display:none;
+		font-weight:normal;
+		text-align:center;
+	}
+    .mcd-menu li a .logo {
+		display: block;
+        padding-left: 40%;
+	}
+    
+    .mcd-menu li:hover > a .logo {
+    display: none;
+    }
+	.mcd-menu li a:hover p,.mcd-menu li a:active p {
+		display:block;
+		font-size:10px;
+		padding:3px 0;
+		position:absolute;
+		bottom:0px;
+		left:0;
+		min-width:100%;
+		font-weight:normal;
+		text-align:center;
+	}
+}
+
+@media only screen and (max-width: 360px) {
+    .container{
+        width: 72px;
+    }
+    .mcd-menu li a .logo {
+		display: block;
+        padding-left: 20%;
+	}
+    .mcd-menu li:hover > a .logo {
+        display: none;
+    }
     
     
 }
@@ -111,20 +369,79 @@ h1 {
     padding-bottom: 1em;
     padding-top: 0.5em;
 
+
 }
 
 #areaPersonale a:link {
     text-decoration-line: none;
 }
 
+/* --------------------- FOOTER ----------------------*/
+
+#footer {
+    padding: 2em;
+    text-align: center;
+    font-size: 0.5em;
+}
+
+/* ---------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------- */
+
+.card {
+    margin: 25px auto; 
+    position: relative; 
+    width: 900px;
+  } 
+
+#fogli {
+	border: 0px solid #c4c6ca;
+	position: relative;
+	text-align: center;
+	text-shadow: 0 1px 0 #fff;
+
+}
+
+#fogli:after, #fogli:before {
+	border: 1px solid #c4c6ca;
+    background: #FFFFFF;
+	content: "";
+	display: block;
+	height: 100%;
+	left: -1px;
+	position: absolute;
+	width: 100%;
+
+}
+#fogli:after {
+	transform: rotate(2deg);
+	top: 0;
+    z-index: 2;
+}
+#fogli:before {
+	transform: rotate(-3deg);
+	top: 0;
+    z-index: 1;
+
+}
+
+#foglio {
+	background: #FFFFFF;
+	border: 1px solid #c4c6ca;
+	margin: 0 auto;
+	padding: 2em 1em 2em 1em;
+	position: relative;
+	text-align: center;
+	text-shadow: 0 1px 0 #fff;
+    z-index: 3;
+}
+
 /* ----------------------- CONTENUTO ----------------------*/
 
 #contenuto {
-    padding:0.5em;
-    margin-left:14.5em;
-    height:20em;
+    display:block;
     margin-right: 5px;
-    text-align: center;
+    padding-left: 28%;   
+
 }
 
 
@@ -155,13 +472,16 @@ h1 {
 
 #listannunci {
     margin-top: 1em;
-    margin-left: 20%;
-    margin-right: 20%;
+    margin-left: 10%;
+    margin-right: 10%;
     border-style: inset;
     border-color: darkslategrey;
-    border-width: 2px;
-    padding: 0.5em;
-   
+    border-width: 1px;
+    padding-bottom: 0.5em;
+    padding-top: 0.5em;
+    padding-left: 10%;
+    padding-right: 10%;
+
 }
 
 
@@ -170,16 +490,15 @@ h1 {
     padding:0.2em;
 }
 
-
+/*
 #annunci li {
-    margin:0.1em;
+    margin:1px;
     border-style:inset;
     border-color: black;
-    margin:0.5em;
     padding:0.2em;
 }
 
-
+*/
 /* --------------------- SIGN IN FORM ---------------------*/
 
 #form {
@@ -210,11 +529,14 @@ h1 {
 }
 
 
-/* --------------------- FOOTER ----------------------*/
 
-#footer {
-    padding: 2em;
-    text-align: center;
-    font-size: 0.5em;
+/* --------------------- SECTIONS ----------------------*/
+
+#section {
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align: justify;
+
+
 }
 

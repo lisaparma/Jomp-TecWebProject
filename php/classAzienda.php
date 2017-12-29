@@ -1,11 +1,12 @@
 <?php
 
 class Azienda {
-	private $id;
+	//private $id;
 	private $name;
 	private $pIva;
 	private $email;
 	private $city;
+	private $entry;
 	private $password;
 
 	public function __construct($login) {
@@ -14,6 +15,7 @@ class Azienda {
 		$this->pIva = $login['PIva'];
 		$this->email = $login['Email'];
 		$this->city = $login['Citta'];
+		$this->entry = $login['Iscrizione'];
 		$this->password = $login['Password'];
 	}
 
@@ -63,41 +65,34 @@ class Azienda {
 		return $this->city;
 	}
 
+	public function getDateEntry() {
+		return date('d/m/Y', strtotime(str_replace('-','/', $this->entry)));
+	}
+
 	public function getPassword() {
 		return $this->password;
 	}
 
-	//funzioni di verifica di specifichi campi dati
-	function checkName($Name) {
-	    $result = mysqli_query(openDB(),"SELECT Nome FROM Aziende WHERE Nome='".$Name."'");
-
-	    $num_rows = mysqli_num_rows($result);
-
-	    if($num_rows == 0) {
-	        return true;
-	    }
-	    return false;
+	public function getAdsNumber() {
+		$result = mysqli_query(openDB(),"SELECT * FROM Annunci WHERE Azienda='".$this->name."'");
+		return mysqli_num_rows($result);
 	}
 
-
-	function checkPIva($PIva) {
-	    $result = mysqli_query(openDB(),"SELECT PIva FROM Aziende WHERE PIva='".$PIva."'");
-
-	    $num_rows = mysqli_num_rows($result);
-
-	    if($num_rows == 0) {
-	        return true;
-	    }
-	    return false;   
+	public function getDateLastAd() {
+		$result = mysqli_query(openDB(),"SELECT Data FROM Annunci WHERE Azienda='".$this->name."' ORDER BY Data DESC LIMIT 1");
+		$row = $result->fetch_assoc();
+		return date('d/m/Y', strtotime(str_replace('-','/', $row['Data'])));
 	}
 
-
-	function checkRepeatPassword($Password, $RipPassword) {
-	    if($Password == $RipPassword) {
-	        return true;
-	    }
-	    return false;
+	public function getFollowedAdsNumber() {
+		$result = mysqli_query(openDB(),"SELECT * FROM Consultazioni JOIN Annunci ON Consultazioni.CodAnnuncio=Annunci.Codice WHERE Azienda='".$this->name."'");
+		return mysqli_num_rows($result);  
 	}
+
+	/*public function getDateTimeAd() {
+		return date('d/m/Y', strtotime(str_replace('-','/',':', $this)));
+	}*/
+
 }
 
 ?>

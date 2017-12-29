@@ -48,12 +48,12 @@ if(isset($_POST['submit'])) {
             $company = $_SESSION['login'];
 
             $title = $_POST['Title'];
-            $id = $_POST['Type'];
+            $type = $_POST['Type'];
 
             $description = $_POST['Description'];
             $name = $company->getName();
 
-    	    $ad = "INSERT INTO Annunci(Titolo, Azienda, Tipologia, Descrizione) VALUES ('$title', '$name', '$id', '$description')";
+    	    $ad = "INSERT INTO Annunci(Titolo, Azienda, Tipologia, Descrizione) VALUES ('$title', '$name', '$type', '$description')";
 
     		if (mysqli_query(openDB(), $ad)) {
 				header("location: AzResocontoAnnunci.php");

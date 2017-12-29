@@ -1,49 +1,77 @@
 <?php
 
 function breadcrumb($page) {
-	if($page == 'Modifica annuncio') {
-		echo "<div id='breadcrumb'>
-	        <p> Ti trovi in: <span xml:lang='en'> <a href='home.php'>  Home</a> >> <a href='AzResocontoAnnunci.php'> Resoconto Annunci</a> >> $page </span> </p>
-	    </div> ";
-	}
-	else {
-		echo "<div id='breadcrumb'>
-		        <p> Ti trovi in: <span xml:lang='en'> <a href='home.php'>  Home</a> >> $page </span> </p>
-		    </div> " ;
-	}
+	echo "<ul id='bc'>
+          <li><a href='home.php'> <img class='icon' src='../IMG/home.svg'></img> </a></li>
+          <li><a><span class='icon'> </span> Area personale </a></li>
+          <li><a><span class='icon'> </span> $page</a></li>
+        </ul>";
 }
 
 
 function menu($page) {
-	echo"<div id='areaPersonale'>
-	        <ul>
+	echo"<div class='container'>
+	        <ul class='mcd-menu'>
 	            <li> "; 
-	            if($page === 'Dashboard') { 
-        			echo "Dashboard </li>";
-        		} else { 
-        			echo "<a href='AzDashboard.php'> Dashboard </a></li>"; 
-        		} 
-        		echo "<li>"; 
-        		if($page === "Pubblica annuncio") { 
-        			echo "Pubblica annuncio</li>";
-        		} else { 
-        			echo "<a href='AzPubblicaAnnuncio.php'>Pubblica annuncio</a></li>"; 
-        		} 
-        		echo "<li>"; 
-        		if($page === "Resoconto annunci") { 
-        			echo "Recosonto annunci</li>";
-        		} else { 
-        			echo "<a href='AzResocontoAnnunci.php'>Resoconto annunci</a></li>"; 
-        		} echo "<li>";
-        		if($page === "Modifica dati") { 
-        			echo "Modifica dati</li>";
-        		} else { 
-        			echo "<a href='AzModificaDati.php'>Modifica dati</a></li> "; 
-        		} 
-        		echo "
-	        </ul>
+                if($page === 'Dashboard') 
+                       echo "<a id='this'> 
+                                <img class='logo' src='../IMG/dashboard.svg'>
+					           <p>Dashboard</p>
+                            </a>
+                       </li>"; 
+                   else 
+                       echo "<a href='AzDashboard.php'>
+                                <img class='logo' src='../IMG/dashboard.svg'>
+					           <p>Dashboard</p>
+                            </a>
+                       </li>"; 
+    
+	            echo"<li>";
+                if($page === 'Pubblica annuncio') 
+                       echo "<a id='this'> 
+                            <img class='logo' src='../IMG/annunci.svg'>
+					           <p>Pubblica annuncio</p>
+                            </a>
+                       </li>"; 
+                   else 
+                       echo "<a href='AzPubblicaAnnuncio.php'> 
+                                <img class='logo' src='../IMG/annunci.svg'>
+					           <p>Pubblica annuncio</p>
+                            </a>
+                       </li>"; 
+    
+	            echo "<li>";
+                if($page === 'Resoconto annunci') 
+                       echo "<a id='this'> 
+                                <img class='logo' src='../IMG/list.svg'>
+					           <p>Resoconto annunci</p>
+                            </a>
+                       </li>"; 
+                   else 
+                       echo "<a href='AzResocontoAnnunci.php'> 
+                                <img class='logo' src='../IMG/list.svg'>
+					           <p>Resoconti annunci</p>
+                            </a>
+                       </li>"; 
+   
+	            echo "<li>";
+                if($page === 'Modifica dati') 
+                       echo "<a id='this'> 
+                                <img class='logo' src='../IMG/edit.svg'>
+					           <p>Modifica dati</p>
+                            </a>
+                       </li>"; 
+                   else 
+                       echo "<a href='AzModificaDati.php'> 
+                                <img class='logo' src='../IMG/edit.svg'>
+					           <p>Modifica Dati</p>
+                            </a>
+                       </li>"; 
+	            echo "
+                    </ul>
 	    </div>";
 }
+    
 
 
 //usata sia del form per pubblicare annunci sia dal form per modificare uno specifico annuncio
@@ -68,6 +96,38 @@ function printWorkType($id) {
 	echo "ciao";
     echo "</select>";
 }
+
+  //funzioni di verifica di specifici campi dati
+  function checkName($Name) {
+      $result = mysqli_query(openDB(),"SELECT Nome FROM Aziende WHERE Nome='".$Name."'");
+
+      $num_rows = mysqli_num_rows($result);
+
+      if($num_rows == 0) {
+          return true;
+      }
+      return false;
+  }
+
+
+  function checkPIva($PIva) {
+      $result = mysqli_query(openDB(),"SELECT PIva FROM Aziende WHERE PIva='".$PIva."'");
+
+      $num_rows = mysqli_num_rows($result);
+
+      if($num_rows == 0) {
+          return true;
+      }
+      return false;   
+  }
+
+
+  function checkRepeatPassword($Password, $RipPassword) {
+      if($Password == $RipPassword) {
+          return true;
+      }
+      return false;
+  }
 
 
 ?>

@@ -2,40 +2,73 @@
 
 function breadcrumb($page)
 {
-	echo "<div id='breadcrumb'>
-	        <p>Ti trovi in: <span xml:lang='en'><a href='home.php'>Home</a> >>$page</span></p>
-	    </div>";
+	echo "<ul id='bc'>
+          <li><a href='home.php'> <img class='icon' src='../IMG/home.svg'></img> </a></li>
+          <li><a><span class='icon'> </span> Area personale </a></li>
+          <li><a><span class='icon'> </span> $page</a></li>
+        </ul>";
 }
 
 
 function menu($page)
 {
-	echo"<div id='areaPersonale'>
-	        <ul>
-	            <li>"; 
-	            if($page === 'Dashboard') { 
-	            	echo "Dashboard</li>";
-	            } else { 
-	            	echo "<a href='UtDashboard.php'>Dashboard</a></li>"; 
-	            } 
+	echo"<div class='container'>
+	        <ul class='mcd-menu'>
+	            <li>";
+                if($page === 'Dashboard') 
+                       echo "<a id='this'> 
+                                <img class='logo' src='../IMG/dashboard.svg'>
+					           <p>Dashboard</p>
+                            </a>
+                       </li>"; 
+                   else 
+                       echo "<a href='UtDashboard.php'>
+                                <img class='logo' src='../IMG/dashboard.svg'>
+					           <p>Dashboard</p>
+                            </a>
+                       </li>"; 
+    
 	            echo"<li>";
-	           	if($page === 'Cerca annuncio') { 
-	            	echo "Cerca annuncio</li>";
-	            } else { 
-	            	echo "<a href='UtCercaAnnuncio.php'>Cerca annuncio</a></li>"; 
-	            }
+                if($page === 'Cerca annuncio') 
+                       echo "<a id='this'> 
+                            <img class='logo' src='../IMG/cerca.svg'>
+					           <p>Cerca annuncio</p>
+                            </a>
+                       </li>"; 
+                   else 
+                       echo "<a href='UtCercaAnnuncio.php'> 
+                                <img class='logo' src='../IMG/cerca.svg'>
+					           <p>Cerca annuncio</p>
+                            </a>
+                       </li>"; 
+    
 	            echo "<li>";
-	            if($page === 'Annunci salvati') { 
-	            	echo "Annunci salvati</li>";
-	            } else { 
-	            	echo "<a href='UtAnnunciSalvati.php'>Annunci salvati</a></li>"; 
-	            } 
+                if($page === 'Annunci salvati') 
+                       echo "<a id='this'> 
+                                <img class='logo' src='../IMG/like.svg'>
+					           <p>Annunci salvati</p>
+                            </a>
+                       </li>"; 
+                   else 
+                       echo "<a href='UtAnnunciSalvati.php'> 
+                                <img class='logo' src='../IMG/like.svg'>
+					           <p>Annunci salvati</p>
+                            </a>
+                       </li>"; 
+   
 	            echo "<li>";
-	            if($page === 'Modifica dati') { 
-	            	echo "Modifica dati</li>";
-	            } else { 
-	            	echo "<a href='UtModificaDati.php'>Modifica dati</a></li>"; 
-	            } 
+                if($page === 'Modifica dati') 
+                       echo "<a id='this'> 
+                                <img class='logo' src='../IMG/edit.svg'>
+					           <p>Modifica dati</p>
+                            </a>
+                       </li>"; 
+                   else 
+                       echo "<a href='UtModificaDati.php'> 
+                                <img class='logo' src='../IMG/edit.svg'>
+					           <p>Modifica Dati</p>
+                            </a>
+                       </li>"; 
 	            echo "
 	        </ul>
 	    </div>";
@@ -50,13 +83,19 @@ function printAd($result, $username, $page){
                     $like="Salvato";
                 else 
                     $like="Salva";
-                echo "<li><h3>".$row['Titolo']."</h3>
-                        <p>Pubblicato il: ".$row['Data']."</p>
-                        <p>Descrizione:<br/><p>".$row['Descrizione']."</p>
-                        <form method='post' action=$page>
-                            <button type='submit' name='$like' value='$id'>$like</button>
-                        </form>
-                    </li>";
+                echo "</br></br>
+                    <li id='fogli'>
+                        <div id='foglio'>
+                            <h3>".$row['Titolo']."</h3>
+                            <p>Pubblicato il: ".$row['Data']."</p>
+                            <p>Descrizione:<br/><p>".$row['Descrizione']."</p>
+                            <form method='post' action=$page>
+                                <button type='submit' name='$like' value='$id'>$like</button>
+                            </form>
+                        </div>
+                    </li>
+                    </br>
+                    </br>";
             }	
 }
 function liked($username, $ad) {

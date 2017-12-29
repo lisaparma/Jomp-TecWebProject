@@ -21,7 +21,7 @@ menu($page);
 
 
 # ------------------------------------------------------
-
+echo"<div id='contenuto'>";
 if(isset($_POST['update'])) {
 	$ad = $_POST['update']; 
 	$newTitle = $_POST['Title'];
@@ -75,7 +75,7 @@ if(isset($_SESSION['login'])) {
 	}
 }
 
-
+echo"</div>";
 
 # ------------------------------------------------------
 
