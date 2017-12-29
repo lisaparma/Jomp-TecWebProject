@@ -83,7 +83,8 @@ function printAd($result, $username, $page){
                     $like="Salvato";
                 else 
                     $like="Salva";
-                echo "<li id='fogli'>
+                echo "</br></br>
+                    <li id='fogli'>
                         <div id='foglio'>
                             <h3>".$row['Titolo']."</h3>
                             <p>Pubblicato il: ".$row['Data']."</p>
