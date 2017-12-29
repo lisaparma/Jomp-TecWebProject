@@ -22,7 +22,7 @@ function search() {
 	echo "<div id='ricerca'> 
 	        <form action='home.php' method='post'>
 	            <fieldset id='fieldset'>
-	                <legend>  Ricerca:</legend>
+					<h2> Ricerca offerte </h2>
 
 	                <div id='titolo'> 
 	                    <label for='titolo'>Titolo:<br/></label>
