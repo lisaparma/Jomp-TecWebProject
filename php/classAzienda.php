@@ -79,6 +79,9 @@ class Azienda {
 	}
 
 	public function getDateLastAd() {
+		if($this->getAdsNumber() == 0) {
+			return 'Nessun annuncio ancora publicato';
+		}		
 		$result = mysqli_query(openDB(),"SELECT Data FROM Annunci WHERE Azienda='".$this->name."' ORDER BY Data DESC LIMIT 1");
 		$row = $result->fetch_assoc();
 		return date('d/m/Y', strtotime(str_replace('-','/', $row['Data'])));
