@@ -8,7 +8,7 @@ html, body {
     font-size:1em;
     background-color:#EFEFEF;
     align-content: center;
-    
+
 }
 
 body {
@@ -16,6 +16,7 @@ body {
     max-width: 1024px;
     margin:auto;
     background-color: #FFFFFF;
+
     
 }
 /* ------------------    HEADER   ------------------- */
@@ -341,16 +342,53 @@ h1 {
 /* ---------------------------------------------------------------------------------- */
 /* ---------------------------------------------------------------------------------- */
 
-#card {
-  background:transparent;
-  left:0;
-  right:0;
-  margin:auto;
-  top:0;
-  bottom:0;
-  box-shadow: 0px 10px 20px 1px rgba(0, 0, 0, 0.55);
-    border-width: 1px;
+.card {
+    margin: 25px auto; 
+    position: relative; 
+    width: 900px;
   } 
+
+#fogli {
+	border: 0px solid #c4c6ca;
+	position: relative;
+	text-align: center;
+	text-shadow: 0 1px 0 #fff;
+
+}
+
+#fogli:after, #fogli:before {
+	border: 1px solid #c4c6ca;
+    background: #FFFFFF;
+	content: "";
+	display: block;
+	height: 100%;
+	left: -1px;
+	position: absolute;
+	width: 100%;
+
+}
+#fogli:after {
+	transform: rotate(2deg);
+	top: 0;
+    z-index: 2;
+}
+#fogli:before {
+	transform: rotate(-3deg);
+	top: 0;
+    z-index: 1;
+
+}
+
+#foglio {
+	background: #FFFFFF;
+	border: 1px solid #c4c6ca;
+	margin: 0 auto;
+	padding: 2em 1em 2em 1em;
+	position: relative;
+	text-align: center;
+	text-shadow: 0 1px 0 #fff;
+    z-index: 3;
+}
 
 /* ----------------------- CONTENUTO ----------------------*/
 
@@ -399,7 +437,7 @@ h1 {
     padding:0.2em;
 }
 
-
+/*
 #annunci li {
     margin:1px;
     border-style:inset;
@@ -407,7 +445,7 @@ h1 {
     padding:0.2em;
 }
 
-
+*/
 /* --------------------- SIGN IN FORM ---------------------*/
 
 #form {

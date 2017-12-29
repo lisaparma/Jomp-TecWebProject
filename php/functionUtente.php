@@ -83,14 +83,18 @@ function printAd($result, $username, $page){
                     $like="Salvato";
                 else 
                     $like="Salva";
-                echo "<li id='card'><h3>".$row['Titolo']."</h3>
-                        <p>Pubblicato il: ".$row['Data']."</p>
-                        <p>Descrizione:<br/><p>".$row['Descrizione']."</p>
-                        <form method='post' action=$page>
-                            <button type='submit' name='$like' value='$id'>$like</button>
-                        </form>
+                echo "<li id='fogli'>
+                        <div id='foglio'>
+                            <h3>".$row['Titolo']."</h3>
+                            <p>Pubblicato il: ".$row['Data']."</p>
+                            <p>Descrizione:<br/><p>".$row['Descrizione']."</p>
+                            <form method='post' action=$page>
+                                <button type='submit' name='$like' value='$id'>$like</button>
+                            </form>
+                        </div>
                     </li>
-                    </br></br>";
+                    </br>
+                    </br>";
             }	
 }
 function liked($username, $ad) {
