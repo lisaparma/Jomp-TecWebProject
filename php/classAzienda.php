@@ -1,7 +1,7 @@
 <?php
 
 class Azienda {
-	private $id;
+	//private $id;
 	private $name;
 	private $pIva;
 	private $email;
@@ -93,38 +93,6 @@ class Azienda {
 		return date('d/m/Y', strtotime(str_replace('-','/',':', $this)));
 	}*/
 
-
-	//funzioni di verifica di specifichi campi dati
-	public function checkName($Name) {
-	    $result = mysqli_query(openDB(),"SELECT Nome FROM Aziende WHERE Nome='".$Name."'");
-
-	    $num_rows = mysqli_num_rows($result);
-
-	    if($num_rows == 0) {
-	        return true;
-	    }
-	    return false;
-	}
-
-
-	public function checkPIva($PIva) {
-	    $result = mysqli_query(openDB(),"SELECT PIva FROM Aziende WHERE PIva='".$PIva."'");
-
-	    $num_rows = mysqli_num_rows($result);
-
-	    if($num_rows == 0) {
-	        return true;
-	    }
-	    return false;   
-	}
-
-
-	public function checkRepeatPassword($Password, $RipPassword) {
-	    if($Password == $RipPassword) {
-	        return true;
-	    }
-	    return false;
-	}
 }
 
 ?>

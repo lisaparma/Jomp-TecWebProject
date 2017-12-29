@@ -6,6 +6,7 @@ require_once("functionHome.php");
 require_once("connect.php");
 require_once("functionAzienda.php");
 
+
 $title = "Registrazione Azienda - Jomp";
 head($title);
 
