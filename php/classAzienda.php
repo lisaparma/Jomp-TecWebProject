@@ -1,7 +1,7 @@
 <?php
 
 class Azienda {
-	//private $id;
+	private $id;
 	private $name;
 	private $pIva;
 	private $email;
