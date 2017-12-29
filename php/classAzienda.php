@@ -89,6 +89,10 @@ class Azienda {
 		return mysqli_num_rows($result);  
 	}
 
+	/*public function getDateTimeAd() {
+		return date('d/m/Y', strtotime(str_replace('-','/',':', $this)));
+	}*/
+
 
 	//funzioni di verifica di specifichi campi dati
 	public function checkName($Name) {
