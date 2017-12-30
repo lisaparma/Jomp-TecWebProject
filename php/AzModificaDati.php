@@ -46,7 +46,7 @@ try {
 				echo "Nome azienda già in uso.<br/>";
 				$check = false;
 			}
-			if($newPIva != $pIva && checkPIva($newPIva)) {
+			if($newPIva != $pIva && !checkPIva($newPIva)) {
 				echo "Partita iva già presente nel database";
 				$check = false;
 			}

@@ -2,19 +2,18 @@
 
 function menuHome() {
 	echo "<ul id='menu'>
-	        <li> <a href='sectionChiSiamo.php'> Chi siamo </a> </li>";
+	        <li><a href='sectionChiSiamo.php'> Chi siamo </a></li>";
     if(isset($_SESSION['login'])) {
         if(get_class($_SESSION['login'])=='Utente')
-	        echo "<li> <a href='UtDashboard.php'> Area personale </a> </li>";
+	        echo "<li><a href='UtDashboard.php'> Area personale </a></li>";
         else
-            echo "<li> <a href='AzDashboard.php'> Area personale </a> </li>";
+            echo "<li><a href='AzDashboard.php'> Area personale </a></li>";
     }
     else
-        echo "<li> <a href='login.php'> Login </a> </li>";
-    echo "
-	        <li> <a href=''> Aziende partner </a> </li>
-	        <li> <a href=''> Aree professionali </a> </li>
-	     </ul>" ;
+        echo "<li><a href='login.php'> Login </a></li>
+	           <li><a href='sectionAziendePartner.php'> Aziende partner </a></li>
+	           <li><a href=''> Aree professionali </a></li>
+	           </ul>" ;
 }
 
 
