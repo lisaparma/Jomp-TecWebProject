@@ -32,6 +32,7 @@ Email char(255) NOT NULL,
 Citta char(20) NOT NULL,
 Iscrizione timestamp DEFAULT CURRENT_TIMESTAMP,
 Password char(20) NOT NULL,
+Descrizione text(300) NOT NULL,
 PRIMARY KEY (Codice, Nome)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -42,7 +43,7 @@ Azienda char(100) NOT NULL,
 Titolo char(100) NOT NULL,
 Tipologia int(10) NOT NULL,
 Data timestamp DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-Descrizione text(300) NOT NULL,
+Descrizione text(900) NOT NULL,
 PRIMARY KEY (Codice),
 FOREIGN KEY (Tipologia) REFERENCES Tipo(CodLavoro) ON DELETE CASCADE ON UPDATE CASCADE
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;

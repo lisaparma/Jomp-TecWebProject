@@ -503,8 +503,8 @@ h1 {
 
 #form {
     margin-top: 1em;
-    margin-left: 30%;
-    margin-right: 30%;
+    margin-left: 20%;
+    margin-right: 20%;
     border-style: inset;
     border-color: darkslategrey;
     border-width: 2px;
@@ -515,6 +515,10 @@ h1 {
     text-align: center;
     font-size: 1.5em;
 
+}
+
+.label {
+  padding: 8px;
 }
 
 

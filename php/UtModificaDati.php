@@ -107,7 +107,7 @@ if(isset($_SESSION['login'])){
                 $user->setEmail($newEmail);
                 $user->setUsername($newUsername);
                 $user->setPassword($newPassword);
-                $user->setPassword($newSex);
+                $user->setSex($newSex);
                 
                 header("location: UtModificaDati.php");
             }

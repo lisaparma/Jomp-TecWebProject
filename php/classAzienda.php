@@ -8,6 +8,7 @@ class Azienda {
 	private $city;
 	private $entry;
 	private $password;
+	private $description;
 
 	public function __construct($login) {
 		$this->id = $login['Codice'];
@@ -17,6 +18,7 @@ class Azienda {
 		$this->city = $login['Citta'];
 		$this->entry = $login['Iscrizione'];
 		$this->password = $login['Password'];
+		$this->description = $login['Descrizione'];
 	}
 
 	//funzioni set
@@ -42,6 +44,10 @@ class Azienda {
 
 	public function setPassword($newPassword) {
 		$this->password = $newPassword;
+	}
+
+	public function setDescription($newDescription) {
+		$this->description = $newDescription;
 	}
 
 	//funzioni get
@@ -73,6 +79,10 @@ class Azienda {
 		return $this->password;
 	}
 
+	public function getDescription() {
+		return $this->description;	
+	}
+
 	public function getAdsNumber() {
 		$result = mysqli_query(openDB(),"SELECT * FROM Annunci WHERE Azienda='".$this->name."'");
 		return mysqli_num_rows($result);
@@ -91,10 +101,6 @@ class Azienda {
 		$result = mysqli_query(openDB(),"SELECT * FROM Consultazioni JOIN Annunci ON Consultazioni.CodAnnuncio=Annunci.Codice WHERE Azienda='".$this->name."'");
 		return mysqli_num_rows($result);  
 	}
-
-	/*public function getDateTimeAd() {
-		return date('d/m/Y', strtotime(str_replace('-','/',':', $this)));
-	}*/
 
 }
 

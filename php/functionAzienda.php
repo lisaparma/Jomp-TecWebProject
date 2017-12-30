@@ -99,7 +99,7 @@ function printWorkType($id) {
 
   //funzioni di verifica di specifici campi dati
   function checkName($Name) {
-      $result = mysqli_query(openDB(),"SELECT Nome FROM Aziende WHERE Nome='".$Name."'");
+      $result = mysqli_query(openDB(),"SELECT Codice FROM Aziende WHERE Nome='".$Name."'");
 
       $num_rows = mysqli_num_rows($result);
 
@@ -111,7 +111,7 @@ function printWorkType($id) {
 
 
   function checkPIva($PIva) {
-      $result = mysqli_query(openDB(),"SELECT PIva FROM Aziende WHERE PIva='".$PIva."'");
+      $result = mysqli_query(openDB(),"SELECT Codice FROM Aziende WHERE PIva='".$PIva."'");
 
       $num_rows = mysqli_num_rows($result);
 
