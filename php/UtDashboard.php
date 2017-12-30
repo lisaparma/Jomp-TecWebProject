@@ -38,8 +38,8 @@ if(isset($_SESSION['login'])){ // Solo se in sessione vedi questo
                     echo "uomo";
     
     echo"  <h4> Ricerche salvate:</h4>
-                <p> Numero ricerche salvate:".$user->getNumLike()."</p>
-                <p> La città in cui cerchi più lavoro è ".$user->getPrefCity()." con ".$user->getNumLikePrefCity()." annunci salvati.</p>
+                <p> Numero ricerche salvate: ".$user->getNumLike()."</br>
+                La città in cui cerchi più lavoro è ".$user->getPrefCity()." con ".$user->getNumLikePrefCity()." annunci salvati.</p>
                 
     ";
     
