@@ -8,7 +8,7 @@ require_once("classUtente.php");
 require_once("classAzienda.php");
 session_start();
 
-$title = "Home - Jomp";
+$title = "Chi siamo - Jomp";
 head($title);
 
 echo "<body>";
@@ -16,6 +16,9 @@ echo "<body>";
 headers();
 
 menuHome();
+
+$page='Chi siamo';
+breadcrumb(array($page));
 
 echo "<div id='section'><h2>Chi siamo</h2>
 		<p><strong>Jomp</strong> è un sito di annunci gratuito e aperto a tutti. Tutte le aziende del territorio italiano

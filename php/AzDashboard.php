@@ -15,7 +15,7 @@ echo "<body>";
 headers();
 
 $page = "Dashboard";
-breadcrumb($page);
+breadcrumb(array('Area Personale', $page));
 
 menu($page);
 

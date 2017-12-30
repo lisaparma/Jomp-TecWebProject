@@ -1,17 +1,9 @@
 <?php
 
-function breadcrumb($page) {
-	echo "<ul id='bc'>
-          <li><a href='home.php'> <img class='icon' src='../IMG/home.svg'></img> </a></li>
-          <li><a><span class='icon'> </span> Area personale </a></li>
-          <li><a><span class='icon'> </span> $page</a></li>
-        </ul>";
-}
-
 
 function menu($page) {
-	echo"<div class='container'>
-	        <ul class='mcd-menu'>
+	echo"<div class='container-menu'>
+	        <ul class='ap-menu'>
 	            <li> "; 
                 if($page === 'Dashboard') 
                        echo "<a id='this'> 

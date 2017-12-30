@@ -8,7 +8,7 @@ require_once("classAzienda.php");
 
 session_start();
 
-$title = "Home - Jomp";
+$title = "Aziende partner - Jomp";
 head($title);
 
 echo "<body>";
@@ -16,6 +16,9 @@ echo "<body>";
 headers();
 
 menuHome();
+
+$page='Aziende partner';
+breadcrumb(array($page));
 
 function getCompany() {
 	$result = mysqli_query(openDB(), "SELECT Nome, Citta, Email, Descrizione FROM Aziende ORDER BY Nome ASC");

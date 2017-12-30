@@ -25,8 +25,6 @@ function head($title) {
 }
 
 
-
-
 function headers() {
 	echo "<div id='header'>";
 	if(!isset($_SESSION['login'])) {
@@ -37,7 +35,7 @@ function headers() {
 	}
 	else {
 		echo " 	<div id='box'>
-			            <p class='button' id='esci'><a href='logout.php'>Log out</a></p>
+			            <p class='button' id='logout'><a href='logout.php'>Log out</a></p>
 			        </div>";
 	}
 	echo "		<a href='home.php'>
@@ -49,9 +47,15 @@ function headers() {
 	    </div>";
 }
 
-
-
-
+function breadcrumb($pages){
+    echo "<ul id='bc'>
+            <li><a href='home.php'> <img class='icon' src='../IMG/home.svg'></img> </a></li>";
+    for ($i = 0, $n = count($pages) ; $i < $n ; $i++)
+    {
+        echo "<li><a><span class='icon'> </span> $pages[$i]</a></li>";
+    }
+    echo "</ul>";
+}
 
 function footer() {
 	echo "<div id='footer'> 

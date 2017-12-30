@@ -17,7 +17,7 @@ echo "<body>";
 headers();
 
 $page = "Pubblica annuncio";
-breadcrumb($page);
+breadcrumb(array('Area Personale', $page));
 
 menu($page);
 

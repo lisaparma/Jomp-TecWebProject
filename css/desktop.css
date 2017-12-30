@@ -1,17 +1,14 @@
 
-/* ---------------------------------------------------------------------------------- */
-/* --------------------------------- PARTI COMUNI ----------------------------------- */
+/* ---------------------------------------------------------------------------------------------- */
+/* --------------------------------------- PARTI COMUNI ----------------------------------------- */
 
 html, body {
     margin: 0px;
     padding: 0px;
     font-family: LFTEtica,Helvetica Neue,Helvetica,Arial,sans-serif;
     font-size:1em;
-
     background-color:#EFEFEF;
     align-content: center;
-
-
 }
 
 body {
@@ -19,10 +16,10 @@ body {
     max-width: 1024px;
     margin:auto;
     background-color: #FFFFFF;
-
-    
 }
+
 /* ------------------    HEADER   ------------------- */
+
 #header {
     background-color: #896859;
     min-height: 11em;
@@ -48,11 +45,10 @@ h1 {
     float: right;
     align-content: center;
     font-size: 0.8em;
-    padding-left: 5em
+    padding-left: 5em;
 }
 
 .button {
-
     margin:0.4em;
     padding:0.3em;
     border-style:groove;
@@ -60,9 +56,8 @@ h1 {
     border-color: black;
 }
 
-#login {
-
-    float:left;  
+#login, #signin, #logout {
+    display: inline-block;
     background-color: #d4d3d3;
     border-style: solid;
     border-width: 2px;
@@ -70,12 +65,18 @@ h1 {
     border-radius: 10px;
     padding: 1em;
     margin: 1em;
-    width: 25%;
 }
 
 
 #signin {
-    float:left;
+    display: inline-block;
+    background-color: #d4d3d3;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #708090;
+    border-radius: 10px;
+    padding: 1em;
+    margin: 1em;
 }
 
 .button a:link {
@@ -119,14 +120,12 @@ h1 {
 
 /* ----------------------- BREADCRUMB ----------------------*/
 
-
 #bc{
     margin: 5px;
     padding-left: 0px;
     list-style:none;
     display: block;
     height: 40px;
-
 }
 
 #bc .icon{
@@ -181,7 +180,7 @@ h1 {
     border-width:20px 10px;
     width: 0;
     height: 0;
-  }
+}
 
 #bc li a:before{
     left:-20px;
@@ -221,9 +220,9 @@ h1 {
 
 /* ----------------------- MENU area personale ----------------------*/
  
-.container {
+.container-menu {
     display: block;
-    width: 23%;
+    width: 24%;
     float: left;
 
     margin-left: 5px;
@@ -231,7 +230,7 @@ h1 {
 }
 
 
-.mcd-menu {
+.ap-menu {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -242,7 +241,7 @@ h1 {
   width: 100%;
 }
 
-.mcd-menu li a {
+.ap-menu li a {
   display: block;
   text-decoration: none;
   padding: 8px 15px;
@@ -253,22 +252,22 @@ h1 {
 
 }
 
-.mcd-menu li a p {
+.ap-menu li a p {
     display: inline-block;
     text-transform: uppercase;
     text-align:left;
     padding-left:3px;
 }
-.mcd-menu li a .logo {
+.ap-menu li a .logo {
   display: inline-block;
 }
 /* quando passo sopra un link si colora*/
-.mcd-menu li:hover > a {
+.ap-menu li:hover > a {
   color: #e67e22;
 }
 
 /* bordo nella pagina in cui sono*/
-.mcd-menu li #this {
+.ap-menu li #this {
   position: relative;
   color: #e67e22;
   border:0;
@@ -285,27 +284,26 @@ h1 {
 }
 
 
-
 /* media queries per farlo responsive */
 @media only screen and (min-width: 980px) {
-    .mcd-menu {
+    .ap-menu {
 		margin-left:10px;
 	}
 }
 
 @media only screen and (min-width: 700px) and (max-width: 979px) {
-    .mcd-menu {
+    .ap-menu {
 		width: 100%;
 	}
-	.mcd-menu li a {
+	.ap-menu li a {
 		height:40px;
 	}
-	.mcd-menu li a p {
+	.ap-menu li a p {
 		font-size: 12px;
         display: block;
         text-align: center;
 	}
-    .mcd-menu li a .logo {
+    .ap-menu li a .logo {
 		display: block;
         padding-left: 40%;
 	}
@@ -314,29 +312,29 @@ h1 {
 
 @media only screen and (max-width: 699px) {
 	
-	.mcd-menu { 
+	.ap-menu { 
 		width: 100%;
         height:auto;
 	}
-	.mcd-menu li a { 
+	.ap-menu li a { 
 		position: relative;
 		padding: 12px 16px;
 		height:20px;
 	}
-	.mcd-menu li a p { 
+	.ap-menu li a p { 
 		display:none;
 		font-weight:normal;
 		text-align:center;
 	}
-    .mcd-menu li a .logo {
+    .ap-menu li a .logo {
 		display: block;
         padding-left: 40%;
 	}
     
-    .mcd-menu li:hover > a .logo {
+    .ap-menu li:hover > a .logo {
     display: none;
     }
-	.mcd-menu li a:hover p,.mcd-menu li a:active p {
+	.ap-menu li a:hover p,.mcd-menu li a:active p {
 		display:block;
 		font-size:10px;
 		padding:3px 0;
@@ -350,31 +348,20 @@ h1 {
 }
 
 @media only screen and (max-width: 360px) {
-    .container{
+    .container-menu{
         width: 72px;
     }
-    .mcd-menu li a .logo {
+    .ap-menu li a .logo {
 		display: block;
         padding-left: 20%;
 	}
-    .mcd-menu li:hover > a .logo {
+    .ap-menu li:hover > a .logo {
         display: none;
     }
     
     
 }
-#areaPersonale li{
-    list-style-image: url(../IMG/arrow.svg);
-    position: sticky;
-    padding-bottom: 1em;
-    padding-top: 0.5em;
 
-
-}
-
-#areaPersonale a:link {
-    text-decoration-line: none;
-}
 
 /* --------------------- FOOTER ----------------------*/
 
@@ -384,21 +371,47 @@ h1 {
     font-size: 0.5em;
 }
 
-/* ---------------------------------------------------------------------------------- */
-/* ---------------------------------------------------------------------------------- */
 
+/* --------------------------------------------------------------------------------------------------------- */
+/* -------------------------------------- CONTENUTO pagine Utente e Azienda ---------------------------------*/
+
+#contenuto {
+    display:block;
+    margin-right: 5px;
+    padding-left: 28%;   
+}
+
+/* -------------- ELENCO ANNUNCI - home.php / UtCercaAnnunci.php / UtAnnunciSalvati.php -----------------*/
+
+#listannunci {
+    margin-top: 1em;
+    margin-left: 10%;
+    margin-right: 10%;
+    border-style: inset;
+    border-color: darkslategrey;
+    border-width: 1px;
+    padding-bottom: 0.5em;
+    padding-top: 0.5em;
+    padding-left: 10%;
+    padding-right: 10%;
+
+}
+
+#annunci {
+    list-style: none;
+    padding:0.2em;
+}
 .card {
     margin: 25px auto; 
     position: relative; 
     width: 900px;
-  } 
+} 
 
 #fogli {
 	border: 0px solid #c4c6ca;
 	position: relative;
 	text-align: center;
 	text-shadow: 0 1px 0 #fff;
-
 }
 
 #fogli:after, #fogli:before {
@@ -410,20 +423,21 @@ h1 {
 	left: -1px;
 	position: absolute;
 	width: 100%;
-
 }
+
 #fogli:after {
 	transform: rotate(2deg);
 	top: 0;
     z-index: 2;
 }
+
 #fogli:before {
 	transform: rotate(-3deg);
 	top: 0;
     z-index: 1;
-
 }
 
+/* Foglio che viene in primo piano rispetto agli altri*/
 #foglio {
 	background: #FFFFFF;
 	border: 1px solid #c4c6ca;
@@ -435,17 +449,9 @@ h1 {
     z-index: 3;
 }
 
-/* ----------------------- CONTENUTO ----------------------*/
-
-#contenuto {
-    display:block;
-    margin-right: 5px;
-    padding-left: 28%;   
-
-}
 
 
-/* ----------------------- RICERCA ----------------------*/
+/* ----------------------- RICERCA - menu.php / UtCercaAnnuncio.php ----------------------*/
 
 #ricerca {
     margin: 5% 15%;
@@ -468,38 +474,7 @@ h1 {
 }
 
 
-/* ----------------------- LISTA ANNUNCI ----------------------*/
-
-#listannunci {
-    margin-top: 1em;
-    margin-left: 10%;
-    margin-right: 10%;
-    border-style: inset;
-    border-color: darkslategrey;
-    border-width: 1px;
-    padding-bottom: 0.5em;
-    padding-top: 0.5em;
-    padding-left: 10%;
-    padding-right: 10%;
-
-}
-
-
-#annunci {
-    list-style: none;
-    padding:0.2em;
-}
-
-/*
-#annunci li {
-    margin:1px;
-    border-style:inset;
-    border-color: black;
-    padding:0.2em;
-}
-
-*/
-/* --------------------- SIGN IN FORM ---------------------*/
+/* --------------------- SIGN IN FORM - CompanySignIn.php / UserSignIn.php ---------------------*/
 
 #form {
     margin-top: 1em;
@@ -522,7 +497,7 @@ h1 {
 }
 
 
-/* --------------------- ADD ADS ----------------------*/
+/* --------------------- ADD ADS - AzPubblicaAnnuncio.php ----------------------*/
 
 #remove {
     float: left;

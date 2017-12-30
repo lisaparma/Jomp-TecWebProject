@@ -15,7 +15,7 @@ echo "<body>";
 headers();
 
 $page = "Modifica annuncio";
-breadcrumb($page);
+breadcrumb(array('Area Personale','Resoconto annunci', $page));
 
 menu($page);
 
