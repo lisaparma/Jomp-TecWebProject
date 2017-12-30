@@ -1,5 +1,5 @@
 <?php
-    
+
     class Utente {
         
         private $name;
@@ -65,6 +65,26 @@
             $this->sex = $new;
         }
         
+        
+        // Funzioni varie
+        public function getNumLike(){
+            $query="SELECT * FROM Consultazioni WHERE Utente='".$this->username."'";
+            $result = mysqli_query(openDB(), $query);
+            return mysqli_num_rows($result);
+        }
+        
+        public function getPrefCity(){
+            $query="SELECT count(Citta) AS tot, Citta FROM Consultazioni JOIN Annunci ON Consultazioni.CodAnnuncio=Annunci.Codice JOIN Aziende ON Annunci.Azienda=Aziende.Nome WHERE Consultazioni.Utente='".$this->username."' GROUP BY Aziende.Citta ORDER BY tot DESC";
+            $result = mysqli_query(openDB(), $query);
+            $row = $result->fetch_assoc();
+            return $row['Citta'];
+        }
+        
+        public function getNumLikePrefCity(){
+            $query="SELECT Citta AS tot, Citta FROM Consultazioni JOIN Annunci ON Consultazioni.CodAnnuncio=Annunci.Codice JOIN Aziende ON Annunci.Azienda=Aziende.Nome WHERE Consultazioni.Utente='".$this->username."' GROUP BY Aziende.Citta ORDER BY tot DESC";
+            $result = mysqli_query(openDB(), $query);
+            return mysqli_num_rows($result);
+        }
     }
     
 ?>

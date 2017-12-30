@@ -16,7 +16,7 @@ headers();
 
 # -------------------------------------------
 
-if(isset($_SESSION['login'])){
+if(isset($_SESSION['login'])){ // Solo se in sessione vedi questo 
     $page = "Dashboard";
     breadcrumb($page);
     menu($page);
@@ -24,8 +24,9 @@ if(isset($_SESSION['login'])){
     $user = $_SESSION['login'];
     
     echo"<div id='contenuto'>
-                <h3> Benvenut";if($user->getSex() =='f') echo"a "; else echo"o "; echo $user->getName()."!</h3>
-                <h4> Ricapitoliamo i tuoi dati:</h4>
+                <h3> Benvenut";if($user->getSex() =='f') echo"a "; else echo"o "; echo "nella tua area personale, ".$user->getName()."!</h3>
+                
+            <h4> Ricapitoliamo i tuoi dati:</h4>
                 <p> Nome: ".$user->getName()."<br/> 
                 Cognome: ".$user->getSurname()." <br/> 
                 e-mail:".$user->getEmail()." <br/> 
@@ -35,6 +36,13 @@ if(isset($_SESSION['login'])){
                     echo "donna";
                 else
                     echo "uomo";
+    
+    echo"  <h4> Ricerche salvate:</h4>
+                <p> Numero ricerche salvate:".$user->getNumLike()."</p>
+                <p> La città in cui cerchi più lavoro è ".$user->getPrefCity()." con ".$user->getNumLikePrefCity()." annunci salvati.</p>
+                
+    ";
+    
 }
 else{
     echo " <div id='contenuto'>

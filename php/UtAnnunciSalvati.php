@@ -17,7 +17,7 @@ headers();
 
 # -------------------------------------------
 
-if(isset($_SESSION['login'])){
+if(isset($_SESSION['login'])){ // Solo se in sessione vedi questo 
     $page = "Annunci salvati";
     breadcrumb($page);
     menu($page);
