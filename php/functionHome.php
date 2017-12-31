@@ -12,7 +12,7 @@ function menuHome() {
     else
         echo "<li><a href='login.php'> Login </a></li>";
     echo "<li><a href='sectionAziendePartner.php'> Aziende partner </a></li>
-	       <li><a href=''> Aree professionali </a></li>
+	       <li><a href='sectionPerchèIscriversi.php'> Perchè iscriversi </a></li>
 	       </ul>" ;
 }
 
