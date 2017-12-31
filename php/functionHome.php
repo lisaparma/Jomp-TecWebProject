@@ -17,11 +17,11 @@ function menuHome() {
 }
 
 
-function search() {
+function searchForm($pagephp) {
 	echo "<div id='ricerca'> 
-	        <form action='home.php' method='post'>
+	        <form action='$pagephp' method='post'>
 	            <fieldset id='fieldset'>
-					<h2> Ricerca offerte </h2>
+					<legend>  Ricerca offerte:</legend>
 
 	                <div id='titolo'> 
 	                    <label for='titolo'>Titolo:<br/></label>
@@ -50,52 +50,9 @@ function search() {
 
 	        </form>
 	    </div>" ;
-    
-    
-    
-    if(isset($_POST['cerca'])) {
-    	$title = $_POST['Title'];
-        $city=$_POST['City'];
-        $type=$_POST['Type'];
-        $plus1="";
-        $plus2="";
-        
-        if($city)
-            $plus1=" AND Aziende.Citta='$city'";
-        if($type!='all')
-            $plus2=" AND Annunci.Tipologia='$type'";
-        
-        $result = mysqli_query(openDB(), "SELECT * FROM Annunci JOIN Aziende ON Aziende.Nome=Annunci.Azienda WHERE Annunci.Descrizione LIKE '%$title%' $plus1 $plus2 ORDER BY Data DESC");
-        
-        
-        if($result->num_rows) {
-            echo "<div id='listannunci'>
-                    <p>Risultati:</p>
-                        <ul id='annunci'>";
-                            while($row = mysqli_fetch_array($result, MYSQLI_BOTH)) {
-                                echo "</br></br>
-                                    <li id='fogli'>
-                                        <div id='foglio'>
-                                            <h3>".$row['Titolo']."</h3>
-                                            <p>Pubblicato il: ".$row['Data']."</p>
-                                            <p>Descrizione:<br/><p>".$row['Descrizione']."</p>
-                                        </div>
-                                    </li>
-                                    </br>
-                                    </br>";
-            }	
-            echo "</ul>
-                    </div>" ;       
-        }
-        else {
-            echo "Nessun annuncio corrispondente";
-        }
-        return false;
-    }
-    else
-    return true;
 }
-
+    
+    
 
 //prende gli ultimi 5 annunci che sono stati inseriti nel database
 function lastAds() {

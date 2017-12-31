@@ -1,6 +1,7 @@
 <?php
 
 require_once("structure.php");
+require_once("functionHome.php");
 require_once("functionUtente.php");
 require_once("connect.php");
 require_once("classUtente.php");
@@ -25,40 +26,9 @@ if(isset($_SESSION['login'])){ // Solo se in sessione vedi questo
     
     $user = &$_SESSION['login'];
     
-    // Stampa ricerca 
-    echo"<div id='contenuto'>
-                <div id='ricerca'> 
-                    <form action='UtCercaAnnuncio.php' method='post'>
-                        <fieldset id='fieldset'>
-                            <legend>  Ricerca:</legend>
-
-                            <div id='titolo'> 
-                                <label for='titolo'>Titolo:<br/></label>
-                                <input type='text' id='boxtitolo' name='Title' tabindex=''> <!--</input>-->
-                            </div>
-
-                            <div id='regione'> 
-                                <label for='citta'>Città:<br/></label>
-                                <input type='text' id='boxcitta' name='City' tabindex=''> <!--</input>-->
-                            </div>
-
-                            <div id='tipologia'> 
-                                <label for='titolo'>Tipologia:<br/></label>
-                                <select name='Type'>
-                                    <option value='all' selected> TUTTE ";
-                                    $result = mysqli_query(openDB(), "SELECT * FROM Tipo");
-                                    while($row = $result->fetch_array(MYSQLI_ASSOC)) {
-                                        echo "<option value='".$row['CodLavoro']."'>".$row['Lavoro']."</option>";
-                                    }
-                            echo" 
-                                </select>
-                            </div>
-
-                        <input type='submit' id='cerca' value='Cerca' tabindex='' name='cerca'>
-                        </fieldset>
-
-                    </form>
-                </div>";
+    echo"<div id='contenuto'>";
+    
+    searchForm("UtCercaAnnuncio.php");
     
     // Quando clicco Salva su un annuncio
     if(isset($_POST['Salva'])){
@@ -87,18 +57,18 @@ if(isset($_SESSION['login'])){ // Solo se in sessione vedi questo
         if($type!='all')
             $plus2=" AND Annunci.Tipologia='$type'";
 
-        $result = mysqli_query(openDB(), "SELECT Annunci.Codice, Annunci.Titolo, Annunci.Descrizione, Annunci.Data FROM Annunci JOIN Aziende ON Aziende.Nome=Annunci.Azienda WHERE Descrizione LIKE '%$title%' $plus1 $plus2 ORDER BY Data DESC");    
+        $result = mysqli_query(openDB(), "SELECT Annunci.Codice, Annunci.Titolo, Annunci.Descrizione, Annunci.Data FROM Annunci JOIN Aziende ON Aziende.Nome=Annunci.Azienda WHERE Annunci.Descrizione LIKE '%$title%' $plus1 $plus2 ORDER BY Data DESC");    
     }
     else {
         $result = mysqli_query(openDB(), "SELECT Annunci.Codice, Annunci.Titolo, Annunci.Descrizione, Annunci.Data FROM Annunci ORDER BY Data DESC LIMIT 5");
     }
-
+    
     // Stampa gli annunci trovati
     if($result->num_rows) {
         echo "<div id='listannunci'>
                 <p>Annunci:</p>
                     <ul id='annunci'>";
-        printAd($result, $user->getUsername(), 'UtCercaAnnuncio.php');
+                    printAd($result, $user->getUsername(), 'UtCercaAnnuncio.php');
         echo "      </ul>
                 </div>" ;       
     }
@@ -106,7 +76,7 @@ if(isset($_SESSION['login'])){ // Solo se in sessione vedi questo
         echo "Nessun annuncio corrispondente a questi parametri";
 
     
-    echo" </div>" ;
+    echo" </div>" ; //div contenuto
 
 }
 else{
