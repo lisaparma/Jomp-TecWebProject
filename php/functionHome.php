@@ -21,22 +21,19 @@ function searchForm($pagephp) {
 	echo "<div id='ricerca'> 
 	        <form action='$pagephp' method='post'>
 	            <fieldset id='fieldset'>
-					<legend>  Ricerca offerte:</legend>
+					<h2> Ricerca offerte </h2>
 
-	                <div id='titolo'> 
-	                    <label for='titolo'>Titolo:<br/></label>
-	                    <input type='text' id='boxtitolo' name='Title' tabindex=''> <!--</input>-->
-	                </div>
+					<div id='titolo'> 
+						<input type='text' id='boxtitolo' name='Title' placeholder='Inserisci parole chiave' tabindex=''> <!--</input>-->
+					</div>
 
-	                <div id='regione'> 
-	                    <label for='citta'>Città:<br/></label>
-	                    <input type='text' id='boxcitta' name='City' tabindex=''> <!--</input>-->
-	                </div>
+					<div id='regione'> 
+						<input type='text' id='boxcitta' name='City' placeholder='Città' tabindex=''> <!--</input>-->
+					</div>
 
-	                <div id='tipologia'> 
-	                    <label for='titolo'>Tipologia:<br/></label>
-	                    <select name='Type'>
-                            <option value='all' selected> TUTTE ";
+					<div id='tipologia'> 
+						<select name='Type'>
+							<option value='all' selected> Tipologia: ";
                             $result = mysqli_query(openDB(), "SELECT * FROM Tipo");
 	                        while($row = $result->fetch_array(MYSQLI_ASSOC)) {
                                 echo "<option value='".$row['CodLavoro']."'>".$row['Lavoro']."</option>";
