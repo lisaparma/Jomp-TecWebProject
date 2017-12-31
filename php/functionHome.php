@@ -65,7 +65,7 @@ function search() {
         if($type!='all')
             $plus2=" AND Annunci.Tipologia='$type'";
         
-        $result = mysqli_query(openDB(), "SELECT * FROM Annunci JOIN Aziende ON Aziende.Nome=Annunci.Azienda WHERE Descrizione LIKE '%$title%' $plus1 $plus2 ORDER BY Data DESC");
+        $result = mysqli_query(openDB(), "SELECT * FROM Annunci JOIN Aziende ON Aziende.Nome=Annunci.Azienda WHERE Annunci.Descrizione LIKE '%$title%' $plus1 $plus2 ORDER BY Data DESC");
         
         
         if($result->num_rows) {
