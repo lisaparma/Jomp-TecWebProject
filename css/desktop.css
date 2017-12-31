@@ -21,7 +21,7 @@ body {
 /* ------------------    HEADER   ------------------- */
 
 #header {
-    background-color: #896859;
+    background-color: #9fc4c6;
     min-height: 11em;
     margin: 0em;
     border: 0.1px solid #A9E8DC;
@@ -57,18 +57,6 @@ h1 {
 }
 
 #login, #signin, #logout {
-    display: inline-block;
-    background-color: #d4d3d3;
-    border-style: solid;
-    border-width: 2px;
-    border-color: #708090;
-    border-radius: 10px;
-    padding: 1em;
-    margin: 1em;
-}
-
-
-#signin {
     display: inline-block;
     background-color: #d4d3d3;
     border-style: solid;
@@ -384,16 +372,11 @@ h1 {
 /* -------------- ELENCO ANNUNCI - home.php / UtCercaAnnunci.php / UtAnnunciSalvati.php -----------------*/
 
 #listannunci {
-    margin-top: 1em;
-    margin-left: 10%;
-    margin-right: 10%;
+    margin: 1em 10%;
     border-style: inset;
     border-color: darkslategrey;
     border-width: 1px;
-    padding-bottom: 0.5em;
-    padding-top: 0.5em;
-    padding-left: 10%;
-    padding-right: 10%;
+    padding: 0.5em 10%;
 
 }
 
@@ -454,8 +437,10 @@ h1 {
 /* ----------------------- RICERCA - menu.php / UtCercaAnnuncio.php ----------------------*/
 
 #ricerca {
-    margin: 5% 15%;
+    margin: 5% 0%;
     text-align: center;
+    width: 100%;
+    border: white;
 }
 
 #fieldset h2 {
@@ -466,11 +451,16 @@ h1 {
 
 #fieldset {
     padding: 10px;
+    background-image: url("../IMG/jump1280_w.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 350px;
 }
 
 #titolo, #regione, #tipologia {
-    padding: 0.8em;
+    padding: 100px 0.8em;
     display: inline-block;
+    margin: auto;
 }
 
 
