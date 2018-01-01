@@ -135,6 +135,7 @@ h1 {
   padding: 0 10px 0 5px;
   text-align: center;
   margin-right: 23px;
+    cursor: default;
 }
 
 /*cambia colore ai pari*/
@@ -153,6 +154,7 @@ h1 {
 #bc li:first-child a{
     padding-left:15px;
     border-radius(4px 0 0 4px);
+    cursor:pointer;
 }
 #bc li:first-child a:before{
       border:none;
@@ -432,6 +434,18 @@ h1 {
     z-index: 3;
 }
 
+/* Immagine per like/dislike */
+#foglio img{
+    width: 30px;
+    cursor:pointer;
+}
+#foglio strong {
+    display: block;
+    cursor:pointer;
+}
+#foglio button {
+    display: none;
+}
 
 
 /* ----------------------- RICERCA - menu.php / UtCercaAnnuncio.php ----------------------*/
@@ -506,6 +520,4 @@ h1 {
     margin-right: 20px;
     text-align: justify;
 }
-
-
 

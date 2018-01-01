@@ -69,10 +69,14 @@ function menu($page)
 function printAd($result, $username, $page){
     while($row = mysqli_fetch_array($result, MYSQLI_BOTH)) {
                 $id=$row['Codice'];
-                if(liked($username, $id))
+                if(liked($username, $id)){
                     $like="Salvato";
-                else 
+                    $img="<img src='../IMG/checked.svg'> <strong> Mi interessa già! </strong> ";
+                }
+                else {
                     $like="Salva";
+                    $img="<img src='../IMG/like1.svg'> <strong> Mi interessa!</strong> ";
+                }
                 echo "</br></br>
                     <li id='fogli'>
                         <div id='foglio'>
@@ -80,7 +84,9 @@ function printAd($result, $username, $page){
                             <p>Pubblicato il: ".$row['Data']."</p>
                             <p>Descrizione:<br/><p>".$row['Descrizione']."</p>
                             <form method='post' action=$page>
-                                <button type='submit' name='$like' value='$id'>$like</button>
+                                <label for='$id'> $img </label>
+                                <button type='submit' id='$id' name='$like' value='$id'>$like</button>
+                                
                             </form>
                         </div>
                     </li>
