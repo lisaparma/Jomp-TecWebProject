@@ -74,7 +74,7 @@ function printAdsHome($result) { //se si modifica questa cambiare anche printAds
                 <li id='fogli'>
                     <div id='foglio'>
                         <h3>".$row['Titolo']."</h3>
-						<p>Pubblicato il: ".$row['Data']."</p><br/>
+						<p>Pubblicato il: ".$row['Data']." dall'azienda ".$row['Azienda']."<br/></p>
 						<p>Descrizione:<br/><p>".$row['Descrizione']."</p>
                     </div>
 				</li>

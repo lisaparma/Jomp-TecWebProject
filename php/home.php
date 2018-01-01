@@ -33,14 +33,14 @@ if(isset($_POST['cerca'])) {
         if($type!='all')
             $plus2=" AND Annunci.Tipologia='$type'";
         
-        $result = mysqli_query(openDB(), "SELECT * FROM Annunci JOIN Aziende ON Aziende.Nome=Annunci.Azienda WHERE Annunci.Descrizione LIKE '%$title%' $plus1 $plus2 ORDER BY Data DESC");
+        $result = mysqli_query(openDB(), "SELECT Annunci.Titolo, Annunci.Data, Annunci.Descrizione, Annunci.Azienda FROM Annunci JOIN Aziende ON Aziende.Nome=Annunci.Azienda WHERE Annunci.Descrizione LIKE '%$title%' $plus1 $plus2 ORDER BY Data DESC");
         
         
         if($result->num_rows) {
             echo "<div id='listannunci'>
                     <p>Risultati:</p>
                         <ul id='annunci'>";
-                printAdsHome($result);	
+                        printAdsHome($result);	
             echo "</ul>
                     </div>" ;       
         }

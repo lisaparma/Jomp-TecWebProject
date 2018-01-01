@@ -57,10 +57,10 @@ if(isset($_SESSION['login'])){ // Solo se in sessione vedi questo
         if($type!='all')
             $plus2=" AND Annunci.Tipologia='$type'";
 
-        $result = mysqli_query(openDB(), "SELECT Annunci.Codice, Annunci.Titolo, Annunci.Descrizione, Annunci.Data FROM Annunci JOIN Aziende ON Aziende.Nome=Annunci.Azienda WHERE Annunci.Descrizione LIKE '%$title%' $plus1 $plus2 ORDER BY Data DESC");    
+        $result = mysqli_query(openDB(), "SELECT Annunci.Codice, Annunci.Titolo, Annunci.Descrizione, Annunci.Data, Annunci.Azienda FROM Annunci JOIN Aziende ON Aziende.Nome=Annunci.Azienda WHERE Annunci.Descrizione LIKE '%$title%' $plus1 $plus2 ORDER BY Data DESC");    
     }
     else {
-        $result = mysqli_query(openDB(), "SELECT Annunci.Codice, Annunci.Titolo, Annunci.Descrizione, Annunci.Data FROM Annunci ORDER BY Data DESC LIMIT 5");
+        $result = mysqli_query(openDB(), "SELECT Annunci.Codice, Annunci.Titolo, Annunci.Descrizione, Annunci.Data, Annunci.Azienda FROM Annunci ORDER BY Data DESC LIMIT 5");
     }
     
     // Stampa gli annunci trovati

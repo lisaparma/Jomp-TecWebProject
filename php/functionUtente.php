@@ -81,7 +81,7 @@ function printAd($result, $username, $page){
                     <li id='fogli'>
                         <div id='foglio'>
                             <h3>".$row['Titolo']."</h3>
-                            <p>Pubblicato il: ".$row['Data']."</p>
+                            <p>Pubblicato il: ".$row['Data']." dall'azienda ".$row['Azienda']."</p>
                             <p>Descrizione:<br/><p>".$row['Descrizione']."</p>
                             <form method='post' action=$page>
                                 <label for='$id'> $img </label>
