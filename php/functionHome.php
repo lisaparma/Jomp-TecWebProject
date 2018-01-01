@@ -59,7 +59,17 @@ function lastAds() {
 		echo "<div id='listannunci'>
 		    	<p>Aggiunti di recente:</p>
 		    		<ul id='annunci'>";
-		while($row = $result->fetch_array(MYSQLI_ASSOC)) {
+		  printAdsHome($result);
+		echo "</ul>
+    			</div>" ;       
+	}
+	else {
+		echo "Ancora nessun annuncio è stato pubblicato";
+	}
+}
+
+function printAdsHome($result) { //se si modifica questa cambiare anche printAds() in functionUtente.php
+    while($row = $result->fetch_array(MYSQLI_ASSOC)) {
 			echo "</br></br>
                 <li id='fogli'>
                     <div id='foglio'>
@@ -72,12 +82,5 @@ function lastAds() {
                 </br>"
                 ;
 		}	
-		echo "</ul>
-    			</div>" ;       
-	}
-	else {
-		echo "Ancora nessun annuncio è stato pubblicato";
-	}
 }
-
 ?>

@@ -20,6 +20,7 @@ menuHome();
 
 
 searchForm("home.php");
+
 if(isset($_POST['cerca'])) {
     	$title = $_POST['Title'];
         $city=$_POST['City'];
@@ -39,18 +40,7 @@ if(isset($_POST['cerca'])) {
             echo "<div id='listannunci'>
                     <p>Risultati:</p>
                         <ul id='annunci'>";
-                            while($row = mysqli_fetch_array($result, MYSQLI_BOTH)) {
-                                echo "</br></br>
-                                    <li id='fogli'>
-                                        <div id='foglio'>
-                                            <h3>".$row['Titolo']."</h3>
-                                            <p>Pubblicato il: ".$row['Data']."</p>
-                                            <p>Descrizione:<br/><p>".$row['Descrizione']."</p>
-                                        </div>
-                                    </li>
-                                    </br>
-                                    </br>";
-            }	
+                printAdsHome($result);	
             echo "</ul>
                     </div>" ;       
         }
