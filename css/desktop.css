@@ -309,7 +309,7 @@ h1 {
 	.ap-menu li a { 
 		position: relative;
 		padding: 12px 16px;
-		height:20px;
+		height:30px;
 	}
 	.ap-menu li a p { 
 		display:none;
@@ -318,6 +318,7 @@ h1 {
 	}
     .ap-menu li a .logo {
 		display: block;
+        width: 30px;
         padding-left: 40%;
 	}
     
@@ -337,6 +338,7 @@ h1 {
 	}
 }
 
+/* fare proprio un css a parte per i cellulari?*/
 @media only screen and (max-width: 360px) {
     .container-menu{
         width: 72px;
