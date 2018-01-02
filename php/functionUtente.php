@@ -71,27 +71,49 @@ function printAd($result, $username, $page){
                 $id=$row['Codice'];
                 if(liked($username, $id)){
                     $like="Salvato";
-                    $img="<img src='../IMG/checked.svg'> <strong> Mi interessa già! </strong> ";
+                    $img="<img src='../IMG/checked.svg'> <div class='click'> Mi interessa già! </div> ";
                 }
                 else {
                     $like="Salva";
-                    $img="<img src='../IMG/like1.svg'> <strong> Mi interessa!</strong> ";
+                    $img="<img src='../IMG/like1.svg'> <div class='click'> Mi interessa!</div> ";
                 }
-                echo "</br></br>
+                echo "
                     <li id='fogli'>
                         <div id='foglio'>
                             <h3>".$row['Titolo']."</h3>
-                            <p>Pubblicato il: ".$row['Data']." dall'azienda ".$row['Azienda']."</p>
-                            <p>Descrizione:<br/><p>".$row['Descrizione']."</p>
+                            <small>Pubblicato il: ".$row['Data']." </small>
+                
+                            <table class='detail'>
+                            <tbody>
+                            <tr>
+                                <td class='det'> Azienda </td>
+                                <td class='ris'> ".$row['Nome']."</td>
+                            </tr>
+                            <tr>
+                                <td class='det'> Sede di lavoro </td>
+                                <td class='ris'> ".$row['Citta']."</td>
+                            </tr>
+                            <tr>
+                                <td class='det'> Settore </td>
+                                <td class='ris'> ".$row['Lavoro']."</td>
+                            </tr>
+                            <tr>
+                                <td class='det'> Orario </td>
+                                <td class='ris'> Lo mettiamo? </td>
+                            </tr><tr>
+                                <td class='det'> Contratto </td>
+                                <td class='ris'> Lo mettiamo? </td>
+                            </tr>
+                            </tbody>
+                            </table>
+                            <p><strong> Descrizione:</strong><br/>".$row['Descrizione']."</p>
                             <form method='post' action=$page>
                                 <label for='$id'> $img </label>
                                 <button type='submit' id='$id' name='$like' value='$id'>$like</button>
                                 
                             </form>
                         </div>
-                    </li>
-                    </br>
-                    </br>";
+                    </li>";
             }	
 }
 function liked($username, $ad) {
