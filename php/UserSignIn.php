@@ -14,9 +14,9 @@ headers();
 menuHome();
 
 
-function checkEmail($Email) {
+function checkEmail($email) {
 
-    $result = mysqli_query(openDB(),"SELECT Email FROM Utenti WHERE Email='".$Email."'");     //creo la query
+    $result = mysqli_query(openDB(),"SELECT Email FROM Utenti WHERE Email='".$email."'");     //creo la query
     
     $num_rows = mysqli_num_rows($result);                                      //invio la query
 
@@ -27,9 +27,9 @@ function checkEmail($Email) {
     return false;
 }
 
-function checkUsername($Username) {
+function checkUsername($username) {
 
-    $result = mysqli_query(openDB(),"SELECT Username FROM Utenti WHERE Username='".$Username."'");
+    $result = mysqli_query(openDB(),"SELECT Username FROM Utenti WHERE Username='".$username."'");
 
     $num_rows = mysqli_num_rows($result);
 
@@ -39,12 +39,21 @@ function checkUsername($Username) {
     return false;
 }
 
-function checkRepeatPassword($Password, $RipPassword) {
-    if($Password == $RipPassword) {
+function checkRepeatPassword($password, $ripPassword) {
+    if($password == $ripPassword) {
         return true;
     }
     return false;
 }
+
+echo "<h3>Regole per l'iscrizione:</h3>
+        <ol>
+            <li>Tutti i campi devono essere <strong>OBBLIGATORIAMENTE</strong> compilati;</li>
+            <li>L'email personale deve essere univoca;</li>
+            <li>L'username deve contenere dai 5 ai 15 caratteri;</li>
+            <li>La password deve essere lunga almeno 8 caratteri;</li>
+            <li>E' necessario ripetere la stessa esatta sequenza di caratteri della password dove viene richiesto di ripeterla.</li>
+        </ol>";
 
 //Mettere i tab index nei form e nei link
 echo "<div id=form>
@@ -81,15 +90,15 @@ if(isset($_POST['submit'])){
     try {
 
         $db = openDB();
-        $Username = $_POST['Username'];
-        $Password = $_POST['Password'];
-        $RipPassword = $_POST['RipPassword'];
-        $Nome = $_POST['Nome'];
-        $Cognome = $_POST['Cognome'];
-        $Email = $_POST['Email'];
+        $username = $_POST['Username'];
+        $password = $_POST['Password'];
+        $ripPassword = $_POST['RipPassword'];
+        $nome = $_POST['Nome'];
+        $cognome = $_POST['Cognome'];
+        $email = $_POST['Email'];
 
         //verifico i dati inseriti
-        if(checkEmail($Email) && checkUsername($Username) && checkRepeatPassword($Password, $RipPassword)) {
+        if(checkEmail($email) && checkUsername($username) && checkRepeatPassword($password, $ripPassword)) {
             $sql = "INSERT INTO Utenti(Username, Password, Nome, Cognome, Email) VALUES ('$Username', '$Password', '$Nome', '$Cognome', '$Email')";
 
             $db -> query($sql);
@@ -99,15 +108,23 @@ if(isset($_POST['submit'])){
         else {
             echo "<div><p class='errorMsg'>Tentativo di registrazione fallito, sono sorti i seguenti errori:</p><br/>";
             echo "<ul  id=errorList>";
-            if(!checkEmail($Email)) {
+            if(!checkEmail($email)) {
                 echo "<li>Email già presente, controlla di non essere già registrato</li><br/>";
             }
 
-            if(!checkUsername($Username)) {
+            if(!checkUsername($username)) {
                 echo "<li>Username non disponibile, sceglierne un altro</li><br/>";
             }
 
-            if(!checkRepeatPassword($Password, $RipPassword)) {
+            if(!checkLengthUsername($username)) {
+                echo "<li>Username troppo corto o troppo lungo</li><br/>";
+            }
+
+            if(!checkLenghtPassword($password)) {
+                echo "<li>Password troppo corta</li><br/>"; 
+            }
+
+            if(!checkRepeatPassword($password, $ripPassword)) {
                 echo "<li>La password di verifica non corrisponde alla password scelta</li><br/>";
             }
             echo "</ul></div>";

@@ -14,6 +14,15 @@ headers();
 
 menuHome();
 
+echo "<h3>Regole per l'iscrizione:</h3>
+        <ol>
+            <li>Tutti i campi devono essere <strong>OBBLIGATORIAMENTE</strong> compilati;</li>
+            <li>Il nome e l'email dell'azienda devono essere univoche;</li>
+            <li>Vengono accettate solo aziende con sede legale in italia, ragion per cui la Partita Iva deve essere lunga 11 cifre;</li>
+            <li>La password deve essere lunga almeno 8 caratteri;</li>
+            <li>E' necessario ripetere la stessa esatta sequenza di caratteri della password dove viene richiesto di ripeterla.</li>
+        </ol>";
+
 
 echo "<div id=form>
         <div id=contentForm>
@@ -59,7 +68,7 @@ if(isset($_POST['submit'])){
         $description = $_POST['description'];
 
         //verifico i dati inseriti
-        if(checkName($name) && checkPIva($pIva) && checkRepeatPassword($password, $repPassword)) {
+        if(checkName($name) && checkPIva($pIva) && checkLengthPIva($pIva) && checkLengthPassword($password) && checkRepeatPassword($password, $repPassword)) {
             $sql = "INSERT INTO Aziende (Nome, PIva, Email, Citta, Password, Descrizione) VALUES ('$name', '$pIva', '$email', '$citta', '$password', '$description')";
 
             if (mysqli_query(openDB(), $sql)) {
@@ -79,6 +88,14 @@ if(isset($_POST['submit'])){
 
             if(!checkPIva($pIva)) {
                 echo "<li>Partita IVA già presente, controlla di non essere già registrato o di avere inserito corretamente la sequenza di cifre</li><br/>";
+            }
+
+            if(!checkLengthPIva($pIva)) {
+                echo "<li>Partita IVA non valida</li><br/>";    
+            }
+
+            if(!checkLengthPassword($password)) {
+                echo "<li>Password troppo corta</li><br/>";   
             }
 
             if(!checkRepeatPassword($password, $repPassword)) {

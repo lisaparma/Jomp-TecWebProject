@@ -124,6 +124,25 @@ function checkUsername($username) {
     
 }
 
+  function checkLengthUsername($username) {
+    if(strlen($username) > 4 && strlen($username) < 16) {
+      return true;
+    }
+    else {
+      return false;
+    }    
+  }
+
+
+  function checkLengthPassworde($password) {
+    if(strlen($password) > 7) {
+      return true;
+    }
+    else {
+      return false;
+    }   
+  }  
+
 
 
 ?>

@@ -90,8 +90,8 @@ function printWorkType($id) {
 }
 
   //funzioni di verifica di specifici campi dati
-  function checkName($Name) {
-      $result = mysqli_query(openDB(),"SELECT Codice FROM Aziende WHERE Nome='".$Name."'");
+  function checkName($name) {
+      $result = mysqli_query(openDB(),"SELECT Codice FROM Aziende WHERE Nome='".$name."'");
 
       $num_rows = mysqli_num_rows($result);
 
@@ -102,8 +102,8 @@ function printWorkType($id) {
   }
 
 
-  function checkPIva($PIva) {
-      $result = mysqli_query(openDB(),"SELECT Codice FROM Aziende WHERE PIva='".$PIva."'");
+  function checkPIva($pIva) {
+      $result = mysqli_query(openDB(),"SELECT Codice FROM Aziende WHERE PIva='".$pIva."'");
 
       $num_rows = mysqli_num_rows($result);
 
@@ -114,8 +114,28 @@ function printWorkType($id) {
   }
 
 
-  function checkRepeatPassword($Password, $RipPassword) {
-      if($Password == $RipPassword) {
+  function checkLengthPIva($pIva) {
+    if(strlen($pIva) == 11) {
+      return true;
+    }
+    else {
+      return false;
+    }    
+  }
+
+
+  function checkLengthPassword($password) {
+    if(strlen($password) > 7) {
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
+
+
+  function checkRepeatPassword($password, $ripPassword) {
+      if($password == $ripPassword) {
           return true;
       }
       return false;
