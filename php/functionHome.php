@@ -70,16 +70,14 @@ function lastAds() {
 
 function printAdsHome($result) { //se si modifica questa cambiare anche printAds() in functionUtente.php
     while($row = $result->fetch_array(MYSQLI_ASSOC)) {
-			echo "</br></br>
+			echo "
                 <li id='fogli'>
                     <div id='foglio'>
                         <h3>".$row['Titolo']."</h3>
 						<p>Pubblicato il: ".$row['Data']." dall'azienda ".$row['Azienda']."<br/></p>
 						<p>Descrizione:<br/><p>".$row['Descrizione']."</p>
                     </div>
-				</li>
-                </br>
-                </br>"
+				</li>"
                 ;
 		}	
 }

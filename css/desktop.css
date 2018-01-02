@@ -399,6 +399,8 @@ h1 {
 	position: relative;
 	text-align: center;
 	text-shadow: 0 1px 0 #fff;
+    margin-top: 3em;
+    margin-bottom: 3em;
 }
 
 #fogli:after, #fogli:before {
@@ -436,18 +438,74 @@ h1 {
   z-index: 3;
 }
 
+#foglio h3 {
+    font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+    font-size: 25px;
+    text-align: center;
+    text-transform: uppercase;
+    text-rendering: optimizeLegibility;
+    color: #131313;
+    letter-spacing: .15em;
+    text-shadow: 
+      1px -1px 0 #D2D2D2, 
+      -1px 2px 1px #D2D2D2, 
+      -2px 4px 1px  #D2D2D2;
+    margin-bottom: 5px;
+}
+
+#foglio small {
+    font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+    font-size: 12px;
+}
+
+#foglio strong {
+    
+}
+
+/* Annunci in Utente */
+.detail{
+    margin-top: 0.5em;
+    margin-left:auto; 
+    margin-right:auto;
+    margin-bottom: 2em;
+    border-collapse: collapse;
+}
+
+.detail tr{
+    height: 2em;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(210, 210, 210);
+}
+
+.detail tr .det {
+    font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+    color: #969696;
+    text-align: left;
+    padding-right: 2em;
+    
+}
+.detail tr .ris {
+    font-weight: 600;
+    text-align: left;
+}
+
+
 /* Immagine per like/dislike */
 #foglio img{
     width: 30px;
     cursor:pointer;
 }
-#foglio strong {
+#foglio .click {
+    font-weight: 600;
     display: block;
-    cursor:pointer;
+    cursor: pointer;
 }
 #foglio button {
     display: none;
 }
+
+
 
 
 /* ----------------------- RICERCA - menu.php / UtCercaAnnuncio.php ----------------------*/
@@ -462,7 +520,7 @@ h1 {
 #fieldset h2 {
     text-align: left;
     padding: 10px;
-    margin-top: 0em;
+    margin: 0px;
 }
 
 #fieldset {
@@ -470,11 +528,10 @@ h1 {
     background-image: url("../IMG/jump1280_w.jpg");
     background-repeat: no-repeat;
     background-position: center center;
-    height: 350px;
 }
 
 #titolo, #regione, #tipologia {
-    padding: 100px 0.8em;
+    padding: 30px 0.8em;
     display: inline-block;
     margin: auto;
 }
