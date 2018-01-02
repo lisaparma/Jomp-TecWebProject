@@ -135,7 +135,7 @@ h1 {
   padding: 0 10px 0 5px;
   text-align: center;
   margin-right: 23px;
-    cursor: default;
+  cursor: default;
 }
 
 /*cambia colore ai pari*/
@@ -276,13 +276,13 @@ h1 {
 
 /* media queries per farlo responsive */
 @media only screen and (min-width: 980px) {
-    .ap-menu {
+  .ap-menu {
 		margin-left:10px;
 	}
 }
 
 @media only screen and (min-width: 700px) and (max-width: 979px) {
-    .ap-menu {
+  .ap-menu {
 		width: 100%;
 	}
 	.ap-menu li a {
@@ -290,12 +290,12 @@ h1 {
 	}
 	.ap-menu li a p {
 		font-size: 12px;
-        display: block;
-        text-align: center;
+    display: block;
+    text-align: center;
 	}
-    .ap-menu li a .logo {
+  .ap-menu li a .logo {
 		display: block;
-        padding-left: 40%;
+    padding-left: 40%;
 	}
     
 }
@@ -304,7 +304,7 @@ h1 {
 	
 	.ap-menu { 
 		width: 100%;
-        height:auto;
+    height:auto;
 	}
 	.ap-menu li a { 
 		position: relative;
@@ -316,15 +316,15 @@ h1 {
 		font-weight:normal;
 		text-align:center;
 	}
-    .ap-menu li a .logo {
-		display: block;
-        width: 30px;
-        padding-left: 40%;
+  .ap-menu li a .logo {
+	  display: block;
+    width: 30px;
+    padding-left: 40%;
 	}
     
-    .ap-menu li:hover > a .logo {
+  .ap-menu li:hover > a .logo {
     display: none;
-    }
+  }
 	.ap-menu li a:hover p,.mcd-menu li a:active p {
 		display:block;
 		font-size:10px;
@@ -403,7 +403,7 @@ h1 {
 
 #fogli:after, #fogli:before {
 	border: 1px solid #c4c6ca;
-    background: #FFFFFF;
+  background: #FFFFFF;
 	content: "";
 	display: block;
 	height: 100%;
@@ -415,13 +415,13 @@ h1 {
 #fogli:after {
 	transform: rotate(2deg);
 	top: 0;
-    z-index: 2;
+  z-index: 2;
 }
 
 #fogli:before {
 	transform: rotate(-3deg);
 	top: 0;
-    z-index: 1;
+  z-index: 1;
 }
 
 /* Foglio che viene in primo piano rispetto agli altri*/
@@ -433,7 +433,7 @@ h1 {
 	position: relative;
 	text-align: center;
 	text-shadow: 0 1px 0 #fff;
-    z-index: 3;
+  z-index: 3;
 }
 
 /* Immagine per like/dislike */
@@ -521,5 +521,22 @@ h1 {
     margin-left: 20px;
     margin-right: 20px;
     text-align: justify;
+}
+
+
+/* --------------------- SUCCESS AND ERROR MESSAGE ----------------------*/
+
+.successMsg {
+  color: green;
+  margin-left: 20px;
+  margin-right: 20px;
+  text-align: justify;
+}
+
+.errorMsg {
+  color: red;
+  margin-left: 20px;
+  margin-right: 20px;
+  text-align: justify;
 }
 

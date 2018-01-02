@@ -93,12 +93,12 @@ if(isset($_POST['submit'])){
             $sql = "INSERT INTO Utenti(Username, Password, Nome, Cognome, Email) VALUES ('$Username', '$Password', '$Nome', '$Cognome', '$Email')";
 
             $db -> query($sql);
-            header("location: login.php");
+            header("location: login.php?msg");
 
         }
         else {
-            echo "<div id=errorList><p>Tentativo di registrazione fallito, sono sorti i seguenti errori:</p><br/>";
-            echo "<ul>";
+            echo "<div><p class='errorMsg'>Tentativo di registrazione fallito, sono sorti i seguenti errori:</p><br/>";
+            echo "<ul  id=errorList>";
             if(!checkEmail($Email)) {
                 echo "<li>Email già presente, controlla di non essere già registrato</li><br/>";
             }

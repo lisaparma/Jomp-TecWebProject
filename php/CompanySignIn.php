@@ -63,16 +63,16 @@ if(isset($_POST['submit'])){
             $sql = "INSERT INTO Aziende (Nome, PIva, Email, Citta, Password, Descrizione) VALUES ('$name', '$pIva', '$email', '$citta', '$password', '$description')";
 
             if (mysqli_query(openDB(), $sql)) {
-                header("location: login.php");
+                header("location: login.php?msg");
             } 
             else {
-                echo "Errore";
+                echo "<p class='errorMsg'>Errore nell'inserire i dati nel database. Riprova.</p>";
             }
 
         }
         else {
-            echo "<div id=errorList><p>Tentativo di registrazione fallito, sono sorti i seguenti errori:</p><br/>";
-            echo "<ul>";
+            echo "<div><p class='errorMsg'>Tentativo di registrazione fallito, sono sorti i seguenti errori:</p><br/>";
+            echo "<ul id='errorList'>";
             if(!checkName($name)) {
                 echo "<li>Azienda già presente, controlla di non essere già registrato</li><br/>";
             }
