@@ -14,9 +14,9 @@ head($title);
 echo "<body>";
 
 headers();
-
+/*
 menuHome();
-
+*/
 
 
 searchForm("home.php");

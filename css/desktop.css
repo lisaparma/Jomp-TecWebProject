@@ -22,7 +22,7 @@ body {
 
 #header {
     background-color: #9fc4c6;
-    min-height: 11em;
+    height: 7em;
     margin: 0em;
     border: 0.1px solid #A9E8DC;
     border-top-right-radius: 5px;
@@ -30,7 +30,8 @@ body {
 }
 
 #logo {
-    height: 10em;
+    padding-left: 4em;
+    height: 7em;
     float: left;
 }
 
@@ -42,6 +43,7 @@ h1 {
 }
 
 #box {
+    display: none;
     float: right;
     align-content: center;
     font-size: 0.8em;
@@ -105,6 +107,85 @@ h1 {
     color: #e6d1b8;
 }
 
+
+
+/* prova menu */
+#primarymenu
+{
+	margin-top:15px;
+    text-align: center;
+}
+
+/* elenco pagine*/
+#primarymenu ul
+{
+	list-style:none;
+	position:relative;
+	float:right;
+	margin:0;
+	padding:0;
+    padding-top: 1.5em;
+    padding-top: 1.5em;
+    width: 70%;
+}
+
+/* link alle altre pagine*/
+#primarymenu ul a
+{
+	color:#333;
+	text-decoration:none;
+	font-weight:700;
+	font-size:12px;
+	line-height:32px;
+	padding:0 15px;
+	font-family:"HelveticaNeue","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 1em;
+}
+
+/* ogni voce di menu*/
+#primarymenu ul li
+{
+	position:relative;
+	float:left;
+	margin:0;
+	padding:0;
+    width: 25%;
+}
+
+/*quando ci passo sopra*/
+#primarymenu ul li:hover
+{
+	background:#f6f6f6;
+}
+
+/* elenco pagine dentro una pagina*/
+#primarymenu ul ul
+{
+	display:none;
+	position:absolute;
+	top:100%;
+	left:0;
+	background:#fff;
+	padding:0;
+}
+
+/*pagine secondarie*/
+#primarymenu ul ul li
+{
+	float:none;
+	width:200px;
+}
+
+#primarymenu ul ul a
+{
+	line-height:120%;
+	padding:10px 15px;
+}
+
+#primarymenu ul li:hover > ul
+{
+	display:block;
+}
 
 /* ----------------------- BREADCRUMB ----------------------*/
 
@@ -596,4 +677,6 @@ h1 {
   margin-right: 20px;
   text-align: justify;
 }
+
+
 

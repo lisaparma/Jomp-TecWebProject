@@ -24,6 +24,46 @@ function head($title) {
 			</head>";
 }
 
+function menuu(){ echo "
+<div id='primarymenu'>
+<ul>
+  <li><a href='sectionChiSiamo.php'>Chi siamo</a>
+    <ul>
+      <li><a href=''>Sub Menu 1</a></li>
+      <li><a href=''>Sub Menu 2</a></li>
+      <li><a href=''>Sub Menu 3</a></li>
+      <li><a href=''>Sub Menu 4</a></li>
+      <li><a href=''>Sub Menu 5</a></li>
+    </ul>
+  </li>";
+if(isset($_SESSION['login'])) {
+        if(get_class($_SESSION['login'])=='Utente')
+	        echo "<li><a href='UtDashboard.php'> Area personale </a></li>";
+        else
+            echo "<li><a href='AzDashboard.php'> Area personale </a></li>";
+    }
+    else
+        echo "<li><a href='login.php'> Login </a></li>";
+echo"
+  <li><a href='sectionAziendePartner.php'>Aziende partner</a>
+    <ul>
+      <li><a href=''>Sub Menu 1</a></li>
+      <li><a href=''>Sub Menu 2</a></li>
+      <li><a href=''>Sub Menu 3</a></li>
+    </ul>
+  </li>
+  <li><a href='sectionPerchèIscriversi.php'>Perchè iscriversi</a>
+    <ul>
+      <li><a href=''>Sub Menu 1</a></li>
+      <li><a href=''>Sub Menu 2</a></li>
+      <li><a href=''>Sub Menu 3</a></li>
+      <li><a href=''>Sub Menu 4</a></li>
+      <li><a href=''>Sub Menu 5</a></li>
+    </ul>
+  </li>
+</ul>
+</div>";
+}
 
 function headers() {
 	echo "<div id='header'>";
@@ -40,12 +80,13 @@ function headers() {
 	}
 	echo "		<a href='home.php'>
 		            <img id='logo' src='../IMG/jomp.png' alt='logo scritta jomp con lente d&rsquo;ingrandimento'>
-		        </a>
-	     
-	        <h1> A jump in the job</h1>
+		        </a>";
+                menuu();
 
-	    </div>";
+	 echo"   </div>";
 }
+
+
 
 function breadcrumb($pages){
     echo "<ul id='bc'>
