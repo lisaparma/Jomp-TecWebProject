@@ -41,7 +41,7 @@ if(isset($_SESSION['login'])){ // Solo se in sessione vedi questo
     echo"<div id='contenuto'>
                <h3> Annunci salvati</h3>";
     
-    $result = mysqli_query(openDB(), "SELECT * FROM Consultazioni JOIN Annunci ON Consultazioni.CodAnnuncio=Annunci.Codice WHERE Consultazioni.Utente='".$user->getUsername()."'");
+    $result = mysqli_query(openDB(), "SELECT Annunci.Codice, Annunci.Titolo, Annunci.Descrizione, Annunci.Tipologia, Annunci.Data, Annunci.Azienda, Aziende.Nome, Aziende.Email, Aziende.Citta, Tipo.Lavoro FROM Consultazioni JOIN Annunci ON Consultazioni.CodAnnuncio=Annunci.Codice JOIN Aziende ON Aziende.Nome=Annunci.Azienda JOIN Tipo ON Tipo.CodLavoro=Annunci.Tipologia WHERE Consultazioni.Utente='".$user->getUsername()."' ORDER BY Data");
     
     if($result->num_rows) {
         echo "<div id='listannunci'>
