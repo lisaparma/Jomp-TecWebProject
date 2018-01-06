@@ -24,15 +24,18 @@ function searchForm($pagephp) {
 					<h2> Ricerca offerte </h2>
 
 					<div id='titolo'> 
+                        <label for='boxtitolo'>Cosa cerchi?<br/></label>
 						<input type='text' id='boxtitolo' name='Title' placeholder='Inserisci parole chiave' tabindex=''> <!--</input>-->
 					</div>
 
-					<div id='regione'> 
+					<div id='regione'>
+                        <label for='boxcitta'>Dove?<br/></label>
 						<input type='text' id='boxcitta' name='City' placeholder='Città' tabindex=''> <!--</input>-->
 					</div>
 
 					<div id='tipologia'> 
-						<select name='Type'>
+						<label for='boxvalue'>Di che tipo?<br/></label>  
+                            <select id='boxvalue' name='Type'>
 							<option value='all' selected> Tipologia: ";
                             $result = mysqli_query(openDB(), "SELECT * FROM Tipo");
 	                        while($row = $result->fetch_array(MYSQLI_ASSOC)) {
