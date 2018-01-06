@@ -139,7 +139,7 @@ h1 {
 	line-height:32px;
 	padding:0 15px;
 	font-family:"HelveticaNeue","Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size: 1em;
+    font-size: 1.2em;
 }
 
 /* ogni voce di menu*/
@@ -168,6 +168,8 @@ h1 {
 	background:#fff;
 	padding:0;
     width: 100%;
+    font-size: 0.8em;
+    z-index: 3;
 }
 
 /*pagine secondarie*/
@@ -594,11 +596,30 @@ h1 {
 
 /* ----------------------- RICERCA - menu.php / UtCercaAnnuncio.php ----------------------*/
 
+#foto {
+    padding: 5em 1em 5em 1em;
+    position: relative;
+    background-image: url(../IMG/front.jpg);
+    overflow: hidden;
+    height: 200px;
+}
+
+
 #ricerca {
-    margin: 5% 0%;
-    text-align: center;
-    width: 100%;
-    border: white;
+    align-items: center;
+    margin: 0px;
+    width: 60%;
+    margin: 0 auto;
+    border: 1px;
+    border-color: #000000;
+    border-style: inset;
+    background: rgba(255,255,255,0.9);
+    
+}
+
+
+#fieldset {
+    border: 10px;
 }
 
 #fieldset h2 {
@@ -607,12 +628,6 @@ h1 {
     margin: 0px;
 }
 
-#fieldset {
-    padding: 10px;
-    background-image: url("../IMG/jump1280_w.jpg");
-    background-repeat: no-repeat;
-    background-position: center center;
-}
 
 #titolo, #regione, #tipologia {
     padding: 30px 0.8em;
@@ -680,6 +695,5 @@ h1 {
   margin-right: 20px;
   text-align: justify;
 }
-
 
 

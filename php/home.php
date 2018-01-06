@@ -14,13 +14,11 @@ head($title);
 echo "<body>";
 
 headers();
-/*
-menuHome();
-*/
 
+echo "<div id='foto'>";
 
 searchForm("home.php");
-
+echo"</div>";
 if(isset($_POST['cerca'])) {
     	$title = $_POST['Title'];
         $city=$_POST['City'];
