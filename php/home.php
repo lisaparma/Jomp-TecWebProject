@@ -36,14 +36,14 @@ if(isset($_POST['cerca'])) {
         
         if($result->num_rows) {
             echo "<div id='listannunci'>
-                    <p>Risultati:</p>
+                    <h3>Risultati della ricerca:</h3>
                         <ul id='annunci'>";
                         printAdsHome($result);	
-            echo "</ul>
+            echo "      </ul>
                     </div>" ;       
         }
         else {
-            echo "Nessun annuncio corrispondente";
+            echo "<p>Nessun annuncio corrispondente</p>";
         }
     }
 else

@@ -462,12 +462,8 @@ h1 {
 /* -------------- ELENCO ANNUNCI - home.php / UtCercaAnnunci.php / UtAnnunciSalvati.php -----------------*/
 
 #listannunci {
-    margin: 1em 10%;
-    border-style: inset;
-    border-color: darkslategrey;
-    border-width: 1px;
+    margin: 1em 7%;
     padding: 0.5em 10%;
-
 }
 
 #annunci {
@@ -485,8 +481,8 @@ h1 {
 	position: relative;
 	text-align: center;
 	text-shadow: 0 1px 0 #fff;
-    margin-top: 3em;
-    margin-bottom: 3em;
+    margin-top: 5em;
+    margin-bottom: 5em;
 }
 
 #fogli:after, #fogli:before {
@@ -517,7 +513,7 @@ h1 {
 	background: #FFFFFF;
 	border: 1px solid #c4c6ca;
 	margin: 0 auto;
-	padding: 2em 1em 2em 1em;
+	padding: 3em;
 	position: relative;
 	text-align: center;
 	text-shadow: 0 1px 0 #fff;

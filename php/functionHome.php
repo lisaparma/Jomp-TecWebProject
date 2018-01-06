@@ -60,10 +60,10 @@ function lastAds() {
 
 	if($result) {
 		echo "<div id='listannunci'>
-		    	<p>Aggiunti di recente:</p>
+		    	<h3>Ultimi annunci inseriti:</h3>
 		    		<ul id='annunci'>";
-		  printAdsHome($result);
-		echo "</ul>
+		              printAdsHome($result);
+		echo "      </ul>
     			</div>" ;       
 	}
 	else {

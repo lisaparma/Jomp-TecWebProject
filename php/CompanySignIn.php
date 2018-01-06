@@ -12,8 +12,6 @@ head($title);
 
 headers();
 
-menuHome();
-
 echo "<h3>Regole per l'iscrizione:</h3>
         <ol>
             <li>Tutti i campi devono essere <strong>OBBLIGATORIAMENTE</strong> compilati;</li>

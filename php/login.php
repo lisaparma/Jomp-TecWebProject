@@ -14,7 +14,6 @@ head($title);
 
 headers();
 
-menuHome();
 
 if(isset($_GET['msg'])){
     echo "<p class='successMsg'>Registrazione avvenuta con successo! Procedi ora con l'autenticazione.</p>";
