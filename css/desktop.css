@@ -167,16 +167,13 @@ h1 {
 	left:0;
 	background:#fff;
 	padding:0;
-    width: 100%;
 }
 
 /*pagine secondarie*/
 #primarymenu ul ul li
 {
 	float:none;
-    width: 100%;
-    padding-bottom: 0.5em;
-    padding-top: 0.5em;
+	width:200px;
 }
 
 #primarymenu ul ul a

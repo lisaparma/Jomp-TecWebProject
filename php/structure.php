@@ -27,40 +27,29 @@ function head($title) {
 function menuu(){ echo "
 <div id='primarymenu'>
 <ul>
-  <li><a href='sectionChiSiamo.php'>Chi siamo</a>
-    <ul>
-      <li><a href=''>Sub Menu 1</a></li>
-      <li><a href=''>Sub Menu 2</a></li>
-      <li><a href=''>Sub Menu 3</a></li>
-      <li><a href=''>Sub Menu 4</a></li>
-      <li><a href=''>Sub Menu 5</a></li>
-    </ul>
-  </li>";
+  <li><a href='sectionChiSiamo.php'>Chi siamo</a></li>
+  <li><a href='sectionAziendePartner.php'>Aziende partner</a> </li>";
 if(isset($_SESSION['login'])) {
         if(get_class($_SESSION['login'])=='Utente')
-	        echo "<li><a href='UtDashboard.php'> Area personale </a></li>";
+	        echo "<li><a href='UtDashboard.php'> Area personale </a></li>
+                <li><a href='logout.php'> Esci </a></li>";
         else
-            echo "<li><a href='AzDashboard.php'> Area personale </a></li>";
+            echo "<li><a href='AzDashboard.php'> Area personale </a></li>
+                <li><a href='logout.php'> Esci </a></li>";
     }
     else
-        echo "<li><a href='login.php'> Login </a></li>";
+        echo "<li><a href='login.php'> Login </a></li>
+            <li><a href='signin.php'> Registrati </a>
+                <ul>
+                  <li><a href='CompanySignIn.php'>Come Azienda</a></li>
+                  <li><a href='UserSignIn.php'>Come Utente</a></li>
+                  <li><a href='sectionPerchèIscriversi.php'>Perchè registrarsi</a> </li>
+                </ul>
+            </li>";
 echo"
-  <li><a href='sectionAziendePartner.php'>Aziende partner</a>
-    <ul>
-      <li><a href=''>Sub Menu 1</a></li>
-      <li><a href=''>Sub Menu 2</a></li>
-      <li><a href=''>Sub Menu 3</a></li>
-    </ul>
-  </li>
-  <li><a href='sectionPerchèIscriversi.php'>Perchè iscriversi</a>
-    <ul>
-      <li><a href=''>Sub Menu 1</a></li>
-      <li><a href=''>Sub Menu 2</a></li>
-      <li><a href=''>Sub Menu 3</a></li>
-      <li><a href=''>Sub Menu 4</a></li>
-      <li><a href=''>Sub Menu 5</a></li>
-    </ul>
-  </li>
+  
+
+  
 </ul>
 </div>";
 }
