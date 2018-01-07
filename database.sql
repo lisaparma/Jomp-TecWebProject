@@ -32,7 +32,7 @@ Email char(255) NOT NULL,
 Citta char(20) NOT NULL,
 Iscrizione timestamp DEFAULT CURRENT_TIMESTAMP,
 Password char(20) NOT NULL,
-Descrizione text(300) NOT NULL,
+Descrizione text(1000) NOT NULL,
 PRIMARY KEY (Codice, Nome)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
