@@ -24,6 +24,35 @@ function head($title) {
 			</head>";
 }
 
+function menuu(){ echo "
+<div id='primarymenu'>
+<ul>
+  <li><a href='sectionChiSiamo.php'>Chi siamo</a></li>
+  <li><a href='sectionAziendePartner.php'>Aziende partner</a> </li>";
+if(isset($_SESSION['login'])) {
+        if(get_class($_SESSION['login'])=='Utente')
+	        echo "<li><a href='UtDashboard.php'> Area personale </a></li>
+                <li><a href='logout.php'> Esci </a></li>";
+        else
+            echo "<li><a href='AzDashboard.php'> Area personale </a></li>
+                <li><a href='logout.php'> Esci </a></li>";
+    }
+    else
+        echo "<li><a href='login.php'> Login </a></li>
+            <li><a href='signin.php'> Registrati </a>
+                <ul>
+                  <li><a href='CompanySignIn.php'>Come Azienda</a></li>
+                  <li><a href='UserSignIn.php'>Come Utente</a></li>
+                  <li><a href='sectionPerchèIscriversi.php'>Perchè registrarsi</a> </li>
+                </ul>
+            </li>";
+echo"
+  
+
+  
+</ul>
+</div>";
+}
 
 function headers() {
 	echo "<div id='header'>";
@@ -40,12 +69,13 @@ function headers() {
 	}
 	echo "		<a href='home.php'>
 		            <img id='logo' src='../IMG/jomp.png' alt='logo scritta jomp con lente d&rsquo;ingrandimento'>
-		        </a>
-	     
-	        <h1> A jump in the job</h1>
+		        </a>";
+                menuu();
 
-	    </div>";
+	 echo"   </div>";
 }
+
+
 
 function breadcrumb($pages){
     echo "<ul id='bc'>

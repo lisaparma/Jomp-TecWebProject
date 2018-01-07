@@ -11,7 +11,6 @@ echo "<body>";
 
 headers();
 
-menuHome();
 
 echo   "<div id=form>
             <div id=contentForm>

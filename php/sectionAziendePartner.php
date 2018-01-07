@@ -15,8 +15,6 @@ echo "<body>";
 
 headers();
 
-menuHome();
-
 $page='Aziende partner';
 breadcrumb(array($page));
 

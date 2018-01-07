@@ -11,8 +11,6 @@ echo "<body>";
 
 headers();
 
-menuHome();
-
 
 function checkEmail($email) {
 
