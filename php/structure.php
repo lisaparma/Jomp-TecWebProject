@@ -24,19 +24,19 @@ function head($title) {
 			</head>";
 }
 
-function menuu(){ echo "
-<div id='primarymenu'>
-<ul>
-  <li><a href='sectionChiSiamo.php'>Chi siamo</a></li>
-  <li><a href='sectionAziendePartner.php'>Aziende partner</a> </li>";
-if(isset($_SESSION['login'])) {
-        if(get_class($_SESSION['login'])=='Utente')
-	        echo "<li><a href='UtDashboard.php'> Area personale </a></li>
-                <li><a href='logout.php'> Esci </a></li>";
-        else
-            echo "<li><a href='AzDashboard.php'> Area personale </a></li>
-                <li><a href='logout.php'> Esci </a></li>";
-    }
+function menuu(){ 
+	echo "<div id='primarymenu'>
+			<ul>
+			  <li><a href='sectionChiSiamo.php'>Chi siamo</a></li>
+			  <li><a href='sectionAziendePartner.php'>Aziende partner</a> </li>";
+	if(isset($_SESSION['login'])) {
+	        if(get_class($_SESSION['login'])=='Utente')
+		        echo "<li><a href='UtDashboard.php'> Area personale </a></li>
+	                <li><a href='logout.php'> Esci </a></li>";
+	        else
+	            echo "<li><a href='AzDashboard.php'> Area personale </a></li>
+	                <li><a href='logout.php'> Esci </a></li>";
+	    }
     else
         echo "<li><a href='login.php'> Login </a></li>
             <li><a href='signin.php'> Registrati </a>
@@ -46,12 +46,12 @@ if(isset($_SESSION['login'])) {
                   <li><a href='sectionPerchèIscriversi.php'>Perchè registrarsi</a> </li>
                 </ul>
             </li>";
-echo"
-  
+	echo"
+	  
 
-  
-</ul>
-</div>";
+	  
+	</ul>
+	</div>";
 }
 
 function headers() {
