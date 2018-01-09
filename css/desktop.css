@@ -1,10 +1,14 @@
 
 /* ---------------------------------------------------------------------------------------------- */
 /* --------------------------------------- PARTI COMUNI ----------------------------------------- */
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
 
 html, body {
-    margin: 0px;
-    padding: 0px;
+    height: 100%;
     font-family: LFTEtica,Helvetica Neue,Helvetica,Arial,sans-serif;
     font-size:1em;
     background-color:#EFEFEF;
@@ -13,25 +17,24 @@ html, body {
 
 body {
     display: block;
-    max-width: 1024px;
-    margin:auto;
+    padding-top: 7em;
     background-color: #FFFFFF;
+
 }
 
 /* ------------------    HEADER   ------------------- */
 
 #header {
+    width: 90%;
+    margin-right: 5%;
+    margin-left: 5%;
     background-color: #9fc4c6;
     height: 7em;
-    margin: 0em;
-    border: 0.1px solid #A9E8DC;
-    border-top-right-radius: 5px;
-    border-top-left-radius: 5px;
-    /* prova */
+    border: 0.1% solid #A9E8DC;
+    border-top-right-radius: 1%;
+    border-top-left-radius: 1%;
     position: fixed;
-    left:0;
-    top:0;
-    width: 100%;
+    top: 0;
     z-index: 1000;
 }
 
@@ -68,7 +71,7 @@ h1 {
     display: inline-block;
     background-color: #d4d3d3;
     border-style: solid;
-    border-width: 2px;
+    border-width: 0.1%;
     border-color: #708090;
     border-radius: 10px;
     padding: 1em;
@@ -79,6 +82,15 @@ h1 {
     text-decoration-line: none;
 
 }
+
+/* ------------------ CONTENUTO PAGINE ------------------*/
+
+#page {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+
 
 /* --------------------- MENU HOME ----------------------*/
 
@@ -203,7 +215,7 @@ h1 {
 /* ----------------------- BREADCRUMB ----------------------*/
 
 #bc{
-    margin: 5px;
+    margin-top: 0.4%;
     padding-left: 0px;
     list-style:none;
     display: block;
@@ -226,7 +238,7 @@ h1 {
   position:relative;
   height: 40px;
   line-height:40px;
-  padding: 0 10px 0 5px;
+  /*padding: 0 10px 0 5px;*/
   text-align: center;
   margin-right: 23px;
   cursor: default;
@@ -305,19 +317,16 @@ h1 {
 /* ----------------------- MENU area personale ----------------------*/
  
 .container-menu {
+    margin-top: 0.4%;
     display: block;
     width: 24%;
     float: left;
-
-    margin-left: 5px;
 
 }
 
 
 .ap-menu {
   list-style: none;
-  padding: 0;
-  margin: 0;
   background: #FFF;
   border-radius: 2px;
   -moz-border-radius: 2px;
@@ -339,28 +348,30 @@ h1 {
 .ap-menu li a p {
     display: inline-block;
     text-transform: uppercase;
-    text-align:left;
-    padding-left:3px;
+    text-align:center;
+    padding-left: 1%;
 }
 .ap-menu li a .logo {
   display: inline-block;
+  padding-right: 5%;
 }
 /* quando passo sopra un link si colora*/
 .ap-menu li:hover > a {
   color: #e67e22;
+
 }
 
 /* bordo nella pagina in cui sono*/
-.ap-menu li #this {
+.ap-menu li #this { 
   position: relative;
   color: #e67e22;
   border:0;
   /*border-top: 4px solid #e67e22;
   border-bottom: 4px solid #e67e22;
   margin-top: -4px;*/
-  box-shadow: 0 0 5px #DDD;
-  -moz-box-shadow: 0 0 5px #DDD;
-  -webkit-box-shadow: 0 0 5px #DDD;
+  box-shadow: 0 0 1% #DDD;
+  -moz-box-shadow: 0 0 50% #DDD;
+  -webkit-box-shadow: 0 0 50% #DDD;
   border-left: 4px solid #e67e22;
   border-right: 4px solid #e67e22;
   margin: 0 -4px;
@@ -369,11 +380,11 @@ h1 {
 
 
 /* media queries per farlo responsive */
-@media only screen and (min-width: 980px) {
+/*@media only screen and (min-width: 980px) {
   .ap-menu {
 		margin-left:10px;
 	}
-}
+}*/
 
 @media only screen and (min-width: 700px) and (max-width: 979px) {
   .ap-menu {
@@ -452,9 +463,12 @@ h1 {
 /* --------------------- FOOTER ----------------------*/
 
 #footer {
-    padding: 2em;
     text-align: center;
     font-size: 0.5em;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
 }
 
 
@@ -601,7 +615,6 @@ h1 {
 /* ----------------------- RICERCA - menu.php / UtCercaAnnuncio.php ----------------------*/
 
 #foto {
-    margin-top: 110px;
     padding: 5em 1em 5em 1em;
     position: relative;
     background-image: url(../IMG/front.jpg);

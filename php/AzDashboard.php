@@ -32,7 +32,7 @@ echo "<p>Gentile ".$company->getName().", ecco un riassunto delle sue attività:
 
 # ------------------------------------------------------
 
-echo"</div>";
+echo"</div></div>";
 footer();
  
 echo "</body> \n </html>";

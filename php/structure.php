@@ -78,7 +78,8 @@ function headers() {
 
 
 function breadcrumb($pages){
-    echo "<ul id='bc'>
+    echo "<div id=page>
+    		<ul id='bc'>
             <li><a href='home.php'> <img class='icon' src='../IMG/home.svg'></img> </a></li>";
     for ($i = 0, $n = count($pages) ; $i < $n ; $i++)
     {

@@ -67,7 +67,8 @@ if(isset($_POST['submit'])){
     }
 }
 
-echo "<h3>Regole per l'iscrizione:</h3>
+echo "<div id=page>
+        <h3>Regole per l'iscrizione:</h3>
         <ol>
             <li>Tutti i campi devono essere <strong>OBBLIGATORIAMENTE</strong> compilati;</li>
             <li>Il nome e l'email dell'azienda devono essere univoche;</li>
@@ -107,7 +108,8 @@ echo "<div id=form>
 
             </form>
         </div>
-    </div>";
+    </div>
+</div>";
 
 
 footer();
