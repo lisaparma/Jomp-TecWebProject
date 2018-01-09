@@ -615,6 +615,7 @@ h1 {
 /* ----------------------- RICERCA - menu.php / UtCercaAnnuncio.php ----------------------*/
 
 #foto {
+    
     padding: 5em 1em 5em 1em;
     position: relative;
     background-image: url(../IMG/front.jpg);

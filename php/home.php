@@ -15,7 +15,8 @@ echo "<body>";
 
 headers();
 
-echo "<div id='foto'>";
+echo "<div id=page>
+        <div id='foto'>";
 
 searchForm("home.php");
 echo"</div>";
@@ -49,6 +50,7 @@ if(isset($_POST['cerca'])) {
 else
     lastAds();
 
+echo "</div>";
 
 footer();
  
