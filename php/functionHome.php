@@ -19,7 +19,7 @@ function menuHome() {
 
 function searchForm($pagephp) {
 	echo "<div id='ricerca'> 
-	        <form action='$pagephp' method='post'>
+	        <form id='ricercaForm' action='$pagephp' method='post'>
 	            <fieldset id='fieldset'>
 					<h2> Ricerca offerte </h2>
 
