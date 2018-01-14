@@ -72,14 +72,13 @@ function headers() {
 		        </a>";
                 menuu();
 
-	 echo"   </div>";
+	 echo"   </div>
+     <div id=page>";
 }
 
 
-
 function breadcrumb($pages){
-    echo "<div id=page>
-    		<ul id='bc'>
+    echo "<ul id='bc'>
             <li><a href='home.php'> <img class='icon' src='../IMG/home.svg'></img> </a></li>";
     for ($i = 0, $n = count($pages) ; $i < $n ; $i++)
     {
@@ -88,10 +87,24 @@ function breadcrumb($pages){
     echo "</ul>";
 }
 
-function footer() {
-	echo "<div id='footer'> 
-        <p> Questo è il footer, ci scriverò qualcosa di sensato un giorno.</p>
-    </div>";
-}
-
+function footer() { 
+    echo "<div id='footer'>
+        <div id='link'>
+            <ul> 
+                <li><a href=''>Chi siamo</a></li> 
+                <li><a href=''>Privacy/Policy</a></li> 
+                <li><a href=''>Termini e condizioni</a></li> 
+            </ul> 
+        </div>
+        <div id='social'>
+            <ul> 
+                <li><a href=''><img src='../IMG/facebook.svg'></a></li> 
+                <li><a href=''><img src='../IMG/google+.svg'></a></li> 
+                <li><a href=''><img src='../IMG/twitter.svg'></a></li> 
+                <li><a href=''><img src='../IMG/instagram.svg'></a></li> 
+            </ul> 
+        </div> 
+        <p> SLS Group <br/> Sede legale: Via Trieste 63, 35121 Padova (Italy) <br/> Contatti: sara.feltrin.2@studenti.unipd.it, lisa.parma@studenti.unipd.it, silvia.bazzeato@studenti.unipd.it</p> 
+    </div>"; 
+} 
 ?>

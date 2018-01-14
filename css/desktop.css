@@ -1,6 +1,7 @@
 
 /* ---------------------------------------------------------------------------------------------- */
 /* --------------------------------------- PARTI COMUNI ----------------------------------------- */
+
 *{
     margin: 0;
     padding: 0;
@@ -16,11 +17,66 @@ html, body {
 }
 
 body {
-    display: block;
-    padding-top: 7em;
     background-color: #FFFFFF;
+    height: auto;
+    min-height: 100%;
+}
+
+#page {
+    padding-top: 7em;
+    margin-left: 5%;
+    margin-right: 5%;
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+}
+
+#footer {
+    height: auto; 
+    clear: both;
+    text-align: center;
+    font-size: 0.5em;
+    width: 100%;
 
 }
+
+#footer p{
+    width: 100%;
+    
+    
+}
+#footer ul {
+    list-style:none;
+    display: block;
+}
+ 
+#social {
+    display: inline-block;
+    float: right;
+}
+#social li { 
+    list-style:none; 
+    position:relative; 
+    float:right; 
+    margin:0; 
+    padding: 1em;
+} 
+#social img{ 
+    width: 3em; 
+} 
+
+#link {
+    display: inline-block;
+    width: 35%;
+    margin: auto;
+}
+#link li{ 
+    display: inline-block;
+    list-style:none; 
+    position:relative; 
+    margin:0; 
+    padding:2em; 
+} 
 
 /* ------------------    HEADER   ------------------- */
 
@@ -90,14 +146,6 @@ h1 {
     text-decoration-line: none;
 
 }
-
-/* ------------------ CONTENUTO PAGINE ------------------*/
-
-#page {
-    margin-left: 5%;
-    margin-right: 5%;
-}
-
 
 
 /* --------------------- MENU HOME ----------------------*/
@@ -329,9 +377,7 @@ h1 {
     display: block;
     width: 24%;
     float: left;
-
 }
-
 
 .ap-menu {
   list-style: none;
@@ -465,18 +511,6 @@ h1 {
     }
     
     
-}
-
-
-/* --------------------- FOOTER ----------------------*/
-
-#footer {
-    text-align: center;
-    font-size: 0.5em;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
 }
 
 
