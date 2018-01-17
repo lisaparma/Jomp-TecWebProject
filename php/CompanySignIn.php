@@ -67,8 +67,7 @@ if(isset($_POST['submit'])){
     }
 }
 
-echo "<div id=page>
-        <h3>Regole per l'iscrizione:</h3>
+echo "<h3>Regole per l'iscrizione:</h3>
         <ol>
             <li>Tutti i campi devono essere <strong>OBBLIGATORIAMENTE</strong> compilati;</li>
             <li>Il nome e l'email dell'azienda devono essere univoche;</li>
@@ -78,36 +77,35 @@ echo "<div id=page>
         </ol>";
 
 
-echo "<div id=form>
-        <div id=contentForm>
-            <form method='post' action='CompanySignIn.php'> 
-
-                <label for='nome'> Nome: </label><br/>
-                <input type='text' id='name' name='name' placeholder='Nome'required><br/> 
+echo "<div id='signinform'>
+        <h1>Sign Up Now!</h1>
+        <form method='post' action='CompanySignIn.php'> 
+            <div class='inner-wrap'>
+                <label for='name'> Nome: </label><br/>
+                <input type='text' id='name' name='name' placeholder='Nome'required>
 
                 <label for='pIva'> Partita IVA: </label><br/>
-                <input type='text' id='pIva' name='pIva' placeholder='Partita Iva'required><br/> 
-                
+                <input type='text' id='pIva' name='pIva' placeholder='Partita Iva'required>
+
                 <label for='email'> E-mail: </label><br/>
-                <input type='text' id='email' name='email' placeholder='Email' pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$' required><br/> 
-                
-                <label for='citta'> Città: </label><br/>
-                <input type='text' id='cyty' name='city' placeholder='Città' required><br/>       
-                                
+                <input type='text' id='email' name='email' placeholder='Email' pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$' required>
+
+                <label for='city'> Città: </label><br/>
+                <input type='text' id='city' name='city' placeholder='Città' required>      
+
                 <label for='password'> Password: </label><br/>
-                <input type='password' id='password' name='password' placeholder='Password' required><br/>
+                <input type='password' id='password' name='password' placeholder='Password' required>
 
                 <label for='rippw'> Ripeti password: </label><br/>
-                <input type='password' id='reppw' name='repPassword' placeholder='Password' required><br/>
+                <input type='password' id='rippw' name='repPassword' placeholder='Password' required>
 
-                <p> Descrivi la tua azienda: </p><br/>
-                <textarea name='description' rows='15' cols='45' placeholder='Cosa vuoi raccontare della tua azienda?' required></textarea><br/>
-                <br/>
+                <label for='description'> Descrivi la tua azienda: </label><br/>
+                <textarea id='description' name='description' rows='15' cols='45' placeholder='Cosa vuoi raccontare della tua azienda?' required></textarea>
+            </div>
+            
+            <input type='submit' value='Registrati' name='submit'>
 
-                <input type='submit' value='Registrati' name='submit'>
-
-            </form>
-        </div>
+        </form>
     </div>
 </div>";
 

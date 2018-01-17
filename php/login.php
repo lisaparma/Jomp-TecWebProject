@@ -19,8 +19,7 @@ if(isset($_GET['msg'])){
     echo "<p class='successMsg'>Registrazione avvenuta con successo! Procedi ora con l'autenticazione.</p>";
 }
 
-echo "<body>
-        <div id=form>
+echo "<div id=form>
             <div id=contentForm>
                 <form method='post' action='login.php'> 
                     <label for='username'> Username o nome azienda: </label> <br/>

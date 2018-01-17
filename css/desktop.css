@@ -766,6 +766,7 @@ h1 {
 
 /* --------------------- SIGN IN FORM - CompanySignIn.php / UserSignIn.php ---------------------*/
 
+/* roba da eliminare*/
 #form {
     margin-top: 1em;
     margin-left: 20%;
@@ -782,11 +783,83 @@ h1 {
 
 }
 
-.label {
+label {
   padding: 8px;
+}
+/*-----*/
+
+#signinform{
+    max-width: 400px;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
+    text-align: center;
+    margin-top: 2em;
+}
+
+#signinform form{
+    padding: 2em;
+}
+
+#signinform h1 {
+    background: #2A88AD;
+    padding: 20px 30px 15px 30px;
+    border-radius: 10px 10px 0 0;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
+    font: normal 30px 'Bitter', serif;
+    box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+    border: 1px solid #257C9E;
+}
+
+#signinform input[type="text"],
+#signinform input[type="password"], #signinform textarea{
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 8px;
+    border-radius: 6px;
+    border: 2px solid #fff;
+    box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.33);
+    outline: none;
+    margin-bottom: 1em;
 }
 
 
+#signinform input[type="text"]:focus,
+#signinform input[type="password"]:focus, #signinform textarea:focus {
+    box-shadow: 0 0 5px #B0CFE0;
+    border:1px solid #B0CFE0;
+}
+#signinform input[type="radio"]{
+    margin-bottom: 1em;
+}
+#signinform .inner-wrap{
+    padding: 30px;
+    background: #F8F8F8;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+#signinform input[type="submit"]{
+    background: #2A88AD;
+    padding: 8px 20px 8px 20px;
+    margin: auto;
+    border-radius: 5px;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
+    font: normal 30px 'Bitter', serif;
+    box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+    border: 1px solid #257C9E;
+    font-size: 15px;
+}
+
+#signinform input[type="submit"]:hover{
+    background: #2A6881;
+    -moz-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
+    -webkit-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
+    box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
+}
 /* --------------------- ADD ADS - AzPubblicaAnnuncio.php ----------------------*/
 
 #remove {
