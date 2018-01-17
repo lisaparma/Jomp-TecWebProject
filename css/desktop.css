@@ -696,10 +696,53 @@ h1 {
     margin: auto;
     align-content: center;
     width: 60%;
+    padding: 1em;
     border: 1px;
     border-color: #000000;
     border-style: inset;
-    background: rgba(255,255,255,0.9);    
+    background: rgba(255,255,255,0.9);   
+    box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.35);
+    border-radius: 10px;
+    border: 6px solid #305A72;
+}
+
+#ricerca input[type="text"] {
+    box-sizing: border-box; 
+    padding: 8px;
+    outline: none;
+    border: 1px solid #B0CFE0;
+}
+
+#ricerca input[type="text"]:focus{
+    box-shadow: 0 0 5px #B0CFE0;
+    border:1px solid #B0CFE0;
+}
+
+#ricerca select {
+    box-sizing: border-box; 
+    padding: 8px;
+    outline: none;
+    border: 1px solid #B0CFE0;
+}
+#ricerca select:focus{
+    box-shadow: 0 0 5px #B0CFE0;
+    border:1px solid #B0CFE0;
+}
+
+#ricerca input[type="submit"] {
+    box-shadow: inset 0px 1px 0px 0px #3985B1;
+    background-color: #216288;
+    border: 1px solid #17445E;
+    display: inline-block;
+    cursor: pointer;
+    color: #FFFFFF;
+    padding: 8px 18px;
+    text-decoration: none;
+    font: 12px Arial, Helvetica, sans-serif;
+}
+#ricerca input[type="submit"]:hover {
+    background: linear-gradient(to bottom, #2D77A2 5%, #337DA8 100%);
+    background-color: #28739E;
 }
 
 #fieldset {
