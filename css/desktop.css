@@ -61,6 +61,7 @@ body {
     margin: 0; 
     margin:1em;
 } 
+
 #social #fb{
     background-image: url(../IMG/facebook.svg);
     background-repeat: no-repeat;
@@ -124,14 +125,6 @@ body {
     height: 7em;
     float: left;
 }
-
-/*  SISTEMARE H1   */
-h1 {
-    text-align: center;
-    padding-top: 1.5em;
-    padding-left: 35%;
-}
-
 
 #box {
     display: none;
