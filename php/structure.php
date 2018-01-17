@@ -97,11 +97,11 @@ function footer() {
             </ul> 
         </div>
         <div id='social'>
-            <ul> 
-                <li><a href=''><img src='../IMG/facebook.svg'></a></li> 
-                <li><a href=''><img src='../IMG/google+.svg'></a></li> 
-                <li><a href=''><img src='../IMG/twitter.svg'></a></li> 
-                <li><a href=''><img src='../IMG/instagram.svg'></a></li> 
+            <ul>
+                <li id='fb'><a href=''></a></li> 
+                <li id='ig'><a href=''></a></li> 
+                <li id='gg'><a href=''></a></li> 
+                <li id='tw'><a href=''></a></li> 
             </ul> 
         </div> 
         <p> SLS Group <br/> Sede legale: Via Trieste 63, 35121 Padova (Italy) <br/> Contatti: sara.feltrin.2@studenti.unipd.it, lisa.parma@studenti.unipd.it, silvia.bazzeato@studenti.unipd.it</p> 

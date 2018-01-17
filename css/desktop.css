@@ -29,45 +29,70 @@ body {
     min-height: 100%;
     height: auto !important;
     height: 100%;
+    position: relative;
 }
 
 #footer {
     height: auto; 
-    clear: both;
     text-align: center;
-    font-size: 0.5em;
+    font-size: 0.7em;
     width: 100%;
+    padding: 1em;
+    padding-bottom: 2em;
+    align-content: center;
 
 }
 
 #footer p{
     width: 100%;
-    
-    
 }
 #footer ul {
     list-style:none;
-    display: block;
 }
  
 #social {
     display: inline-block;
-    float: right;
+    margin: auto;
 }
 #social li { 
     list-style:none; 
     position:relative; 
     float:right; 
-    margin:0; 
-    padding: 1em;
+    margin: 0; 
+    margin:1em;
 } 
-#social img{ 
-    width: 3em; 
-} 
+#social #fb{
+    background-image: url(../IMG/facebook.svg);
+    background-repeat: no-repeat;
+    background-size: 2.5em 2.5em;
+    width: 2.5em;
+    height: 2.5em;
+}
+#social #ig{
+    background-image: url(../IMG/instagram.svg);
+    background-repeat: no-repeat;
+    background-size: 2.5em 2.5em;
+    width: 2.5em;
+    height: 2.5em;
+}
+#social #gg{
+    background-image: url(../IMG/google+.svg); 
+    background-repeat: no-repeat;
+    background-size: 2.5em 2.5em;
+    width: 2.5em;
+    height: 2.5em;
+}
+#social #tw{
+    background-image: url(../IMG/twitter.svg);
+    background-repeat: no-repeat;
+    background-size: 2.5em 2.5em;
+    width: 2.5em;
+    height: 2.5em;
+}
 
 #link {
     display: inline-block;
-    width: 35%;
+    width: 100%;
     margin: auto;
 }
 #link li{ 
@@ -75,7 +100,7 @@ body {
     list-style:none; 
     position:relative; 
     margin:0; 
-    padding:2em; 
+    padding:1em; 
 } 
 
 /* ------------------    HEADER   ------------------- */
