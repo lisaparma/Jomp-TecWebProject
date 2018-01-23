@@ -10,7 +10,6 @@ session_start();
 $title = "Dashboard Azienda - Jomp";
 head($title);
 
-echo "<body>";
 
 headers();
 

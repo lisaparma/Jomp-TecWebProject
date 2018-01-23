@@ -9,7 +9,6 @@ session_start();
 $title = "Dashboard Utente - Jomp";
 head($title);
 
-echo "<body>";
 
 headers();
 

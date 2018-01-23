@@ -16,30 +16,34 @@ function head($title) {
 			    <meta name='viewport' content='width=device-width'/>
 			    
 			    <link href='../css/desktop.css' rel='stylesheet' type='text/css' media='screen'/>
-			    <link href='../css/print.css' rel='stylesheet' type='text/css' media='print'/>
+			    <!-- <link href='../css/print.css' rel='stylesheet' type='text/css' media='print'/> -->
 			    
 			    <link href='../IMG/job.png' rel='icon' type='image/x-icon'/>
 			    <link href='../IMG/job.png' rel='shortcut icon' type='image/x-icon'/>
+                
+                <script language='JavaScript' type='text/javascript' src='../JavaScript/javascript.js'></script>
+
 			    
-			</head>";
+			</head>
+            <body onLoad='whereIam();'>";
 }
 
-function menuu(){ 
+function primaryMenu(){ 
 	echo "<div id='primarymenu'>
 			<ul>
-			  <li><a href='sectionChiSiamo.php'>Chi siamo</a></li>
-			  <li><a href='sectionAziendePartner.php'>Aziende partner</a> </li>";
+			  <li ><a id='qui' href='sectionChiSiamo.php'>Chi siamo</a></li>
+			  <li ><a id='qui' href='sectionAziendePartner.php'>Aziende partner</a> </li>";
 	if(isset($_SESSION['login'])) {
 	        if(get_class($_SESSION['login'])=='Utente')
-		        echo "<li><a href='UtDashboard.php'> Area personale </a></li>
-	                <li><a href='logout.php'> Esci </a></li>";
+		        echo "<li><a id='qui' href='UtDashboard.php'> Area personale </a></li>
+	                <li><a id='qui' href='logout.php'> Esci </a></li>";
 	        else
-	            echo "<li><a href='AzDashboard.php'> Area personale </a></li>
-	                <li><a href='logout.php'> Esci </a></li>";
+	            echo "<li><a id='qui' href='AzDashboard.php'> Area personale </a></li>
+	                <li><a id='qui' href='logout.php'> Esci </a></li>";
 	    }
     else
-        echo "<li><a href='login.php'> Login </a></li>
-            <li><a href='signin.php'> Registrati </a>
+        echo "<li><a id='qui' href='login.php'> Login </a></li>
+            <li><a id='qui' href='signin.php'> Registrati </a>
                 <ul>
                   <li><a href='CompanySignIn.php'>Come Azienda</a></li>
                   <li><a href='UserSignIn.php'>Come Utente</a></li>
@@ -55,7 +59,7 @@ function menuu(){
 }
 
 function headers() {
-	echo "<div id='header'>";
+	echo "<div class='header'>";
 	if(!isset($_SESSION['login'])) {
 	        echo " 	<div id='box'>
 			            <p class='button' id='login'><a href='login.php'>Log In</a></p>
@@ -68,12 +72,12 @@ function headers() {
 			        </div>";
 	}
 	echo "		<a href='home.php'>
-		            <img id='logo' src='../IMG/jomp.png' alt='logo scritta jomp con lente d&rsquo;ingrandimento'>
+		            <img id='logo' src='../IMG/jomp2.png' alt='logo scritta jomp con lente d&rsquo;ingrandimento'>
 		        </a>";
-                menuu();
+                primaryMenu();
 
 	 echo"   </div>
-     <div id=page>";
+     <div id='page'>";
 }
 
 

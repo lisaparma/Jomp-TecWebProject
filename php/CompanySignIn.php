@@ -14,7 +14,6 @@ headers();
 
 if(isset($_POST['submit'])){
     try {
-
         $name = $_POST['name'];
         $pIva = $_POST['pIva'];
         $email = $_POST['email'];

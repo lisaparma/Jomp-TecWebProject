@@ -10,8 +10,6 @@ session_start();
 $title = "Annunci salvati - Jomp";
 head($title);
 
-echo "<body>";
-
 headers();
 
 

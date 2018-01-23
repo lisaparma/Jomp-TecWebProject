@@ -11,8 +11,6 @@ session_start();
 $title = "Aziende partner - Jomp";
 head($title);
 
-echo "<body>";
-
 headers();
 
 $page='Aziende partner';

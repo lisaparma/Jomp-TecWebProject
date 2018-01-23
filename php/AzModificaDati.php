@@ -10,7 +10,6 @@ session_start();
 $title="Jomp - Modifica dati";
 head($title);
 
-echo "<body>";
 
 headers();
 

@@ -7,7 +7,6 @@ require_once("connect.php");
 $title = "Registrazione Utente - Jomp";
 head($title);
 
-echo "<body>";
 
 headers();
 

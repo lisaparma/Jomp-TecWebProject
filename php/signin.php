@@ -7,8 +7,6 @@ require_once("connect.php");
 $title="Sign In - Jomp";
 head($title);
 
-echo "<body>";
-
 headers();
 
 

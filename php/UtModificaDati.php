@@ -10,8 +10,6 @@ session_start();
 $title = "Modifica dati - Jomp";
 head($title);
 
-echo "<body>";
-
 headers();
 
 

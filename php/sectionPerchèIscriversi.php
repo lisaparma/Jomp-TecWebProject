@@ -15,8 +15,6 @@ echo "<body>";
 
 headers();
 
-menuHome();
-
 $page='Chi siamo';
 breadcrumb(array($page));
 

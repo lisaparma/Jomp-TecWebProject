@@ -106,11 +106,12 @@ body {
 
 /* ------------------    HEADER   ------------------- */
 
-#header {
+.header {
     width: 90%;
     margin-right: 5%;
     margin-left: 5%;
-    background-color: #9fc4c6;
+    padding-bottom: 0.5em;
+    background-color: #029cc7;
     height: 7em;
     border: 0.1% solid #A9E8DC;
     border-top-right-radius: 1%;
@@ -118,6 +119,10 @@ body {
     position: fixed;
     top: 0;
     z-index: 1000;
+}
+.small {
+    height: 3em;
+    box-shadow: 0 0 5px rgba(black, .2);
 }
 
 #logo {
@@ -166,47 +171,14 @@ body {
 }
 
 
-/* --------------------- MENU HOME ----------------------*/
+/* --------------------- MENU HEADER ----------------------*/
 
-#menu {
-    margin: 0em;
-    padding: 1em;
-    text-align: center;
-    align-content: center;
-    background-color: cadetblue; 
-}
-
-#menu li {
-    padding: 1em;
-    display: inline-block;
-    width: 20%;
-    list-style: none;
-    background-color: #d4d3d3;
-    border-style: solid;
-    border-width: 2px;
-    border-color: cadetblue;
-    border-radius: 10px;
-}
-
-
-#menu a:link {
-    text-decoration-line: none;
-    color: #2b0b30;
-}
-
-#menu li:hover {
-    background-color: #708090;
-    color: #e6d1b8;
-}
-
-
-
-/* prova menu */
 #primarymenu
 {
 	margin-top:15px;
     text-align: center;
 }
+
 
 /* elenco pagine*/
 #primarymenu ul
@@ -225,7 +197,7 @@ body {
 /* link alle altre pagine*/
 #primarymenu ul a
 {
-	color:#333;
+    color: lightgray;
 	text-decoration:none;
 	font-weight:700;
 	font-size:12px;
@@ -286,6 +258,12 @@ body {
 	display:block;
 }
 
+/* Pagina corrente*/
+#primarymenu ul li .here {
+    font-size: 1.8em;
+    color: #ffffff;
+}
+
 /* ----------------------- BREADCRUMB ----------------------*/
 
 #bc{
@@ -294,6 +272,7 @@ body {
     list-style:none;
     display: block;
     height: 40px;
+    padding-top: 0.4em;
 }
 
 #bc .icon{
