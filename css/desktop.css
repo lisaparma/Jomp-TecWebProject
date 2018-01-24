@@ -17,19 +17,20 @@ html, body {
 }
 
 body {
-    background-color: #FFFFFF;
+    background-color: #EFEFEF;
     height: auto;
     min-height: 100%;
 }
 
 #page {
     padding-top: 7em;
-    margin-left: 5%;
-    margin-right: 5%;
+    max-width: 1024px;
+    margin: auto;
     min-height: 100%;
     height: auto !important;
     height: 100%;
     position: relative;
+    background-color: #ffffff;
 }
 
 #footer {
@@ -107,9 +108,7 @@ body {
 /* ------------------    HEADER   ------------------- */
 
 .header {
-    width: 90%;
-    margin-right: 5%;
-    margin-left: 5%;
+    width: 100%;
     padding-bottom: 0.5em;
     background-color: #029cc7;
     height: 7em;
@@ -190,7 +189,7 @@ body {
 	padding:0;
     padding-top: 1.5em;
     padding-top: 1.5em;
-    width: 70%;
+    width: 75%;
 
 }
 
@@ -214,13 +213,13 @@ body {
 	float:left;
 	margin:0;
 	padding:0;
-    width: 25%;
+    width: 20%;
 }
 
 /*quando ci passo sopra*/
-#primarymenu ul li:hover
+#primarymenu ul li a:hover
 {
-	background:#f6f6f6;
+	font-size: 1.7em;
 }
 
 /* elenco pagine dentro una pagina*/
@@ -262,7 +261,12 @@ body {
 #primarymenu ul li .here {
     font-size: 1.8em;
     color: #ffffff;
+    pointer-events: none;
+    cursor: default;
+    
 }
+
+
 
 /* ----------------------- BREADCRUMB ----------------------*/
 

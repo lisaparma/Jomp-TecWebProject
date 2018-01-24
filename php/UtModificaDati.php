@@ -60,7 +60,6 @@ if(isset($_SESSION['login'])){ // Solo se in sessione vedi questo
                     <input type='submit' value='Modifica' name='modifica'>
 
 	            </form>
-            </div>
         </div>" ;
         
     // Quando clicco su "MODIFICA"...

@@ -81,7 +81,7 @@
         }
         
         public function getNumLikePrefCity(){
-            $query="SELECT Citta AS tot, Citta FROM Consultazioni JOIN Annunci ON Consultazioni.CodAnnuncio=Annunci.Codice JOIN Aziende ON Annunci.Azienda=Aziende.Nome WHERE Consultazioni.Utente='".$this->username."' GROUP BY Aziende.Citta ORDER BY tot DESC";
+            $query="SELECT count(*) FROM Consultazioni JOIN Annunci ON Consultazioni.CodAnnuncio=Annunci.Codice JOIN Aziende ON Annunci.Azienda=Aziende.Nome WHERE Aziende.Citta='".$this->getPrefCity()."'";
             $result = mysqli_query(openDB(), $query);
             return mysqli_num_rows($result);
         }

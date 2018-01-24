@@ -31,19 +31,34 @@ function head($title) {
 function primaryMenu(){ 
 	echo "<div id='primarymenu'>
 			<ul>
-			  <li ><a id='qui' href='sectionChiSiamo.php'>Chi siamo</a></li>
-			  <li ><a id='qui' href='sectionAziendePartner.php'>Aziende partner</a> </li>";
+              <li><a href='home.php'>Home </a></li>
+			  <li><a href='sectionChiSiamo.php'>Chi siamo</a></li>
+			  <li><a href='sectionAziendePartner.php'>Aziende partner</a> </li>";
 	if(isset($_SESSION['login'])) {
 	        if(get_class($_SESSION['login'])=='Utente')
-		        echo "<li><a id='qui' href='UtDashboard.php'> Area personale </a></li>
-	                <li><a id='qui' href='logout.php'> Esci </a></li>";
+		        echo "<li><a href='UtDashboard.php'> Area personale </a>
+                    <ul>
+                        <li><a href='UtDashboard.php'>Dashboard</a></li>
+                        <li><a href='UtCercaAnnuncio.php'>Cerca annuncio</a></li>
+                        <li><a href='UtAnnunciSalvati.php'>Annunci salvati</a></li>
+                        <li><a href='UtModificaDati.ph'>Modifica dati</a></li>
+                    </ul>
+                    </li>
+	                <li><a href='logout.php'> Esci </a></li>";
 	        else
-	            echo "<li><a id='qui' href='AzDashboard.php'> Area personale </a></li>
-	                <li><a id='qui' href='logout.php'> Esci </a></li>";
+	            echo "<li><a href='AzDashboard.php'> Area personale </a>
+                    <ul>
+                        <li><a href='AzDashboard.php'>Dashboard</a></li>
+                        <li><a href='AzPubblicaAnnuncio.php'></a>Pubblica annuncio</li>
+                        <li><a href='AzResocontoAnnunci.php'>Resoconto Annunci</a></li>
+                        <li><a href='AzModificaDati.php'></a>Modifica dati</li>
+                    </ul>
+                    </li>
+	                <li><a href='logout.php'> Esci </a></li>";
 	    }
     else
-        echo "<li><a id='qui' href='login.php'> Login </a></li>
-            <li><a id='qui' href='signin.php'> Registrati </a>
+        echo "<li><a href='login.php'> Login </a></li>
+            <li><a href='signin.php'> Registrati </a>
                 <ul>
                   <li><a href='CompanySignIn.php'>Come Azienda</a></li>
                   <li><a href='UserSignIn.php'>Come Utente</a></li>
@@ -51,9 +66,6 @@ function primaryMenu(){
                 </ul>
             </li>";
 	echo"
-	  
-
-	  
 	</ul>
 	</div>";
 }
