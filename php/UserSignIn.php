@@ -7,7 +7,6 @@ require_once("connect.php");
 $title = "Registrazione Utente - Jomp";
 head($title);
 
-echo "<body>";
 
 headers();
 
@@ -109,33 +108,31 @@ echo "<h3>Regole per l'iscrizione:</h3>
         </ol>";
 
 //Mettere i tab index nei form e nei link
-echo "<div id=form>
-        <div id=contentForm>
-            <form method='post' action='UserSignIn.php'> 
-
+echo "<div id='signinform'>
+        <h1>Sign Up Now!</h1>
+        <form method='post' action='UserSignIn.php'> 
+            <div class='inner-wrap'>
                 <label for='nome'> Nome: </label><br/>
-                <input type='text' id='nome' name='Nome' placeholder='Nome'required><br/> 
-                
+                <input type='text' id='nome' name='Nome' placeholder='Nome'required>
+
                 <label for='cognome'> Cognome </label><br/>
-                <input type='text' id='cognome' name='Cognome' placeholder='Cognome' required><br/>
-                
+                <input type='text' id='cognome' name='Cognome' placeholder='Cognome' required>
+
                 <label for='email'> E-mail: </label><br/>
-                <input type='text' id='email' name='Email' placeholder='Email' pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$' required><br/>        
-                
+                <input type='text' id='email' name='Email' placeholder='Email' pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$' required>       
                 <label for='username'> Username: </label><br/>
-                <input type='text' id='username' name='Username' placeholder='Username' required><br/>
-                
+                <input type='text' id='username' name='Username' placeholder='Username' required>
+
                 <label for='password'> Password: </label><br/>
-                <input type='password' id='password' name='Password' placeholder='Password' required><br/>
+                <input type='password' id='password' name='Password' placeholder='Password' required>
 
                 <label for='rippw'> Ripeti password: </label><br/>
-                <input type='password' id='rippw' name='RipPassword' placeholder='Password' required><br/>
-                <br/>
+                <input type='password' id='rippw' name='RipPassword' placeholder='Password' required>
+            </div>
 
-                <input type='submit' value='Registrati' name='submit'>
+            <input type='submit' value='Registrati' name='submit'>
 
-            </form>
-        </div>
+        </form>
     </div>";
 
 

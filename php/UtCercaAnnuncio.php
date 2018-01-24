@@ -11,8 +11,6 @@ session_start();
 $title = "Cerca annuncio - Jomp";
 head($title);
 
-echo "<body>";
-
 headers();
 
 

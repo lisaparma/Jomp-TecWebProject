@@ -12,8 +12,6 @@ session_start();
 
 head($title);
 
-echo "<body>";
-
 headers();
 
 $page = "Pubblica annuncio";

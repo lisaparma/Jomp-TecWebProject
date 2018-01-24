@@ -10,7 +10,6 @@ session_start();
 $title = "Modifica annuncio - Jomp";
 head($title);
 
-echo "<body>";
 
 headers();
 

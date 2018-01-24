@@ -11,8 +11,6 @@ session_start();
 $title = "Home - Jomp";
 head($title);
 
-echo "<body>";
-
 headers();
 
 echo "<div id='foto'>";

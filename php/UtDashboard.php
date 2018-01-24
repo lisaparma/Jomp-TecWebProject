@@ -9,7 +9,6 @@ session_start();
 $title = "Dashboard Utente - Jomp";
 head($title);
 
-echo "<body>";
 
 headers();
 
@@ -41,6 +40,8 @@ if(isset($_SESSION['login'])){ // Solo se in sessione vedi questo
                 <p> Numero ricerche salvate: ".$user->getNumLike()."</br>
                 La città in cui cerchi più lavoro è ".$user->getPrefCity()." con ".$user->getNumLikePrefCity()." annunci salvati.</p>
                 
+                
+    </div>
     ";
     
 }

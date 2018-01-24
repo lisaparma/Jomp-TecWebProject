@@ -11,7 +11,6 @@ session_start();
 $title = "Chi siamo - Jomp";
 head($title);
 
-echo "<body>";
 
 headers();
 

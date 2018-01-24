@@ -16,25 +16,44 @@ function head($title) {
 			    <meta name='viewport' content='width=device-width'/>
 			    
 			    <link href='../css/desktop.css' rel='stylesheet' type='text/css' media='screen'/>
-			    <link href='../css/print.css' rel='stylesheet' type='text/css' media='print'/>
+			    <!-- <link href='../css/print.css' rel='stylesheet' type='text/css' media='print'/> -->
 			    
 			    <link href='../IMG/job.png' rel='icon' type='image/x-icon'/>
 			    <link href='../IMG/job.png' rel='shortcut icon' type='image/x-icon'/>
+                
+                <script language='JavaScript' type='text/javascript' src='../JavaScript/javascript.js'></script>
+
 			    
-			</head>";
+			</head>
+            <body onLoad='whereIam();'>";
 }
 
-function menuu(){ 
+function primaryMenu(){ 
 	echo "<div id='primarymenu'>
 			<ul>
+              <li><a href='home.php'>Home </a></li>
 			  <li><a href='sectionChiSiamo.php'>Chi siamo</a></li>
 			  <li><a href='sectionAziendePartner.php'>Aziende partner</a> </li>";
 	if(isset($_SESSION['login'])) {
 	        if(get_class($_SESSION['login'])=='Utente')
-		        echo "<li><a href='UtDashboard.php'> Area personale </a></li>
+		        echo "<li><a href='UtDashboard.php'> Area personale </a>
+                    <ul>
+                        <li><a href='UtDashboard.php'>Dashboard</a></li>
+                        <li><a href='UtCercaAnnuncio.php'>Cerca annuncio</a></li>
+                        <li><a href='UtAnnunciSalvati.php'>Annunci salvati</a></li>
+                        <li><a href='UtModificaDati.ph'>Modifica dati</a></li>
+                    </ul>
+                    </li>
 	                <li><a href='logout.php'> Esci </a></li>";
 	        else
-	            echo "<li><a href='AzDashboard.php'> Area personale </a></li>
+	            echo "<li><a href='AzDashboard.php'> Area personale </a>
+                    <ul>
+                        <li><a href='AzDashboard.php'>Dashboard</a></li>
+                        <li><a href='AzPubblicaAnnuncio.php'></a>Pubblica annuncio</li>
+                        <li><a href='AzResocontoAnnunci.php'>Resoconto Annunci</a></li>
+                        <li><a href='AzModificaDati.php'></a>Modifica dati</li>
+                    </ul>
+                    </li>
 	                <li><a href='logout.php'> Esci </a></li>";
 	    }
     else
@@ -47,15 +66,12 @@ function menuu(){
                 </ul>
             </li>";
 	echo"
-	  
-
-	  
 	</ul>
 	</div>";
 }
 
 function headers() {
-	echo "<div id='header'>";
+	echo "<div class='header'>";
 	if(!isset($_SESSION['login'])) {
 	        echo " 	<div id='box'>
 			            <p class='button' id='login'><a href='login.php'>Log In</a></p>
@@ -68,12 +84,12 @@ function headers() {
 			        </div>";
 	}
 	echo "		<a href='home.php'>
-		            <img id='logo' src='../IMG/jomp.png' alt='logo scritta jomp con lente d&rsquo;ingrandimento'>
+		            <img id='logo' src='../IMG/jomp2.png' alt='logo scritta jomp con lente d&rsquo;ingrandimento'>
 		        </a>";
-                menuu();
+                primaryMenu();
 
 	 echo"   </div>
-     <div id=page>";
+     <div id='page'>";
 }
 
 
@@ -97,11 +113,11 @@ function footer() {
             </ul> 
         </div>
         <div id='social'>
-            <ul> 
-                <li><a href=''><img src='../IMG/facebook.svg'></a></li> 
-                <li><a href=''><img src='../IMG/google+.svg'></a></li> 
-                <li><a href=''><img src='../IMG/twitter.svg'></a></li> 
-                <li><a href=''><img src='../IMG/instagram.svg'></a></li> 
+            <ul>
+                <li><a href='http://www.facebook.com'><div id='fb'></div></a></li> 
+                <li><a href='http://www.instagram.com'><div id='ig'></div></a></li> 
+                <li><a href='http://www.plus.google.com'><div id='gg'></div></a></li> 
+                <li><a href='http://www.twitter.com'><div id='tw'></div></a></li> 
             </ul> 
         </div> 
         <p> SLS Group <br/> Sede legale: Via Trieste 63, 35121 Padova (Italy) <br/> Contatti: sara.feltrin.2@studenti.unipd.it, lisa.parma@studenti.unipd.it, silvia.bazzeato@studenti.unipd.it</p> 

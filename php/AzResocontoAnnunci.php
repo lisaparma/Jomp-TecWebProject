@@ -10,8 +10,6 @@ session_start();
 $title = "Resoconto annunci - Jomp";
 head($title);
 
-echo "<body>";
-
 headers();
 
 $page = "Resoconto annunci";
