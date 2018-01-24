@@ -57,17 +57,38 @@ VALUES
 ('Sicurezza'),
 ('Altro');
 
+
+INSERT INTO OrarioLavoro (TipoOrario)
+VALUES
+('Qualsiasi'),
+('Full time'),
+('Part time'),
+('Turni'),
+('Altro');
+
+
+INSERT INTO ContrattoLavoro (TipoContratto)
+VALUES
+('Qualsiasi'),
+('Agente/P.Iva'),
+('Apprendistato'),
+('Tempo Indeterminato'),
+('Contratto a Progetto'),
+('Stage'),
+('Tempo Determinato'),
+('Altro');
+
 /* ----- ANNUNCI ----- */
 
-INSERT INTO Annunci (Azienda, Titolo, Tipologia, Data, Descrizione)
+INSERT INTO Annunci (Azienda, Titolo, Tipologia, Orario, Contratto, Data, Descrizione)
 VALUES
-('Trenitalia', 'Specialista gestione umane', '1', '2014-12-13 11:14:34', "La figura ricercata ha conseguito una laurea in ambito economico o giuridico. Ha esperienza pregressa in settori quali Risorse Umane, Legale, Audit. Possiede una conoscenza ottima del Pacchetto Office e base della normativa del lavoro. Inoltre, conosce bene il Sistema Applicativo SAP e la lingua inglese."),
-('Trenitalia', 'SENIOR SAFETY & VALIDATION ENGINEER', '10', '2015-03-22 09:12:34', "Si ricercano laureati in Ingegneria Elettrica, Elettronica o delle Telecomunicazioni. Devono aver maturato esperienza minima triennale nella verifica e validazione di sistemi hardware e software per il segnalamento ferroviario. E’ richiesta anche la conoscenza della lingua inglese, ad un livello corrispondente almeno a quello B2 del QCER."),
-('Trenitalia', 'STAGE AREA INTERNAL AUDITING PER NEOLAUREATI ', '1', '2016-02-28 11:54:00', "I tirocinanti sono neolaureati in Giurisprudenza, Economia o Ingegneria Gestionale. Hanno conseguito il titolo di studio con una votazione non inferiore a 105 / 110. Possiedono conoscenze in ambito Internal Auditing, Compliance Auditing, D.Lgs. n. 231/2001. Sanno usare bene il pacchetto Office e conoscono la lingua inglese ad un livello corrispondente almeno a quello B2 del Quadro comune europeo di riferimento per la conoscenza delle lingue (QCER).
+('Trenitalia', 'Specialista gestione umane', '1', '2', '4', '2014-12-13 11:14:34', "La figura ricercata ha conseguito una laurea in ambito economico o giuridico. Ha esperienza pregressa in settori quali Risorse Umane, Legale, Audit. Possiede una conoscenza ottima del Pacchetto Office e base della normativa del lavoro. Inoltre, conosce bene il Sistema Applicativo SAP e la lingua inglese."),
+('Trenitalia', 'SENIOR SAFETY & VALIDATION ENGINEER', '10', '3', '7', '2015-03-22 09:12:34', "Si ricercano laureati in Ingegneria Elettrica, Elettronica o delle Telecomunicazioni. Devono aver maturato esperienza minima triennale nella verifica e validazione di sistemi hardware e software per il segnalamento ferroviario. E’ richiesta anche la conoscenza della lingua inglese, ad un livello corrispondente almeno a quello B2 del QCER."),
+('Trenitalia', 'STAGE AREA INTERNAL AUDITING PER NEOLAUREATI ', '1', '4', '6', '2016-02-28 11:54:00', "I tirocinanti sono neolaureati in Giurisprudenza, Economia o Ingegneria Gestionale. Hanno conseguito il titolo di studio con una votazione non inferiore a 105 / 110. Possiedono conoscenze in ambito Internal Auditing, Compliance Auditing, D.Lgs. n. 231/2001. Sanno usare bene il pacchetto Office e conoscono la lingua inglese ad un livello corrispondente almeno a quello B2 del Quadro comune europeo di riferimento per la conoscenza delle lingue (QCER).
 Requisiti preferenziali: tesi svolta in materia di Internal Auditing, certificazione CIA, master o scuole di specializzazione in Internal Auditing, conoscenza della lingua tedesca."),
 
 
-('Allianz', 'CREDITRAS - ATTUARIO DANNI', '1', '2014-12-13 11:14:34', " La persona verrà inserità nell' unità dell'Attuariato Danni di
+('Allianz', 'CREDITRAS - ATTUARIO DANNI', '1', '1', '5', '2014-12-13 11:14:34', " La persona verrà inserità nell' unità dell'Attuariato Danni di
 Creditras e avrà modo di seguire le seguenti attività: Sviluppo dei modelli che sottendono al calcolo del premio tecnico
 
 necessari per la determinazione delle tariffe RC Auto (RCa, MoD), Costruzione dei modelli di propensione all'acquisto\abbandono, Sviluppo e analisi monitoraggi, Determinazione del fabbisogno tariffario.
