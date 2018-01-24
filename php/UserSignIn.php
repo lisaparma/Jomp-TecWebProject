@@ -10,6 +10,8 @@ head($title);
 
 headers();
 
+$page='Registrazione utente';
+breadcrumb(array($page));
 
 function checkEmail($email) {
 
@@ -108,7 +110,7 @@ echo "<h3>Regole per l'iscrizione:</h3>
         </ol>";
 
 //Mettere i tab index nei form e nei link
-echo "<div id='signinform'>
+echo "<div id='form'>
         <h1>Sign Up Now!</h1>
         <form method='post' action='UserSignIn.php'> 
             <div class='inner-wrap'>

@@ -20,7 +20,6 @@ menu($page);
 
 
 # ------------------------------------------------------
-echo"<div id='contenuto'>";
 try {
 	if(isset($_SESSION['login'])) {
 		$company = &$_SESSION['login'];
@@ -107,8 +106,6 @@ try {
     echo "Errore: " . $e->getMessage();
     die(); 
 }
-echo"	</div>
-	</div>";
 
 # ------------------------------------------------------
 

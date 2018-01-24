@@ -138,13 +138,6 @@ body {
     padding-left: 5em;
 }
 
-/*)
-#boxtitolo, #boxcitta, #boxvalue {
-    border-style: solid;
-    border-width: 0.1%;
-    border-color: #708090;  
-}*/
-
 .button {
     margin:0.4em;
     padding:0.3em;
@@ -183,13 +176,11 @@ body {
 #primarymenu ul
 {
 	list-style:none;
-	position:relative;
-	float:right;
-	margin:0;
+	margin:auto;
 	padding:0;
+    padding-left: 17em;
     padding-top: 1.5em;
-    padding-top: 1.5em;
-    width: 75%;
+    width: auto;
 
 }
 
@@ -210,16 +201,31 @@ body {
 #primarymenu ul li
 {
 	position:relative;
-	float:left;
-	margin:0;
+	margin:auto;
 	padding:0;
-    width: 20%;
+    display: inline-block;
+    vertical-align: top;
 }
 
 /*quando ci passo sopra*/
-#primarymenu ul li a:hover
+#primarymenu ul li:hover a
 {
-	font-size: 1.7em;
+	color: #ffffff;
+    text-shadow: 0px 0 15px #000000;
+
+}
+
+/* Pagina corrente*/
+#primarymenu ul li.here {
+    font-size: 1.7em;
+    pointer-events: none;
+    cursor: default;
+    
+}
+
+#primarymenu ul li.here a{
+    color: #ffffff;
+    text-shadow: 0px 0 15px #000000;
 }
 
 /* elenco pagine dentro una pagina*/
@@ -246,6 +252,11 @@ body {
 
 }
 
+#primarymenu ul ul li:hover{
+    font-size: 1em;
+    background-color: black;
+}
+
 #primarymenu ul ul a
 {
 	line-height:120%;
@@ -255,15 +266,6 @@ body {
 #primarymenu ul li:hover > ul
 {
 	display:block;
-}
-
-/* Pagina corrente*/
-#primarymenu ul li .here {
-    font-size: 1.8em;
-    color: #ffffff;
-    pointer-events: none;
-    cursor: default;
-    
 }
 
 
@@ -295,7 +297,7 @@ body {
   position:relative;
   height: 40px;
   line-height:40px;
-  /*padding: 0 10px 0 5px;*/
+  padding: 0 10px 0 5px;
   text-align: center;
   margin-right: 23px;
   cursor: default;
@@ -336,7 +338,7 @@ body {
 }
 
 #bc li a:before{
-    left:-20px;
+    left:-19px;
     border-left-color:transparent;
 }
 
@@ -374,6 +376,7 @@ body {
 /* ----------------------- MENU area personale ----------------------*/
  
 .container-menu {
+    padding-left: 4px;
     margin-top: 0.4%;
     display: block;
     width: 24%;
@@ -742,29 +745,9 @@ body {
 
 /* --------------------- SIGN IN FORM - CompanySignIn.php / UserSignIn.php ---------------------*/
 
-/* roba da eliminare*/
-#form {
-    margin-top: 1em;
-    margin-left: 20%;
-    margin-right: 20%;
-    border-style: inset;
-    border-color: darkslategrey;
-    border-width: 2px;
-    padding: 0.5em;
-}
 
-#contentForm {
-    text-align: center;
-    font-size: 1.5em;
 
-}
-
-label {
-  padding: 8px;
-}
-/*-----*/
-
-#signinform{
+#form{
     max-width: 400px;
     margin: auto;
     border-radius: 10px;
@@ -773,11 +756,11 @@ label {
     margin-top: 2em;
 }
 
-#signinform form{
+#form form{
     padding: 2em;
 }
 
-#signinform h1 {
+#form h1 {
     background: #2A88AD;
     padding: 20px 30px 15px 30px;
     border-radius: 10px 10px 0 0;
@@ -788,8 +771,8 @@ label {
     border: 1px solid #257C9E;
 }
 
-#signinform input[type="text"],
-#signinform input[type="password"], #signinform textarea{
+#form input[type="text"],
+#form input[type="password"], #form textarea{
     display: block;
     box-sizing: border-box;
     width: 100%;
@@ -802,22 +785,22 @@ label {
 }
 
 
-#signinform input[type="text"]:focus,
-#signinform input[type="password"]:focus, #signinform textarea:focus {
+#form input[type="text"]:focus,
+#form input[type="password"]:focus, #form textarea:focus {
     box-shadow: 0 0 5px #B0CFE0;
     border:1px solid #B0CFE0;
 }
-#signinform input[type="radio"]{
+#form input[type="radio"]{
     margin-bottom: 1em;
 }
-#signinform .inner-wrap{
+#form .inner-wrap{
     padding: 30px;
     background: #F8F8F8;
     border-radius: 6px;
     margin-bottom: 15px;
     text-align: left;
 }
-#signinform input[type="submit"]{
+#form input[type="submit"]{
     background: #2A88AD;
     padding: 8px 20px 8px 20px;
     margin: auto;
@@ -830,7 +813,7 @@ label {
     font-size: 15px;
 }
 
-#signinform input[type="submit"]:hover{
+#form input[type="submit"]:hover{
     background: #2A6881;
     -moz-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
     -webkit-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);

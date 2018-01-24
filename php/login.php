@@ -14,12 +14,15 @@ head($title);
 
 headers();
 
+$page='Accedi';
+breadcrumb(array($page));
+
 
 if(isset($_GET['msg'])){
     echo "<p class='successMsg'>Registrazione avvenuta con successo! Procedi ora con l'autenticazione.</p>";
 }
 
-echo "<div id=form>
+echo "<div id='form'>
             <div id=contentForm>
                 <form method='post' action='login.php'> 
                     <label for='username'> Username o nome azienda: </label> <br/>

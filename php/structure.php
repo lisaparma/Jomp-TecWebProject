@@ -49,9 +49,9 @@ function primaryMenu(){
 	            echo "<li><a href='AzDashboard.php'> Area personale </a>
                     <ul>
                         <li><a href='AzDashboard.php'>Dashboard</a></li>
-                        <li><a href='AzPubblicaAnnuncio.php'></a>Pubblica annuncio</li>
+                        <li><a href='AzPubblicaAnnuncio.php'>Pubblica annuncio</a></li>
                         <li><a href='AzResocontoAnnunci.php'>Resoconto Annunci</a></li>
-                        <li><a href='AzModificaDati.php'></a>Modifica dati</li>
+                        <li><a href='AzModificaDati.php'>Modifica dati</a></li>
                     </ul>
                     </li>
 	                <li><a href='logout.php'> Esci </a></li>";

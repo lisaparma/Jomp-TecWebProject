@@ -12,6 +12,9 @@ head($title);
 
 headers();
 
+$page='Registrazione azienda';
+breadcrumb(array($page));
+
 if(isset($_POST['submit'])){
     try {
         $name = $_POST['name'];
@@ -76,7 +79,7 @@ echo "<h3>Regole per l'iscrizione:</h3>
         </ol>";
 
 
-echo "<div id='signinform'>
+echo "<div id='form'>
         <h1>Sign Up Now!</h1>
         <form method='post' action='CompanySignIn.php'> 
             <div class='inner-wrap'>
@@ -105,8 +108,7 @@ echo "<div id='signinform'>
             <input type='submit' value='Registrati' name='submit'>
 
         </form>
-    </div>
-</div>";
+    </div>";
 
 
 footer();
