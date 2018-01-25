@@ -23,17 +23,17 @@ if(isset($_GET['msg'])){
 }
 
 echo "<div id='form'>
-            <div id=contentForm>
-                <form method='post' action='login.php'> 
+            <h1> Accedi </h1>
+            <form method='post' action='login.php'> 
+                    <div class='inner-wrap'>
                     <label for='username'> Username o nome azienda: </label> <br/>
                     <input type='text' id='username' name='Username' placeholder='Username'> <br />
                     
                     <label for='password'> Password: </label> <br/>
                     <input type='password' id='password' name='Password' placeholder='Password'> <br />
-
-                    <input type='submit' value='Entra' name='submit'>
-                </form>
-            </div>
+                </div>
+                <input type='submit' value='Entra' name='submit'>
+            </form>
         </div>";
 
 function checkDataUser($Username, $Password) {

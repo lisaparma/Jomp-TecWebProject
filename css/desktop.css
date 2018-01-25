@@ -218,13 +218,12 @@ body {
 /* Pagina corrente*/
 #primarymenu ul li.here {
     font-size: 1.7em;
-    pointer-events: none;
-    cursor: default;
     
 }
 
 #primarymenu ul li.here a{
     color: #ffffff;
+    cursor: default;
     text-shadow: 0px 0 15px #000000;
 }
 

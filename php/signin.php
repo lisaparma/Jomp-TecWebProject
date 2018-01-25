@@ -10,7 +10,7 @@ head($title);
 headers();
 
 
-echo   "<div id=signinform>
+echo   "<div id='form'>
             <h1> Come vuoi registrarti? </h1>
             <form method='post' action=signin.php> 
                 <input type='radio' id='azienda' name='button' value='Company' checked> <label for='azienda'>Azienda</label>
