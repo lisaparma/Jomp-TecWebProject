@@ -100,17 +100,19 @@ if(isset($_POST['submit'])){
 
 }
 
-echo "<h3>Regole per l'iscrizione:</h3>
+echo "<div id='intro'>
+    <h2>Regole per l'iscrizione:</h2>
         <ol>
             <li>Tutti i campi devono essere <strong>OBBLIGATORIAMENTE</strong> compilati;</li>
             <li>L'email personale deve essere univoca;</li>
             <li>L'username deve contenere dai 5 ai 15 caratteri;</li>
             <li>La password deve essere lunga almeno 8 caratteri;</li>
             <li>E' necessario ripetere la stessa esatta sequenza di caratteri della password dove viene richiesto di ripeterla.</li>
-        </ol>";
+        </ol>
+    </div>";
 
 //Mettere i tab index nei form e nei link
-echo "<div id='form'>
+echo "<div class='form'>
         <h1>Sign Up Now!</h1>
         <form method='post' action='UserSignIn.php'> 
             <div class='inner-wrap'>

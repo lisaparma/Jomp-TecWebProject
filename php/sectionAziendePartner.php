@@ -24,8 +24,9 @@ function getCompany() {
 	}
 
 	else {
+		echo"<ul>";
 		while($row = $result->fetch_array(MYSQLI_ASSOC)) {
-			echo "<div class='sectionCompany'>
+			echo "<li class='sectionCompany'>
 					<h3>".$row['Nome']."</strong></h3>
 					<ul>
 						<li> <strong>Sede:</strong> ".$row['Citta']."</li>
@@ -34,9 +35,9 @@ function getCompany() {
 						<li>".$row['Descrizione']."</li>
 					</ul>
 					<hr>
-				</div>";
+				</li>";
 		}
-
+		echo"</ul>";
 	}
 }
 

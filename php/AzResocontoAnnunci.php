@@ -49,26 +49,26 @@ if(isset($_SESSION['login'])) {
 	}
 
 	else {
-		echo "<p>Ecco tutti i tuoi annunci:</p>";
+		echo "<h3>Ecco tutti i tuoi annunci:</h3>
+			<ul>";
 		
 		//stampo tutti gli annunci trovati
 		while($row = $result->fetch_array(MYSQLI_ASSOC)) {
-			echo "<div id='contenuto'>
-					<dl>
-						<dt>".$row['Titolo']."</dt>
-						<dd>Pubblicato il ".$row['Data']."</br>
-							".$row['Descrizione']."</br>
-								<div id='options'>
-									<form method='post' action='AzModificaAnnuncio.php'>
-										<button value=".$row['Codice']." name='edit'>Modifica</button>
-				            			<button value=".$row['Codice']." name='delete'>Rimuovi</button>
-				            		</form>
-			            		</div>
-							</dd>
-						</dt>
-					</dl>
-				</div>";
+			echo "<li class='ResAnn'>
+					<ul>
+						<li id='title'>".$row['Titolo']."</li>
+						<li>Pubblicato il ".$row['Data']."</li>
+						<li>".$row['Descrizione']."</li>
+							<div id='options'>
+								<form method='post' action='AzModificaAnnuncio.php'>
+									<button value=".$row['Codice']." name='edit'>Modifica</button>
+					            	<button value=".$row['Codice']." name='delete'>Rimuovi</button>
+				            	</form>
+			            	</div>
+					</ul>
+				</li>";
 		}
+		echo"</ul>";
 
 	}
 }

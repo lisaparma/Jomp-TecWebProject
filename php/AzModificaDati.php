@@ -72,9 +72,11 @@ try {
 	    }
 
 		echo "<div id='contenuto'>
-		        <h4> I tuoi dati: </h4>
-		        <form method='post' action='AzModificaDati.php'> 
-
+		        <h3> I tuoi dati: </h3>
+		        <p> Visualizza i tuoi dati e modificali in ogni momento! <br/>
+                Ricorda: non puoi modificare contemporaneamente <strong> Partita Iva </strong> ed <strong> e-mail </strong>!</p>
+		        <form method='post' id='modifica' class='form'  action='AzModificaDati.php'> 
+		        	<div class='inner-wrap'>
 		            <label for='nome'>Nome: </label>
 		            <input type='text' id='nome' value='$name' name='name'><br/> 
 		                
@@ -94,7 +96,7 @@ try {
 		            <p> Descrivi la tua azienda: </p><br/>
 	                <textarea name='description' rows='15' cols='45' required>$description</textarea><br/>
 	                <br/>
-
+	                </div>
                 	<input type='submit' value='Modifica' name='edit'>
 
 		        </form>

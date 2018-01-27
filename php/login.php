@@ -18,11 +18,13 @@ $page='Accedi';
 breadcrumb(array($page));
 
 
-if(isset($_GET['msg'])){
-    echo "<p class='successMsg'>Registrazione avvenuta con successo! Procedi ora con l'autenticazione.</p>";
-}
+echo "<div id='intro'>
+        <h2>Accedi subito!</h2>
+        <p>Che tu sia un'azienda o un utente privato, accedi subito per riornare a controllare gli annunci di lavoro!<br/>
+        Inserisci il tuo username (se sei un utente privato) o il nome della tua azienda:</p>
+    </div>";
 
-echo "<div id='form'>
+echo "<div class='form'>
             <h1> Accedi </h1>
             <form method='post' action='login.php'> 
                     <div class='inner-wrap'>

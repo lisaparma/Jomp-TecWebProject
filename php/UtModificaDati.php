@@ -33,10 +33,11 @@ if(isset($_SESSION['login'])){ // Solo se in sessione vedi questo
     
     // Stampo il form per cambiare i dati con quelli vecchi già inseriti
     echo" <div id='contenuto'>
-	        
-            <h4> I tuoi dati: </h4>
-	            <form method='post' action='UtModificaDati.php'> 
-
+            <h3> I tuoi dati: </h3>
+            <p> Visualizza i tuoi dati e modificali in ogni momento! <br/>
+                Ricorda: non puoi modificare contemporaneamente <strong> username </strong> ed <strong> e-mail </strong>!</p>
+	            <form method='post' id='modifica' class='form' action='UtModificaDati.php'> 
+                    <div class='inner-wrap'>
 	                <label for='nome'> Nome: </label> <br/>
 	                <input type='text' id='nome' value='".$user->getName()."' name='Nome'><br /> 
 	                
@@ -56,7 +57,7 @@ if(isset($_SESSION['login'])){ // Solo se in sessione vedi questo
 	                Sesso:
 	                <input type='radio' id='uomo' name='button' value='m' $check1> <label for='uomo'> Uomo </label>
                     <input type='radio' id='donna' name='button' value='f' $check2> <label for='donna'> Donna</label> <br/>
-                    
+                    </div>
                     <input type='submit' value='Modifica' name='modifica'>
 
 	            </form>

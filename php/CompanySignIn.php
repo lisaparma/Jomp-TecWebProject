@@ -69,17 +69,19 @@ if(isset($_POST['submit'])){
     }
 }
 
-echo "<h3>Regole per l'iscrizione:</h3>
+echo "<div id='intro'>
+    <h2>Regole per l'iscrizione:</h2>
         <ol>
-            <li>Tutti i campi devono essere <strong>OBBLIGATORIAMENTE</strong> compilati;</li>
-            <li>Il nome e l'email dell'azienda devono essere univoche;</li>
-            <li>Vengono accettate solo aziende con sede legale in italia, ragion per cui la Partita Iva deve essere lunga 11 cifre;</li>
-            <li>La password deve essere lunga almeno 8 caratteri;</li>
-            <li>E' necessario ripetere la stessa esatta sequenza di caratteri della password dove viene richiesto di ripeterla.</li>
-        </ol>";
+            <li> Tutti i campi devono essere <strong>OBBLIGATORIAMENTE</strong> compilati;</li>
+            <li> Il nome e l'email dell'azienda devono essere univoci;</li>
+            <li> Vengono accettate solo aziende con sede legale in italia, ragion per cui la Partita Iva deve essere lunga 11 cifre;</li>
+            <li> La password deve essere lunga almeno 8 caratteri;</li>
+            <li> E' necessario ripetere la stessa esatta sequenza di caratteri della password dove viene richiesto di ripeterla.</li>
+        </ol>
+    </div>";
 
 
-echo "<div id='form'>
+echo "<div class='form'>
         <h1>Sign Up Now!</h1>
         <form method='post' action='CompanySignIn.php'> 
             <div class='inner-wrap'>

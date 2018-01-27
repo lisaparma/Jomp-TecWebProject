@@ -60,6 +60,7 @@ if(isset($_SESSION['login'])){ // Solo se in sessione vedi questo
     else {
         $result = mysqli_query(openDB(), "SELECT Annunci.Codice, Annunci.Titolo, Annunci.Descrizione, Annunci.Tipologia, Annunci.Data, Annunci.Azienda, Aziende.Nome, Aziende.Email, Aziende.Citta, Tipo.Lavoro, ContrattoLavoro.TipoContratto, OrarioLavoro.TipoOrario FROM Annunci JOIN Aziende ON Aziende.Nome=Annunci.Azienda JOIN Tipo ON Tipo.CodLavoro=Annunci.Tipologia JOIN OrarioLavoro ON OrarioLavoro.CodOrario=Annunci.Orario JOIN ContrattoLavoro ON ContrattoLavoro.CodContratto=Annunci.Contratto ORDER BY Data DESC LIMIT 5");
     }
+    echo" </div>" ; //div contenuto
     
     // Stampa gli annunci trovati
     if($result->num_rows) {
@@ -73,8 +74,6 @@ if(isset($_SESSION['login'])){ // Solo se in sessione vedi questo
     else
         echo "Nessun annuncio corrispondente a questi parametri";
 
-    
-    echo" </div>" ; //div contenuto
 
 }
 else{

@@ -26,15 +26,15 @@ if(isset($_SESSION['login'])){ // Solo se in sessione vedi questo
                 <h3> Benvenut";if($user->getSex() =='f') echo"a "; else echo"o "; echo "nella tua area personale, ".$user->getName()."!</h3>
                 
             <h4> Ricapitoliamo i tuoi dati:</h4>
-                <p> Nome: ".$user->getName()."<br/> 
-                Cognome: ".$user->getSurname()." <br/> 
-                e-mail:".$user->getEmail()." <br/> 
-                Username:".$user->getUsername()." <br/> 
-                Sesso: ";
+                <p> <strong> Nome: </strong>".$user->getName()."<br/> 
+                <strong> Cognome: </strong>".$user->getSurname()." <br/> 
+                <strong>E-mail: </strong>".$user->getEmail()." <br/> 
+                <strong>Username: </strong>".$user->getUsername()." <br/> 
+                <strong>Sesso: </strong>";
                 if($user->getSex()=='f')
-                    echo "donna";
+                    echo "donna</p>";
                 else
-                    echo "uomo";
+                    echo "uomo</p>";
     
     echo"  <h4> Ricerche salvate:</h4>
                 <p> Numero ricerche salvate: ".$user->getNumLike()."</br>

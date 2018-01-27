@@ -574,7 +574,7 @@ body {
 
 #fogli:after, #fogli:before {
 	border: 1px solid #c4c6ca;
-  background: #FFFFFF;
+    background: #FFFFFF;
 	content: "";
 	display: block;
 	height: 100%;
@@ -674,6 +674,79 @@ body {
     display: none;
 }
 
+/* Utenti */
+#contenuto form {
+    padding:0.5em;
+}
+#contenuto h3{
+    font-size: 1.5em;
+    font-weight: bold;
+    line-height: 1.8;
+}
+#contenuto h4{
+    font-size: 1.3em;
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+#contenuto p{
+    padding-left: 1em;
+    padding-bottom: 1em;
+    line-height: 1.5em;
+}
+
+#contenuto strong {
+    font-weight: bold;
+}
+
+/*modifica dati*/
+#modifica.form{
+    padding: 
+}
+
+/* AzResocontoAnnuncio.php */
+.ResAnn {
+    list-style: none;
+    margin: 2em;
+
+    border: 1px;
+    border-style: solid;
+    border-color: #808080;
+
+    padding: 0.5em;
+}
+
+.ResAnn ul{
+    list-style: none;
+}
+
+.ResAnn li{
+    padding-left: 1em;
+    padding-bottom: 0.5em;
+    line-height: 1.5em;
+}
+
+#title {
+    padding-left: 0em;
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+.ResAnn button{
+    box-shadow: inset 0px 1px 0px 0px #3985B1;
+    background-color: #216288;
+    border: 1px solid #17445E;
+    display: inline-block;
+    cursor: pointer;
+    color: #FFFFFF;
+    padding: 8px 18px;
+    text-decoration: none;
+    font: 12px Arial, Helvetica, sans-serif;
+}
+.ResAnn button:hover {
+    background: linear-gradient(to bottom, #2D77A2 5%, #337DA8 100%);
+    background-color: #28739E;
+}
 
 
 
@@ -766,7 +839,7 @@ body {
 
 
 
-#form{
+.form{
     max-width: 400px;
     margin: auto;
     border-radius: 10px;
@@ -775,11 +848,11 @@ body {
     margin-top: 2em;
 }
 
-#form form{
+.form form{
     padding: 2em;
 }
 
-#form h1 {
+.form h1 {
     background: #2A88AD;
     padding: 20px 30px 15px 30px;
     border-radius: 10px 10px 0 0;
@@ -790,8 +863,8 @@ body {
     border: 1px solid #257C9E;
 }
 
-#form input[type="text"],
-#form input[type="password"], #form textarea{
+.form input[type="text"],
+.form input[type="password"], #description{
     display: block;
     box-sizing: border-box;
     width: 100%;
@@ -804,22 +877,22 @@ body {
 }
 
 
-#form input[type="text"]:focus,
-#form input[type="password"]:focus, #form textarea:focus {
+.form input[type="text"]:focus,
+.form input[type="password"]:focus, #description:focus {
     box-shadow: 0 0 5px #B0CFE0;
     border:1px solid #B0CFE0;
 }
-#form input[type="radio"]{
+.form input[type="radio"]{
     margin-bottom: 1em;
 }
-#form .inner-wrap{
+.form .inner-wrap{
     padding: 30px;
     background: #F8F8F8;
     border-radius: 6px;
     margin-bottom: 15px;
     text-align: left;
 }
-#form input[type="submit"]{
+.form input[type="submit"]{
     background: #2A88AD;
     padding: 8px 20px 8px 20px;
     margin: auto;
@@ -832,7 +905,7 @@ body {
     font-size: 15px;
 }
 
-#form input[type="submit"]:hover{
+.form input[type="submit"]:hover{
     background: #2A6881;
     -moz-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
     -webkit-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
@@ -864,19 +937,27 @@ body {
 
 #intro h2{
     font-size: 2em;
-    letter-spacing: 2px;
     line-height: 1.8;
 }
 
 #intro p{
     line-height: 1.3em;
+    padding-bottom: 0.8em;
 }
 
+#intro ol {
+    padding-left: 2em;
+    line-height: 1.5em;
+}
+
+/* SectionAziendePartner.php */
 .sectionCompany{
+    list-style:none;
     padding: 1em 2em 0em 2em;
 }
 
 .sectionCompany h3{
+    font-weight:bold;
     font-size: 1.3em;
     text-decoration: underline;
 }
@@ -900,8 +981,6 @@ body {
   background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
   background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0); 
 }
-
-
 
 
 

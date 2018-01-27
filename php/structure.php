@@ -1,8 +1,7 @@
 <?php
 
 function head($title) {
-	echo "<!DOCTYPE HTML PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
-			<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='it' lang='it' >
+	echo "<!DOCTYPE html>
 
 			<head> 
 			    <title> $title </title>
@@ -25,7 +24,18 @@ function head($title) {
 
 			    
 			</head>
-            <body onLoad='whereIam();' onscroll='reduceHeader();''>";
+            <body onLoad='whereIam();' onscroll='reduceHeader();'>";
+}
+
+function headers() {
+    echo "<div id='header'>
+            <a href='home.php'>
+                <img id='logo' src='../IMG/jomp2.png' alt='logo scritta jomp con lente d&rsquo;ingrandimento'>
+            </a>";
+            primaryMenu();
+
+     echo"   </div>
+     <div id='page'>";
 }
 
 function primaryMenu(){ 
@@ -69,17 +79,6 @@ function primaryMenu(){
 	</div>";
 }
 
-function headers() {
-	echo "<div id='header'>
-            <a href='home.php'>
-                <img id='logo' src='../IMG/jomp2.png' alt='logo scritta jomp con lente d&rsquo;ingrandimento'>
-            </a>";
-            primaryMenu();
-
-	 echo"   </div>
-     <div id='page'>";
-}
-
 
 function breadcrumb($pages){
     echo "<ul id='bc'>
@@ -92,7 +91,8 @@ function breadcrumb($pages){
 }
 
 function footer() { 
-    echo "<div id='footer'>
+    echo "
+    <div id='footer'>
         <div id='link'>
             <ul> 
                 <li><a href=''>Chi siamo</a></li> 
@@ -109,6 +109,7 @@ function footer() {
             </ul> 
         </div> 
         <p> SLS Group <br/> Sede legale: Via Trieste 63, 35121 Padova (Italy) <br/> Contatti: sara.feltrin.2@studenti.unipd.it, lisa.parma@studenti.unipd.it, silvia.bazzeato@studenti.unipd.it</p> 
+    </div>
     </div>"; 
 } 
 ?>
