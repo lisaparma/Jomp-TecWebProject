@@ -13,7 +13,7 @@ function reduceHeader(){
 	var header = document.getElementById("header");
 	var sticky = header.offsetTop;
 
-	if (window.pageYOffset > sticky+50) {
+	if (window.pageYOffset > sticky+150) {
 		header.classList.add("small");
 	} else {
 		header.classList.remove("small");

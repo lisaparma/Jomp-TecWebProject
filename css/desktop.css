@@ -116,24 +116,46 @@ body {
     position: fixed;
     top: 0;
     z-index: 1000;
+
+    transition-property: height;
+    transition-duration: 1s;
+    transition-timing-function: initial;
+    transition-delay: initial;
 }
 
 #logo {
     padding-left: 4em;
     height: 7em;
     float: left;
+
+    transition-property: height;
+    transition-duration: 1s;
+    transition-timing-function: initial;
+    transition-delay: initial;
 }
 
 #header.small{
     height: 4em;
+    transition-property: height;
+    transition-duration: 1s;
+    transition-timing-function: initial;
+    transition-delay: initial;
 }
 
 #header.small #logo{
     height: 4em;
+    transition-property: height;
+    transition-duration: 1s;
+    transition-timing-function: initial;
+    transition-delay: initial;
 }
 
 #header.small #primarymenu {
     margin: 0;
+
+    transition-duration: 1s;
+    transition-timing-function: initial;
+    transition-delay: initial;
 }
 
 /* --------------------- MENU HEADER ----------------------*/
@@ -142,6 +164,10 @@ body {
 {
 	margin-top:20px;
     text-align: center;
+
+    transition-duration: 1s;
+    transition-timing-function: initial;
+    transition-delay: initial;
 }
 
 
