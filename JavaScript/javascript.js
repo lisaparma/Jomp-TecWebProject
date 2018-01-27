@@ -7,3 +7,16 @@ function whereIam() {
 		}
 	}
 }
+
+
+function reduceHeader(){
+	var header = document.getElementById("header");
+	var sticky = header.offsetTop;
+
+	if (window.pageYOffset > sticky+50) {
+		header.classList.add("small");
+	} else {
+		header.classList.remove("small");
+}
+
+}

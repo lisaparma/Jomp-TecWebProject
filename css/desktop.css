@@ -107,21 +107,15 @@ body {
 
 /* ------------------    HEADER   ------------------- */
 
-.header {
+#header {
     width: 100%;
     padding-bottom: 0.5em;
     background-color: #029cc7;
     height: 7em;
     border: 0.1% solid #A9E8DC;
-    border-top-right-radius: 1%;
-    border-top-left-radius: 1%;
     position: fixed;
     top: 0;
     z-index: 1000;
-}
-.small {
-    height: 3em;
-    box-shadow: 0 0 5px rgba(black, .2);
 }
 
 #logo {
@@ -130,44 +124,23 @@ body {
     float: left;
 }
 
-#box {
-    display: none;
-    float: right;
-    align-content: center;
-    font-size: 0.8em;
-    padding-left: 5em;
+#header.small{
+    height: 4em;
 }
 
-.button {
-    margin:0.4em;
-    padding:0.3em;
-    border-style:groove;
-    border-width: 0.1em;
-    border-color: black;
+#header.small #logo{
+    height: 4em;
 }
 
-#login, #signin, #logout {
-    display: inline-block;
-    background-color: #d4d3d3;
-    border-style: solid;
-    border-width: 0.1%;
-    border-color: #708090;
-    border-radius: 10px;
-    padding: 1em;
-    margin: 1em;
+#header.small #primarymenu {
+    margin: 0;
 }
-
-.button a:link {
-    text-decoration-line: none;
-
-}
-
 
 /* --------------------- MENU HEADER ----------------------*/
 
 #primarymenu
 {
-	margin-top:15px;
+	margin-top:20px;
     text-align: center;
 }
 
@@ -195,6 +168,7 @@ body {
 	padding:0 15px;
 	font-family:"HelveticaNeue","Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 1.2em;
+
 }
 
 /* ogni voce di menu*/
@@ -234,32 +208,44 @@ body {
 	position:absolute;
 	top:100%;
 	left:0;
-	background:#fff;
+	background:#029cc7;
 	padding:0;
     width: 100%;
     font-size: 0.8em;
     z-index: 3;
+    text-align: center;
+
 }
 
-/*pagine secondarie*/
-#primarymenu ul ul li
-{
-	float:none;
-	width: 100%; 
-    padding-bottom: 0.5em; 
-    padding-top: 0.5em;
 
+/*pagine secondarie*/
+#primarymenu ul ul li{
+    background:#029cc7;
+    border: 1px;
+    border-top: 0px;
+    border-style: solid;
+    border-color: black;
+    float:none;
+    width: 100%; 
+
+}
+#primarymenu ul li:hover ul li a{
+    text-shadow: none;
+    color:lightgrey;
+}
+
+#primarymenu ul li.here ul li {
+    font-size: 0.7em;
 }
 
 #primarymenu ul ul li:hover{
     font-size: 1em;
-    background-color: black;
 }
 
-#primarymenu ul ul a
-{
-	line-height:120%;
-	padding:10px 15px;
+
+#primarymenu ul li:hover ul li:hover a{
+    color: #ffffff;
+    text-shadow: 0px 0 15px #000000;
 }
 
 #primarymenu ul li:hover > ul
@@ -267,6 +253,14 @@ body {
 	display:block;
 }
 
+#primarymenu ul li:hover ul li.here {
+    font-size: 1em;
+}
+
+#primarymenu ul li:hover ul li.here a{
+    color: #ffffff;
+    text-shadow: 0px 0 15px #000000;
+}
 
 
 /* ----------------------- BREADCRUMB ----------------------*/

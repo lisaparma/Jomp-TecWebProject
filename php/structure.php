@@ -25,7 +25,7 @@ function head($title) {
 
 			    
 			</head>
-            <body onLoad='whereIam();'>";
+            <body onLoad='whereIam();' onscroll='reduceHeader();''>";
 }
 
 function primaryMenu(){ 
@@ -62,7 +62,6 @@ function primaryMenu(){
                 <ul>
                   <li><a href='CompanySignIn.php'>Come Azienda</a></li>
                   <li><a href='UserSignIn.php'>Come Utente</a></li>
-                  <li><a href='sectionPerchèIscriversi.php'>Perchè registrarsi</a> </li>
                 </ul>
             </li>";
 	echo"
@@ -71,22 +70,11 @@ function primaryMenu(){
 }
 
 function headers() {
-	echo "<div class='header'>";
-	if(!isset($_SESSION['login'])) {
-	        echo " 	<div id='box'>
-			            <p class='button' id='login'><a href='login.php'>Log In</a></p>
-			            <p class='button' id='signin'><a href='signin.php'>Sign In</a></p>
-			        </div>";
-	}
-	else {
-		echo " 	<div id='box'>
-			            <p class='button' id='logout'><a href='logout.php'>Log out</a></p>
-			        </div>";
-	}
-	echo "		<a href='home.php'>
-		            <img id='logo' src='../IMG/jomp2.png' alt='logo scritta jomp con lente d&rsquo;ingrandimento'>
-		        </a>";
-                primaryMenu();
+	echo "<div id='header'>
+            <a href='home.php'>
+                <img id='logo' src='../IMG/jomp2.png' alt='logo scritta jomp con lente d&rsquo;ingrandimento'>
+            </a>";
+            primaryMenu();
 
 	 echo"   </div>
      <div id='page'>";
