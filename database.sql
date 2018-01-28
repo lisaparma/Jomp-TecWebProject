@@ -51,6 +51,7 @@ Citta char(20) NOT NULL,
 Iscrizione timestamp DEFAULT CURRENT_TIMESTAMP,
 Password char(20) NOT NULL,
 Descrizione text(1000) NOT NULL,
+Sito char(25),
 PRIMARY KEY (Codice, Nome)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 

@@ -9,6 +9,7 @@ class Azienda {
 	private $entry;
 	private $password;
 	private $description;
+	private $sito;
 
 	public function __construct($login) {
 		$this->id = $login['Codice'];
@@ -19,6 +20,7 @@ class Azienda {
 		$this->entry = $login['Iscrizione'];
 		$this->password = $login['Password'];
 		$this->description = $login['Descrizione'];
+		$this->sito=$login['Sito'];
 	}
 
 	//funzioni set
@@ -49,6 +51,11 @@ class Azienda {
 	public function setDescription($newDescription) {
 		$this->description = $newDescription;
 	}
+
+	public function setSito($newSito) {
+		$this->sito = $newSito;
+	}
+
 
 	//funzioni get
 	public function getId() {
@@ -81,6 +88,10 @@ class Azienda {
 
 	public function getDescription() {
 		return $this->description;	
+	}
+
+	public function getSito() {
+		return $this->sito;	
 	}
 
 	public function getAdsNumber() {
