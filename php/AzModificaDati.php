@@ -75,27 +75,26 @@ try {
 		        <h3> I tuoi dati: </h3>
 		        <p> Visualizza i tuoi dati e modificali in ogni momento! <br/>
                 Ricorda: non puoi modificare contemporaneamente <strong> Partita Iva </strong> ed <strong> e-mail </strong>!</p>
-		        <form method='post' id='modifica' class='form'  action='AzModificaDati.php'> 
+
+		        <form method='post' class='formMod'  action='AzModificaDati.php'> 
 		        	<div class='inner-wrap'>
 		            <label for='nome'>Nome: </label>
-		            <input type='text' id='nome' value='$name' name='name'><br/> 
+		            <input type='text' id='nome' value='$name' name='name'>
 		                
     				<label for='pIva'>Partita Iva: </label>
-		            <input type='text' id='pIva' value='$pIva' name='pIva'><br/>
+		            <input type='text' id='pIva' value='$pIva' name='pIva'>
 		                
 		            <label for='email'>E-mail: </label>
-		            <input type='text' id='email' value='$email' name='email'><br/>        
+		            <input type='text' id='email' value='$email' name='email'>     
 		                
 		            <label for='city'>Città: </label>
-		            <input type='text' id='city' value='$city' name='city'><br/>
+		            <input type='text' id='city' value='$city' name='city'>
 		                
 		            <label for='password'> Password: </label>
-		            <input type='password' id='password' name='password' value='$password'><br/>
-		            <br/>
+		            <input type='password' id='password' name='password' value='$password'>
 
-		            <p> Descrivi la tua azienda: </p><br/>
-	                <textarea name='description' rows='15' cols='45' required>$description</textarea><br/>
-	                <br/>
+		            <label id='descrAz'> Descrivi la tua azienda: </label>
+	                <textarea id='description' name='description' rows='15' cols='45' required>$description</textarea>
 	                </div>
                 	<input type='submit' value='Modifica' name='edit'>
 

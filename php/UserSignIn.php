@@ -116,21 +116,21 @@ echo "<div class='form'>
         <h1>Sign Up Now!</h1>
         <form method='post' action='UserSignIn.php'> 
             <div class='inner-wrap'>
-                <label for='nome'> Nome: </label><br/>
+                <label for='nome'> Nome: </label>
                 <input type='text' id='nome' name='Nome' placeholder='Nome'required>
 
-                <label for='cognome'> Cognome </label><br/>
+                <label for='cognome'> Cognome </label>
                 <input type='text' id='cognome' name='Cognome' placeholder='Cognome' required>
 
-                <label for='email'> E-mail: </label><br/>
+                <label for='email'> E-mail: </label>
                 <input type='text' id='email' name='Email' placeholder='Email' pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$' required>       
-                <label for='username'> Username: </label><br/>
+                <label for='username'> Username: </label>
                 <input type='text' id='username' name='Username' placeholder='Username' required>
 
-                <label for='password'> Password: </label><br/>
+                <label for='password'> Password: </label>
                 <input type='password' id='password' name='Password' placeholder='Password' required>
 
-                <label for='rippw'> Ripeti password: </label><br/>
+                <label for='rippw'> Ripeti password: </label>
                 <input type='password' id='rippw' name='RipPassword' placeholder='Password' required>
             </div>
 

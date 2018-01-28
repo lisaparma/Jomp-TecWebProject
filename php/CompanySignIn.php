@@ -85,25 +85,25 @@ echo "<div class='form'>
         <h1>Sign Up Now!</h1>
         <form method='post' action='CompanySignIn.php'> 
             <div class='inner-wrap'>
-                <label for='name'> Nome: </label><br/>
+                <label for='name'> Nome: </label>
                 <input type='text' id='name' name='name' placeholder='Nome'required>
 
-                <label for='pIva'> Partita IVA: </label><br/>
+                <label for='pIva'> Partita IVA: </label>
                 <input type='text' id='pIva' name='pIva' placeholder='Partita Iva'required>
 
-                <label for='email'> E-mail: </label><br/>
+                <label for='email'> E-mail: </label>
                 <input type='text' id='email' name='email' placeholder='Email' pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$' required>
 
-                <label for='city'> Città: </label><br/>
+                <label for='city'> Città: </label>
                 <input type='text' id='city' name='city' placeholder='Città' required>      
 
-                <label for='password'> Password: </label><br/>
+                <label for='password'> Password: </label>
                 <input type='password' id='password' name='password' placeholder='Password' required>
 
-                <label for='rippw'> Ripeti password: </label><br/>
+                <label for='rippw'> Ripeti password: </label>
                 <input type='password' id='rippw' name='repPassword' placeholder='Password' required>
 
-                <label for='description'> Descrivi la tua azienda: </label><br/>
+                <label for='description'> Descrivi la tua azienda: </label>
                 <textarea id='description' name='description' rows='15' cols='45' placeholder='Cosa vuoi raccontare della tua azienda?' required></textarea>
             </div>
             
