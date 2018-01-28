@@ -8,15 +8,19 @@
         private $username;
         private $password;
         private $sex;
+        private $birth;
+        private $signin;
         
         //costruttore
         public function __construct($login) {
-        $this->name=$login['Nome'];
-        $this->surname=$login['Cognome'];
-        $this->email=$login['Email'];
-        $this->username=$login['Username'];
-        $this->password=$login['Password'];
-        $this->sex=$login['Sesso'];
+            $this->name=$login['Nome'];
+            $this->surname=$login['Cognome'];
+            $this->email=$login['Email'];
+            $this->username=$login['Username'];
+            $this->password=$login['Password'];
+            $this->sex=$login['Sesso'];
+            $this->birth=$login['Nascita'];
+            $this->signin=$login['Iscrizione'];
         }
         
         // Funzioni GETTER
@@ -43,6 +47,17 @@
         public function getSex() {
             return $this->sex;
         }
+        public function getBirth() {
+            return $this->birth;
+        }
+
+        public function getBirth2() {
+            return date('d/m/Y', strtotime(str_replace('-','/', $this->birth)));
+        }
+
+        public function getLogin() {
+            return date('d/m/Y', strtotime(str_replace('-','/', $this->signin)));
+        }
         
         // Funzioni SETTER
         
@@ -63,6 +78,9 @@
         }
         public function setSex($new) {
             $this->sex = $new;
+        }
+        public function setBirth($new) {
+            $this->birth = $new;
         }
         
         

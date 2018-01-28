@@ -76,7 +76,7 @@ try {
 		        <p> Visualizza i tuoi dati e modificali in ogni momento! <br/>
                 Ricorda: non puoi modificare contemporaneamente <strong> Partita Iva </strong> ed <strong> e-mail </strong>!</p>
 
-		        <form method='post' class='formMod'  action='AzModificaDati.php'> 
+		        <form method='post' class='formMod' action='AzModificaDati.php'> 
 		        	<div class='inner-wrap'>
 		            <label for='nome'>Nome: </label>
 		            <input type='text' id='nome' value='$name' name='name'>

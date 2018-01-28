@@ -22,11 +22,12 @@ menu($page);
 
 $company = &$_SESSION['login'];
 echo"<div id='contenuto'>";
-echo "<p>Gentile ".$company->getName().", ecco un riassunto delle sue attività:</p>
-		<p>Data iscrizione: ".$company->getDateEntry().";</p>
-		<p>Numero totale di annunci inseriti: ".$company->getAdsNumber().";</p>
-		<p>Data ultimo annuncio inserito: ".$company->getDateLastAd().";</p>
-		<p>Numero di utenti che sono interessati ai tuoi annunci: ".$company->getFollowedAdsNumber().";</p> ";
+echo "<h3>Buongiorno ".$company->getName()."!</h3> 
+		<p>Ecco un riassunto delle sue attività:</p>
+		<p><strong>Data iscrizione: </strong>".$company->getDateEntry().";</p>
+		<p><strong>Numero totale di annunci inseriti: </strong>".$company->getAdsNumber().";</p>
+		<p><strong>Data ultimo annuncio inserito: </strong>".$company->getDateLastAd().";</p>
+		<p><strong>Numero di utenti che sono interessati ai tuoi annunci: </strong>".$company->getFollowedAdsNumber().";</p> ";
 
 
 # ------------------------------------------------------

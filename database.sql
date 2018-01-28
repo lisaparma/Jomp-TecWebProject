@@ -4,6 +4,8 @@ DROP TABLE IF EXISTS Annunci;
 DROP TABLE IF EXISTS Aziende;
 DROP TABLE IF EXISTS Consultazioni;
 DROP TABLE IF EXISTS Tipo;
+DROP TABLE IF EXISTS OrarioLavoro;
+DROP TABLE IF EXISTS ContrattoLavoro;
 
 
 CREATE TABLE Utenti (
@@ -13,6 +15,8 @@ Sesso char(1) NOT NULL,
 Email char(255) NOT NULL,
 Username char(20) PRIMARY KEY,
 Password char(20) NOT NULL,
+Iscrizione timestamp DEFAULT CURRENT_TIMESTAMP,
+Nascita date NOT NULL,
 UNIQUE (Email)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -41,7 +45,7 @@ PRIMARY kEY(CodContratto)
 CREATE TABLE Aziende (
 Codice int(10) AUTO_INCREMENT,
 Nome char(100) NOT NULL,
-PIva int(11) NOT NULL, 
+PIva int(11) ZEROFILL NOT NULL, 
 Email char(255) NOT NULL,
 Citta char(20) NOT NULL,
 Iscrizione timestamp DEFAULT CURRENT_TIMESTAMP,

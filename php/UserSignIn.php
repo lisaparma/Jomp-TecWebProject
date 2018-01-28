@@ -66,7 +66,7 @@ if(isset($_POST['submit'])){
         }
         else {
             echo "<div><p class='errorMsg'>Tentativo di registrazione fallito, sono sorti i seguenti errori:</p><br/>";
-            echo "<ul  id=errorList>";
+            echo "<ul id=errorList>";
             if(!checkEmail($email)) {
                 echo "<li>Email già presente, controlla di non essere già registrato</li><br/>";
             }
@@ -122,6 +122,9 @@ echo "<div class='form'>
                 <label for='cognome'> Cognome </label>
                 <input type='text' id='cognome' name='Cognome' placeholder='Cognome' required>
 
+                <label for='date'> Data di nascita: </label>
+                <input type='date' id='date' required>
+
                 <label for='email'> E-mail: </label>
                 <input type='text' id='email' name='Email' placeholder='Email' pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$' required>       
                 <label for='username'> Username: </label>
@@ -132,6 +135,7 @@ echo "<div class='form'>
 
                 <label for='rippw'> Ripeti password: </label>
                 <input type='password' id='rippw' name='RipPassword' placeholder='Password' required>
+
             </div>
 
             <input type='submit' value='Registrati' name='submit'>

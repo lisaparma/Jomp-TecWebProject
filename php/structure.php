@@ -51,7 +51,7 @@ function primaryMenu(){
                         <li><a href='UtDashboard.php'>Dashboard</a></li>
                         <li><a href='UtCercaAnnuncio.php'>Cerca annuncio</a></li>
                         <li><a href='UtAnnunciSalvati.php'>Annunci salvati</a></li>
-                        <li><a href='UtModificaDati.ph'>Modifica dati</a></li>
+                        <li><a href='UtModificaDati.php'>Modifica dati</a></li>
                     </ul>
                     </li>
 	                <li><a href='logout.php'> Esci </a></li>";
@@ -93,6 +93,7 @@ function breadcrumb($pages){
 function footer() { 
     echo "
     <div id='footer'>
+        <hr>
         <div id='link'>
             <ul> 
                 <li><a href=''>Chi siamo</a></li> 

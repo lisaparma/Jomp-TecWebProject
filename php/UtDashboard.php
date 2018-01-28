@@ -28,13 +28,15 @@ if(isset($_SESSION['login'])){ // Solo se in sessione vedi questo
             <h4> Ricapitoliamo i tuoi dati:</h4>
                 <p> <strong> Nome: </strong>".$user->getName()."<br/> 
                 <strong> Cognome: </strong>".$user->getSurname()." <br/> 
-                <strong>E-mail: </strong>".$user->getEmail()." <br/> 
-                <strong>Username: </strong>".$user->getUsername()." <br/> 
+                <strong> Data di nascita: </strong>".$user->getBirth2()."<br/> 
                 <strong>Sesso: </strong>";
                 if($user->getSex()=='f')
-                    echo "donna</p>";
+                    echo "donna";
                 else
-                    echo "uomo</p>";
+                    echo "uomo";
+            echo"</br><strong>E-mail: </strong>".$user->getEmail()." <br/> 
+                <strong>Username: </strong>".$user->getUsername()." <br/>
+                <strong>Data e ora di iscrizione: </strong>".$user->getLogin()."</p>";
     
     echo"  <h4> Ricerche salvate:</h4>
                 <p> Numero ricerche salvate: ".$user->getNumLike()."</br>

@@ -45,6 +45,9 @@ if(isset($_SESSION['login'])){ // Solo se in sessione vedi questo
 	                <label for='cognome'> Cognome: </label> 
 	                <input type='text' id='cognome' value='".$user->getSurname()."' name='Cognome'>
 	                
+                    <label for='date'> Data di nascita: </label>
+                    <input type='date' id='date' value='".$user->getBirth()."' name='Nascita'>
+
 	                <label for='email'> E-mail: </label> 
 	                <input type='text' id='email' value='".$user->getEmail()."' name='Email'>     
 	                
@@ -74,12 +77,13 @@ if(isset($_SESSION['login'])){ // Solo se in sessione vedi questo
             $newUsername= $_POST['Username'];
             $newPassword = $_POST['Password'];
             $newSex = $_POST['button'];
+            $newNascita = $_POST['Nascita'];
             $sql="";
             
             // ... controllo che username ed email (che devono essere unici) non siano già utilizzati
             if($newUsername == $user->getUsername()) {
                 if(($newEmail!=$user->getEmail() && checkEmail($newEmail)) || ($newEmail==$user->getEmail() && !checkEmail($newEmail))){
-                    $sql = "UPDATE Utenti SET Nome='$newName', Cognome='$newSurname',Sesso='$newSex', Email='$newEmail', Password='$newPassword' WHERE Username='".$user->getUsername()."'";
+                    $sql = "UPDATE Utenti SET Nome='$newName', Cognome='$newSurname',Sesso='$newSex', Email='$newEmail', Password='$newPassword', Nascita='$newNascita' WHERE Username='".$user->getUsername()."'";
                 }
                 else {
                     echo "ERRORE EMAIL NON DISPONIBILE";
@@ -88,7 +92,7 @@ if(isset($_SESSION['login'])){ // Solo se in sessione vedi questo
             else{
                 if($newEmail == $user->getEmail()) {
                     if(($newUsername!=$user->getUsername() && checkUsername($newUsername))||($newUsername==$user->getUsername() && !checkUsername($newUsername))){
-                        $sql = "UPDATE Utenti SET Nome='$newName', Cognome='$newSurname', Sesso='$newSex', Username='$newUsername', Password='$newPassword'  WHERE Email='".$user->getEmail."'";
+                        $sql = "UPDATE Utenti SET Nome='$newName', Cognome='$newSurname', Sesso='$newSex', Username='$newUsername', Password='$newPassword', Nascita='$newNascita'  WHERE Email='".$user->getEmail."'";
                     }
                     else {
                         echo "ERRORE USERNAME NON DISPONIBILE";
@@ -107,6 +111,7 @@ if(isset($_SESSION['login'])){ // Solo se in sessione vedi questo
                 $user->setUsername($newUsername);
                 $user->setPassword($newPassword);
                 $user->setSex($newSex);
+                $user->setBirth($newNascita);
                 
                 header("location: UtModificaDati.php");
             }
