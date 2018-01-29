@@ -24,10 +24,11 @@ if(isset($_POST['submit'])){
         $password = $_POST['password'];
         $repPassword = $_POST['repPassword'];
         $description = $_POST['description'];
+        $sito = $_POST['sito'];
 
         //verifico i dati inseriti
         if(checkName($name) && checkPIva($pIva) && checkLengthPIva($pIva) && checkLengthPassword($password) && checkRepeatPassword($password, $repPassword)) {
-            $sql = "INSERT INTO Aziende (Nome, PIva, Email, Citta, Password, Descrizione) VALUES ('$name', '$pIva', '$email', '$citta', '$password', '$description')";
+            $sql = "INSERT INTO Aziende (Nome, PIva, Email, Citta, Password, Descrizione,Sito) VALUES ('$name', '$pIva', '$email', '$citta', '$password', '$description', $sito)";
 
             if (mysqli_query(openDB(), $sql)) {
                 header("location: login.php?msg");
@@ -93,6 +94,9 @@ echo "<div class='form'>
 
                 <label for='email'> E-mail: </label>
                 <input type='text' id='email' name='email' placeholder='Email' pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$' required>
+
+                <label for='sito'> Sito web: </label>
+                <input type='text' id='sito' name='sito' placeholder='Sito web' pattern='wwww+[a-z0-9.-]+\.[a-z]{2,3,4,5}$' required>
 
                 <label for='city'> Città: </label>
                 <input type='text' id='city' name='city' placeholder='Città' required>      

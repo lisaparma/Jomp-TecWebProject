@@ -33,87 +33,6 @@ body {
     background-color: #ffffff;
 }
 
-#footer {
-    height: auto; 
-    text-align: center;
-    font-size: 0.7em;
-    width: 100%;
-    padding: 1em 0em 2em 0em;
-    align-content: center;
-
-}
-
-#footer p{
-    width: 100%;
-}
-#footer ul {
-    list-style:none;
-}
-
-#footer hr{ 
-  border: 0; 
-  height: 1px; 
-  background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
-  background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
-  background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
-  background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0); 
-}
- 
-#social {
-    display: inline-block;
-    margin: auto;
-}
-#social li { 
-    list-style:none; 
-    position:relative; 
-    float:right; 
-    margin: 0; 
-    margin:1em;
-} 
-
-#social #fb{
-    background-image: url(../IMG/facebook.svg);
-    background-repeat: no-repeat;
-    background-size: 2.5em 2.5em;
-    width: 2.5em;
-    height: 2.5em;
-}
-#social #ig{
-    background-image: url(../IMG/instagram.svg);
-    background-repeat: no-repeat;
-    background-size: 2.5em 2.5em;
-    width: 2.5em;
-    height: 2.5em;
-}
-#social #gg{
-    background-image: url(../IMG/google+.svg); 
-    background-repeat: no-repeat;
-    background-size: 2.5em 2.5em;
-    width: 2.5em;
-    height: 2.5em;
-}
-#social #tw{
-    background-image: url(../IMG/twitter.svg);
-    background-repeat: no-repeat;
-    background-size: 2.5em 2.5em;
-    width: 2.5em;
-    height: 2.5em;
-}
-
-#link {
-    display: inline-block;
-    width: 100%;
-    margin: auto;
-    padding-top: 1em;
-}
-#link li{ 
-    display: inline-block;
-    list-style:none; 
-    position:relative; 
-    margin:0; 
-    padding:1em; 
-} 
-
 /* ------------------    HEADER   ------------------- */
 
 #header {
@@ -125,7 +44,6 @@ body {
     position: fixed;
     top: 0;
     z-index: 1000;
-
     transition-property: height;
     transition-duration: 1s;
     transition-timing-function: initial;
@@ -136,7 +54,6 @@ body {
     padding-left: 4em;
     height: 7em;
     float: left;
-
     transition-property: height;
     transition-duration: 1s;
     transition-timing-function: initial;
@@ -161,24 +78,22 @@ body {
 
 #header.small #primarymenu {
     margin: 0;
-
     transition-duration: 1s;
     transition-timing-function: initial;
     transition-delay: initial;
 }
 
-/* --------------------- MENU HEADER ----------------------*/
+
+/* ------------------    MENU HEADER    ----------------- */
 
 #primarymenu
 {
 	margin-top:20px;
     text-align: center;
-
     transition-duration: 1s;
     transition-timing-function: initial;
     transition-delay: initial;
 }
-
 
 /* elenco pagine*/
 #primarymenu ul
@@ -189,7 +104,6 @@ body {
     padding-left: 17em;
     padding-top: 1.5em;
     width: auto;
-
 }
 
 /* link alle altre pagine*/
@@ -203,7 +117,6 @@ body {
 	padding:0 15px;
 	font-family:"HelveticaNeue","Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 1.2em;
-
 }
 
 /* ogni voce di menu*/
@@ -221,13 +134,11 @@ body {
 {
 	color: #ffffff;
     text-shadow: 0px 0 15px #000000;
-
 }
 
 /* Pagina corrente*/
 #primarymenu ul li.here {
     font-size: 1.7em;
-    
 }
 
 #primarymenu ul li.here a{
@@ -249,9 +160,7 @@ body {
     font-size: 0.8em;
     z-index: 3;
     text-align: center;
-
 }
-
 
 /*pagine secondarie*/
 #primarymenu ul ul li{
@@ -262,8 +171,8 @@ body {
     border-color: black;
     float:none;
     width: 100%; 
-
 }
+
 #primarymenu ul li:hover ul li a{
     text-shadow: none;
     color:lightgrey;
@@ -276,7 +185,6 @@ body {
 #primarymenu ul ul li:hover{
     font-size: 1em;
 }
-
 
 #primarymenu ul li:hover ul li:hover a{
     color: #ffffff;
@@ -298,15 +206,15 @@ body {
 }
 
 
-/* ----------------------- BREADCRUMB ----------------------*/
+/* ----------------    BREADCRUMB   ----------------*/
 
 #bc{
     margin-top: 0.4%;
-    padding-left: 0px;
+    padding: 0.5em 0em 0.5em 0.3em;
     list-style:none;
     display: block;
     height: 40px;
-    padding-top: 0.4em;
+
 }
 
 #bc .icon{
@@ -379,171 +287,264 @@ body {
 /* cambio colore quando passo sopra*/
 #bc li a:hover{
     background-color: #1abc9c;
-}       
+}  
+
 #bc li a:hover::before{
-  border-color:#1abc9c;
-  border-left-color:transparent;
- }
+    border-color:#1abc9c;
+    border-left-color:transparent;
+}
+
 #bc li a:hover::after{
-  border-left-color:#1abc9c;
+    border-left-color:#1abc9c;
 }
 
 /* più scuro quando lo clicco*/
 #bc li a:active{
     background-color: #16a085;
 }
+
 #bc li a:active::before{
-  border-color:#16a085;
-  border-left-color:transparent;
+    border-color:#16a085;
+    border-left-color:transparent;
 }
+
 #bc li a:active::after{
-  border-left-color:#16a085;
+    border-left-color:#16a085;
 }
 
 
-/* ----------------------- MENU area personale ----------------------*/
- 
-.container-menu {
-    padding-left: 4px;
-    margin-top: 0.4%;
-    display: block;
-    width: 24%;
-    float: left;
-}
+/* --------------    FOOTER    ---------------- */
 
-.ap-menu {
-  list-style: none;
-  background: #FFF;
-  border-radius: 2px;
-  -moz-border-radius: 2px;
-  -webkit-border-radius: 2px;
-  width: 100%;
-}
-
-.ap-menu li a {
-  display: block;
-  text-decoration: none;
-  padding: 8px 15px;
-  color: #777;
-  height: 36px;
-  position: relative;
-  border-bottom: 1px solid #EEE;
-
-}
-
-.ap-menu li a p {
-    display: inline-block;
-    text-transform: uppercase;
-    text-align:center;
-    padding-left: 1%;
-}
-.ap-menu li a .logo {
-  display: inline-block;
-  padding-right: 5%;
-}
-/* quando passo sopra un link si colora*/
-.ap-menu li:hover > a {
-  color: #e67e22;
-
-}
-
-/* bordo nella pagina in cui sono*/
-.ap-menu li #this { 
-  position: relative;
-  color: #e67e22;
-  border:0;
-  /*border-top: 4px solid #e67e22;
-  border-bottom: 4px solid #e67e22;
-  margin-top: -4px;*/
-  box-shadow: 0 0 1% #DDD;
-  -moz-box-shadow: 0 0 50% #DDD;
-  -webkit-box-shadow: 0 0 50% #DDD;
-  border-left: 4px solid #e67e22;
-  border-right: 4px solid #e67e22;
-  margin: 0 -4px;
-
-}
-
-
-/* media queries per farlo responsive */
-/*@media only screen and (min-width: 980px) {
-  .ap-menu {
-		margin-left:10px;
-	}
-}*/
-
-@media only screen and (min-width: 700px) and (max-width: 979px) {
-  .ap-menu {
-		width: 100%;
-	}
-	.ap-menu li a {
-		height:40px;
-	}
-	.ap-menu li a p {
-		font-size: 12px;
-    display: block;
+#footer {
+    height: auto; 
     text-align: center;
-	}
-  .ap-menu li a .logo {
-		display: block;
-    padding-left: 40%;
-	}
-    
+    font-size: 0.7em;
+    width: 100%;
+    padding: 1em 0em 2em 0em;
+    align-content: center;
 }
 
-@media only screen and (max-width: 699px) {
-	
-	.ap-menu { 
-		width: 100%;
-    height:auto;
-	}
-	.ap-menu li a { 
-		position: relative;
-		padding: 12px 16px;
-		height:30px;
-	}
-	.ap-menu li a p { 
-		display:none;
-		font-weight:normal;
-		text-align:center;
-	}
-  .ap-menu li a .logo {
-	  display: block;
-    width: 30px;
-    padding-left: 40%;
-	}
-    
-  .ap-menu li:hover > a .logo {
-    display: none;
-  }
-	.ap-menu li a:hover p,.mcd-menu li a:active p {
-		display:block;
-		font-size:10px;
-		padding:3px 0;
-		position:absolute;
-		bottom:0px;
-		left:0;
-		min-width:100%;
-		font-weight:normal;
-		text-align:center;
-	}
+#footer p{
+    width: 100%;
 }
 
-/* fare proprio un css a parte per i cellulari?*/
-@media only screen and (max-width: 360px) {
-    .container-menu{
-        width: 72px;
-    }
-    .ap-menu li a .logo {
-		display: block;
-        padding-left: 20%;
-	}
-    .ap-menu li:hover > a .logo {
-        display: none;
-    }
-    
-    
+#footer ul {
+    list-style:none;
 }
+
+#footer hr{ 
+    border: 0; 
+    height: 1px; 
+    background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+    background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+    background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+    background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0); 
+}
+ 
+#social {
+    display: inline-block;
+    margin: auto;
+}
+
+#social li { 
+    list-style:none; 
+    position:relative; 
+    float:right; 
+    margin: 0; 
+    margin:1em;
+} 
+
+#social #fb{
+    background-image: url(../IMG/facebook.svg);
+    background-repeat: no-repeat;
+    background-size: 2.5em 2.5em;
+    width: 2.5em;
+    height: 2.5em;
+}
+
+#social #ig{
+    background-image: url(../IMG/instagram.svg);
+    background-repeat: no-repeat;
+    background-size: 2.5em 2.5em;
+    width: 2.5em;
+    height: 2.5em;
+}
+
+#social #gg{
+    background-image: url(../IMG/google+.svg); 
+    background-repeat: no-repeat;
+    background-size: 2.5em 2.5em;
+    width: 2.5em;
+    height: 2.5em;
+}
+
+#social #tw{
+    background-image: url(../IMG/twitter.svg);
+    background-repeat: no-repeat;
+    background-size: 2.5em 2.5em;
+    width: 2.5em;
+    height: 2.5em;
+}
+
+#link {
+    display: inline-block;
+    width: 100%;
+    margin: auto;
+    padding-top: 1em;
+}
+
+#link li{ 
+    display: inline-block;
+    list-style:none; 
+    position:relative; 
+    margin:0; 
+    padding:1em; 
+} 
+
+
+
+/* --------------------------------------------------------------------------------------------------------- */
+/* ---------------------------------- CONTENUTO pagine statiche senza accesso -------------------------------*/
+
+#section {
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align: justify;
+}
+
+#intro {
+    padding: 0 2em;
+}
+
+#intro h2{
+    font-size: 2em;
+    line-height: 1.8;
+}
+
+#intro p{
+    line-height: 1.3em;
+    padding-bottom: 0.8em;
+}
+
+#intro ol {
+    padding-left: 2em;
+    line-height: 1.5em;
+}
+
+
+/* -------     SectionAziendePartner.php    ----------*/
+
+.sectionCompany{
+    list-style:none;
+    padding: 1em 2em 1em 2em;
+}
+
+.sectionCompany h3{
+    font-weight:bold;
+    font-size: 1.3em;
+    text-decoration: underline;
+    padding-top: 1em;
+}
+
+.sectionCompany ul{
+    list-style:none;
+    padding-left: 1em;
+}
+
+.sectionCompany ul li{
+    padding-top: 0.5em;
+    line-height: 1.3em;
+}
+
+.sectionCompany hr{ 
+  border: 0; 
+  height: 1px; 
+  background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0); 
+}
+
+
+/* ----------     SIGN IN / LOG IN FORM    -------------*/
+/* CompanySignIn.php / UserSignIn.php / login.php */
+
+.form{
+    max-width: 400px;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
+    text-align: center;
+    margin-top: 1em;
+    margin-bottom: 3em;
+}
+
+.form form{
+    padding: 2em;
+}
+
+.form h1 {
+    background: #2A88AD;
+    padding: 20px 30px 15px 30px;
+    border-radius: 10px 10px 0 0;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
+    font: normal 30px 'Bitter', serif;
+    box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+    border: 1px solid #257C9E;
+}
+
+.form input[type="text"], .form input[type="password"], #date, #description{
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 8px;
+    border-radius: 6px;
+    border: 2px solid #fff;
+    box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.33);
+    outline: none;
+    margin-bottom: 1em;
+}
+
+
+.form input[type="text"]:focus, .form input[type="password"]:focus, #date:focus, #description:focus {
+    box-shadow: 0 0 5px #B0CFE0;
+    border:1px solid #B0CFE0;
+}
+
+.form input[type="radio"]{
+    margin-bottom: 1em;
+}
+
+.form .inner-wrap{
+    padding: 30px;
+    background: #F8F8F8;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form input[type="submit"]{
+    background: #2A88AD;
+    padding: 8px 20px 8px 20px;
+    margin: auto;
+    border-radius: 5px;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
+    font: normal 30px 'Bitter', serif;
+    box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+    border: 1px solid #257C9E;
+    font-size: 15px;
+}
+
+.form input[type="submit"]:hover{
+    background: #2A6881;
+    -moz-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
+    -webkit-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
+    box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
+}
+
+
 
 
 /* --------------------------------------------------------------------------------------------------------- */
@@ -555,136 +556,6 @@ body {
     padding-left: 28%;   
 }
 
-/* -------------- ELENCO ANNUNCI - home.php / UtCercaAnnunci.php / UtAnnunciSalvati.php -----------------*/
-
-#listannunci {
-    margin: 1em 7%;
-    padding: 0.5em 10%;
-}
-
-#annunci {
-    list-style: none;
-    padding:0.2em;
-}
-.card {
-    margin: 25px auto; 
-    position: relative; 
-    width: 900px;
-} 
-
-#fogli {
-	border: 0px solid #c4c6ca;
-	position: relative;
-	text-align: center;
-	text-shadow: 0 1px 0 #fff;
-    margin-top: 5em;
-    margin-bottom: 5em;
-}
-
-#fogli:after, #fogli:before {
-	border: 1px solid #c4c6ca;
-    background: #FFFFFF;
-	content: "";
-	display: block;
-	height: 100%;
-	left: -1px;
-	position: absolute;
-	width: 100%;
-}
-
-#fogli:after {
-	transform: rotate(2deg);
-	top: 0;
-  z-index: 2;
-}
-
-#fogli:before {
-	transform: rotate(-3deg);
-	top: 0;
-  z-index: 1;
-}
-
-/* Foglio che viene in primo piano rispetto agli altri*/
-#foglio {
-	background: #FFFFFF;
-	border: 1px solid #c4c6ca;
-	margin: 0 auto;
-	padding: 3em;
-	position: relative;
-	text-align: center;
-	text-shadow: 0 1px 0 #fff;
-  z-index: 3;
-}
-
-#foglio h3 {
-    font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
-    font-size: 25px;
-    text-align: center;
-    text-transform: uppercase;
-    text-rendering: optimizeLegibility;
-    color: #131313;
-    letter-spacing: .15em;
-    text-shadow: 
-      1px -1px 0 #D2D2D2, 
-      -1px 2px 1px #D2D2D2, 
-      -2px 4px 1px  #D2D2D2;
-    margin-bottom: 5px;
-}
-
-#foglio small {
-    font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
-    font-size: 12px;
-}
-
-#foglio strong {
-    
-}
-
-/* Annunci in Utente */
-.detail{
-    margin-top: 0.5em;
-    margin-left:auto; 
-    margin-right:auto;
-    margin-bottom: 2em;
-    border-collapse: collapse;
-}
-
-.detail tr{
-    height: 2em;
-    border-bottom-width: 1px;
-    border-bottom-style: solid;
-    border-bottom-color: rgb(210, 210, 210);
-}
-
-.detail tr .det {
-    font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
-    color: #969696;
-    text-align: left;
-    padding-right: 2em;
-    
-}
-.detail tr .ris {
-    font-weight: 600;
-    text-align: left;
-}
-
-
-/* Immagine per like/dislike */
-#foglio img{
-    width: 30px;
-    cursor:pointer;
-    padding-top:2em;
-}
-#foglio .click {
-    font-weight: 600;
-    display: block;
-    cursor: pointer;
-}
-#foglio button {
-    display: none;
-}
-
-/* Utenti */
 #contenuto form {
     padding:0.5em;
 }
@@ -725,172 +596,156 @@ body {
     padding-bottom: 0.5em;
 }
 
-/* AzResocontoAnnuncio.php */
-.ResAnn {
-    list-style: none;
-    margin: 2em;
-
-    border: 1px;
-    border-style: solid;
-    border-color: #808080;
-
-    padding: 0.5em;
-}
-
-.ResAnn ul{
-    list-style: none;
-}
-
-.ResAnn li{
-    padding-left: 1em;
-    padding-bottom: 0.5em;
-    line-height: 1.5em;
-}
-
-.ResAnn #title {
-    padding-left: 0em;
-    font-weight: bold;
-    font-size: 1.3em;
-}
-
-.ResAnn button{
-    box-shadow: inset 0px 1px 0px 0px #3985B1;
-    background-color: #216288;
-    border: 1px solid #17445E;
-    display: inline-block;
-    cursor: pointer;
-    color: #FFFFFF;
-    padding: 8px 18px;
-    text-decoration: none;
-    font: 12px Arial, Helvetica, sans-serif;
-}
-.ResAnn button:hover {
-    background: linear-gradient(to bottom, #2D77A2 5%, #337DA8 100%);
-    background-color: #28739E;
-}
-
-/* modifica */
-.formMod{
-    max-width: 400px;
-    margin: auto;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
-    text-align: center;
-    margin-bottom: 2em;
-}
-
-.formMod label {
-    text-align: left;
-    width: 40%;
+/* ----------------------- MENU area personale ----------------------*/
+ 
+.container-menu {
+    padding-left: 4px;
+    margin-top: 0.4%;
+    display: block;
+    width: 24%;
     float: left;
 }
 
-.formMod input[type="text"],
-.formMod input[type="password"], .formMod #date, .formMod #description{
+.ap-menu {
+    list-style: none;
+    background: #FFF;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    width: 100%;
+}
+
+.ap-menu li a {
+    display: block;
+    text-decoration: none;
+    padding: 8px 15px;
+    color: #777;
+    height: 36px;
+    position: relative;
+    border-bottom: 1px solid #EEE;
+}
+
+.ap-menu li a p {
     display: inline-block;
-    box-sizing: border-box;
-    width: 60%;
-    padding: 8px;
-    border-radius: 6px;
-    border: 2px solid #fff;
-    box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.33);
-    outline: none;
-    margin-bottom: 1em;
+    text-transform: uppercase;
+    text-align:center;
+    padding-left: 1%;
 }
 
-.formMod #description{
-    width: 100%;
+.ap-menu li a .logo {
+    display: inline-block;
+    padding-right: 5%;
 }
 
+/* quando passo sopra un link si colora*/
+.ap-menu li:hover > a {
+    color: #e67e22;
 
-.formMod input[type="text"]:focus,
-.formMod input[type="password"]:focus, .formMod #date:focus, .formMod #description:focus {
-    box-shadow: 0 0 5px #B0CFE0;
-    border:1px solid #B0CFE0;
-}
-
-#descrAz {
-    width: 100%;
-    padding-bottom: 0.5em;
-}
-.formMod input[type="radio"]{
-    float: none;
-    margin-bottom: 1em;
 }
 
-#man, #woman {
-    float: none;
-    padding-left: 0.5em;
-    padding-right: 1em;
-}
-.formMod .inner-wrap{
-    padding: 30px;
-    background: #F8F8F8;
-    border-radius: 6px;
-    margin-bottom: 15px;
-    text-align: left;
-}
-.formMod input[type="submit"], .formMod button{
-    background: #2A88AD;
-    padding: 8px 20px 8px 20px;
-    margin: auto;
-    border-radius: 5px;
-    color: #fff;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
-    font: normal 30px 'Bitter', serif;
-    box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
-    border: 1px solid #257C9E;
-    font-size: 15px;
-}
-
-.formMod input[type="submit"]:hover, .formMod button:hover{
-    background: #2A6881;
-    -moz-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
-    -webkit-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
-    box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
-}
-/* ---------- Modifica annuncio -----------*/
-
-#annuncio.formMod {
-    max-width: 80%;
-}
-
-#annuncio.formMod label, #annuncio.formMod select {
-    font-size: 15px;
-    margin: 0.5em 0em 0.5em 0em;
-}
-
-#annuncio.formMod #tit {
-    display: block;
-    width: 100%;
-}
-
-#annuncio.formMod input[type="text"] {
-    width: 100%;
-}
-
-#annuncio.formMod textarea {
-    display: block;
-    box-sizing: border-box;
-    width: 100%;
-    padding: 8px;
-    border-radius: 6px;
-    border: 2px solid #fff;
-    box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.33);
-    outline: none;
-    margin-bottom: 1em;
+/* bordo nella pagina in cui sono*/
+.ap-menu li #this { 
+    position: relative;
+    color: #e67e22;
+    border:0;
+    box-shadow: 0 0 1% #DDD;
+    -moz-box-shadow: 0 0 50% #DDD;
+    -webkit-box-shadow: 0 0 50% #DDD;
+    border-left: 4px solid #e67e22;
+    border-right: 4px solid #e67e22;
+    margin: 0 -4px;
 }
 
 
-#annuncio.formMod textarea:focus {
-    box-shadow: 0 0 5px #B0CFE0;
-    border:1px solid #B0CFE0;
+/* media queries per farlo responsive */
+/*@media only screen and (min-width: 980px) {
+  .ap-menu {
+        margin-left:10px;
+    }
+}*/
+
+@media only screen and (min-width: 700px) and (max-width: 979px) {
+    .ap-menu {
+        width: 100%;
+    }
+
+    .ap-menu li a {
+        height:40px;
+    }
+
+    .ap-menu li a p {
+        font-size: 12px;
+        display: block;
+        text-align: center;
+    }
+
+    .ap-menu li a .logo {
+        display: block;
+        padding-left: 40%;
+    }
+}
+
+@media only screen and (max-width: 699px) {
+    .ap-menu { 
+        width: 100%;
+        height:auto;
+    }
+
+    .ap-menu li a { 
+        position: relative;
+        padding: 12px 16px;
+        height:30px;
+    }
+
+    .ap-menu li a p { 
+        display:none;
+        font-weight:normal;
+        text-align:center;
+    }
+
+    .ap-menu li a .logo {
+        display: block;
+        width: 30px;
+        padding-left: 40%;
+    }
+    
+    .ap-menu li:hover > a .logo {
+        display: none;
+    }
+
+    .ap-menu li a:hover p,.mcd-menu li a:active p {
+        display:block;
+        font-size:10px;
+        padding:3px 0;
+        position:absolute;
+        bottom:0px;
+        left:0;
+        min-width:100%;
+        font-weight:normal;
+        text-align:center;
+    }
+}
+
+/* fare proprio un css a parte per i cellulari?*/
+@media only screen and (max-width: 360px) {
+    .container-menu{
+        width: 72px;
+    }
+
+    .ap-menu li a .logo {
+        display: block;
+        padding-left: 20%;
+    }
+
+    .ap-menu li:hover > a .logo {
+        display: none;
+    }
 }
 
 
-/* ----------------------- RICERCA - menu.php / UtCercaAnnuncio.php ----------------------*/
+/* ------------     RICERCA     --------------*/
+/* home.php e UtRicercaAnnunci.php */
 
-/* SISTEMARE IL PROBLEMA DELL'IMMAGINE CHE SI RIPETE*/
 #foto {
     padding-top: 10%;   
     padding-bottom: 10%; 
@@ -933,6 +788,7 @@ body {
     outline: none;
     border: 1px solid #B0CFE0;
 }
+
 #ricerca select:focus{
     box-shadow: 0 0 5px #B0CFE0;
     border:1px solid #B0CFE0;
@@ -949,6 +805,7 @@ body {
     text-decoration: none;
     font: 12px Arial, Helvetica, sans-serif;
 }
+
 #ricerca input[type="submit"]:hover {
     background: linear-gradient(to bottom, #2D77A2 5%, #337DA8 100%);
     background-color: #28739E;
@@ -965,7 +822,6 @@ body {
     margin: 0px;
 }
 
-
 #titolo, #regione, #tipologia {
     padding: 30px 0.8em;
     display: inline-block;
@@ -973,40 +829,200 @@ body {
 }
 
 
-/* --------------------- SIGN IN FORM - CompanySignIn.php / UserSignIn.php ---------------------*/
+/* --------------    ELENCO ANNUNCI    -------------*/
+/* home.php / UtCercaAnnunci.php / UtAnnunciSalvati.php */
+
+#listannunci {
+    margin: 1em 7%;
+    padding: 0.5em 10%;
+}
+
+#annunci {
+    list-style: none;
+    padding:0.2em;
+}
+
+.card {
+    margin: 25px auto; 
+    position: relative; 
+    width: 900px;
+} 
+
+#fogli {
+	border: 0px solid #c4c6ca;
+	position: relative;
+	text-align: center;
+	text-shadow: 0 1px 0 #fff;
+    margin-top: 5em;
+    margin-bottom: 5em;
+}
+
+#fogli:after, #fogli:before {
+	border: 1px solid #c4c6ca;
+    background: #FFFFFF;
+	content: "";
+	display: block;
+	height: 100%;
+	left: -1px;
+	position: absolute;
+	width: 100%;
+}
+
+#fogli:after {
+	transform: rotate(2deg);
+	top: 0;
+    z-index: 2;
+}
+
+#fogli:before {
+	transform: rotate(-3deg);
+	top: 0;
+    z-index: 1;
+}
+
+/* Foglio che viene in primo piano rispetto agli altri*/
+#foglio {
+	background: #FFFFFF;
+	border: 1px solid #c4c6ca;
+	margin: 0 auto;
+	padding: 3em;
+	position: relative;
+	text-align: center;
+	text-shadow: 0 1px 0 #fff;
+  z-index: 3;
+}
+
+#foglio h3 {
+    font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+    font-size: 25px;
+    text-align: center;
+    text-transform: uppercase;
+    text-rendering: optimizeLegibility;
+    color: #131313;
+    letter-spacing: .15em;
+    text-shadow: 
+      1px -1px 0 #D2D2D2, 
+      -1px 2px 1px #D2D2D2, 
+      -2px 4px 1px  #D2D2D2;
+    margin-bottom: 5px;
+}
+
+#foglio small {
+    font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+    font-size: 12px;
+}
+
+/* ------   Annunci in Utente   ----- */
+.detail{
+    margin-top: 0.5em;
+    margin-left:auto; 
+    margin-right:auto;
+    margin-bottom: 2em;
+    border-collapse: collapse;
+}
+
+.detail tr{
+    height: 2em;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(210, 210, 210);
+}
+
+.detail tr .det {
+    font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+    color: #969696;
+    text-align: left;
+    padding-right: 2em;
+}
+
+.detail tr .ris {
+    font-weight: 600;
+    text-align: left;
+}
 
 
+/* Immagine per like/dislike */
+#foglio img{
+    width: 30px;
+    cursor:pointer;
+    padding-top:2em;
+}
+#foglio .click {
+    font-weight: 600;
+    display: block;
+    cursor: pointer;
+}
+#foglio button {
+    display: none;
+}
 
-.form{
+
+/* ----------     AzResocontoAnnuncio.php    ---------- */
+.ResAnn {
+    list-style: none;
+    margin: 2em;
+
+    border: 1px;
+    border-style: solid;
+    border-color: #808080;
+
+    padding: 0.5em;
+}
+
+.ResAnn ul{
+    list-style: none;
+}
+
+.ResAnn li{
+    padding-left: 1em;
+    padding-bottom: 0.5em;
+    line-height: 1.5em;
+}
+
+.ResAnn #title {
+    padding-left: 0em;
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+.ResAnn button{
+    box-shadow: inset 0px 1px 0px 0px #3985B1;
+    background-color: #216288;
+    border: 1px solid #17445E;
+    display: inline-block;
+    cursor: pointer;
+    color: #FFFFFF;
+    padding: 8px 18px;
+    text-decoration: none;
+    font: 12px Arial, Helvetica, sans-serif;
+}
+
+.ResAnn button:hover {
+    background: linear-gradient(to bottom, #2D77A2 5%, #337DA8 100%);
+    background-color: #28739E;
+}
+
+/* ------      FORM MODIFICA     --------*/
+/* AzModificaDati.php / UtModificaDati.php */
+.formMod{
     max-width: 400px;
     margin: auto;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
     text-align: center;
-    margin-top: 1em;
-    margin-bottom: 3em;
+    margin-bottom: 2em;
 }
 
-.form form{
-    padding: 2em;
+.formMod label {
+    text-align: left;
+    width: 40%;
+    float: left;
 }
 
-.form h1 {
-    background: #2A88AD;
-    padding: 20px 30px 15px 30px;
-    border-radius: 10px 10px 0 0;
-    color: #fff;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
-    font: normal 30px 'Bitter', serif;
-    box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
-    border: 1px solid #257C9E;
-}
-
-.form input[type="text"],
-.form input[type="password"], #date, #description{
-    display: block;
+.formMod input[type="text"], .formMod input[type="password"], .formMod #date, .formMod #description{
+    display: inline-block;
     box-sizing: border-box;
-    width: 100%;
+    width: 60%;
     padding: 8px;
     border-radius: 6px;
     border: 2px solid #fff;
@@ -1015,23 +1031,38 @@ body {
     margin-bottom: 1em;
 }
 
+.formMod #description{
+    width: 100%;
+}
 
-.form input[type="text"]:focus,
-.form input[type="password"]:focus, #date:focus, #description:focus {
+.formMod input[type="text"]:focus, .formMod input[type="password"]:focus, .formMod #date:focus, .formMod #description:focus {
     box-shadow: 0 0 5px #B0CFE0;
     border:1px solid #B0CFE0;
 }
-.form input[type="radio"]{
+
+#descrAz {
+    width: 100%;
+    padding-bottom: 0.5em;
+}
+
+.formMod input[type="radio"]{
+    float: none;
     margin-bottom: 1em;
 }
-.form .inner-wrap{
+
+#man, #woman {
+    float: none;
+    padding-left: 0.5em;
+    padding-right: 1em;
+}
+.formMod .inner-wrap{
     padding: 30px;
     background: #F8F8F8;
     border-radius: 6px;
     margin-bottom: 15px;
     text-align: left;
 }
-.form input[type="submit"]{
+.formMod input[type="submit"], .formMod button{
     background: #2A88AD;
     padding: 8px 20px 8px 20px;
     margin: auto;
@@ -1044,81 +1075,52 @@ body {
     font-size: 15px;
 }
 
-.form input[type="submit"]:hover{
+.formMod input[type="submit"]:hover, .formMod button:hover{
     background: #2A6881;
     -moz-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
     -webkit-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
     box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
 }
-/* --------------------- ADD ADS - AzPubblicaAnnuncio.php ----------------------*/
 
-#remove {
-    float: left;
+
+
+/* ----------     MODIFICA ANNUNCIO     -----------*/
+/* AzModificaAnnuncio.php / AzPubblicaAnnuncio.php */
+
+#annuncio.formMod {
+    max-width: 80%;
 }
 
-#edit {
-    float: left;
+#annuncio.formMod label, #annuncio.formMod select {
+    font-size: 15px;
+    margin: 0.5em 0em 0.5em 0em;
+}
+
+#annuncio.formMod #tit {
+    display: block;
+    width: 100%;
+}
+
+#annuncio.formMod input[type="text"] {
+    width: 100%;
+}
+
+#annuncio.formMod textarea {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 8px;
+    border-radius: 6px;
+    border: 2px solid #fff;
+    box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.33);
+    outline: none;
+    margin-bottom: 1em;
 }
 
 
-
-/* --------------------- SECTIONS ----------------------*/
-
-#section {
-    margin-left: 20px;
-    margin-right: 20px;
-    text-align: justify;
-}
-
-#intro {
-    padding: 0 2em;
-}
-
-#intro h2{
-    font-size: 2em;
-    line-height: 1.8;
-}
-
-#intro p{
-    line-height: 1.3em;
-    padding-bottom: 0.8em;
-}
-
-#intro ol {
-    padding-left: 2em;
-    line-height: 1.5em;
-}
-
-/* SectionAziendePartner.php */
-.sectionCompany{
-    list-style:none;
-    padding: 1em 2em 1em 2em;
-}
-
-.sectionCompany h3{
-    font-weight:bold;
-    font-size: 1.3em;
-    text-decoration: underline;
-    padding-top: 1em;
-}
-
-.sectionCompany ul{
-    list-style:none;
-    padding-left: 1em;
-}
-
-.sectionCompany ul li{
-    padding-top: 0.5em;
-    line-height: 1.3em;
-}
-
-.sectionCompany hr{ 
-  border: 0; 
-  height: 1px; 
-  background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
-  background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
-  background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
-  background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0); 
+#annuncio.formMod textarea:focus {
+    box-shadow: 0 0 5px #B0CFE0;
+    border:1px solid #B0CFE0;
 }
 
 

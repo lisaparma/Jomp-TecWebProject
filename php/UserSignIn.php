@@ -15,9 +15,9 @@ breadcrumb(array($page));
 
 function checkEmail($email) {
 
-    $result = mysqli_query(openDB(),"SELECT Email FROM Utenti WHERE Email='".$email."'");     //creo la query
+    $result = mysqli_query(openDB(),"SELECT Email FROM Utenti WHERE Email='".$email."'");
     
-    $num_rows = mysqli_num_rows($result);                                      //invio la query
+    $num_rows = mysqli_num_rows($result);
 
 
     if($num_rows == 0) {             //resultato non vuoto: email già esistente
