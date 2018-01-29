@@ -17,6 +17,42 @@ headers();
 $page='Accedi';
 breadcrumb(array($page));
 
+if(isset($_POST['submit'])){
+    try {
+
+        $db=openDB();
+        
+        $email=trim($_POST['Email']);
+        $Password=trim($_POST['Password']);
+
+        //login per l'utente
+        if(checkDataUser($email, $Password)) {
+            $user = mysqli_query(openDB(), "SELECT * FROM Utenti WHERE Email='".$email."'");
+            $login = $user->fetch_array(MYSQLI_ASSOC);
+            $_SESSION['login'] = new Utente($login);
+            header("location: UtDashboard.php");
+        }
+
+        //login per l'azienda
+        if(checkDataCompany($email, $Password)) {
+            $company = mysqli_query(openDB(), "SELECT * FROM Aziende WHERE Email='".$email."'"); 
+            $login = $company->fetch_array(MYSQLI_ASSOC);
+            $_SESSION['login'] = new Azienda($login);
+            header("location: AzDashboard.php");
+        }
+
+        else{
+            echo "<p>Attenzione! Username o Password non sono corretti.<p>";
+        }
+
+
+        closeDB($db);
+    } catch (PDOException $e) {
+        echo "Errore: " . $e->getMessage();
+        die();
+    }
+
+}
 
 echo "<div id='intro'>
         <h2>Accedi subito!</h2>
@@ -58,45 +94,6 @@ function checkDataCompany($email, $Password) {
         return true;
     }
     return false;
-}
-
-
-
-if(isset($_POST['submit'])){
-    try {
-
-        $db=openDB();
-        
-        $email=$_POST['Email'];
-        $Password=$_POST['Password'];
-
-        //login per l'utente
-        if(checkDataUser($email, $Password)) {
-            $user = mysqli_query(openDB(), "SELECT * FROM Utenti WHERE Email='".$email."'");
-            $login = $user->fetch_array(MYSQLI_ASSOC);
-            $_SESSION['login'] = new Utente($login);
-            header("location: UtDashboard.php");
-        }
-
-        //login per l'azienda
-        if(checkDataCompany($email, $Password)) {
-            $company = mysqli_query(openDB(), "SELECT * FROM Aziende WHERE Email='".$email."'"); 
-            $login = $company->fetch_array(MYSQLI_ASSOC);
-            $_SESSION['login'] = new Azienda($login);
-            header("location: AzDashboard.php");
-        }
-
-        else{
-            echo "<p>Attenzione! Username o Password non sono corretti.<p>";
-        }
-
-
-        closeDB($db);
-    } catch (PDOException $e) {
-        echo "Errore: " . $e->getMessage();
-        die();
-    }
-
 }
 
 
