@@ -17,7 +17,7 @@ $page='Aziende partner';
 breadcrumb(array($page));
 
 function getCompany() {
-	$result = mysqli_query(openDB(), "SELECT Nome, Citta, Email, Descrizione FROM Aziende ORDER BY Nome ASC");
+	$result = mysqli_query(openDB(), "SELECT Nome, Citta, Email, Descrizione, Sito FROM Aziende ORDER BY Nome ASC");
 
 	if(mysqli_num_rows($result) == 0) {
 		echo "<div class='NoData'> Nessuna azienda si è ancora registrata. </div>";
@@ -32,7 +32,7 @@ function getCompany() {
 					<ul>
 						<li> <strong>Sede:</strong> ".$row['Citta']."</li>
 						<li> <strong>Contatto:</strong> ".$row['Email']."</li>
-						<li> <strong>Sito web:</strong> Quando ci sarà verrà fuori</li>
+						<li> <strong>Sito web: </strong> <a href='".$row['Sito']."'>".$row['Sito']."</a></li>
 						<li>".$row['Descrizione']."</li>
 					</ul>
 					

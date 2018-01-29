@@ -32,17 +32,15 @@ if(isset($_POST['edit'])) {
 	$description = $row['Descrizione'];
 
 	echo "<div id='contenuto'>
-		<form method='post' action='AzResocontoAnnunci.php' accept-charset='utf-8'>
-			<h3>Modifica l'annuncio: </h3>
-
-			<label for='title'> Titolo: </label>
+		<h3>Modifica l'annuncio: </h3>
+		<form method='post' id='annuncio' class='formMod' action='AzResocontoAnnunci.php' accept-charset='utf-8'>
+		<div class='inner-wrap'>
+			<label id='tit' for='title'> Titolo: </label>
 	        <input type='text' id='title' name='Title' value='$title' required><br/>"; 
-
-	printWorkType($type);
-	echo "
-	        <p> Inserisci una breve descrizione del lavoro (max 300 caratteri): </p>
+			printWorkType($type);
+	echo "  <label id='descrAz'> Inserisci una breve descrizione del lavoro (max 300 caratteri): </label>
 	        <textarea name='Description' rows='5' cols='70' required>$description</textarea><br/>
-
+	    </div>
 	        <button value=$ad name='update'>Aggiorna</button>
 		</form>
 	</div>";
