@@ -114,27 +114,28 @@ echo "<div id='intro'>
 //Mettere i tab index nei form e nei link
 echo "<div class='form'>
         <h1>Sign Up Now!</h1>
-        <form method='post' action='UserSignIn.php'> 
-            <div class='inner-wrap'>
+        <form name='formSign' method='post' action='UserSignIn.php' onsubmit='return validateForm()'> 
+            <div id='listImp' class='inner-wrap'>
                 <label for='nome'> Nome: </label>
-                <input type='text' id='nome' name='Nome' placeholder='Nome'required>
+                <input type='text' id='nome' name='Nome' placeholder='Nome' onBlur='checkName();'>
 
                 <label for='cognome'> Cognome </label>
-                <input type='text' id='cognome' name='Cognome' placeholder='Cognome' required>
+                <input type='text' id='cognome' name='Cognome' placeholder='Cognome' onBlur='checkSurname();' o>
 
                 <label for='date'> Data di nascita: </label>
-                <input type='date' id='date' required>
+                <input type='date' name='Data' id='date' >
 
                 <label for='email'> E-mail: </label>
-                <input type='text' id='email' name='Email' placeholder='Email' pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$' required>       
+                <input type='text' id='email' name='Email' placeholder='Email' onBlur='checkEmail();'>   
+                    
                 <label for='username'> Username: </label>
-                <input type='text' id='username' name='Username' placeholder='Username' required>
+                <input type='text' id='username' name='Username' placeholder='Username' onBlur='checkUsername();'>
 
                 <label for='password'> Password: </label>
-                <input type='password' id='password' name='Password' placeholder='Password' required>
+                <input type='password' id='password' name='Password' placeholder='Password' onBlur='checkPassword();'>
 
                 <label for='rippw'> Ripeti password: </label>
-                <input type='password' id='rippw' name='RipPassword' placeholder='Password' required>
+                <input type='password' id='rippw' name='RipPassword' placeholder='Password'onBlur='checkRipPassword();'>
 
             </div>
 

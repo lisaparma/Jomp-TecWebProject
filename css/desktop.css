@@ -1145,3 +1145,20 @@ body {
     /* Da fareeeee*/
 }
 
+.erroreDati {
+    color: red;
+    padding: 0em 2em;
+}
+
+.errorForm {
+    font-size: 0.8em;
+    color: red; 
+    padding-left: 1em;
+}
+
+.okForm {
+    font-size: 0.8em;
+    color: green; 
+    padding-left: 1em;
+}
+

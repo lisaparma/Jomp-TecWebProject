@@ -17,6 +17,13 @@ headers();
 $page='Accedi';
 breadcrumb(array($page));
 
+echo "<div id='intro'>
+        <h2>Accedi subito!</h2>
+        <p>Che tu sia un'azienda o un utente privato, accedi subito alla tua area privata per gestire gli annunci di lavoro!<br/>
+        Inserisci l'e-mail con cui ti sei registrato e la password:</p>
+    </div>";
+
+
 if(isset($_POST['submit'])){
     try {
 
@@ -42,7 +49,7 @@ if(isset($_POST['submit'])){
         }
 
         else{
-            echo "<p>Attenzione! Username o Password non sono corretti.<p>";
+            echo "<div class='erroreDati'> Attenzione! Username e/o password non sono corretti.</div>";
         }
 
 
@@ -53,12 +60,6 @@ if(isset($_POST['submit'])){
     }
 
 }
-
-echo "<div id='intro'>
-        <h2>Accedi subito!</h2>
-        <p>Che tu sia un'azienda o un utente privato, accedi subito alla tua area privata per gestire gli annunci di lavoro!<br/>
-        Inserisci l'e-mail con cui ti sei registrato e la password:</p>
-    </div>";
 
 echo "<div class='form'>
             <h1> Accedi </h1>
