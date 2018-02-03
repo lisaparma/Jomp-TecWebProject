@@ -1,2 +1,12 @@
 ._*
 *.DS_Store
+
+## Core latex/pdflatex auxiliary files: 
+*.aux 
+*.log 
+*.fls 
+*.out 
+*.toc 
+*.fdb_latexmk 
+*.dvi
+*.synctex.gz

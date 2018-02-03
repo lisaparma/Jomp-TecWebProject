@@ -4,41 +4,41 @@ RAPIDO POPOLAMENTO DEL DATABASE
 
 /* ----- UTENTI ----- */
 
-INSERT INTO Utenti (Nome, Cognome, Sesso, Email, Username, Password)
+INSERT INTO Utenti (Nome, Cognome, Sesso, Email, Username, Password, Nascita)
 VALUES
-('Lisa', 'Parma', 'f', 'lisa.parma@gmail.com', 'lisa', 'lisa'),
-('Sara', 'Feltrin', 'f', 'sara.feltrin@gmail.com', 'sara', 'sara'),
-('Mario', 'Rossi', 'm', 'mario.rossi@gmail.com', 'mario', 'mario'),
-('Maya', 'Parma', 'f', 'mumik@gmail.com', 'mumik', 'mumik');
+('Lisa', 'Parma', 'f', 'lisa.parma@gmail.com', 'lisa', 'lisa','1996-05-23'),
+('Sara', 'Feltrin', 'f', 'sara.feltrin@gmail.com', 'sara', 'sara', '1995-01-17'),
+('Mario', 'Rossi', 'm', 'mario.rossi@gmail.com', 'mario', 'mario', 2000-03-12),
+('Maya', 'Parma', 'f', 'mumik@gmail.com', 'mumik', 'mumik', '1993-06-23');
 
 
 /* ----- AZIENDE ----- */
 
-INSERT INTO Aziende (Nome, PIva, Email, Citta, Iscrizione, Password, Descrizione)
+INSERT INTO Aziende (Nome, PIva, Email, Citta, Iscrizione, Password, Descrizione, Sito)
 VALUES
 ('Trenitalia', '1231234521', 'trenitalia@azienda.it', 'Roma', '2014-01-13 21:14:14','trenitalia', "Il Gruppo Ferrovie dello Stato Italiane è uno dei maggiori gruppi industriali italiani, forte, innovativo ed autorevole nel confronto con le migliori imprese europee di trasporto su ferro. Le nostre persone si confrontano quotidianamente con tecnologie d'eccellenza, che ci hanno consentito di diventare leader in sicurezza in Europa e un punto di riferimento a livello mondiale, comprovato da riconoscimenti scientifici internazionali (Best Paper Award ). Il Gruppo è formato da una holding che definisce le politiche e le strategie industriali e da una serie di aziende operative.
-Tra queste RFI, che ha la responsabilità dell'infrastruttura e della gestione della circolazione, Trenitalia che assicura il trasporto delle persone e delle merci e Italferr che opera sul mercato italiano ed internazionale nel campo dell'ingegneria dei trasporti."),
+Tra queste RFI, che ha la responsabilità dell'infrastruttura e della gestione della circolazione, Trenitalia che assicura il trasporto delle persone e delle merci e Italferr che opera sul mercato italiano ed internazionale nel campo dell'ingegneria dei trasporti.", 'www.sito.it'),
 
-('Umana', '6783450652', 'umana@gmail.com', 'Padova', '2015-03-22 15:09:34', 'umana', "Con UMANA SpA puoi contare su un grande Gruppo per il Tuo Lavoro: 114 filiali in Italia e una squadra di oltre 700 persone dedicate alla ricerca del migliore lavoro per te. Abbiamo un approccio alla gestione delle risorse umane che pone da sempre al centro la Persona, con particolare attenzione ai giovani. Questa sensibilità ci ha portati ad essere la prima Agenzia in Italia a dotarsi di un Codice Etico “Essere Umana” e a dedicare importanti risorse in favore della sicurezza sul lavoro e della cultura del lavoro. L’impegno di UMANA verso l’eccellenza del proprio servizio, le ha permesso di raggiungere nel 2006 la certificazione UNI EN ISO 9001:2008, seguita da quella del Sistema di gestione per la Qualità, in relazione all’erogazione di somministrazione di lavoro, ricerca e selezione di Risorse Umane di medio e alto profilo e progettazione di nuovi servizi relativi all’attività di Agenzia per il Lavoro generalista, valida per la Direzione Generale, per ogni filiale, per la propria società di Formazione, Umana Forma Srl e per la propria società specializzata in ricollocazione, Uomo e Impresa Srl."),
+('Umana', '6783450652', 'umana@gmail.com', 'Padova', '2015-03-22 15:09:34', 'umana', "Con UMANA SpA puoi contare su un grande Gruppo per il Tuo Lavoro: 114 filiali in Italia e una squadra di oltre 700 persone dedicate alla ricerca del migliore lavoro per te. Abbiamo un approccio alla gestione delle risorse umane che pone da sempre al centro la Persona, con particolare attenzione ai giovani. Questa sensibilità ci ha portati ad essere la prima Agenzia in Italia a dotarsi di un Codice Etico “Essere Umana” e a dedicare importanti risorse in favore della sicurezza sul lavoro e della cultura del lavoro. L’impegno di UMANA verso l’eccellenza del proprio servizio, le ha permesso di raggiungere nel 2006 la certificazione UNI EN ISO 9001:2008, seguita da quella del Sistema di gestione per la Qualità, in relazione all’erogazione di somministrazione di lavoro, ricerca e selezione di Risorse Umane di medio e alto profilo e progettazione di nuovi servizi relativi all’attività di Agenzia per il Lavoro generalista, valida per la Direzione Generale, per ogni filiale, per la propria società di Formazione, Umana Forma Srl e per la propria società specializzata in ricollocazione, Uomo e Impresa Srl.", 'www.sito.it'),
 
 ('Allianz', '2956384726', 'allianz@gmail.com', 'Padova', '2016-11-19 11:14:14', 'allianz', "Allianz è presente in oltre 70 paesi con 78 milioni di clienti ed è uno dei primi asset manager al mondo. L'Italia è il secondo mercato per Allianz SE in termini di volumi premi, con circa 11 miliardi di euro di raccolta nel 2011.
 In Italia conta circa 5000 dipendenti e fa leva su una forza vendita composta da 2.250 promotori finanziari e una rete agenziale che opera con i marchi Allianz Ras, Allianz Lloyd Adriatico e Allianz Subalpina e si avvale di 2.200 agenti e circa 16.000 collaboratori sul territorio italiano.
-Allianz SpA è leader anche nel settore bancario e nell'asset management con Allianz Bank Financial Advisor, Investitori Sgr, la società di private banking del gruppo, e Allianz Global Investors Italia Sgr, nella bancassicurazione con Creditras Assicurazioni, Creditras Vita e L'assicuratrice Italiana Vita e nel canale diretto (telefono e internet) con Genialloyd. Nel 2011 Allianz si è confermata ai vertici del mercato italiano in termini di solidità patrimoniale con il solvency ratio e i rating più alti del settore."),
+Allianz SpA è leader anche nel settore bancario e nell'asset management con Allianz Bank Financial Advisor, Investitori Sgr, la società di private banking del gruppo, e Allianz Global Investors Italia Sgr, nella bancassicurazione con Creditras Assicurazioni, Creditras Vita e L'assicuratrice Italiana Vita e nel canale diretto (telefono e internet) con Genialloyd. Nel 2011 Allianz si è confermata ai vertici del mercato italiano in termini di solidità patrimoniale con il solvency ratio e i rating più alti del settore.", 'www.sito.it'),
 
-('Bosch', '5348797628', 'bosch@gmail.com', 'Rovigo', '2017-07-13 21:14:14','bosch', "Il Gruppo Bosch è fornitore leader e globale di tecnologie e servizi. Secondo i dati preliminari, nel 2012, grazie agli oltre 306.000 collaboratori impiegati nelle aree di business Tecnica per autoveicoli, Energia e Tecnologie costruttive, Tecnologia industriale e Beni di consumo, il Gruppo Bosch ha registrato un fatturato di 52,3 miliardi di euro. Le attività internazionali di sviluppo, di produzione e di vendita sono alla base della continua crescita. Nel 2012 Bosch ha investito oltre 4,5 miliardi di euro in Ricerca e Sviluppo, registrando oltre 4.700 brevetti in tutto il mondo."),
+('Bosch', '5348797628', 'bosch@gmail.com', 'Rovigo', '2017-07-13 21:14:14','bosch', "Il Gruppo Bosch è fornitore leader e globale di tecnologie e servizi. Secondo i dati preliminari, nel 2012, grazie agli oltre 306.000 collaboratori impiegati nelle aree di business Tecnica per autoveicoli, Energia e Tecnologie costruttive, Tecnologia industriale e Beni di consumo, il Gruppo Bosch ha registrato un fatturato di 52,3 miliardi di euro. Le attività internazionali di sviluppo, di produzione e di vendita sono alla base della continua crescita. Nel 2012 Bosch ha investito oltre 4,5 miliardi di euro in Ricerca e Sviluppo, registrando oltre 4.700 brevetti in tutto il mondo.", 'www.sito.it'),
 
 
 ('Despar', '5338797628', 'despar@gmail.com', 'Vicenza', '2015-07-23 11:24:14','despar', "Il Gruppo Aspiag Service Srl, concessionario dei marchi DESPAR, EUROSPAR ed INTERSPAR per l’area del Nord Est Italia, è tra le aziende leader nella Grande Distribuzione Organizzata con oltre 200 filiali, circa 370 associati, 3 centri commerciali nella provincia di Padova e circa 6.500 collaboratori.
-Viene fondata in Italia nel 1991 da Aspiag AG (AUSTRIA SPAR International AG), società della SPAR Austria."),
+Viene fondata in Italia nel 1991 da Aspiag AG (AUSTRIA SPAR International AG), società della SPAR Austria.", 'www.sito.it'),
 
 ('VenetoBanca', '38487929468', 'venetobanca@gmail.com', 'Venezia', '2017-02-13 10:04:19','bosch', "Il Gruppo Veneto Banca è la dodicesima realtà bancaria italiana per masse amministrate. E’ il risultato di un percorso che risale al 1877, anno di nascita della Banca Popolare di Montebelluna. 
 Dal 1997 la Popolare intraprende un cammino che la porta a cambiare la denominazione in Veneto Banca e a divenire protagonista del panorama bancario nazionale. 
-Apre numerosi sportelli, si dota di alcune società prodotto e crea la rete di promotori finanziari Claris Net.  Dà vita a Banca Meridiana (attiva in Puglia e Basilicata) e cresce anche per vie esterne, assumendo il controllo di: Banca di Bergamo, Banca Popolare di Monza e Brianza e Banca Popolare di Intra (operative in Lombardia e Piemonte) e di Intra Private Bank, che ribattezza Banca IPIBI (presente con una rete di private banker sul territorio nazionale). Dal 2000 Veneto Banca estende inoltre i propri interessi nell'Europa Orientale, area nella quale oggi controlla quattro istituti di credito in quattro Paesi dalle grandi potenzialità, dove operano molte imprese italiane: Banca Italo Romena in Romania, Eximbank in Moldova, Veneto Banka d.d. in Croazia e Veneto Banka sh.a. in Albania. "),
+Apre numerosi sportelli, si dota di alcune società prodotto e crea la rete di promotori finanziari Claris Net.  Dà vita a Banca Meridiana (attiva in Puglia e Basilicata) e cresce anche per vie esterne, assumendo il controllo di: Banca di Bergamo, Banca Popolare di Monza e Brianza e Banca Popolare di Intra (operative in Lombardia e Piemonte) e di Intra Private Bank, che ribattezza Banca IPIBI (presente con una rete di private banker sul territorio nazionale). Dal 2000 Veneto Banca estende inoltre i propri interessi nell'Europa Orientale, area nella quale oggi controlla quattro istituti di credito in quattro Paesi dalle grandi potenzialità, dove operano molte imprese italiane: Banca Italo Romena in Romania, Eximbank in Moldova, Veneto Banka d.d. in Croazia e Veneto Banka sh.a. in Albania. ", 'www.sito.it'),
 
 ('SanMarcoInformatica', '3958797672', 'sanmarco@gmail.com', 'Padova', '2017-10-13 20:14:54','sanmarco', "Sanmarco Informatica Spa è una società leader nel mercato Italiano delle software house con oltre 280 collaboratori diretti, tre filiali, 6 distributori e 7 Pool Galileo sul territorio nazionale. 
 Nata negli anni '80 come software house specializzata negli applicativi per aziende manifatturiere, Sanmarco Informatica Spa si è evoluta in un crescendo di esperienze di successo e di scelte imprenditoriali che individuano nella specializzazione del proprio capitale umano l'elemento centrale. 
 Nel 2013 Sanmarco Informatica Spa ha dato alla luce 4words, una web agency a 360 gradi, capace di affiancare il cliente in un percorso di miglioramento globale delle performance, per affrontare con la giust
-a reattività i cambiamenti del mercato e trasformarli in nuove occasione di crescita. Competenza, metodologia, tecnologia, innovazione sono i punti cardine dell'attività di 4words, dalla cui azione sinergica scaturisce l'implementazione di soluzioni rapide, efficaci e innovative, in grado di accrescere la competitività dei suoi clienti grazie a strumenti concepiti per snellire le procedure e ridurre le inefficienze, in un'ottica strategica orientata al lean thinking.");
+a reattività i cambiamenti del mercato e trasformarli in nuove occasione di crescita. Competenza, metodologia, tecnologia, innovazione sono i punti cardine dell'attività di 4words, dalla cui azione sinergica scaturisce l'implementazione di soluzioni rapide, efficaci e innovative, in grado di accrescere la competitività dei suoi clienti grazie a strumenti concepiti per snellire le procedure e ridurre le inefficienze, in un'ottica strategica orientata al lean thinking.", 'www.sito.it');
 
 
 INSERT INTO Tipo (Lavoro)
@@ -57,17 +57,38 @@ VALUES
 ('Sicurezza'),
 ('Altro');
 
+
+INSERT INTO OrarioLavoro (TipoOrario)
+VALUES
+('Qualsiasi'),
+('Full time'),
+('Part time'),
+('Turni'),
+('Altro');
+
+
+INSERT INTO ContrattoLavoro (TipoContratto)
+VALUES
+('Qualsiasi'),
+('Agente/P.Iva'),
+('Apprendistato'),
+('Tempo Indeterminato'),
+('Contratto a Progetto'),
+('Stage'),
+('Tempo Determinato'),
+('Altro');
+
 /* ----- ANNUNCI ----- */
 
-INSERT INTO Annunci (Azienda, Titolo, Tipologia, Data, Descrizione)
+INSERT INTO Annunci (Azienda, Titolo, Tipologia, Orario, Contratto, Data, Descrizione)
 VALUES
-('Trenitalia', 'Specialista gestione umane', '1', '2014-12-13 11:14:34', "La figura ricercata ha conseguito una laurea in ambito economico o giuridico. Ha esperienza pregressa in settori quali Risorse Umane, Legale, Audit. Possiede una conoscenza ottima del Pacchetto Office e base della normativa del lavoro. Inoltre, conosce bene il Sistema Applicativo SAP e la lingua inglese."),
-('Trenitalia', 'SENIOR SAFETY & VALIDATION ENGINEER', '10', '2015-03-22 09:12:34', "Si ricercano laureati in Ingegneria Elettrica, Elettronica o delle Telecomunicazioni. Devono aver maturato esperienza minima triennale nella verifica e validazione di sistemi hardware e software per il segnalamento ferroviario. E’ richiesta anche la conoscenza della lingua inglese, ad un livello corrispondente almeno a quello B2 del QCER."),
-('Trenitalia', 'STAGE AREA INTERNAL AUDITING PER NEOLAUREATI ', '1', '2016-02-28 11:54:00', "I tirocinanti sono neolaureati in Giurisprudenza, Economia o Ingegneria Gestionale. Hanno conseguito il titolo di studio con una votazione non inferiore a 105 / 110. Possiedono conoscenze in ambito Internal Auditing, Compliance Auditing, D.Lgs. n. 231/2001. Sanno usare bene il pacchetto Office e conoscono la lingua inglese ad un livello corrispondente almeno a quello B2 del Quadro comune europeo di riferimento per la conoscenza delle lingue (QCER).
+('Trenitalia', 'Specialista gestione umane', '1', '2', '4', '2014-12-13 11:14:34', "La figura ricercata ha conseguito una laurea in ambito economico o giuridico. Ha esperienza pregressa in settori quali Risorse Umane, Legale, Audit. Possiede una conoscenza ottima del Pacchetto Office e base della normativa del lavoro. Inoltre, conosce bene il Sistema Applicativo SAP e la lingua inglese."),
+('Trenitalia', 'SENIOR SAFETY & VALIDATION ENGINEER', '10', '3', '7', '2015-03-22 09:12:34', "Si ricercano laureati in Ingegneria Elettrica, Elettronica o delle Telecomunicazioni. Devono aver maturato esperienza minima triennale nella verifica e validazione di sistemi hardware e software per il segnalamento ferroviario. E’ richiesta anche la conoscenza della lingua inglese, ad un livello corrispondente almeno a quello B2 del QCER."),
+('Trenitalia', 'STAGE AREA INTERNAL AUDITING PER NEOLAUREATI ', '1', '4', '6', '2016-02-28 11:54:00', "I tirocinanti sono neolaureati in Giurisprudenza, Economia o Ingegneria Gestionale. Hanno conseguito il titolo di studio con una votazione non inferiore a 105 / 110. Possiedono conoscenze in ambito Internal Auditing, Compliance Auditing, D.Lgs. n. 231/2001. Sanno usare bene il pacchetto Office e conoscono la lingua inglese ad un livello corrispondente almeno a quello B2 del Quadro comune europeo di riferimento per la conoscenza delle lingue (QCER).
 Requisiti preferenziali: tesi svolta in materia di Internal Auditing, certificazione CIA, master o scuole di specializzazione in Internal Auditing, conoscenza della lingua tedesca."),
 
 
-('Allianz', 'CREDITRAS - ATTUARIO DANNI', '1', '2014-12-13 11:14:34', " La persona verrà inserità nell' unità dell'Attuariato Danni di
+('Allianz', 'CREDITRAS - ATTUARIO DANNI', '1', '1', '5', '2014-12-13 11:14:34', " La persona verrà inserità nell' unità dell'Attuariato Danni di
 Creditras e avrà modo di seguire le seguenti attività: Sviluppo dei modelli che sottendono al calcolo del premio tecnico
 
 necessari per la determinazione delle tariffe RC Auto (RCa, MoD), Costruzione dei modelli di propensione all'acquisto\abbandono, Sviluppo e analisi monitoraggi, Determinazione del fabbisogno tariffario.

@@ -2,144 +2,114 @@
 /* ---------------------------------------------------------------------------------------------- */
 /* --------------------------------------- PARTI COMUNI ----------------------------------------- */
 
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
 html, body {
-    margin: 0px;
-    padding: 0px;
+    height: 100%;
     font-family: LFTEtica,Helvetica Neue,Helvetica,Arial,sans-serif;
-    font-size:1em;
+    font-size:100%;
     background-color:#EFEFEF;
     align-content: center;
 }
 
 body {
-    display: block;
+    background-color: #EFEFEF;
+    height: auto;
+    min-height: 100%;
+}
+
+#page {
+    padding-top: 7em;
     max-width: 1024px;
-    margin:auto;
-    background-color: #FFFFFF;
+    margin: auto;
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    position: relative;
+    background-color: #ffffff;
 }
 
 /* ------------------    HEADER   ------------------- */
 
 #header {
-    background-color: #9fc4c6;
-    height: 7em;
-    margin: 0em;
-    border: 0.1px solid #A9E8DC;
-    border-top-right-radius: 5px;
-    border-top-left-radius: 5px;
-    /* prova */
-    position: fixed;
-    left:0;
-    top:0;
     width: 100%;
+    padding-bottom: 0.5em;
+    background-color: #029cc7;
+    height: 7em;
+    border: 0.1% solid #A9E8DC;
+    position: fixed;
+    top: 0;
     z-index: 1000;
+    transition-property: height;
+    transition-duration: 1s;
+    transition-timing-function: initial;
+    transition-delay: initial;
 }
 
 #logo {
     padding-left: 4em;
     height: 7em;
     float: left;
+    transition-property: height;
+    transition-duration: 1s;
+    transition-timing-function: initial;
+    transition-delay: initial;
 }
 
-/*  SISTEMARE H1   */
-h1 {
-    text-align: center;
-    padding-top: 1.5em;
-    padding-left: 35%;
+#header.small{
+    height: 4em;
+    transition-property: height;
+    transition-duration: 1s;
+    transition-timing-function: initial;
+    transition-delay: initial;
 }
 
-#box {
-    display: none;
-    float: right;
-    align-content: center;
-    font-size: 0.8em;
-    padding-left: 5em;
+#header.small #logo{
+    height: 4em;
+    transition-property: height;
+    transition-duration: 1s;
+    transition-timing-function: initial;
+    transition-delay: initial;
 }
 
-.button {
-    margin:0.4em;
-    padding:0.3em;
-    border-style:groove;
-    border-width: 0.1em;
-    border-color: black;
-}
-
-#login, #signin, #logout {
-    display: inline-block;
-    background-color: #d4d3d3;
-    border-style: solid;
-    border-width: 2px;
-    border-color: #708090;
-    border-radius: 10px;
-    padding: 1em;
-    margin: 1em;
-}
-
-.button a:link {
-    text-decoration-line: none;
-
-}
-
-/* --------------------- MENU HOME ----------------------*/
-
-#menu {
-    margin: 0em;
-    padding: 1em;
-    text-align: center;
-    align-content: center;
-    background-color: cadetblue; 
-}
-
-#menu li {
-    padding: 1em;
-    display: inline-block;
-    width: 20%;
-    list-style: none;
-    background-color: #d4d3d3;
-    border-style: solid;
-    border-width: 2px;
-    border-color: cadetblue;
-    border-radius: 10px;
+#header.small #primarymenu {
+    margin: 0;
+    transition-duration: 1s;
+    transition-timing-function: initial;
+    transition-delay: initial;
 }
 
 
-#menu a:link {
-    text-decoration-line: none;
-    color: #2b0b30;
-}
+/* ------------------    MENU HEADER    ----------------- */
 
-#menu li:hover {
-    background-color: #708090;
-    color: #e6d1b8;
-}
-
-
-
-/* prova menu */
 #primarymenu
 {
-	margin-top:15px;
+	margin-top:20px;
     text-align: center;
+    transition-duration: 1s;
+    transition-timing-function: initial;
+    transition-delay: initial;
 }
 
 /* elenco pagine*/
 #primarymenu ul
 {
 	list-style:none;
-	position:relative;
-	float:right;
-	margin:0;
+	margin:auto;
 	padding:0;
+    padding-left: 17em;
     padding-top: 1.5em;
-    padding-top: 1.5em;
-    width: 70%;
-
+    width: auto;
 }
 
 /* link alle altre pagine*/
 #primarymenu ul a
 {
-	color:#333;
+    color: lightgray;
 	text-decoration:none;
 	font-weight:700;
 	font-size:12px;
@@ -153,16 +123,28 @@ h1 {
 #primarymenu ul li
 {
 	position:relative;
-	float:left;
-	margin:0;
+	margin:auto;
 	padding:0;
-    width: 25%;
+    display: inline-block;
+    vertical-align: top;
 }
 
 /*quando ci passo sopra*/
-#primarymenu ul li:hover
+#primarymenu ul li:hover a
 {
-	background:#f6f6f6;
+	color: #ffffff;
+    text-shadow: 0px 0 15px #000000;
+}
+
+/* Pagina corrente*/
+#primarymenu ul li.here {
+    font-size: 1.7em;
+}
+
+#primarymenu ul li.here a{
+    color: #ffffff;
+    cursor: default;
+    text-shadow: 0px 0 15px #000000;
 }
 
 /* elenco pagine dentro una pagina*/
@@ -172,27 +154,41 @@ h1 {
 	position:absolute;
 	top:100%;
 	left:0;
-	background:#fff;
+	background:#029cc7;
 	padding:0;
     width: 100%;
     font-size: 0.8em;
     z-index: 3;
+    text-align: center;
 }
 
 /*pagine secondarie*/
-#primarymenu ul ul li
-{
-	float:none;
-	width: 100%; 
-    padding-bottom: 0.5em; 
-    padding-top: 0.5em;
-
+#primarymenu ul ul li{
+    background:#029cc7;
+    border: 1px;
+    border-top: 0px;
+    border-style: solid;
+    border-color: black;
+    float:none;
+    width: 100%; 
 }
 
-#primarymenu ul ul a
-{
-	line-height:120%;
-	padding:10px 15px;
+#primarymenu ul li:hover ul li a{
+    text-shadow: none;
+    color:lightgrey;
+}
+
+#primarymenu ul li.here ul li {
+    font-size: 0.7em;
+}
+
+#primarymenu ul ul li:hover{
+    font-size: 1em;
+}
+
+#primarymenu ul li:hover ul li:hover a{
+    color: #ffffff;
+    text-shadow: 0px 0 15px #000000;
 }
 
 #primarymenu ul li:hover > ul
@@ -200,14 +196,25 @@ h1 {
 	display:block;
 }
 
-/* ----------------------- BREADCRUMB ----------------------*/
+#primarymenu ul li:hover ul li.here {
+    font-size: 1em;
+}
+
+#primarymenu ul li:hover ul li.here a{
+    color: #ffffff;
+    text-shadow: 0px 0 15px #000000;
+}
+
+
+/* ----------------    BREADCRUMB   ----------------*/
 
 #bc{
-    margin: 5px;
-    padding-left: 0px;
+    margin-top: 0.4%;
+    padding: 0.5em 0em 0.5em 0.3em;
     list-style:none;
     display: block;
     height: 40px;
+
 }
 
 #bc .icon{
@@ -267,7 +274,7 @@ h1 {
 }
 
 #bc li a:before{
-    left:-20px;
+    left:-19px;
     border-left-color:transparent;
 }
 
@@ -280,182 +287,264 @@ h1 {
 /* cambio colore quando passo sopra*/
 #bc li a:hover{
     background-color: #1abc9c;
-}       
+}  
+
 #bc li a:hover::before{
-  border-color:#1abc9c;
-  border-left-color:transparent;
- }
+    border-color:#1abc9c;
+    border-left-color:transparent;
+}
+
 #bc li a:hover::after{
-  border-left-color:#1abc9c;
+    border-left-color:#1abc9c;
 }
 
 /* più scuro quando lo clicco*/
 #bc li a:active{
     background-color: #16a085;
 }
+
 #bc li a:active::before{
-  border-color:#16a085;
-  border-left-color:transparent;
+    border-color:#16a085;
+    border-left-color:transparent;
 }
+
 #bc li a:active::after{
-  border-left-color:#16a085;
+    border-left-color:#16a085;
 }
 
 
-/* ----------------------- MENU area personale ----------------------*/
- 
-.container-menu {
-    display: block;
-    width: 24%;
-    float: left;
-
-    margin-left: 5px;
-
-}
-
-
-.ap-menu {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  background: #FFF;
-  border-radius: 2px;
-  -moz-border-radius: 2px;
-  -webkit-border-radius: 2px;
-  width: 100%;
-}
-
-.ap-menu li a {
-  display: block;
-  text-decoration: none;
-  padding: 8px 15px;
-  color: #777;
-  height: 36px;
-  position: relative;
-  border-bottom: 1px solid #EEE;
-
-}
-
-.ap-menu li a p {
-    display: inline-block;
-    text-transform: uppercase;
-    text-align:left;
-    padding-left:3px;
-}
-.ap-menu li a .logo {
-  display: inline-block;
-}
-/* quando passo sopra un link si colora*/
-.ap-menu li:hover > a {
-  color: #e67e22;
-}
-
-/* bordo nella pagina in cui sono*/
-.ap-menu li #this {
-  position: relative;
-  color: #e67e22;
-  border:0;
-  /*border-top: 4px solid #e67e22;
-  border-bottom: 4px solid #e67e22;
-  margin-top: -4px;*/
-  box-shadow: 0 0 5px #DDD;
-  -moz-box-shadow: 0 0 5px #DDD;
-  -webkit-box-shadow: 0 0 5px #DDD;
-  border-left: 4px solid #e67e22;
-  border-right: 4px solid #e67e22;
-  margin: 0 -4px;
-
-}
-
-
-/* media queries per farlo responsive */
-@media only screen and (min-width: 980px) {
-  .ap-menu {
-		margin-left:10px;
-	}
-}
-
-@media only screen and (min-width: 700px) and (max-width: 979px) {
-  .ap-menu {
-		width: 100%;
-	}
-	.ap-menu li a {
-		height:40px;
-	}
-	.ap-menu li a p {
-		font-size: 12px;
-    display: block;
-    text-align: center;
-	}
-  .ap-menu li a .logo {
-		display: block;
-    padding-left: 40%;
-	}
-    
-}
-
-@media only screen and (max-width: 699px) {
-	
-	.ap-menu { 
-		width: 100%;
-    height:auto;
-	}
-	.ap-menu li a { 
-		position: relative;
-		padding: 12px 16px;
-		height:30px;
-	}
-	.ap-menu li a p { 
-		display:none;
-		font-weight:normal;
-		text-align:center;
-	}
-  .ap-menu li a .logo {
-	  display: block;
-    width: 30px;
-    padding-left: 40%;
-	}
-    
-  .ap-menu li:hover > a .logo {
-    display: none;
-  }
-	.ap-menu li a:hover p,.mcd-menu li a:active p {
-		display:block;
-		font-size:10px;
-		padding:3px 0;
-		position:absolute;
-		bottom:0px;
-		left:0;
-		min-width:100%;
-		font-weight:normal;
-		text-align:center;
-	}
-}
-
-/* fare proprio un css a parte per i cellulari?*/
-@media only screen and (max-width: 360px) {
-    .container-menu{
-        width: 72px;
-    }
-    .ap-menu li a .logo {
-		display: block;
-        padding-left: 20%;
-	}
-    .ap-menu li:hover > a .logo {
-        display: none;
-    }
-    
-    
-}
-
-
-/* --------------------- FOOTER ----------------------*/
+/* --------------    FOOTER    ---------------- */
 
 #footer {
-    padding: 2em;
+    height: auto; 
     text-align: center;
-    font-size: 0.5em;
+    font-size: 0.7em;
+    width: 100%;
+    padding: 1em 0em 2em 0em;
+    align-content: center;
 }
+
+#footer p{
+    width: 100%;
+}
+
+#footer ul {
+    list-style:none;
+}
+
+#footer hr{ 
+    border: 0; 
+    height: 1px; 
+    background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+    background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+    background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+    background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0); 
+}
+ 
+#social {
+    display: inline-block;
+    margin: auto;
+}
+
+#social li { 
+    list-style:none; 
+    position:relative; 
+    float:right; 
+    margin: 0; 
+    margin:1em;
+} 
+
+#social #fb{
+    background-image: url(../IMG/facebook.svg);
+    background-repeat: no-repeat;
+    background-size: 2.5em 2.5em;
+    width: 2.5em;
+    height: 2.5em;
+}
+
+#social #ig{
+    background-image: url(../IMG/instagram.svg);
+    background-repeat: no-repeat;
+    background-size: 2.5em 2.5em;
+    width: 2.5em;
+    height: 2.5em;
+}
+
+#social #gg{
+    background-image: url(../IMG/google+.svg); 
+    background-repeat: no-repeat;
+    background-size: 2.5em 2.5em;
+    width: 2.5em;
+    height: 2.5em;
+}
+
+#social #tw{
+    background-image: url(../IMG/twitter.svg);
+    background-repeat: no-repeat;
+    background-size: 2.5em 2.5em;
+    width: 2.5em;
+    height: 2.5em;
+}
+
+#link {
+    display: inline-block;
+    width: 100%;
+    margin: auto;
+    padding-top: 1em;
+}
+
+#link li{ 
+    display: inline-block;
+    list-style:none; 
+    position:relative; 
+    margin:0; 
+    padding:1em; 
+} 
+
+
+
+/* --------------------------------------------------------------------------------------------------------- */
+/* ---------------------------------- CONTENUTO pagine statiche senza accesso -------------------------------*/
+
+#section {
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align: justify;
+}
+
+#intro {
+    padding: 0 2em;
+}
+
+#intro h2{
+    font-size: 2em;
+    line-height: 1.8;
+}
+
+#intro p{
+    line-height: 1.3em;
+    padding-bottom: 0.8em;
+}
+
+#intro ol {
+    padding-left: 2em;
+    line-height: 1.5em;
+}
+
+
+/* -------     SectionAziendePartner.php    ----------*/
+
+.sectionCompany{
+    list-style:none;
+    padding: 1em 2em 1em 2em;
+}
+
+.sectionCompany h3{
+    font-weight:bold;
+    font-size: 1.3em;
+    text-decoration: underline;
+    padding-top: 1em;
+}
+
+.sectionCompany ul{
+    list-style:none;
+    padding-left: 1em;
+}
+
+.sectionCompany ul li{
+    padding-top: 0.5em;
+    line-height: 1.3em;
+}
+
+.sectionCompany hr{ 
+  border: 0; 
+  height: 1px; 
+  background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0); 
+}
+
+
+/* ----------     SIGN IN / LOG IN FORM    -------------*/
+/* CompanySignIn.php / UserSignIn.php / login.php */
+
+.form{
+    max-width: 400px;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
+    text-align: center;
+    margin-top: 1em;
+    margin-bottom: 3em;
+}
+
+.form form{
+    padding: 2em;
+}
+
+.form h1 {
+    background: #2A88AD;
+    padding: 20px 30px 15px 30px;
+    border-radius: 10px 10px 0 0;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
+    font: normal 30px 'Bitter', serif;
+    box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+    border: 1px solid #257C9E;
+}
+
+.form input[type="text"], .form input[type="password"], #date, #description{
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 8px;
+    border-radius: 6px;
+    border: 2px solid #fff;
+    box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.33);
+    outline: none;
+    margin-bottom: 1em;
+}
+
+
+.form input[type="text"]:focus, .form input[type="password"]:focus, #date:focus, #description:focus {
+    box-shadow: 0 0 5px #B0CFE0;
+    border:1px solid #B0CFE0;
+}
+
+.form input[type="radio"]{
+    margin-bottom: 1em;
+}
+
+.form .inner-wrap{
+    padding: 30px;
+    background: #F8F8F8;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form input[type="submit"]{
+    background: #2A88AD;
+    padding: 8px 20px 8px 20px;
+    margin: auto;
+    border-radius: 5px;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
+    font: normal 30px 'Bitter', serif;
+    box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+    border: 1px solid #257C9E;
+    font-size: 15px;
+}
+
+.form input[type="submit"]:hover{
+    background: #2A6881;
+    -moz-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
+    -webkit-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
+    box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
+}
+
+
 
 
 /* --------------------------------------------------------------------------------------------------------- */
@@ -467,7 +556,281 @@ h1 {
     padding-left: 28%;   
 }
 
-/* -------------- ELENCO ANNUNCI - home.php / UtCercaAnnunci.php / UtAnnunciSalvati.php -----------------*/
+#contenuto form {
+    padding:0.5em;
+}
+
+#contenuto h2 {
+    text-align: center;
+}
+
+#contenuto h3{
+    padding: 0.5em 0em 0.5em 0em;
+    font-size: 1.5em;
+    font-weight: bold;
+    line-height: 1.8;
+}
+#contenuto h4{
+    padding-top: 0.5em;
+    font-size: 1.3em;
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+#contenuto p{
+    padding-left: 1em;
+    padding-bottom: 1em;
+    line-height: 1.5em;
+}
+
+#contenuto strong {
+    font-weight: bold;
+}
+
+#contenuto ul{
+    list-style: none;
+    padding-left: 1em;
+}
+
+#contenuto li{
+    padding-bottom: 0.5em;
+}
+
+/* ----------------------- MENU area personale ----------------------*/
+ 
+.container-menu {
+    padding-left: 4px;
+    margin-top: 0.4%;
+    display: block;
+    width: 24%;
+    float: left;
+}
+
+.ap-menu {
+    list-style: none;
+    background: #FFF;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    width: 100%;
+}
+
+.ap-menu li a {
+    display: block;
+    text-decoration: none;
+    padding: 8px 15px;
+    color: #777;
+    height: 36px;
+    position: relative;
+    border-bottom: 1px solid #EEE;
+}
+
+.ap-menu li a p {
+    display: inline-block;
+    text-transform: uppercase;
+    text-align:center;
+    padding-left: 1%;
+}
+
+.ap-menu li a .logo {
+    display: inline-block;
+    padding-right: 5%;
+}
+
+/* quando passo sopra un link si colora*/
+.ap-menu li:hover > a {
+    color: #e67e22;
+
+}
+
+/* bordo nella pagina in cui sono*/
+.ap-menu li #this { 
+    position: relative;
+    color: #e67e22;
+    border:0;
+    box-shadow: 0 0 1% #DDD;
+    -moz-box-shadow: 0 0 50% #DDD;
+    -webkit-box-shadow: 0 0 50% #DDD;
+    border-left: 4px solid #e67e22;
+    border-right: 4px solid #e67e22;
+    margin: 0 -4px;
+}
+
+
+/* media queries per farlo responsive */
+/*@media only screen and (min-width: 980px) {
+  .ap-menu {
+        margin-left:10px;
+    }
+}*/
+
+@media only screen and (min-width: 700px) and (max-width: 979px) {
+    .ap-menu {
+        width: 100%;
+    }
+
+    .ap-menu li a {
+        height:40px;
+    }
+
+    .ap-menu li a p {
+        font-size: 12px;
+        display: block;
+        text-align: center;
+    }
+
+    .ap-menu li a .logo {
+        display: block;
+        padding-left: 40%;
+    }
+}
+
+@media only screen and (max-width: 699px) {
+    .ap-menu { 
+        width: 100%;
+        height:auto;
+    }
+
+    .ap-menu li a { 
+        position: relative;
+        padding: 12px 16px;
+        height:30px;
+    }
+
+    .ap-menu li a p { 
+        display:none;
+        font-weight:normal;
+        text-align:center;
+    }
+
+    .ap-menu li a .logo {
+        display: block;
+        width: 30px;
+        padding-left: 40%;
+    }
+    
+    .ap-menu li:hover > a .logo {
+        display: none;
+    }
+
+    .ap-menu li a:hover p,.mcd-menu li a:active p {
+        display:block;
+        font-size:10px;
+        padding:3px 0;
+        position:absolute;
+        bottom:0px;
+        left:0;
+        min-width:100%;
+        font-weight:normal;
+        text-align:center;
+    }
+}
+
+/* fare proprio un css a parte per i cellulari?*/
+@media only screen and (max-width: 360px) {
+    .container-menu{
+        width: 72px;
+    }
+
+    .ap-menu li a .logo {
+        display: block;
+        padding-left: 20%;
+    }
+
+    .ap-menu li:hover > a .logo {
+        display: none;
+    }
+}
+
+
+/* ------------     RICERCA     --------------*/
+/* home.php e UtRicercaAnnunci.php */
+
+#foto {
+    padding-top: 10%;   
+    padding-bottom: 10%; 
+    width: 100%;
+    position: center;
+    background-image: url(../IMG/front.jpg);
+    overflow: hidden;
+    height: auto;
+}
+
+#ricerca {
+    margin: auto;
+    align-content: center;
+    width: 60%;
+    padding: 1em;
+    border: 1px;
+    border-color: #000000;
+    border-style: inset;
+    background: rgba(255,255,255,0.9);   
+    box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.35);
+    border-radius: 10px;
+    border: 6px solid #305A72;
+}
+
+#ricerca input[type="text"] {
+    box-sizing: border-box; 
+    padding: 8px;
+    outline: none;
+    border: 1px solid #B0CFE0;
+}
+
+#ricerca input[type="text"]:focus{
+    box-shadow: 0 0 5px #B0CFE0;
+    border:1px solid #B0CFE0;
+}
+
+#ricerca select {
+    box-sizing: border-box; 
+    padding: 8px;
+    outline: none;
+    border: 1px solid #B0CFE0;
+}
+
+#ricerca select:focus{
+    box-shadow: 0 0 5px #B0CFE0;
+    border:1px solid #B0CFE0;
+}
+
+#ricerca input[type="submit"] {
+    box-shadow: inset 0px 1px 0px 0px #3985B1;
+    background-color: #216288;
+    border: 1px solid #17445E;
+    display: inline-block;
+    cursor: pointer;
+    color: #FFFFFF;
+    padding: 8px 18px;
+    text-decoration: none;
+    font: 12px Arial, Helvetica, sans-serif;
+}
+
+#ricerca input[type="submit"]:hover {
+    background: linear-gradient(to bottom, #2D77A2 5%, #337DA8 100%);
+    background-color: #28739E;
+}
+
+#fieldset {
+    border: 10px;
+
+}
+
+#fieldset h2 {
+    text-align: center;
+    padding: 10px;
+    margin: 0px;
+}
+
+#titolo, #regione, #tipologia {
+    padding: 30px 0.8em;
+    display: inline-block;
+    margin: auto;
+}
+
+
+/* --------------    ELENCO ANNUNCI    -------------*/
+/* home.php / UtCercaAnnunci.php / UtAnnunciSalvati.php */
 
 #listannunci {
     margin: 1em 7%;
@@ -478,6 +841,7 @@ h1 {
     list-style: none;
     padding:0.2em;
 }
+
 .card {
     margin: 25px auto; 
     position: relative; 
@@ -495,7 +859,7 @@ h1 {
 
 #fogli:after, #fogli:before {
 	border: 1px solid #c4c6ca;
-  background: #FFFFFF;
+    background: #FFFFFF;
 	content: "";
 	display: block;
 	height: 100%;
@@ -507,13 +871,13 @@ h1 {
 #fogli:after {
 	transform: rotate(2deg);
 	top: 0;
-  z-index: 2;
+    z-index: 2;
 }
 
 #fogli:before {
 	transform: rotate(-3deg);
 	top: 0;
-  z-index: 1;
+    z-index: 1;
 }
 
 /* Foglio che viene in primo piano rispetto agli altri*/
@@ -548,11 +912,7 @@ h1 {
     font-size: 12px;
 }
 
-#foglio strong {
-    
-}
-
-/* Annunci in Utente */
+/* ------   Annunci in Utente   ----- */
 .detail{
     margin-top: 0.5em;
     margin-left:auto; 
@@ -573,8 +933,8 @@ h1 {
     color: #969696;
     text-align: left;
     padding-right: 2em;
-    
 }
+
 .detail tr .ris {
     font-weight: 600;
     text-align: left;
@@ -585,6 +945,7 @@ h1 {
 #foglio img{
     width: 30px;
     cursor:pointer;
+    padding-top:2em;
 }
 #foglio .click {
     font-weight: 600;
@@ -596,93 +957,172 @@ h1 {
 }
 
 
+/* ----------     AzResocontoAnnuncio.php    ---------- */
+.ResAnn {
+    list-style: none;
+    margin: 2em;
 
-
-/* ----------------------- RICERCA - menu.php / UtCercaAnnuncio.php ----------------------*/
-
-#foto {
-    margin-top: 110px;
-    padding: 5em 1em 5em 1em;
-    position: relative;
-    background-image: url(../IMG/front.jpg);
-    overflow: hidden;
-    height: 200px;
-}
-
-
-#ricerca {
-    align-items: center;
-    margin: 0px;
-    width: 60%;
-    margin: 0 auto;
     border: 1px;
-    border-color: #000000;
-    border-style: inset;
-    background: rgba(255,255,255,0.9);
-    
-}
+    border-style: solid;
+    border-color: #808080;
 
-
-#fieldset {
-    border: 10px;
-}
-
-#fieldset h2 {
-    text-align: left;
-    padding: 10px;
-    margin: 0px;
-}
-
-
-#titolo, #regione, #tipologia {
-    padding: 30px 0.8em;
-    display: inline-block;
-    margin: auto;
-}
-
-
-/* --------------------- SIGN IN FORM - CompanySignIn.php / UserSignIn.php ---------------------*/
-
-#form {
-    margin-top: 1em;
-    margin-left: 20%;
-    margin-right: 20%;
-    border-style: inset;
-    border-color: darkslategrey;
-    border-width: 2px;
     padding: 0.5em;
 }
 
-#contentForm {
+.ResAnn ul{
+    list-style: none;
+}
+
+.ResAnn li{
+    padding-left: 1em;
+    padding-bottom: 0.5em;
+    line-height: 1.5em;
+}
+
+.ResAnn #title {
+    padding-left: 0em;
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+.ResAnn button{
+    box-shadow: inset 0px 1px 0px 0px #3985B1;
+    background-color: #216288;
+    border: 1px solid #17445E;
+    display: inline-block;
+    cursor: pointer;
+    color: #FFFFFF;
+    padding: 8px 18px;
+    text-decoration: none;
+    font: 12px Arial, Helvetica, sans-serif;
+}
+
+.ResAnn button:hover {
+    background: linear-gradient(to bottom, #2D77A2 5%, #337DA8 100%);
+    background-color: #28739E;
+}
+
+/* ------      FORM MODIFICA     --------*/
+/* AzModificaDati.php / UtModificaDati.php */
+.formMod{
+    max-width: 400px;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
     text-align: center;
-    font-size: 1.5em;
-
+    margin-bottom: 2em;
 }
 
-.label {
-  padding: 8px;
-}
-
-
-/* --------------------- ADD ADS - AzPubblicaAnnuncio.php ----------------------*/
-
-#remove {
+.formMod label {
+    text-align: left;
+    width: 40%;
     float: left;
 }
 
-#edit {
-    float: left;
+.formMod input[type="text"], .formMod input[type="password"], .formMod #date, .formMod #description{
+    display: inline-block;
+    box-sizing: border-box;
+    width: 60%;
+    padding: 8px;
+    border-radius: 6px;
+    border: 2px solid #fff;
+    box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.33);
+    outline: none;
+    margin-bottom: 1em;
+}
+
+.formMod #description{
+    width: 100%;
+}
+
+.formMod input[type="text"]:focus, .formMod input[type="password"]:focus, .formMod #date:focus, .formMod #description:focus {
+    box-shadow: 0 0 5px #B0CFE0;
+    border:1px solid #B0CFE0;
+}
+
+#descrAz {
+    width: 100%;
+    padding-bottom: 0.5em;
+}
+
+.formMod input[type="radio"]{
+    float: none;
+    margin-bottom: 1em;
+}
+
+#man, #woman {
+    float: none;
+    padding-left: 0.5em;
+    padding-right: 1em;
+}
+.formMod .inner-wrap{
+    padding: 30px;
+    background: #F8F8F8;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+.formMod input[type="submit"], .formMod button{
+    background: #2A88AD;
+    padding: 8px 20px 8px 20px;
+    margin: auto;
+    border-radius: 5px;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
+    font: normal 30px 'Bitter', serif;
+    box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+    border: 1px solid #257C9E;
+    font-size: 15px;
+}
+
+.formMod input[type="submit"]:hover, .formMod button:hover{
+    background: #2A6881;
+    -moz-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
+    -webkit-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
+    box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
 }
 
 
 
-/* --------------------- SECTIONS ----------------------*/
+/* ----------     MODIFICA ANNUNCIO     -----------*/
+/* AzModificaAnnuncio.php / AzPubblicaAnnuncio.php */
 
-#section {
-    margin-left: 20px;
-    margin-right: 20px;
-    text-align: justify;
+#annuncio.formMod {
+    max-width: 80%;
 }
+
+#annuncio.formMod label, #annuncio.formMod select {
+    font-size: 15px;
+    margin: 0.5em 0em 0.5em 0em;
+}
+
+#annuncio.formMod #tit {
+    display: block;
+    width: 100%;
+}
+
+#annuncio.formMod input[type="text"] {
+    width: 100%;
+}
+
+#annuncio.formMod textarea {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 8px;
+    border-radius: 6px;
+    border: 2px solid #fff;
+    box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.33);
+    outline: none;
+    margin-bottom: 1em;
+}
+
+
+#annuncio.formMod textarea:focus {
+    box-shadow: 0 0 5px #B0CFE0;
+    border:1px solid #B0CFE0;
+}
+
 
 
 /* --------------------- SUCCESS AND ERROR MESSAGE ----------------------*/
@@ -701,4 +1141,24 @@ h1 {
   text-align: justify;
 }
 
+.NoData{
+    /* Da fareeeee*/
+}
+
+.erroreDati {
+    color: red;
+    padding: 0em 2em;
+}
+
+.errorForm {
+    font-size: 0.8em;
+    color: red; 
+    padding-left: 1em;
+}
+
+.okForm {
+    font-size: 0.8em;
+    color: green; 
+    padding-left: 1em;
+}
 

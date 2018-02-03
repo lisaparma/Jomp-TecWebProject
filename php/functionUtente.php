@@ -99,10 +99,10 @@ function printAd($result, $username, $page){
                             </tr>
                             <tr>
                                 <td class='det'> Orario </td>
-                                <td class='ris'> Lo mettiamo? </td>
+                                <td class='ris'> ".$row['TipoOrario']."</td>
                             </tr><tr>
                                 <td class='det'> Contratto </td>
-                                <td class='ris'> Lo mettiamo? </td>
+                                <td class='ris'> ".$row['TipoContratto']."</td>
                             </tr>
                             </tbody>
                             </table>

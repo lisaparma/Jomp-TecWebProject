@@ -12,8 +12,6 @@ session_start();
 
 head($title);
 
-echo "<body>";
-
 headers();
 
 $page = "Pubblica annuncio";
@@ -26,18 +24,17 @@ menu($page);
 
 
 echo "<div id='contenuto'>
-    	<form method='post' action='AzPubblicaAnnuncio.php' accept-charset='utf-8'>
-    		<h3>Inserisci annuncio: </h3>
-
+        <h3>Inserisci annuncio: </h3>
+    	<form method='post' id='annuncio' class='formMod' action='AzPubblicaAnnuncio.php' accept-charset='utf-8'>
+        <div class='inner-wrap'>
     		<label for='title'> Titolo: </label>
             <input type='text' id='title' name='Title' placeholder='Titolo' required><br/>";
 
-        	
-printWorkType('null');     
+        	printWorkType('null');     
 echo "			
-            <p> Inserisci una breve descrizione del lavoro (max 300 caratteri): </p>
+            <label id='descrAz'> Inserisci una breve descrizione del lavoro (max 300 caratteri): </label>
             <textarea name='Description' rows='5' cols='70' required></textarea><br/>
-
+        </div>
             <input type='submit' value='Inserisci' name='submit'>
     	</form>
     </div>";

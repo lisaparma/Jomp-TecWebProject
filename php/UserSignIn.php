@@ -7,16 +7,17 @@ require_once("connect.php");
 $title = "Registrazione Utente - Jomp";
 head($title);
 
-echo "<body>";
 
 headers();
 
+$page='Registrazione utente';
+breadcrumb(array($page));
 
 function checkEmail($email) {
 
-    $result = mysqli_query(openDB(),"SELECT Email FROM Utenti WHERE Email='".$email."'");     //creo la query
+    $result = mysqli_query(openDB(),"SELECT Email FROM Utenti WHERE Email='".$email."'");
     
-    $num_rows = mysqli_num_rows($result);                                      //invio la query
+    $num_rows = mysqli_num_rows($result);
 
 
     if($num_rows == 0) {             //resultato non vuoto: email già esistente
@@ -65,7 +66,7 @@ if(isset($_POST['submit'])){
         }
         else {
             echo "<div><p class='errorMsg'>Tentativo di registrazione fallito, sono sorti i seguenti errori:</p><br/>";
-            echo "<ul  id=errorList>";
+            echo "<ul id=errorList>";
             if(!checkEmail($email)) {
                 echo "<li>Email già presente, controlla di non essere già registrato</li><br/>";
             }
@@ -99,43 +100,48 @@ if(isset($_POST['submit'])){
 
 }
 
-echo "<h3>Regole per l'iscrizione:</h3>
+echo "<div id='intro'>
+    <h2>Regole per l'iscrizione:</h2>
         <ol>
             <li>Tutti i campi devono essere <strong>OBBLIGATORIAMENTE</strong> compilati;</li>
             <li>L'email personale deve essere univoca;</li>
             <li>L'username deve contenere dai 5 ai 15 caratteri;</li>
             <li>La password deve essere lunga almeno 8 caratteri;</li>
             <li>E' necessario ripetere la stessa esatta sequenza di caratteri della password dove viene richiesto di ripeterla.</li>
-        </ol>";
+        </ol>
+    </div>";
 
 //Mettere i tab index nei form e nei link
-echo "<div id=form>
-        <div id=contentForm>
-            <form method='post' action='UserSignIn.php'> 
+echo "<div class='form'>
+        <h1>Sign Up Now!</h1>
+        <form name='formSign' method='post' action='UserSignIn.php' onsubmit='return validateForm()'> 
+            <div id='listImp' class='inner-wrap'>
+                <label for='nome'> Nome: </label>
+                <input type='text' id='nome' name='Nome' placeholder='Nome' onBlur='checkName();'>
 
-                <label for='nome'> Nome: </label><br/>
-                <input type='text' id='nome' name='Nome' placeholder='Nome'required><br/> 
-                
-                <label for='cognome'> Cognome </label><br/>
-                <input type='text' id='cognome' name='Cognome' placeholder='Cognome' required><br/>
-                
-                <label for='email'> E-mail: </label><br/>
-                <input type='text' id='email' name='Email' placeholder='Email' pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$' required><br/>        
-                
-                <label for='username'> Username: </label><br/>
-                <input type='text' id='username' name='Username' placeholder='Username' required><br/>
-                
-                <label for='password'> Password: </label><br/>
-                <input type='password' id='password' name='Password' placeholder='Password' required><br/>
+                <label for='cognome'> Cognome </label>
+                <input type='text' id='cognome' name='Cognome' placeholder='Cognome' onBlur='checkSurname();' o>
 
-                <label for='rippw'> Ripeti password: </label><br/>
-                <input type='password' id='rippw' name='RipPassword' placeholder='Password' required><br/>
-                <br/>
+                <label for='date'> Data di nascita: </label>
+                <input type='date' name='Data' id='date' >
 
-                <input type='submit' value='Registrati' name='submit'>
+                <label for='email'> E-mail: </label>
+                <input type='text' id='email' name='Email' placeholder='Email' onBlur='checkEmail();'>   
+                    
+                <label for='username'> Username: </label>
+                <input type='text' id='username' name='Username' placeholder='Username' onBlur='checkUsername();'>
 
-            </form>
-        </div>
+                <label for='password'> Password: </label>
+                <input type='password' id='password' name='Password' placeholder='Password' onBlur='checkPassword();'>
+
+                <label for='rippw'> Ripeti password: </label>
+                <input type='password' id='rippw' name='RipPassword' placeholder='Password'onBlur='checkRipPassword();'>
+
+            </div>
+
+            <input type='submit' value='Registrati' name='submit'>
+
+        </form>
     </div>";
 
 

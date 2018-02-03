@@ -10,7 +10,6 @@ session_start();
 $title="Jomp - Modifica dati";
 head($title);
 
-echo "<body>";
 
 headers();
 
@@ -21,7 +20,6 @@ menu($page);
 
 
 # ------------------------------------------------------
-echo"<div id='contenuto'>";
 try {
 	if(isset($_SESSION['login'])) {
 		$company = &$_SESSION['login'];
@@ -32,6 +30,7 @@ try {
 		$city = $company->getCity();
 		$password = $company->getPassword();
 		$description = $company->getDescription();
+		$sito = $company->getSito();
 
 		if(isset($_POST['edit'])) {
 			$newName = $_POST['name'];
@@ -40,6 +39,7 @@ try {
 			$newCity = $_POST['city'];
 			$newPassword = $_POST['password'];	
 			$newDescription = $_POST['description'];
+			$newSito = $_POST['sito'];
 			$check = true;
 
 			if($newName != $name && !checkName($newName)) {
@@ -52,51 +52,56 @@ try {
 			}
 
 			if($check) {
-        		$update = "UPDATE Aziende SET Nome='".$newName."', PIva='".$newPIva."', Email='".$newEmail."', Citta='".$newCity."', Password='".$newPassword."', Descrizione='".$newDescription."' WHERE Codice='".$id."'";
+        		$sql = "UPDATE Aziende SET Nome='$newName', PIva='$newPIva', Email='$newEmail', Citta='$newCity', Password='$newPassword', Descrizione='$newDescription', Sito='$newSito' WHERE Codice='$id' ";
 
-            	if(mysqli_query(openDB(), $update)) {
+            	if(mysqli_query(openDB(), $sql)) {
 	                $company->setName($newName);
 	                $company->setPIva($newPIva);
 	                $company->setEmail($newEmail);
 	                $company->setCity($newCity);
 	                $company->setPassword($newPassword);
 	                $company->setDescription($newDescription);
+	                $company->setSito($newSito);
                 	header("location: AzModificaDati.php?msg");
             	}
-         
             	else {
             		echo "Errore nell'aggiornare i propri dati.";
             	}
             }
         }
+
         if(isset($_GET['msg'])){
 	        echo "Dati aggiornati con successo! Torna nella tua <a href='AzDashboard.php'>bacheca</a>.";
 	    }
 
 		echo "<div id='contenuto'>
-		        <h4> I tuoi dati: </h4>
-		        <form method='post' action='AzModificaDati.php'> 
+		        <h3> I tuoi dati: </h3>
+		        <p> Visualizza i tuoi dati e modificali in ogni momento! <br/>
+                Ricorda: non puoi modificare contemporaneamente <strong> Partita Iva </strong> ed <strong> e-mail </strong>!</p>
 
+		        <form method='post' class='formMod' action='AzModificaDati.php'> 
+		        	<div class='inner-wrap'>
 		            <label for='nome'>Nome: </label>
-		            <input type='text' id='nome' value='$name' name='name'><br/> 
+		            <input type='text' id='nome' value='$name' name='name'>
 		                
     				<label for='pIva'>Partita Iva: </label>
-		            <input type='text' id='pIva' value='$pIva' name='pIva'><br/>
+		            <input type='text' id='pIva' value='$pIva' name='pIva'>
 		                
 		            <label for='email'>E-mail: </label>
-		            <input type='text' id='email' value='$email' name='email'><br/>        
+		            <input type='text' id='email' value='$email' name='email'>  
+
+		            <label for='sito'>Sito web: </label>
+		            <input type='text' id='sito' value='$sito' name='sito'>    
 		                
 		            <label for='city'>Città: </label>
-		            <input type='text' id='city' value='$city' name='city'><br/>
+		            <input type='text' id='city' value='$city' name='city'>
 		                
 		            <label for='password'> Password: </label>
-		            <input type='password' id='password' name='password' value='$password'><br/>
-		            <br/>
+		            <input type='password' id='password' name='password' value='$password'>
 
-		            <p> Descrivi la tua azienda: </p><br/>
-	                <textarea name='description' rows='15' cols='45' required>$description</textarea><br/>
-	                <br/>
-
+		            <label id='descrAz'> Descrivi la tua azienda: </label>
+	                <textarea id='description' name='description' rows='15' cols='45' required>$description</textarea>
+	                </div>
                 	<input type='submit' value='Modifica' name='edit'>
 
 		        </form>
@@ -108,7 +113,6 @@ try {
     echo "Errore: " . $e->getMessage();
     die(); 
 }
-echo"</div>";
 
 # ------------------------------------------------------
 
