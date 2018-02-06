@@ -3,9 +3,14 @@
 function menuHome() {
 	echo "<ul id='menu'>
 	        <li><a href='sectionChiSiamo.php'> Chi siamo </a></li>";
+
     if(isset($_SESSION['login'])) {
-        if(get_class($_SESSION['login'])=='Utente')
-	        echo "<li><a href='UtDashboard.php'> Area personale </a></li>";
+    	if(get_class($_SESSION['login']) == 'Admin')
+    		echo "<li><a href='AdminDashboard.php'> Area personale </a></li>";
+        
+        if(get_class($_SESSION['login']) == 'Utente') 
+        	echo "<li><a href='UtDashboard.php'> Area personale </a></li>";
+        
         else
             echo "<li><a href='AzDashboard.php'> Area personale </a></li>";
     }

@@ -6,6 +6,7 @@ RAPIDO POPOLAMENTO DEL DATABASE
 
 INSERT INTO Utenti (Nome, Cognome, Sesso, Email, Username, Password, Nascita)
 VALUES
+('Admin', '', '', 'admin@admin.com', 'admin', 'admin', '' ),
 ('Lisa', 'Parma', 'f', 'lisa.parma@gmail.com', 'lisa', 'lisa','1996-05-23'),
 ('Sara', 'Feltrin', 'f', 'sara.feltrin@gmail.com', 'sara', 'sara', '1995-01-17'),
 ('Mario', 'Rossi', 'm', 'mario.rossi@gmail.com', 'mario', 'mario', 2000-03-12),

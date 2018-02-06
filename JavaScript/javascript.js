@@ -23,7 +23,6 @@ function reduceHeader(){
 }
 
 // Convalida form registrazione utenti
-
 function checkName() {
 	var valido = false;
 	if(!document.getElementById("nome").value) {
@@ -238,7 +237,7 @@ var valido = false;
 
 function validateForm() {
 	if(checkEmail() & checkName() & checkSurname() & checkUsername() & checkPassword() & checkRipPassword() &&checkDate())
-			return true;
+		return true;
 	else 
 		return false;
 }
