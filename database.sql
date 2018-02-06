@@ -17,6 +17,7 @@ Username char(20) PRIMARY KEY,
 Password char(20) NOT NULL,
 Iscrizione timestamp DEFAULT CURRENT_TIMESTAMP,
 Nascita date NOT NULL,
+Uso char(20) NOT NULL,
 UNIQUE (Email)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 

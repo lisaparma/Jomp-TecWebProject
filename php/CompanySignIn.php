@@ -84,31 +84,31 @@ echo "<div id='intro'>
 
 echo "<div class='form'>
         <h1>Sign Up Now!</h1>
-        <form method='post' action='CompanySignIn.php'> 
-            <div class='inner-wrap'>
-                <label for='name'> Nome: </label>
-                <input type='text' id='name' name='name' placeholder='Nome'required>
+        <form method='post' action='CompanySignIn.php' onsubmit='return validateFormCompany()'> 
+            <div id='listImp' class='inner-wrap'>
+                <label for='nome'> Nome: </label>
+                <input type='text' id='nome' name='name' placeholder='Nome' onBlur='checkName();'>
 
                 <label for='pIva'> Partita IVA: </label>
-                <input type='text' id='pIva' name='pIva' placeholder='Partita Iva'required>
+                <input type='text' id='pIva' name='pIva' placeholder='Partita Iva'  onBlur='checkPiva();'>
 
                 <label for='email'> E-mail: </label>
-                <input type='text' id='email' name='email' placeholder='Email' pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$' required>
+                <input type='text' id='email' name='email' placeholder='Email' pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$'  onBlur='checkEmail();'>
 
                 <label for='sito'> Sito web: </label>
-                <input type='text' id='sito' name='sito' placeholder='Sito web' pattern='wwww+[a-z0-9.-]+\.[a-z]{2,3,4,5}$' required>
+                <input type='text' id='sito' name='sito' placeholder='Sito web' onBlur='checkSito();'>
 
                 <label for='city'> Città: </label>
-                <input type='text' id='city' name='city' placeholder='Città' required>      
+                <input type='text' id='city' name='city' placeholder='Città' onBlur='checkCitta();'>      
 
                 <label for='password'> Password: </label>
-                <input type='password' id='password' name='password' placeholder='Password' required>
+                <input type='password' id='password' name='password' placeholder='Password' onBlur='checkPassword();'>
 
                 <label for='rippw'> Ripeti password: </label>
-                <input type='password' id='rippw' name='repPassword' placeholder='Password' required>
+                <input type='password' id='rippw' name='repPassword' placeholder='Password' onBlur='checkRipPassword();'/>
 
                 <label for='description'> Descrivi la tua azienda: </label>
-                <textarea id='description' name='description' rows='15' cols='45' placeholder='Cosa vuoi raccontare della tua azienda?' required></textarea>
+                <textarea id='description' name='description' rows='15' cols='45' placeholder='Cosa vuoi raccontare della tua azienda?' onBlur='checkDesc();'></textarea>
             </div>
             
             <input type='submit' value='Registrati' name='submit'>

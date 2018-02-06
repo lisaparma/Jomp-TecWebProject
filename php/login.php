@@ -5,6 +5,7 @@ require_once("functionHome.php");
 require_once("connect.php");
 require_once("classUtente.php");
 require_once("classAzienda.php");
+require_once("classAdmin.php");
 
 $title="Jomp - Log In ";
 
@@ -30,18 +31,26 @@ if(isset($_POST['submit'])){
         $db=openDB();
         
         $email=trim($_POST['Email']);
-        $Password=trim($_POST['Password']);
+        $password=trim($_POST['Password']);
 
         //login per l'utente
-        if(checkDataUser($email, $Password)) {
-            $user = mysqli_query(openDB(), "SELECT * FROM Utenti WHERE Email='".$email."'");
-            $login = $user->fetch_array(MYSQLI_ASSOC);
-            $_SESSION['login'] = new Utente($login);
-            header("location: UtDashboard.php");
+        if(checkDataUser($email, $password)) {
+            if($email == 'admin@admin.com' && $password == 'admin') {
+                $admin = mysqli_query(openDB(), "SELECT * FROM Utenti WHERE Email='".$email."'");
+                $login = $admin->fetch_array(MYSQLI_ASSOC);
+                $_SESSION['login'] = new Admin($login);
+                header("location: AdminDashboard.php");
+            }
+            else {
+                $user = mysqli_query(openDB(), "SELECT * FROM Utenti WHERE Email='".$email."'");
+                $login = $user->fetch_array(MYSQLI_ASSOC);
+                $_SESSION['login'] = new Utente($login);
+                header("location: UtDashboard.php");
+            }
         }
 
         //login per l'azienda
-        if(checkDataCompany($email, $Password)) {
+        if(checkDataCompany($email, $password)) {
             $company = mysqli_query(openDB(), "SELECT * FROM Aziende WHERE Email='".$email."'"); 
             $login = $company->fetch_array(MYSQLI_ASSOC);
             $_SESSION['login'] = new Azienda($login);

@@ -4,12 +4,13 @@ RAPIDO POPOLAMENTO DEL DATABASE
 
 /* ----- UTENTI ----- */
 
-INSERT INTO Utenti (Nome, Cognome, Sesso, Email, Username, Password, Nascita)
+INSERT INTO Utenti (Nome, Cognome, Sesso, Email, Username, Password, Nascita, Uso)
 VALUES
-('Lisa', 'Parma', 'f', 'lisa.parma@gmail.com', 'lisa', 'lisa','1996-05-23'),
-('Sara', 'Feltrin', 'f', 'sara.feltrin@gmail.com', 'sara', 'sara', '1995-01-17'),
-('Mario', 'Rossi', 'm', 'mario.rossi@gmail.com', 'mario', 'mario', 2000-03-12),
-('Maya', 'Parma', 'f', 'mumik@gmail.com', 'mumik', 'mumik', '1993-06-23');
+('Admin', '', '', 'admin@admin.com', 'admin', 'admin', '', 'admin' ),
+('Lisa', 'Parma', 'f', 'lisa.parma@gmail.com', 'lisa', 'lisa','1996-05-23', 'utente'),
+('Sara', 'Feltrin', 'f', 'sara.feltrin@gmail.com', 'sara', 'sara', '1995-01-17', 'utente'),
+('Mario', 'Rossi', 'm', 'mario.rossi@gmail.com', 'mario', 'mario', 2000-03-12, 'utente'),
+('Maya', 'Parma', 'f', 'mumik@gmail.com', 'mumik', 'mumik', '1993-06-23', 'utente');
 
 
 /* ----- AZIENDE ----- */
