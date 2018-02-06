@@ -1,3 +1,5 @@
+
+/* ---------------------------------------------------------------------------------------------- */
 /* --------------------------------------- PARTI COMUNI ----------------------------------------- */
 
 *{
@@ -7,60 +9,56 @@
 }
 
 html, body {
+    height: 100%;
     font-family: LFTEtica,Helvetica Neue,Helvetica,Arial,sans-serif;
     font-size:100%;
+    background-color:#EFEFEF;
     align-content: center;
 }
 
-body, #page {
-    min-height: 100%;
-}
-
-body, #footer, #foto{
-    height: auto;
-}
 body {
     background-color: #EFEFEF;
+    height: auto;
+    min-height: 100%;
 }
 
 #page {
     padding-top: 7em;
     max-width: 1024px;
     margin: auto;
+    min-height: 100%;
     height: auto !important;
+    height: 100%;
+    position: relative;
     background-color: #ffffff;
 }
 
-#page, .ap-menu li a, .ap-menu li #this, .ap-menu li a, .card, #fogli , #foglio{
-    position: relative;
-}
-
-#header, #logo, #header.small, #header.small #logo {
-    transition: height 1s initial initial;
-}
-
-#header.small, #header.small #logo{
-    height: 4em;
-}
-
-#header, #logo{
-    height: 7em;
-}
 /* ------------------    HEADER   ------------------- */
 
 #header {
     width: 100%;
-    padding-bottom: 0.5em;
-    background-color: #029cc7;
-    border: 0.1% solid #A9E8DC;
     position: fixed;
     top: 0;
     z-index: 1000;
-    
+    transition-property: height;
+    transition-duration: 1s;
+    transition-timing-function: initial;
+    transition-delay: initial;
+}
+
+#fascia {
+    background-color: #029cc7;
+    display: block;
+    height: 7em;
+    transition-property: height;
+    transition-duration: 1s;
+    transition-timing-function: initial;
+    transition-delay: initial;
 }
 
 #logo {
     padding-left: 4em;
+    height: 6.5em;
     float: left;
     transition-property: height;
     transition-duration: 1s;
@@ -69,7 +67,52 @@ body {
     display: inline;
 }
 
-#header.small #primarymenu {
+#hamburger {
+    visibility: hidden;
+    display: inline;
+    float: right;
+    padding: 2.2em 2.3em 0em 0em;
+    transition: 1s;
+    cursor: pointer;
+}
+
+#mobilemenu {
+    visibility: hidden;
+}
+
+#hamburger img {
+    width: 50px;
+}
+
+#mobilemenu {
+    display: none;
+}
+
+
+#fascia.small{
+    height: 4em;
+    transition-property: height;
+    transition-duration: 1s;
+    transition-timing-function: initial;
+    transition-delay: initial;
+}
+
+#fascia.small #logo {
+    height: 4em;
+    transition-property: height;
+    transition-duration: 1s;
+    transition-timing-function: initial;
+    transition-delay: initial;
+}
+
+#fascia.small #hamburger {
+    padding-top: 0.7em;
+    transition-property: height;
+    transition: 1s;
+}
+
+
+#fascia.small #primarymenu {
     margin: 0;
     transition-duration: 1s;
     transition-timing-function: initial;
@@ -81,7 +124,7 @@ body {
 #primarymenu
 {
     display: inline;
-	margin-top:20px;
+    margin-top:20px;
     text-align: center;
     transition-duration: 1s;
     transition-timing-function: initial;
@@ -91,9 +134,9 @@ body {
 /* elenco pagine*/
 #primarymenu ul
 {
-	list-style:none;
-	margin:auto;
-	padding:0;
+    list-style:none;
+    margin:auto;
+    padding:0;
     padding-top: 3em;
     width: auto;
     transition-duration: 1s;
@@ -101,14 +144,14 @@ body {
     transition-delay: initial;
 }
 
-#header.small #primarymenu ul {
+#fascia.small #primarymenu ul {
     padding-top: 1.3em;
     transition-duration: 1s;
     transition-timing-function: initial;
     transition-delay: initial;
 }
 
-#header.small #primarymenu ul ul {
+#fascia.small #primarymenu ul ul {
     padding-top: 0em;
     transition-duration: 1s;
     transition-timing-function: initial;
@@ -116,24 +159,24 @@ body {
 }
 
 /* link alle altre pagine*/
-#primarymenu ul a 
+#primarymenu ul a
 {
     color: lightgray;
-	text-decoration:none;
-	font-weight:700;
-	font-size:12px;
-	line-height:32px;
-	padding:0 15px;
-	font-family:"HelveticaNeue","Helvetica Neue",Helvetica,Arial,sans-serif;
+    text-decoration:none;
+    font-weight:700;
+    font-size:12px;
+    line-height:32px;
+    padding:0 15px;
+    font-family:"HelveticaNeue","Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 1.2em;
 }
 
 /* ogni voce di menu*/
 #primarymenu ul li
 {
-	position:relative;
-	margin:auto;
-	padding:0;
+    position:relative;
+    margin:auto;
+    padding:0;
     display: inline-block;
     vertical-align: top;
 }
@@ -141,7 +184,7 @@ body {
 /*quando ci passo sopra*/
 #primarymenu ul li:hover a
 {
-	color: #ffffff;
+    color: #ffffff;
     text-shadow: 0px 0 15px #000000;
 }
 
@@ -159,13 +202,12 @@ body {
 /* elenco pagine dentro una pagina*/
 #primarymenu ul ul
 {
-    margin-top: 0.7em;
-	display:none;
-	position:absolute;
-	top:100%;
-	left:0;
-	background:#029cc7;
-	padding:0;
+    display:none;
+    position:absolute;
+    top:100%;
+    left:0;
+    background:#029cc7;
+    padding:0;
     width: 100%;
     font-size: 0.8em;
     z-index: 3;
@@ -175,9 +217,10 @@ body {
 
 /*pagine secondarie*/
 #primarymenu ul ul li{
+    padding: 0em;
     background:#029cc7;
     border: 1px;
-    border-top: 0px;
+    border-top: 0;
     border-style: solid;
     border-color: black;
     float:none;
@@ -204,7 +247,7 @@ body {
 
 #primarymenu ul li:hover > ul
 {
-	display:block;
+    display:block;
 }
 
 #primarymenu ul li:hover ul li.here {
@@ -228,18 +271,101 @@ body {
     {
         display: none;
     }
+
+    #hamburger {
+        visibility: visible;
+    }
+
+    #mobilemenu.show {
+        visibility: visible;
+    }
+}
+
+/* ------ menu mobile --------- */
+#mobilemenu.show {
+    display: block;
+    font-size: 1.5em;
+}
+
+#mobilemenu.show ul {
+    list-style: none;
+    width: 100%;
+    text-align: center;
+    background-color: #029cc7; 
+}
+
+#mobilemenu.show ul li {
+    padding: 0.5em 0em;
+    border-bottom:2px;
+    border-style: solid;
+    border-color: black;
+}
+/*quando ci passo sopra*/
+#mobilemenu.show ul li:hover a
+{
+    color: #ffffff;
+    text-shadow: 0px 0 15px #000000;
+}
+
+#mobilemenu.show ul li a {
+    color: lightgray;
+    text-decoration:none;
+}
+
+/* Pagina corrente*/
+#mobilemenu.show ul li.here {
+    font-weight: bold;
+}
+
+#mobilemenu.show ul li.here a{
+    color: #ffffff;
+    cursor: default;
+    text-shadow: 0px 0 15px #000000;
+}
+
+/* elenco pagine dentro una pagina*/
+#mobilemenu.show ul ul
+{
+    padding:0;
+    width: 100%;
+    font-size: 0.9em;
+    border: 0px;
+}
+
+
+/*pagine secondarie*/
+#mobilemenu.show ul li:hover ul li a{
+    text-shadow: none;
+    color:lightgrey;
+    width: 100%;
+    height: 100%;
+}
+
+#mobilemenu.show ul li ul li {
+    font-size: 0.9em;
+    padding: 0.5em;
+    margin: auto;
+    border:0;
+}
+
+#mobilemenu.show ul li:hover ul li:hover a{
+    color: #ffffff;
+    text-shadow: 0px 0 15px #000000;
+}
+
+#mobilemenu.show ul li:hover ul li.here a{
+    color: #ffffff;
+    text-shadow: 0px 0 15px #000000;
 }
 
 
 /* ----------------    BREADCRUMB   ----------------*/
 
 #bc{
-    margin-top: 0.4%;
-    padding: 0.5em 0em 0.5em 0.3em;
+    padding: 0.3em 0em 0em 0.3em;
     list-style:none;
     display: block;
     height: 40px;
-
 }
 
 #bc .icon{
@@ -270,7 +396,7 @@ body {
 }
 #bc li:nth-child(even) a:before{
   border-color:#2980b9;
-  border-left-color: transparent;
+  border-left-color:transparent;
  } 
 #bc li:nth-child(even) a:after{
   border-left-color: #2980b9;
@@ -279,14 +405,12 @@ body {
 /* Primo elemento diverso*/
 #bc li:first-child a{
     padding-left:15px;
-    border-radius: 4px 0 0 4px;
-    cursor: pointer;
+    border-radius(4px 0 0 4px);
+    cursor:pointer;
 }
 #bc li:first-child a:before{
       border:none;
 }
-
-  
 
 #bc li a:before, #bc li a:after{
     content: "";
@@ -340,7 +464,8 @@ body {
 
 /* --------------    FOOTER    ---------------- */
 
-#footer { 
+#footer {
+    height: auto; 
     text-align: center;
     font-size: 0.7em;
     width: 100%;
@@ -645,6 +770,7 @@ body {
     padding: 8px 15px;
     color: #777;
     height: 36px;
+    position: relative;
     border-bottom: 1px solid #EEE;
 }
 
@@ -668,6 +794,7 @@ body {
 
 /* bordo nella pagina in cui sono*/
 .ap-menu li #this { 
+    position: relative;
     color: #e67e22;
     border:0;
     box-shadow: 0 0 1% #DDD;
@@ -707,59 +834,13 @@ body {
     }
 }
 
-@media only screen and (min-width: 359px) and (max-width: 699px) {
+@media only screen and (max-width: 699px) {
     .ap-menu { 
-        width: 100%;
-        height:auto;
-    }
-
-    .ap-menu li a { 
-        padding: 12px 16px;
-        height:30px;
-    }
-
-    .ap-menu li a p { 
-        display:none;
-        font-weight:normal;
-        text-align:center;
-    }
-
-    .ap-menu li a .logo {
-        display: block;
-        width: 30px;
-        padding-left: 40%;
-    }
-    
-    .ap-menu li:hover > a .logo {
         display: none;
     }
 
-    .ap-menu li a:hover p,.mcd-menu li a:active p {
-        display:block;
-        font-size:10px;
-        padding:3px 0;
-        position:absolute;
-        bottom:0px;
-        left:0;
-        min-width:100%;
-        font-weight:normal;
-        text-align:center;
-    }
-}
-
-/* fare proprio un css a parte per i cellulari?*/
-@media only screen and (max-width: 360px) {
-    .container-menu{
-        width: 72px;
-    }
-
-    .ap-menu li a .logo {
-        display: block;
-        padding-left: 20%;
-    }
-
-    .ap-menu li:hover > a .logo {
-        display: none;
+    #contenuto {
+        padding-left: 1em;
     }
 }
 
@@ -774,6 +855,7 @@ body {
     position: center;
     background-image: url(../IMG/front.jpg);
     overflow: hidden;
+    height: auto;
 }
 
 #ricerca {
@@ -863,64 +945,67 @@ body {
 }
 
 .card {
-    margin: 25px auto;  
+    margin: 25px auto; 
+    position: relative; 
     width: 900px;
 } 
 
 #fogli {
-	border: 0px solid #c4c6ca;
-	text-align: center;
-	text-shadow: 0 1px 0 #fff;
+    border: 0px solid #c4c6ca;
+    position: relative;
+    text-align: center;
+    text-shadow: 0 1px 0 #fff;
     margin-top: 5em;
     margin-bottom: 5em;
 }
 
 #fogli:after, #fogli:before {
-	border: 1px solid #c4c6ca;
+    border: 1px solid #c4c6ca;
     background: #FFFFFF;
-	content: "";
-	display: block;
-	height: 100%;
-	left: -1px;
-	position: absolute;
-	width: 100%;
+    content: "";
+    display: block;
+    height: 100%;
+    left: -1px;
+    position: absolute;
+    width: 100%;
 }
 
 #fogli:after {
-	transform: rotate(2deg);
-	top: 0;
+    transform: rotate(2deg);
+    top: 0;
     z-index: 2;
 }
 
 #fogli:before {
-	transform: rotate(-3deg);
-	top: 0;
+    transform: rotate(-3deg);
+    top: 0;
     z-index: 1;
 }
 
 /* Foglio che viene in primo piano rispetto agli altri*/
 #foglio {
-	background: #FFFFFF;
-	border: 1px solid #c4c6ca;
-	margin: 0 auto;
-	padding: 3em;
-	text-align: center;
-	text-shadow: 0 1px 0 #fff;
+    background: #FFFFFF;
+    border: 1px solid #c4c6ca;
+    margin: 0 auto;
+    padding: 3em;
+    position: relative;
+    text-align: center;
+    text-shadow: 0 1px 0 #fff;
   z-index: 3;
 }
 
 #foglio h3 {
     font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
-    font-size: 150%;
+    font-size: 25px;
     text-align: center;
     text-transform: uppercase;
     text-rendering: optimizeLegibility;
     color: #131313;
     letter-spacing: .15em;
-    /*text-shadow: 
+    text-shadow: 
       1px -1px 0 #D2D2D2, 
       -1px 2px 1px #D2D2D2, 
-      -2px 4px 1px  #D2D2D2; */
+      -2px 4px 1px  #D2D2D2;
     margin-bottom: 5px;
 }
 

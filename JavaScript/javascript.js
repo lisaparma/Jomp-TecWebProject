@@ -11,7 +11,7 @@ function whereIam() {
 
 // Funzione per rimpicciolire l'header allo scroll della pagina 
 function reduceHeader(){
-	var header = document.getElementById("header");
+	var header = document.getElementById("fascia");
 	var sticky = header.offsetTop;
 
 	if (window.pageYOffset > sticky+50) {
@@ -373,3 +373,18 @@ function validateFormCompany() {
 	else 
 		return false;
 }
+
+
+// Menu a tendina
+function menuHamburger() {
+	var menu = document.getElementById("mobilemenu");
+	if(menu.classList.contains("show")) {
+		menu.classList.remove("show");
+	}
+	else {
+		menu.classList.add("show");
+	}
+}
+
+
+

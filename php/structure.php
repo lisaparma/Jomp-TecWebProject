@@ -21,7 +21,6 @@ function head($title) {
 			    <link href='../IMG/job.png' rel='shortcut icon' type='image/x-icon'/>
                 
                 <script language='JavaScript' type='text/javascript' src='../JavaScript/javascript.js'></script>
-
 			    
 			</head>
             <body onLoad='whereIam();' onscroll='reduceHeader();'>";
@@ -29,18 +28,25 @@ function head($title) {
 
 function headers() {
     echo "<div id='header'>
+            <div id='fascia'>
             <a href='home.php'>
                 <img id='logo' src='../IMG/jomp2.png' alt='logo scritta jomp con lente d&rsquo;ingrandimento'>
-            </a>";
-            primaryMenu();
-
-     echo"   </div>
+            </a>
+            <div id='primarymenu'>"; 
+                primaryMenu(); 
+    echo "</div> 
+            <div id='hamburger' onClick='menuHamburger();'> <img src='../IMG/hamburger.svg' alt='menu'/> 
+            </div>
+            </div>
+            <div id='mobilemenu'>"; 
+                primarymenu(); 
+     echo" </div> 
+        </div>
      <div id='page'>";
 }
 
 function primaryMenu(){ 
-	echo "<div id='primarymenu'>
-			<ul>
+	echo "<ul>
               <li><a href='home.php'>Home </a></li>
 			  <li><a href='sectionChiSiamo.php'>Chi siamo</a></li>
 			  <li><a href='sectionAziendePartner.php'>Aziende partner</a> </li>";
@@ -75,8 +81,7 @@ function primaryMenu(){
                 </ul>
             </li>";
 	echo"
-	</ul>
-	</div>";
+	</ul>";
 }
 
 
