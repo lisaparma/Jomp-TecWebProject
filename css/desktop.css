@@ -1,5 +1,3 @@
-
-/* ---------------------------------------------------------------------------------------------- */
 /* --------------------------------------- PARTI COMUNI ----------------------------------------- */
 
 *{
@@ -9,72 +7,66 @@
 }
 
 html, body {
-    height: 100%;
     font-family: LFTEtica,Helvetica Neue,Helvetica,Arial,sans-serif;
     font-size:100%;
-    background-color:#EFEFEF;
     align-content: center;
 }
 
+body, #page {
+    min-height: 100%;
+}
+
+body, #footer, #foto{
+    height: auto;
+}
 body {
     background-color: #EFEFEF;
-    height: auto;
-    min-height: 100%;
 }
 
 #page {
     padding-top: 7em;
     max-width: 1024px;
     margin: auto;
-    min-height: 100%;
     height: auto !important;
-    height: 100%;
-    position: relative;
     background-color: #ffffff;
 }
 
+#page, .ap-menu li a, .ap-menu li #this, .ap-menu li a, .card, #fogli , #foglio{
+    position: relative;
+}
+
+#header, #logo, #header.small, #header.small #logo {
+    transition: height 1s initial initial;
+}
+
+#header.small, #header.small #logo{
+    height: 4em;
+}
+
+#header, #logo{
+    height: 7em;
+}
 /* ------------------    HEADER   ------------------- */
 
 #header {
     width: 100%;
     padding-bottom: 0.5em;
     background-color: #029cc7;
-    height: 7em;
     border: 0.1% solid #A9E8DC;
     position: fixed;
     top: 0;
     z-index: 1000;
-    transition-property: height;
-    transition-duration: 1s;
-    transition-timing-function: initial;
-    transition-delay: initial;
+    
 }
 
 #logo {
     padding-left: 4em;
-    height: 7em;
     float: left;
     transition-property: height;
     transition-duration: 1s;
     transition-timing-function: initial;
     transition-delay: initial;
     display: inline;
-}
-
-#header.small{
-    height: 4em;
-    transition-property: height;
-    transition-duration: 1s;
-    transition-timing-function: initial;
-    transition-delay: initial;
-}
-
-#header.small #logo{
-    height: 4em;
-    transition-property: height;
-    transition-duration: 1s;
-    transition-timing-function: initial;
-    transition-delay: initial;
 }
 
 #header.small #primarymenu {
@@ -124,7 +116,7 @@ body {
 }
 
 /* link alle altre pagine*/
-#primarymenu ul a
+#primarymenu ul a 
 {
     color: lightgray;
 	text-decoration:none;
@@ -278,7 +270,7 @@ body {
 }
 #bc li:nth-child(even) a:before{
   border-color:#2980b9;
-  border-left-color:transparent;
+  border-left-color: transparent;
  } 
 #bc li:nth-child(even) a:after{
   border-left-color: #2980b9;
@@ -287,8 +279,8 @@ body {
 /* Primo elemento diverso*/
 #bc li:first-child a{
     padding-left:15px;
-    border-radius(4px 0 0 4px);
-    cursor:pointer;
+    border-radius: 4px 0 0 4px;
+    cursor: pointer;
 }
 #bc li:first-child a:before{
       border:none;
@@ -348,8 +340,7 @@ body {
 
 /* --------------    FOOTER    ---------------- */
 
-#footer {
-    height: auto; 
+#footer { 
     text-align: center;
     font-size: 0.7em;
     width: 100%;
@@ -654,7 +645,6 @@ body {
     padding: 8px 15px;
     color: #777;
     height: 36px;
-    position: relative;
     border-bottom: 1px solid #EEE;
 }
 
@@ -678,7 +668,6 @@ body {
 
 /* bordo nella pagina in cui sono*/
 .ap-menu li #this { 
-    position: relative;
     color: #e67e22;
     border:0;
     box-shadow: 0 0 1% #DDD;
@@ -725,7 +714,6 @@ body {
     }
 
     .ap-menu li a { 
-        position: relative;
         padding: 12px 16px;
         height:30px;
     }
@@ -786,7 +774,6 @@ body {
     position: center;
     background-image: url(../IMG/front.jpg);
     overflow: hidden;
-    height: auto;
 }
 
 #ricerca {
@@ -876,14 +863,12 @@ body {
 }
 
 .card {
-    margin: 25px auto; 
-    position: relative; 
+    margin: 25px auto;  
     width: 900px;
 } 
 
 #fogli {
 	border: 0px solid #c4c6ca;
-	position: relative;
 	text-align: center;
 	text-shadow: 0 1px 0 #fff;
     margin-top: 5em;
@@ -919,7 +904,6 @@ body {
 	border: 1px solid #c4c6ca;
 	margin: 0 auto;
 	padding: 3em;
-	position: relative;
 	text-align: center;
 	text-shadow: 0 1px 0 #fff;
   z-index: 3;
@@ -927,16 +911,16 @@ body {
 
 #foglio h3 {
     font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
-    font-size: 25px;
+    font-size: 150%;
     text-align: center;
     text-transform: uppercase;
     text-rendering: optimizeLegibility;
     color: #131313;
     letter-spacing: .15em;
-    text-shadow: 
+    /*text-shadow: 
       1px -1px 0 #D2D2D2, 
       -1px 2px 1px #D2D2D2, 
-      -2px 4px 1px  #D2D2D2;
+      -2px 4px 1px  #D2D2D2; */
     margin-bottom: 5px;
 }
 
