@@ -10,7 +10,6 @@ session_start();
 $title = "Sezione Utenti- Jomp";
 head($title);
 
-
 headers();
 
 $page = "Sezione Utenti";
@@ -21,6 +20,26 @@ menu($page);
 # ------------------------------------------------------
 
 echo"<div id='contenuto'>";
+
+//delete action
+if(isset($_POST['delete'])) {
+	$username = $_POST['delete'];
+
+	$delete = "DELETE FROM Utenti WHERE Username='".$username."'";
+
+	if(mysqli_query(openDB(), $delete)) {
+		header("location: AdminModUtenti.php?msg");
+	}
+	else {
+		echo "Problemi con l'eliminizione dell'utente";
+	}
+}
+
+//the messagge will show if the record has been successfully deleted
+if(isset($_GET['msg'])){
+    echo "Rimozione dell'utente avvenuta con successo!";
+}
+
 
 $result = mysqli_query(openDB(), "SELECT * FROM Utenti WHERE Uso='utente' ORDER BY Cognome");
 
@@ -52,9 +71,6 @@ else {
 	echo"</ul>";
 
 }
-
-
-
 
 
 # ------------------------------------------------------

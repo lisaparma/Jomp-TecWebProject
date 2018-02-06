@@ -10,7 +10,6 @@ session_start();
 $title = "Dashboard Admin - Jomp";
 head($title);
 
-
 headers();
 
 $page = "Dashboard";
