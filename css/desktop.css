@@ -58,6 +58,7 @@ body {
     transition-duration: 1s;
     transition-timing-function: initial;
     transition-delay: initial;
+    display: inline;
 }
 
 #header.small{
@@ -83,11 +84,11 @@ body {
     transition-delay: initial;
 }
 
-
 /* ------------------    MENU HEADER    ----------------- */
 
 #primarymenu
 {
+    display: inline;
 	margin-top:20px;
     text-align: center;
     transition-duration: 1s;
@@ -101,9 +102,25 @@ body {
 	list-style:none;
 	margin:auto;
 	padding:0;
-    padding-left: 17em;
-    padding-top: 1.5em;
+    padding-top: 3em;
     width: auto;
+    transition-duration: 1s;
+    transition-timing-function: initial;
+    transition-delay: initial;
+}
+
+#header.small #primarymenu ul {
+    padding-top: 1.3em;
+    transition-duration: 1s;
+    transition-timing-function: initial;
+    transition-delay: initial;
+}
+
+#header.small #primarymenu ul ul {
+    padding-top: 0em;
+    transition-duration: 1s;
+    transition-timing-function: initial;
+    transition-delay: initial;
 }
 
 /* link alle altre pagine*/
@@ -150,6 +167,7 @@ body {
 /* elenco pagine dentro una pagina*/
 #primarymenu ul ul
 {
+    margin-top: 0.7em;
 	display:none;
 	position:absolute;
 	top:100%;
@@ -161,6 +179,7 @@ body {
     z-index: 3;
     text-align: center;
 }
+
 
 /*pagine secondarie*/
 #primarymenu ul ul li{
@@ -203,6 +222,20 @@ body {
 #primarymenu ul li:hover ul li.here a{
     color: #ffffff;
     text-shadow: 0px 0 15px #000000;
+}
+
+@media only screen and (min-width: 840px) and (max-width: 969px) {
+    #primarymenu ul a
+    {
+        font-size: 0.9em;
+    }
+}
+
+@media only screen and (max-width: 839px) {
+    #primarymenu 
+    {
+        display: none;
+    }
 }
 
 
@@ -685,7 +718,7 @@ body {
     }
 }
 
-@media only screen and (max-width: 699px) {
+@media only screen and (min-width: 359px) and (max-width: 699px) {
     .ap-menu { 
         width: 100%;
         height:auto;
