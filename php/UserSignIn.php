@@ -47,7 +47,6 @@ function checkRepeatPassword($password, $ripPassword) {
 
 if(isset($_POST['submit'])){
     try {
-
         $db = openDB();
         $username = $_POST['Username'];
         $password = $_POST['Password'];
@@ -55,13 +54,14 @@ if(isset($_POST['submit'])){
         $nome = $_POST['Nome'];
         $cognome = $_POST['Cognome'];
         $email = $_POST['Email'];
+        $data = $_POST['Data'];
+        echo $data;
 
         //verifico i dati inseriti
         if(checkEmail($email) && checkUsername($username) && checkRepeatPassword($password, $ripPassword)) {
-            $sql = "INSERT INTO Utenti(Username, Password, Nome, Cognome, Email) VALUES ('$Username', '$Password', '$Nome', '$Cognome', '$Email')";
-
+            $sql = "INSERT INTO Utenti(Username, Password, Nome, Cognome, Email, Nascita) VALUES ('$username', '$password', '$nome', '$cognome', '$email', '$data')";
             $db -> query($sql);
-            header("location: login.php?msg");
+            header("location: login.php");
 
         }
         else {
@@ -123,7 +123,7 @@ echo "<div class='form'>
                 <input type='text' id='cognome' name='Cognome' placeholder='Cognome' onBlur='checkSurname();' o>
 
                 <label for='date'> Data di nascita: </label>
-                <input type='date' name='Data' id='date' >
+                <input type='date' name='Data' id='date' onBlur='checkDate();'>
 
                 <label for='email'> E-mail: </label>
                 <input type='text' id='email' name='Email' placeholder='Email' onBlur='checkEmail();'>   
@@ -135,7 +135,7 @@ echo "<div class='form'>
                 <input type='password' id='password' name='Password' placeholder='Password' onBlur='checkPassword();'>
 
                 <label for='rippw'> Ripeti password: </label>
-                <input type='password' id='rippw' name='RipPassword' placeholder='Password'onBlur='checkRipPassword();'>
+                <input type='password' id='rippw' name='RipPassword' placeholder='Password' onBlur='checkRipPassword();'>
 
             </div>
 
