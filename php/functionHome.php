@@ -88,5 +88,5 @@ function printAdsHome($result) { //se si modifica questa cambiare anche printAds
 				</li>"
                 ;
 		}	
-}
+	}
 ?>
