@@ -405,7 +405,7 @@ body {
 /* Primo elemento diverso*/
 #bc li:first-child a{
     padding-left:15px;
-    border-radius(4px 0 0 4px);
+    border-radius: 4px 0 0 4px;
     cursor:pointer;
 }
 #bc li:first-child a:before{

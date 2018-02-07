@@ -61,7 +61,7 @@ function primaryMenu(){
                     </ul>
                     </li>
 	                <li><a href='logout.php'> Esci </a></li>";
-	        else
+	        if(get_class($_SESSION['login'])=='Azienda')
 	            echo "<li><a href='AzDashboard.php'> Area personale </a>
                     <ul>
                         <li><a href='AzDashboard.php'>Dashboard</a></li>
@@ -71,6 +71,16 @@ function primaryMenu(){
                     </ul>
                     </li>
 	                <li><a href='logout.php'> Esci </a></li>";
+            if(get_class($_SESSION['login'])=='Admin')
+                echo "<li><a href='AzDashboard.php'> Area personale </a>
+                    <ul>
+                        <li><a href='AdminDashboard.php'>Dashboard</a></li>
+                        <li><a href='AdminModUtenti.php'>Sezione utenti</a></li>
+                        <li><a href='AdminModAziende.php'>Sezione aziende</a></li>
+                        <li><a href='AdminModAnnunci.php'>Sezione annunci</a></li>
+                    </ul>
+                    </li>
+                    <li><a href='logout.php'> Esci </a></li>";
 	    }
     else
         echo "<li><a href='login.php'> Login </a></li>

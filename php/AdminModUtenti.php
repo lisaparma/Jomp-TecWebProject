@@ -44,7 +44,7 @@ if(isset($_GET['msg'])){
 $result = mysqli_query(openDB(), "SELECT * FROM Utenti WHERE Uso='utente' ORDER BY Cognome");
 
 if(mysqli_num_rows($result) == 0) {
-	echo "Nessun utente ancora registrato.";
+	echo "<div class='noData'> Nessun utente ancora registrato.</div>";
 }
 
 else {
