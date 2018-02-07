@@ -42,7 +42,7 @@ if(isset($_POST['cerca'])) {
                     </div>" ;       
         }
         else {
-            echo "<p>Nessun annuncio corrispondente</p>";
+            echo "<div class='NoData'>Nessun annuncio corrispondente</div>";
         }
     }
 else

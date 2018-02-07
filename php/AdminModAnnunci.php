@@ -45,7 +45,7 @@ if(isset($_GET['msg'])){
 $result = mysqli_query(openDB(), "SELECT * FROM Annunci ORDER BY Titolo");
 
 if(mysqli_num_rows($result) == 0) {
-	echo "Nessun annuncio ancora inserito.";
+	echo "<div id='NoData'> Nessun annuncio ancora inserito. </div>";
 }
 
 else {

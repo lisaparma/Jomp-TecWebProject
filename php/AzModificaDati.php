@@ -32,6 +32,11 @@ try {
 		$description = $company->getDescription();
 		$sito = $company->getSito();
 
+		echo "<div id='contenuto'>
+		        <h3> I tuoi dati: </h3>
+		        <p> Visualizza i tuoi dati e modificali in ogni momento! <br/>
+                Ricorda: non puoi modificare contemporaneamente <strong> Partita Iva </strong> ed <strong> e-mail </strong>!</p>";
+                
 		if(isset($_POST['edit'])) {
 			$newName = $_POST['name'];
 			$newPIva = $_POST['pIva'];
@@ -53,7 +58,6 @@ try {
 
 			if($check) {
         		$sql = "UPDATE Aziende SET Nome='$newName', PIva='$newPIva', Email='$newEmail', Citta='$newCity', Password='$newPassword', Descrizione='$newDescription', Sito='$newSito' WHERE Codice='$id' ";
-
             	if(mysqli_query(openDB(), $sql)) {
 	                $company->setName($newName);
 	                $company->setPIva($newPIva);
@@ -62,24 +66,14 @@ try {
 	                $company->setPassword($newPassword);
 	                $company->setDescription($newDescription);
 	                $company->setSito($newSito);
-                	header("location: AzModificaDati.php?msg");
-            	}
+	                echo"<div class='successMsg'>Dati aggiornati con successo! Torna nella tua <a href='AzDashboard.php'>bacheca</a>.</div>";            	}
             	else {
-            		echo "Errore nell'aggiornare i propri dati.";
+            		echo "<div class='errorMsg'>Errore nell'aggiornare i propri dati.</div>";
             	}
             }
         }
 
-        if(isset($_GET['msg'])){
-	        echo "Dati aggiornati con successo! Torna nella tua <a href='AzDashboard.php'>bacheca</a>.";
-	    }
-
-		echo "<div id='contenuto'>
-		        <h3> I tuoi dati: </h3>
-		        <p> Visualizza i tuoi dati e modificali in ogni momento! <br/>
-                Ricorda: non puoi modificare contemporaneamente <strong> Partita Iva </strong> ed <strong> e-mail </strong>!</p>
-
-		        <form method='post' class='formMod' action='AzModificaDati.php'> 
+echo"		        <form method='post' class='formMod' action='AzModificaDati.php'> 
 		        	<div class='inner-wrap'>
 		            <label for='nome'>Nome: </label>
 		            <input type='text' id='nome' value='$name' name='name'>

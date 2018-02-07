@@ -15,6 +15,17 @@ headers();
 $page='Registrazione azienda';
 breadcrumb(array($page));
 
+echo "<div id='intro'>
+    <h2>Regole per l'iscrizione:</h2>
+        <ol>
+            <li> Tutti i campi devono essere <strong>OBBLIGATORIAMENTE</strong> compilati;</li>
+            <li> Il nome e l'email dell'azienda devono essere univoci;</li>
+            <li> Vengono accettate solo aziende con sede legale in italia, ragion per cui la Partita Iva deve essere lunga 11 cifre;</li>
+            <li> La password deve essere lunga almeno 8 caratteri;</li>
+            <li> E' necessario ripetere la stessa esatta sequenza di caratteri della password dove viene richiesto di ripeterla.</li>
+        </ol>
+    </div>";
+
 if(isset($_POST['submit'])){
     try {
         $name = $_POST['name'];
@@ -28,13 +39,13 @@ if(isset($_POST['submit'])){
 
         //verifico i dati inseriti
         if(checkName($name) && checkPIva($pIva) && checkLengthPIva($pIva) && checkLengthPassword($password) && checkRepeatPassword($password, $repPassword)) {
-            $sql = "INSERT INTO Aziende (Nome, PIva, Email, Citta, Password, Descrizione,Sito) VALUES ('$name', '$pIva', '$email', '$citta', '$password', '$description', $sito)";
+            $sql = "INSERT INTO Aziende (Nome, PIva, Email, Citta, Password, Descrizione, Sito) VALUES ('$name', '$pIva', '$email', '$citta', '$password', '$description', '$sito')";
 
             if (mysqli_query(openDB(), $sql)) {
                 header("location: login.php?msg");
             } 
             else {
-                echo "<p class='errorMsg'>Errore nell'inserire i dati nel database. Riprova.</p>";
+                echo "<div class='errorMsg'>Errore nell'inserire i dati nel database. Riprova.</div>";
             }
 
         }
@@ -69,18 +80,6 @@ if(isset($_POST['submit'])){
         die();
     }
 }
-
-echo "<div id='intro'>
-    <h2>Regole per l'iscrizione:</h2>
-        <ol>
-            <li> Tutti i campi devono essere <strong>OBBLIGATORIAMENTE</strong> compilati;</li>
-            <li> Il nome e l'email dell'azienda devono essere univoci;</li>
-            <li> Vengono accettate solo aziende con sede legale in italia, ragion per cui la Partita Iva deve essere lunga 11 cifre;</li>
-            <li> La password deve essere lunga almeno 8 caratteri;</li>
-            <li> E' necessario ripetere la stessa esatta sequenza di caratteri della password dove viene richiesto di ripeterla.</li>
-        </ol>
-    </div>";
-
 
 echo "<div class='form'>
         <h1>Sign Up Now!</h1>

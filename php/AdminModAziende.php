@@ -44,7 +44,7 @@ if(isset($_GET['msg'])){
 $result = mysqli_query(openDB(), "SELECT * FROM Aziende ORDER BY Nome");
 
 if(mysqli_num_rows($result) == 0) {
-	echo "Nessuna azienda ancora registrata.";
+	echo "<div class='NoData'> Nessuna azienda ancora registrata. </div>";
 }
 
 else {

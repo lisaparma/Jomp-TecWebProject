@@ -49,7 +49,7 @@ if(isset($_SESSION['login'])){ // Solo se in sessione vedi questo
             </div>" ;       
     }
     else 
-        echo "Nessun annuncio salvato";
+        echo "<div class='NoData'>Nessun annuncio salvato</div>";
 
     echo" </div>" ;
     

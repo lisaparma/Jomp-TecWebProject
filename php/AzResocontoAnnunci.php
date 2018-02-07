@@ -29,10 +29,10 @@ if(isset($_POST['update'])) {
 	$up = "UPDATE Annunci SET Titolo = '".$newTitle."', Tipologia = '".$newType."', Descrizione ='".$newDescr."'  WHERE Codice='".$ad."'";
 
 	if(mysqli_query(openDB(), $up)) {
-		echo "Annuncio modificato con successo!";
+		echo "<div class='successMsg'>Annuncio modificato con successo!</div>";
 	}
 	else {
-		echo "Errore nell'aggiornare i propri dati.";
+		echo "<div class='errorMsg'>Errore nell'aggiornare i propri dati.</div>";
 	}
 }
 
@@ -45,7 +45,7 @@ if(isset($_SESSION['login'])) {
 	$result = mysqli_query(openDB(), "SELECT * FROM Annunci WHERE Azienda='".$name."' ORDER BY Data DESC");
 
 	if(mysqli_num_rows($result) == 0) {
-		echo "Nessun annuncio ancora inserito.";
+		echo "<div class='NoData'>Nessun annuncio ancora inserito.</div>";
 	}
 
 	else {

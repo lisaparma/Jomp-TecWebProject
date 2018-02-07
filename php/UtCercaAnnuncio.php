@@ -72,7 +72,7 @@ if(isset($_SESSION['login'])){ // Solo se in sessione vedi questo
                 </div>" ;       
     }
     else
-        echo "Nessun annuncio corrispondente a questi parametri";
+        echo "<div class='NoData'> Nessun annuncio corrispondente a questi parametri</div>";
 
 
 }

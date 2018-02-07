@@ -703,6 +703,7 @@ body {
     display:block;
     margin-right: 5px;
     padding-left: 28%;   
+    min-height: 20em;
 }
 
 #contenuto form {
@@ -1230,21 +1231,34 @@ body {
 /* --------------------- SUCCESS AND ERROR MESSAGE ----------------------*/
 
 .successMsg {
-  color: green;
-  margin-left: 20px;
-  margin-right: 20px;
-  text-align: justify;
+    color: green;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 1em;
 }
 
 .errorMsg {
-  color: red;
-  margin-left: 20px;
-  margin-right: 20px;
-  text-align: justify;
+    color: red;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 1em;
 }
 
-.NoData{
-    /* Da fareeeee*/
+#errorList {
+    text-align: left;
+    font-size: 0.8em;
+    font-weight: normal;
+    padding: 0.4em;
+}
+
+.NoData{ /* Messi nelle pagine Admin */
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 1em;
+
 }
 
 .erroreDati {

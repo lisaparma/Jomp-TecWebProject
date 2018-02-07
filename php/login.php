@@ -58,7 +58,7 @@ if(isset($_POST['submit'])){
         }
 
         else{
-            echo "<div class='erroreDati'> Attenzione! Username e/o password non sono corretti.</div>";
+            echo "<div class='errorMsg'> Attenzione! Username e/o password non sono corretti.</div>";
         }
 
 

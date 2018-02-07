@@ -44,7 +44,7 @@ if(isset($_GET['msg'])){
 $result = mysqli_query(openDB(), "SELECT * FROM Utenti WHERE Uso='utente' ORDER BY Cognome");
 
 if(mysqli_num_rows($result) == 0) {
-	echo "<div class='noData'> Nessun utente ancora registrato.</div>";
+	echo "<div class='NoData'> Nessun utente ancora registrato.</div>";
 }
 
 else {
@@ -54,7 +54,7 @@ else {
 	while($row = $result->fetch_array(MYSQLI_ASSOC)) {
 		echo "<li class=''>
 				<ul>
-					<li id='title'>Nome: ".$row['Cognome']." ".$row['Nome'].";</li>
+					<li>Nome: ".$row['Cognome']." ".$row['Nome'].";</li>
 					<li>Data di nascita: ".$row['Nascita'].";</li>
 					<li>Email: ".$row['Email'].";</li>
 					<li>Iscritto il ".$row['Iscrizione'].";</li>
