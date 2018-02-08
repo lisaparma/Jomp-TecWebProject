@@ -1,10 +1,10 @@
 <?php
 
 function openDB() {
-	$hostname	= 'localhost';
+    $hostname	= 'localhost';
     $dbname 	= 'database';
-    $user 		= 'root';
-    $pass 		= '';
+    $user 	= 'root';
+    $pass 	= '';
 
     $con = mysqli_connect($hostname, $user, $pass, $dbname);
 
