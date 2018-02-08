@@ -28,7 +28,6 @@ body {
     margin: auto;
     min-height: 100%;
     height: auto !important;
-    height: 100%;
     position: relative;
     background-color: #ffffff;
 }
@@ -64,12 +63,10 @@ body {
     transition-duration: 1s;
     transition-timing-function: initial;
     transition-delay: initial;
-    display: inline;
 }
 
 #hamburger {
     visibility: hidden;
-    display: inline;
     float: right;
     padding: 2.2em 2.3em 0em 0em;
     transition: 1s;
@@ -124,7 +121,6 @@ body {
 #primarymenu
 {
     display: inline;
-    margin-top:20px;
     text-align: center;
     transition-duration: 1s;
     transition-timing-function: initial;
@@ -708,7 +704,7 @@ body {
 #contenuto {
     display:block;
     margin-right: 5px;
-    padding-left: 28%;   
+    padding-left: 29%;   
     min-height: 20em;
 }
 
@@ -758,7 +754,7 @@ body {
     padding-left: 4px;
     margin-top: 0.4%;
     display: block;
-    width: 24%;
+    width: 25%;
     float: left;
 }
 
@@ -859,7 +855,6 @@ body {
     padding-top: 10%;   
     padding-bottom: 10%; 
     width: 100%;
-    position: center;
     background-image: url(../IMG/front.jpg);
     overflow: hidden;
     height: auto;
@@ -870,9 +865,6 @@ body {
     align-content: center;
     width: 60%;
     padding: 1em;
-    border: 1px;
-    border-color: #000000;
-    border-style: inset;
     background: rgba(255,255,255,0.9);   
     box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.35);
     border-radius: 10px;
@@ -928,7 +920,6 @@ body {
 #fieldset h2 {
     text-align: center;
     padding: 10px;
-    margin: 0px;
 }
 
 #titolo, #regione, #tipologia {
@@ -1032,9 +1023,7 @@ body {
 
 .detail tr{
     height: 2em;
-    border-bottom-width: 1px;
-    border-bottom-style: solid;
-    border-bottom-color: rgb(210, 210, 210);
+    border-bottom: 1px solid rgb(210, 210, 210);
 }
 
 .detail tr .det {
@@ -1076,10 +1065,6 @@ body {
     border-color: #808080;
 
     padding: 0.5em;
-}
-
-.ResAnn ul{
-    list-style: none;
 }
 
 .ResAnn li{
