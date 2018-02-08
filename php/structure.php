@@ -15,7 +15,7 @@ function head($title) {
 			    <meta name='viewport' content='width=device-width'/>
 			    
 			    <link href='../css/desktop.css' rel='stylesheet' type='text/css' media='screen'/>
-			    <!-- <link href='../css/print.css' rel='stylesheet' type='text/css' media='print'/> -->
+			    <link href='../css/print.css' rel='stylesheet' type='text/css' media='print'/>
 			    
 			    <link href='../IMG/job.png' rel='icon' type='image/x-icon'/>
 			    <link href='../IMG/job.png' rel='shortcut icon' type='image/x-icon'/>

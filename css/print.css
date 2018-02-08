@@ -1,0 +1,491 @@
+*{
+    margin: 0cm;
+    padding: 0cm;
+    border: 0cm;
+    font-family: Arial, Helvetica, sans-serif;
+}
+html, body {
+    width: 21cm;
+    height: 29.7cm;
+    font-size: 12pt;
+    background-color: #ffffff;
+    align-content: left;
+}
+/* --------- DISPLAY: NONE --------- */
+#hamburger, #primarymenu, #mobilemenu, .container-menu, #fogli:after, #fogli:before, #foglio button, .icon, #social{
+    display: none;
+}
+/* --------- HEADER --------- */
+#header {
+    width: auto;
+    position: static;
+    background-color: #0eb4b4;
+}
+#fascia {
+    height: 3cm;
+    display: block;
+    border-bottom: 3pt solid #305A72;
+}
+#logo {
+    height: 2cm;
+    float: left;
+    padding: 0.5cm;
+}
+/* --------- BREADCRUMB ---------*/
+#bc{
+    padding: 0.3cm;
+    list-style: none;
+    display: inline-block;
+}
+#bc li{
+    float:left;
+}
+#bc li a{
+    display: block;
+    text-decoration: none;
+    position: relative;
+    height: 1cm;
+    line-height: 1cm;
+    padding: 0cm 0.2cm 0cm 0.1cm;
+    text-align: center;
+    margin-right: 0.1cm;
+    border-right: 1pt solid #305A72;
+}
+/* --------- PAGE  ---------*/
+#page {
+    max-width: 21cm;
+    margin: auto;
+    min-height: 100%;
+    height: auto !important;
+    position: relative;
+}
+/* --------- FOOTER ---------*/
+#footer {
+    height: auto; 
+    text-align: center;
+    font-size: 10pt;
+    width: 100%;
+    padding: 1em 0em 2em;
+    align-content: center;
+}
+#footer p{
+    width: 100%;
+}
+#footer ul {
+    list-style:none;
+}
+#footer hr{ 
+    border: 0; 
+    height: 1px; 
+    background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+    background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+    background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+    background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0); 
+}
+#link {
+    display: inline-block;
+    width: 100%;
+    margin: auto;
+    padding-top: 1em;
+}
+#link li{ 
+    display: inline-block;
+    list-style:none; 
+    position:relative;
+    padding:1em; 
+} 
+/* --------- CONTENUTO pagine statiche senza accesso --------- */
+#section {
+    margin-left: 0.5cm;
+    margin-right: 0.5cm;
+    text-align: justify;
+}
+#intro {
+    padding: 0 0.8cm;
+}
+#intro h2{
+    font-size: 24pt;
+    line-height: 1.8;
+}
+#intro p{
+    line-height: 0.5cm;
+    padding-bottom: 0.3cm;
+}
+#intro ol {
+    padding-left: 0.8cm;
+    line-height: 0.6cm;
+}
+/* --------- SectionAziendePartner.php ---------*/
+.sectionCompany{
+    list-style: none;
+    padding: 0.4cm 0.8cm;
+}
+.sectionCompany h3{
+    font-weight: bold;
+    font-size: 0.5cm;
+    text-decoration: underline;
+    padding-top: 0.4cm;
+}
+.sectionCompany ul{
+    list-style:none;
+    padding-left: 0.4cm;
+}
+.sectionCompany ul li{
+    padding-top: 0.2cm;
+    line-height: 0.5cm;
+}
+.sectionCompany hr{ 
+  border: 0; 
+  height: 1pt; 
+  background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0); 
+}
+/* --------- SIGN IN / LOG IN FORM --------- */
+/* CompanySignIn.php / UserSignIn.php / login.php */
+.form{
+    max-width: 15cm;
+    margin: auto;
+    border-radius: 0.3cm;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
+    text-align: center;
+    margin-top: 0.4cm;
+    margin-bottom: 1cm;
+}
+.form form{
+    padding: 0.5cm;
+}
+.form h1 {
+    background: #2A88AD;
+    padding: 0.5cm 0.8cm 0.4cm;
+    border-radius: 0.2cm 0.2cm 0 0;
+    text-shadow: 1pt 1pt 3pt rgba(0, 0, 0, 0.12);
+    font: normal 22pt 'Bitter', serif;
+    box-shadow: inset 0pt 2pt 2pt 0pt rgba(255, 255, 255, 0.17);
+    border: 1pt solid #257C9E;
+}
+.form input[type="text"], .form input[type="password"], #date, #description{
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 6pt;
+    border-radius: 4.5pt;
+    border: 1.5pt solid #fff;
+    box-shadow: inset 0pt 1pt 1pt rgba(0, 0, 0, 0.33);
+    margin-bottom: 0.4cm;
+}
+.form input[type="radio"]{
+    margin-bottom: 0.4cm;
+}
+.form .inner-wrap{
+    padding: 0.8cm;
+    background: #F8F8F8;
+    border-radius: 4.5pt;
+    margin-bottom: 0.4cm;
+    text-align: left;
+}
+.form input[type="submit"]{
+    padding: 0.2cm 0.5cm;
+    margin: auto;
+    border-radius: 0.1cm;
+    text-shadow: 1pt 1pt 2.5pt rgba(0, 0, 0, 0.12);
+    font: normal 22.5pt 'Bitter', serif;
+    box-shadow: inset 0pt 1.5pt 1.5pt 0pt rgba(255, 255, 255, 0.17);
+    border: 1px solid #305A72;
+    font-size: 11.5pt;
+}
+/* --------- CONTENUTO pagine Utente e Azienda --------- */
+#contenuto {
+    display:block;
+    margin-right: 0.1cm;
+}
+#contenuto form {
+    padding: 0.2cm;
+}
+#contenuto h2 {
+    text-align: center;
+}
+#contenuto h3{
+    padding: 0.2cm 0cm;
+    font-size: 17pt;
+    font-weight: bold;
+    line-height: 1.8;
+}
+#contenuto h4{
+    padding-top: 0.2cm;
+    font-size: 14pt;
+    font-weight: bold;
+    line-height: 1.5;
+}
+#contenuto p{
+    padding-left: 0.4cm;
+    padding-bottom: 0.4cm;
+    line-height: 0.6cm;
+}
+#contenuto strong {
+    font-weight: bold;
+}
+#contenuto ul{
+    list-style: none;
+    padding-left: 1.4cm;
+}
+#contenuto li{
+    padding-bottom: 0.2cm;
+}
+/* --------- RICERCA --------- */
+/* home.php e UtRicercaAnnunci.php */
+#foto {
+    padding-top: 1cm;   
+    padding-bottom: 1cm; 
+    width: 100%;
+    background-image: none;
+    overflow: hidden;
+    height: auto;
+}
+#ricerca {
+    margin: auto;
+    align-content: center;
+    width: 60%;
+    padding: 0.4cm;
+    border-color: #000000;
+    border-style: inset;  
+    border-radius: 7.5pt;
+    border: 6px solid #305A72;
+}
+#ricerca input[type="text"] {
+    box-sizing: border-box; 
+    padding: 0.2cm;
+    outline: none;
+    border: 1pt solid #B0CFE0;
+}
+#ricerca select {
+    box-sizing: border-box; 
+    padding: 0.2cm;
+    outline: none;
+    border: 1pt solid #B0CFE0;
+}
+#ricerca input[type="submit"] {
+    border: 1pt solid #305A72;
+    display: inline-block;
+    padding: 0.2cm 0.5cm;
+    text-decoration: none;
+    font: 9pt Arial, Helvetica, sans-serif;
+}
+#fieldset {
+    border: 0.2cm;
+}
+#fieldset h2 {
+    text-align: center;
+    padding: 0.2cm;
+}
+#titolo, #regione, #tipologia {
+    padding: 0.8cm 0.3cm;
+    display: inline-block;
+    margin: auto;
+}
+/* --------------    ELENCO ANNUNCI    -------------*/
+/* home.php / UtCercaAnnunci.php / UtAnnunciSalvati.php */
+#listannunci {
+    margin: 0.5cm;
+    padding: 0.5cm;
+}
+#annunci {
+    list-style: none;
+    padding:0.2em;
+}
+#fogli {
+    position: relative;
+    text-align: center;
+    margin-top: 0.5cm;
+    margin-bottom: 0.5cm;
+}
+/* Foglio che viene in primo piano rispetto agli altri*/
+#foglio {
+    border-bottom: 1pt solid #c4c6ca;
+    padding: 0.5cm;
+    position: relative;
+    text-align: center;
+}
+#foglio h3 {
+    font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+    font-size: 19pt;
+    text-align: center;
+    text-transform: uppercase;
+    text-rendering: optimizeLegibility;
+    color: #131313;
+    letter-spacing: 1.8pt;
+    margin-bottom: 0.2cm;
+}
+#foglio small {
+    font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+    font-size: 9pt;
+}
+/* ------   Annunci in Utente   ----- */
+.detail{
+    margin: 0.2cm auto 0.8cm;
+    border-collapse: collapse;
+}
+.detail tr{
+    height: 0.8cm;
+    border-bottom: 1px solid rgb(210, 210, 210);
+}
+.detail tr .det {
+    font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+    color: #6b6b6b;
+    text-align: left;
+    padding-right: 0.8cm;
+}
+.detail tr .ris {
+    font-weight: 600;
+    text-align: left;
+}
+/* Immagine per like/dislike */
+#foglio img{
+    width: 0.8cm;
+    padding-top: 0.8cm;
+}
+#foglio .click {
+    font-weight: 600;
+    display: block;
+}
+/* ----------     AzResocontoAnnuncio.php    ---------- */
+.ResAnn {
+    list-style: none;
+    border-bottom: 1pt solid #808080;
+}
+.ResAnn li{
+    padding-left: 0.4cm;
+    padding-bottom: 0.2cm;
+    line-height: 0.6cm;
+}
+.ResAnn #title {
+    padding-left: 0cm;
+    font-weight: bold;
+    font-size: 15pt;
+}
+.ResAnn button{
+    border: 1pt solid #305A72;
+    display: inline-block;
+    padding: 0.2cm 0.5cm;
+    text-decoration: none;
+    font: 9pt Arial, Helvetica, sans-serif;
+}
+/* ------      FORM MODIFICA     --------*/
+/* AzModificaDati.php / UtModificaDati.php */
+.formMod{
+    border: 1pt solid #808080;
+    text-align: center;
+    margin-bottom: 0.8cm;
+    max-width: 100%;
+}
+.formMod label {
+    text-align: left;
+    width: 30%;
+    float: left;
+}
+.formMod input[type="text"], .formMod input[type="password"], .formMod #date, .formMod #description{
+    display: inline-block;
+    box-sizing: border-box;
+    width: 70%;
+    padding: 0.2cm;
+    border-radius: 4.5pt;
+    border: 1.5pt solid #fff;
+    box-shadow: inset 0px 1pt 1pt rgba(0, 0, 0, 0.33);
+    outline: none;
+    margin-bottom: 0.4cm;
+}
+.formMod #description{
+    width: 100%;
+}
+#descrAz {
+    width: 100%;
+    padding-bottom: 0.2cm;
+}
+.formMod input[type="radio"]{
+    float: none;
+    margin-bottom: 0.4cm;
+}
+#man, #woman {
+    float: none;
+    padding-left: 0.2cm;
+    padding-right: 0.4cm;
+}
+.formMod .inner-wrap{
+    padding: 0.8cm;
+    border-radius: 4.5pt;
+    margin-bottom: 0.4cm;
+    text-align: left;
+}
+.formMod input[type="submit"], .formMod button{
+    padding: 0.2cm 0.5cm;
+    margin: auto;
+    border-radius: 3.5pt;
+    font: normal 22.5pt 'Bitter', serif;
+    border: 1pt solid #305A72;
+    font-size: 11.5pt;
+}
+/* ----------     MODIFICA ANNUNCIO     -----------*/
+/* AzModificaAnnuncio.php / AzPubblicaAnnuncio.php */
+#annuncio.formMod label, #annuncio.formMod select {
+    font-size: 11.5pt;
+    margin: 0.2cm 0cm;
+}
+#annuncio.formMod #tit {
+    display: block;
+    width: 100%;
+}
+#annuncio.formMod input[type="text"] {
+    width: 100%;
+}
+#annuncio.formMod textarea {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0.2cm;
+    border-radius: 4.5pt;
+    border: 1.5pt solid #fff;
+    outline: none;
+    margin-bottom: 0.4cm;
+}
+/* --------------------- SUCCESS AND ERROR MESSAGE ----------------------*/
+.successMsg {
+    color: green;
+    text-align: center;
+    font-size: 14pt;
+    font-weight: bold;
+    padding: 0.4cm;
+}
+.errorMsg {
+    color: red;
+    text-align: center;
+    font-size: 14pt;
+    font-weight: bold;
+    padding: 0.4cm;
+}
+#errorList {
+    color: red;
+    font-size: 10pt;
+    font-weight: normal;
+    padding-left: 1.7cm;
+}
+.NoData{ /* Messi nelle pagine Admin */
+    text-align: center;
+    font-size: 18pt;
+    font-weight: bold;
+    padding: 0.4cm;
+}
+.erroreDati {
+    color: red;
+    padding: 0cm 0.8cm;
+}
+.errorForm {
+    font-size: 0.3cm;
+    color: red; 
+    padding-left: 0.4cm;
+}
+.okForm {
+    font-size: 0.3cm;
+    color: green; 
+    padding-left: 0.4cm;
+}
