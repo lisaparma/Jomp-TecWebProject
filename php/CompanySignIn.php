@@ -1,6 +1,5 @@
 <?php
 
-
 require_once("structure.php");
 require_once("functionHome.php");
 require_once("connect.php");
@@ -12,7 +11,7 @@ head($title);
 
 headers();
 
-$page='Registrazione azienda';
+$page='Registrazione azienda - Jomp';
 breadcrumb(array($page));
 
 echo "<div id='intro'>
@@ -38,7 +37,7 @@ if(isset($_POST['submit'])){
         $sito = $_POST['sito'];
 
         //verifico i dati inseriti
-        if(checkName($name) && checkPIva($pIva) && checkLengthPIva($pIva) && checkLengthPassword($password) && checkRepeatPassword($password, $repPassword)) {
+        if(checkName($name) && checkPIva($pIva) && checkLengthPIva($pIva) && checkLengthPassword($password) && checkRepeatPassword($password, $repPassword) && checkEmail($email)) {
             $sql = "INSERT INTO Aziende (Nome, PIva, Email, Citta, Password, Descrizione, Sito) VALUES ('$name', '$pIva', '$email', '$citta', '$password', '$description', '$sito')";
 
             if (mysqli_query(openDB(), $sql)) {
@@ -54,6 +53,10 @@ if(isset($_POST['submit'])){
             echo "<ul id='errorList'>";
             if(!checkName($name)) {
                 echo "<li>Azienda già presente, controlla di non essere già registrato</li><br/>";
+            }
+
+            if(!checkEmail($email)) {
+                echo "<li>E-mail già presente, controlla di non essere già registrato</li><br/>";
             }
 
             if(!checkPIva($pIva)) {
@@ -81,24 +84,35 @@ if(isset($_POST['submit'])){
     }
 }
 
+if(!isset($_POST['submit'])) {
+    $name = "";
+    $pIva = "";
+    $email = "";
+    $citta = "";
+    $password = "";
+    $repPassword = "";
+    $description = "";
+    $sito = "";
+}
+
 echo "<div class='form'>
         <h1>Sign Up Now!</h1>
         <form method='post' action='CompanySignIn.php' onsubmit='return validateFormCompany()'> 
             <div id='listImp' class='inner-wrap'>
                 <label for='nome'> Nome: </label>
-                <input type='text' id='nome' name='name' placeholder='Nome' tabindex='10' onBlur='checkName();'>
+                <input type='text' id='nome' name='name' placeholder='Nome' value='$name' tabindex='10' onBlur='checkName();'>
 
                 <label for='pIva'> Partita IVA: </label>
-                <input type='text' id='pIva' name='pIva' placeholder='Partita Iva' tabindex='11' onBlur='checkPiva();'>
+                <input type='text' id='pIva' name='pIva' placeholder='Partita Iva' value='$pIva' tabindex='11' onBlur='checkPiva();'>
 
                 <label for='email'> E-mail: </label>
-                <input type='text' id='email' name='email' placeholder='Email' tabindex='12' pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$'  onBlur='checkEmail();'>
+                <input type='text' id='email' name='email' placeholder='Email' tabindex='12' value='$email' pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$'  onBlur='checkEmail();'>
 
                 <label for='sito'> Sito web: </label>
-                <input type='text' id='sito' name='sito' placeholder='Sito web' tabindex='13' onBlur='checkSito();'>
+                <input type='text' id='sito' name='sito' placeholder='Sito web' value='$sito' tabindex='13' onBlur='checkSito();'>
 
                 <label for='city'> Città: </label>
-                <input type='text' id='city' name='city' placeholder='Città' tabindex='14' onBlur='checkCitta();'>      
+                <input type='text' id='city' name='city' placeholder='Città' value='$citta' tabindex='14' onBlur='checkCitta();'>      
 
                 <label for='password'> Password: </label>
                 <input type='password' id='password' name='password' placeholder='Password' tabindex='15' onBlur='checkPassword();'>
@@ -107,7 +121,7 @@ echo "<div class='form'>
                 <input type='password' id='rippw' name='repPassword' placeholder='Password' tabindex='16' onBlur='checkRipPassword();'/>
 
                 <label for='description'> Descrivi la tua azienda: </label>
-                <textarea id='description' name='description' rows='15' cols='45' tabindex='17' placeholder='Cosa vuoi raccontare della tua azienda?' onBlur='checkDesc();'></textarea>
+                <textarea id='description' name='description' rows='15' cols='45' tabindex='17' placeholder='Cosa vuoi raccontare della tua azienda?' onBlur='checkDesc();'>$description</textarea>
             </div>
             
             <input type='submit' value='Registrati' name='submit'>

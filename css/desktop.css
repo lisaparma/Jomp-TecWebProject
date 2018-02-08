@@ -1247,10 +1247,10 @@ body {
 }
 
 #errorList {
-    text-align: left;
-    font-size: 0.8em;
+    color: red;
+    font-size: 0.9em;
     font-weight: normal;
-    padding: 0.4em;
+    padding-left: 4em;
 }
 
 .NoData{ /* Messi nelle pagine Admin */
@@ -1258,7 +1258,6 @@ body {
     font-size: 1.5em;
     font-weight: bold;
     padding: 1em;
-
 }
 
 .erroreDati {

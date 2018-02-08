@@ -113,6 +113,15 @@ function printWorkType($id) {
       return false;   
   }
 
+  function checkEmail($email) {
+    $result = mysqli_query(openDB(),"SELECT Email FROM Aziende WHERE Email='$email'");
+    $num_rows = mysqli_num_rows($result);
+    if($num_rows == 0) {
+        return true;
+    }
+    return false;
+}
+
 
   function checkLengthPIva($pIva) {
     if(strlen($pIva) == 11) {

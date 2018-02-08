@@ -3,6 +3,7 @@
 require_once("structure.php");
 require_once("functionHome.php");
 require_once("connect.php");
+require_once("functionUtente.php");
 
 $title = "Registrazione Utente - Jomp";
 head($title);
@@ -13,37 +14,16 @@ headers();
 $page='Registrazione utente';
 breadcrumb(array($page));
 
-function checkEmail($email) {
-
-    $result = mysqli_query(openDB(),"SELECT Email FROM Utenti WHERE Email='".$email."'");
-    
-    $num_rows = mysqli_num_rows($result);
-
-
-    if($num_rows == 0) {             //resultato non vuoto: email già esistente
-        return true;
-    }
-    return false;
-}
-
-function checkUsername($username) {
-
-    $result = mysqli_query(openDB(),"SELECT Username FROM Utenti WHERE Username='".$username."'");
-
-    $num_rows = mysqli_num_rows($result);
-
-    if($num_rows == 0) {
-        return true;
-    }
-    return false;
-}
-
-function checkRepeatPassword($password, $ripPassword) {
-    if($password == $ripPassword) {
-        return true;
-    }
-    return false;
-}
+echo "<div id='intro'>
+    <h2>Regole per l'iscrizione:</h2>
+        <ol>
+            <li>Tutti i campi devono essere <strong>OBBLIGATORIAMENTE</strong> compilati;</li>
+            <li>L'email personale deve essere univoca;</li>
+            <li>L'username deve contenere dai 5 ai 15 caratteri;</li>
+            <li>La password deve essere lunga almeno 8 caratteri;</li>
+            <li>E' necessario ripetere la stessa esatta sequenza di caratteri della password dove viene richiesto di ripeterla.</li>
+        </ol>
+    </div>";
 
 if(isset($_POST['submit'])){
     try {
@@ -55,7 +35,6 @@ if(isset($_POST['submit'])){
         $cognome = $_POST['Cognome'];
         $email = $_POST['Email'];
         $data = $_POST['Data'];
-        echo $data;
 
         //verifico i dati inseriti
         if(checkEmail($email) && checkUsername($username) && checkRepeatPassword($password, $ripPassword)) {
@@ -65,26 +44,26 @@ if(isset($_POST['submit'])){
 
         }
         else {
-            echo "<div><p class='errorMsg'>Tentativo di registrazione fallito, sono sorti i seguenti errori:</p><br/>";
+            echo "<div><p class='errorMsg'>Tentativo di registrazione fallito, sono sorti i seguenti errori:</p>";
             echo "<ul id=errorList>";
             if(!checkEmail($email)) {
-                echo "<li>Email già presente, controlla di non essere già registrato</li><br/>";
+                echo "<li>Email già presente, controlla di non essere già registrato</li>";
             }
 
             if(!checkUsername($username)) {
-                echo "<li>Username non disponibile, sceglierne un altro</li><br/>";
+                echo "<li>Username non disponibile, sceglierne un altro</li>";
             }
 
             if(!checkLengthUsername($username)) {
-                echo "<li>Username troppo corto o troppo lungo</li><br/>";
+                echo "<li>Username troppo corto o troppo lungo</li>";
             }
 
-            if(!checkLenghtPassword($password)) {
-                echo "<li>Password troppo corta</li><br/>"; 
+            if(!checkLengthPassword($password)) {
+                echo "<li>Password troppo corta</li>"; 
             }
 
             if(!checkRepeatPassword($password, $ripPassword)) {
-                echo "<li>La password di verifica non corrisponde alla password scelta</li><br/>";
+                echo "<li>La password di verifica non corrisponde alla password scelta</li>";
             }
             echo "</ul></div>";
 
@@ -100,36 +79,35 @@ if(isset($_POST['submit'])){
 
 }
 
-echo "<div id='intro'>
-    <h2>Regole per l'iscrizione:</h2>
-        <ol>
-            <li>Tutti i campi devono essere <strong>OBBLIGATORIAMENTE</strong> compilati;</li>
-            <li>L'email personale deve essere univoca;</li>
-            <li>L'username deve contenere dai 5 ai 15 caratteri;</li>
-            <li>La password deve essere lunga almeno 8 caratteri;</li>
-            <li>E' necessario ripetere la stessa esatta sequenza di caratteri della password dove viene richiesto di ripeterla.</li>
-        </ol>
-    </div>";
+if(!isset($_POST['submit'])) {
+    $username = "";
+    $password = "";
+    $ripPassword = "";
+    $nome = "";
+    $cognome = "";
+    $email = "";
+    $data = "";
+}
 
 //Mettere i tab index nei form e nei link
 echo "<div class='form'>
         <h1>Sign Up Now!</h1>
         <form name='formSign' method='post' action='UserSignIn.php' onsubmit='return validateForm()'> 
             <div id='listImp' class='inner-wrap'>
-                <label for='nome'> Nome: </label>
-                <input type='text' id='nome' name='Nome' placeholder='Nome' tabindex='10' onBlur='checkName();'>
+                <label for='nome'> Nome: </label> 
+                <input type='text' id='nome' name='Nome' placeholder='Nome' value='$nome' tabindex='10' onBlur='checkName();'>
 
                 <label for='cognome'> Cognome </label>
-                <input type='text' id='cognome' name='Cognome' placeholder='Cognome' tabindex='11' onBlur='checkSurname();' o>
+                <input type='text' id='cognome' name='Cognome' placeholder='Cognome' value='$cognome' tabindex='11' onBlur='checkSurname();' o>
 
                 <label for='date'> Data di nascita: </label>
-                <input type='date' name='Data' id='date' placeholder='AAAA-MM-GG' tabindex='12' onBlur='checkDate();'>
+                <input type='date' name='Data' id='date' placeholder='AAAA-MM-GG' value='$data' tabindex='12' onBlur='checkDate();'>
 
                 <label for='email'> E-mail: </label>
-                <input type='text' id='email' name='Email' placeholder='Email' tabindex='13' onBlur='checkEmail();'>   
+                <input type='text' id='email' name='Email' placeholder='Email' value='$email' tabindex='13' onBlur='checkEmail();'>   
                     
                 <label for='username'> Username: </label>
-                <input type='text' id='username' name='Username' placeholder='Username' tabindex='13' onBlur='checkUsername();'>
+                <input type='text' id='username' name='Username' placeholder='Username' value='$username' tabindex='13' onBlur='checkUsername();'>
 
                 <label for='password'> Password: </label>
                 <input type='password' id='password' name='Password' placeholder='Password' tabindex='14' onBlur='checkPassword();'>

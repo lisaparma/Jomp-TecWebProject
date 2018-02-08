@@ -83,7 +83,7 @@ function printAd($result, $username, $page){
                             <h3>".$row['Titolo']."</h3>
                             <small>Pubblicato il: ".$row['Data']." </small>
                 
-                            <table class='detail'>
+                            <table class='detail' summary='Dettagli lavoro'>
                             <tbody>
                             <tr>
                                 <td class='det'> Azienda </td>
@@ -136,6 +136,7 @@ function checkEmail($email) {
     }
     return false;
 }
+
 function checkUsername($username) {
     $result = mysqli_query(openDB(),"SELECT Username FROM Utenti WHERE Username='$username'");
     $num_rows = mysqli_num_rows($result);
@@ -156,7 +157,7 @@ function checkUsername($username) {
   }
 
 
-  function checkLengthPassworde($password) {
+  function checkLengthPassword($password) {
     if(strlen($password) > 7) {
       return true;
     }
@@ -165,6 +166,11 @@ function checkUsername($username) {
     }   
   }  
 
-
+function checkRepeatPassword($password, $ripPassword) {
+    if($password == $ripPassword) {
+        return true;
+    }
+    return false;
+}
 
 ?>
