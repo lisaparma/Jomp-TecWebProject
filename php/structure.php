@@ -30,12 +30,12 @@ function headers() {
     echo "<div id='header'>
             <div id='fascia'>
             <a href='home.php'>
-                <img id='logo' src='../IMG/jomp2.png' alt='logo scritta jomp con lente d&rsquo;ingrandimento'>
+                <img id='logo' src='../IMG/jomp2.png' title='Logo Jomp' alt='logo scritta jomp con lente d&rsquo;ingrandimento'>
             </a>
             <div id='primarymenu'>"; 
                 primaryMenu(); 
     echo "</div> 
-            <div id='hamburger' onClick='menuHamburger();'> <img src='../IMG/hamburger.svg' alt='menu'/> 
+            <div id='hamburger' onClick='menuHamburger();'> <img src='../IMG/hamburger.svg' title='Menu' alt='menu'/> 
             </div>
             </div>
             <div id='mobilemenu'>"; 
