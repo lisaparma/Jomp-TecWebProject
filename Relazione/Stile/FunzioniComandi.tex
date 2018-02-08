@@ -1,0 +1,53 @@
+% Creazione della copertina
+\newcommand{\copertina}{
+  \newgeometry{top=4cm}
+  
+  \begin{titlepage}
+  \begin{center}
+
+  \begin{center}
+  	\centerline{\includegraphics[scale=0.07]{Images/uni.png}}
+    \textbf{Università degli Studi di Padova \\
+    Corso di laurea in Informatica}
+    
+    \centerline{\includegraphics[scale=0.7]{Images/logo.png}}
+  \end{center}
+  
+  \vspace{1cm}
+
+  \begin{Huge}
+    \textbf{\Titolo{}} \\
+  \end{Huge}
+
+  \vspace{9pt}  
+  
+  \begin{large}
+  \Rel
+  \end{large}	  
+  
+  \vspace{15pt}
+
+  \bgroup
+  \def\arraystretch{1.3}
+   \centering
+   \begin{tabular}{r|l}
+      \multicolumn{2}{c}{\textbf{Componenti del gruppo} } \\ \hline
+      Sara Feltrin &  9999999\\
+      Lisa Parma &  1121284\\ 
+      Silvia Bazzeato &  6666666\\
+    \end{tabular}
+  \egroup
+
+  \vspace{15pt}
+
+  \begin{center}
+    eyrugveoruvgevgeqfuhvqer8hv
+  \end{center}
+
+  \end{center}
+  \end{titlepage}
+  
+  \restoregeometry
+}
+
+\newcommand{\code}[1]{\flextt{\texttt{#1}}}
