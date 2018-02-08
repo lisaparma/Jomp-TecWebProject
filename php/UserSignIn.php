@@ -34,11 +34,17 @@ if(isset($_POST['submit'])){
         $nome = $_POST['Nome'];
         $cognome = $_POST['Cognome'];
         $email = $_POST['Email'];
+        $sex = $_POST['button'];
         $data = $_POST['Data'];
+
+        if($sex==='m') 
+            $check1='checked';
+        else 
+            $check2='checked';
 
         //verifico i dati inseriti
         if(checkEmail($email) && checkUsername($username) && checkRepeatPassword($password, $ripPassword)) {
-            $sql = "INSERT INTO Utenti(Username, Password, Nome, Cognome, Email, Nascita) VALUES ('$username', '$password', '$nome', '$cognome', '$email', '$data')";
+            $sql = "INSERT INTO Utenti(Username, Password, Nome, Cognome, Email, Nascita, Sesso) VALUES ('$username', '$password', '$nome', '$cognome', '$email', '$data', $sex')";
             $db -> query($sql);
             header("location: login.php");
 
@@ -87,6 +93,8 @@ if(!isset($_POST['submit'])) {
     $cognome = "";
     $email = "";
     $data = "";
+    $check1='';
+    $check2='';
 }
 
 //Mettere i tab index nei form e nei link
@@ -98,7 +106,13 @@ echo "<div class='form'>
                 <input type='text' id='nome' name='Nome' placeholder='Nome' value='$nome' tabindex='10' onBlur='checkName();'>
 
                 <label for='cognome'> Cognome </label>
-                <input type='text' id='cognome' name='Cognome' placeholder='Cognome' value='$cognome' tabindex='11' onBlur='checkSurname();' o>
+                <input type='text' id='cognome' name='Cognome' placeholder='Cognome' value='$cognome' tabindex='11' onBlur='checkSurname();'>
+
+                <div class='radio'>
+                <label> Sesso: </label>
+                    <input type='radio' id='uomo' name='button' value='m' $check1> <label id='man' for='uomo'> Uomo </label>
+                    <input type='radio' id='donna' name='button' value='f' $check2> <label id='woman' for='donna'> Donna</label>
+                </div>
 
                 <label for='date'> Data di nascita: </label>
                 <input type='date' name='Data' id='date' placeholder='AAAA-MM-GG' value='$data' tabindex='12' onBlur='checkDate();'>
