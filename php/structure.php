@@ -47,47 +47,47 @@ function headers() {
 
 function primaryMenu(){ 
 	echo "<ul>
-              <li><a href='home.php'>Home </a></li>
-			  <li><a href='sectionChiSiamo.php'>Chi siamo</a></li>
-			  <li><a href='sectionAziendePartner.php'>Aziende partner</a> </li>";
+              <li><a href='home.php' tabindex='1'>Home </a></li>
+			  <li><a href='sectionChiSiamo.php' tabindex='2'>Chi siamo</a></li>
+			  <li><a href='sectionAziendePartner.php' tabindex='3'>Aziende partner</a> </li>";
 	if(isset($_SESSION['login'])) {
 	        if(get_class($_SESSION['login'])=='Utente')
-		        echo "<li><a href='UtDashboard.php'> Area personale </a>
+		        echo "<li><a href='UtDashboard.php' tabindex='4'> Area personale </a>
                     <ul>
-                        <li><a href='UtDashboard.php'>Dashboard</a></li>
-                        <li><a href='UtCercaAnnuncio.php'>Cerca annuncio</a></li>
-                        <li><a href='UtAnnunciSalvati.php'>Annunci salvati</a></li>
-                        <li><a href='UtModificaDati.php'>Modifica dati</a></li>
+                        <li><a href='UtDashboard.php'tabindex='5'>Dashboard</a></li>
+                        <li><a href='UtCercaAnnuncio.php'tabindex='6'>Cerca annuncio</a></li>
+                        <li><a href='UtAnnunciSalvati.php'tabindex='7'>Annunci salvati</a></li>
+                        <li><a href='UtModificaDati.php'tabindex='8'>Modifica dati</a></li>
                     </ul>
                     </li>
-	                <li><a href='logout.php'> Esci </a></li>";
+	                <li><a href='logout.php' tabindex='9'> Esci</a></li>";
 	        if(get_class($_SESSION['login'])=='Azienda')
-	            echo "<li><a href='AzDashboard.php'> Area personale </a>
+	            echo "<li><a href='AzDashboard.php' tabindex='4'> Area personale </a>
                     <ul>
-                        <li><a href='AzDashboard.php'>Dashboard</a></li>
-                        <li><a href='AzPubblicaAnnuncio.php'>Pubblica annuncio</a></li>
-                        <li><a href='AzResocontoAnnunci.php'>Resoconto Annunci</a></li>
-                        <li><a href='AzModificaDati.php'>Modifica dati</a></li>
+                        <li><a href='AzDashboard.php' tabindex='5'>Dashboard</a></li>
+                        <li><a href='AzPubblicaAnnuncio.php' tabindex='6'>Pubblica annuncio</a></li>
+                        <li><a href='AzResocontoAnnunci.php' tabindex='7'>Resoconto Annunci</a></li>
+                        <li><a href='AzModificaDati.php' tabindex='8'>Modifica dati</a></li>
                     </ul>
                     </li>
-	                <li><a href='logout.php'> Esci </a></li>";
+	                <li><a href='logout.php' tabindex='9'> Esci </a></li>";
             if(get_class($_SESSION['login'])=='Admin')
-                echo "<li><a href='AzDashboard.php'> Area personale </a>
+                echo "<li><a href='AdminDashboard.php' tabindex='4'> Area personale </a>
                     <ul>
-                        <li><a href='AdminDashboard.php'>Dashboard</a></li>
-                        <li><a href='AdminModUtenti.php'>Sezione utenti</a></li>
-                        <li><a href='AdminModAziende.php'>Sezione aziende</a></li>
-                        <li><a href='AdminModAnnunci.php'>Sezione annunci</a></li>
+                        <li><a href='AdminDashboard.php' tabindex='5'>Dashboard</a></li>
+                        <li><a href='AdminModUtenti.php' tabindex='6'>Sezione utenti</a></li>
+                        <li><a href='AdminModAziende.php' tabindex='7'>Sezione aziende</a></li>
+                        <li><a href='AdminModAnnunci.php' tabindex='8'>Sezione annunci</a></li>
                     </ul>
                     </li>
-                    <li><a href='logout.php'> Esci </a></li>";
+                    <li><a href='logout.php' tabindex='9'> Esci </a></li>";
 	    }
     else
-        echo "<li><a href='login.php'> Login </a></li>
-            <li><a href='signin.php'> Registrati </a>
+        echo "<li><a href='login.php' tabindex='4'> Login </a></li>
+            <li><a href='signin.php' tabindex='5'> Registrati </a>
                 <ul>
-                  <li><a href='CompanySignIn.php'>Come Azienda</a></li>
-                  <li><a href='UserSignIn.php'>Come Utente</a></li>
+                  <li><a href='CompanySignIn.php' tabindex='6'>Come Azienda</a></li>
+                  <li><a href='UserSignIn.php' tabindex='7'>Come Utente</a></li>
                 </ul>
             </li>";
 	echo"

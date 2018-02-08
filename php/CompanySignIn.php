@@ -86,28 +86,28 @@ echo "<div class='form'>
         <form method='post' action='CompanySignIn.php' onsubmit='return validateFormCompany()'> 
             <div id='listImp' class='inner-wrap'>
                 <label for='nome'> Nome: </label>
-                <input type='text' id='nome' name='name' placeholder='Nome' onBlur='checkName();'>
+                <input type='text' id='nome' name='name' placeholder='Nome' tabindex='10' onBlur='checkName();'>
 
                 <label for='pIva'> Partita IVA: </label>
-                <input type='text' id='pIva' name='pIva' placeholder='Partita Iva'  onBlur='checkPiva();'>
+                <input type='text' id='pIva' name='pIva' placeholder='Partita Iva' tabindex='11' onBlur='checkPiva();'>
 
                 <label for='email'> E-mail: </label>
-                <input type='text' id='email' name='email' placeholder='Email' pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$'  onBlur='checkEmail();'>
+                <input type='text' id='email' name='email' placeholder='Email' tabindex='12' pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$'  onBlur='checkEmail();'>
 
                 <label for='sito'> Sito web: </label>
-                <input type='text' id='sito' name='sito' placeholder='Sito web' onBlur='checkSito();'>
+                <input type='text' id='sito' name='sito' placeholder='Sito web' tabindex='13' onBlur='checkSito();'>
 
                 <label for='city'> Città: </label>
-                <input type='text' id='city' name='city' placeholder='Città' onBlur='checkCitta();'>      
+                <input type='text' id='city' name='city' placeholder='Città' tabindex='14' onBlur='checkCitta();'>      
 
                 <label for='password'> Password: </label>
-                <input type='password' id='password' name='password' placeholder='Password' onBlur='checkPassword();'>
+                <input type='password' id='password' name='password' placeholder='Password' tabindex='15' onBlur='checkPassword();'>
 
                 <label for='rippw'> Ripeti password: </label>
-                <input type='password' id='rippw' name='repPassword' placeholder='Password' onBlur='checkRipPassword();'/>
+                <input type='password' id='rippw' name='repPassword' placeholder='Password' tabindex='16' onBlur='checkRipPassword();'/>
 
                 <label for='description'> Descrivi la tua azienda: </label>
-                <textarea id='description' name='description' rows='15' cols='45' placeholder='Cosa vuoi raccontare della tua azienda?' onBlur='checkDesc();'></textarea>
+                <textarea id='description' name='description' rows='15' cols='45' tabindex='17' placeholder='Cosa vuoi raccontare della tua azienda?' onBlur='checkDesc();'></textarea>
             </div>
             
             <input type='submit' value='Registrati' name='submit'>

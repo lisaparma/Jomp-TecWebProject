@@ -117,25 +117,25 @@ echo "<div class='form'>
         <form name='formSign' method='post' action='UserSignIn.php' onsubmit='return validateForm()'> 
             <div id='listImp' class='inner-wrap'>
                 <label for='nome'> Nome: </label>
-                <input type='text' id='nome' name='Nome' placeholder='Nome' onBlur='checkName();'>
+                <input type='text' id='nome' name='Nome' placeholder='Nome' tabindex='10' onBlur='checkName();'>
 
                 <label for='cognome'> Cognome </label>
-                <input type='text' id='cognome' name='Cognome' placeholder='Cognome' onBlur='checkSurname();' o>
+                <input type='text' id='cognome' name='Cognome' placeholder='Cognome' tabindex='11' onBlur='checkSurname();' o>
 
                 <label for='date'> Data di nascita: </label>
-                <input type='date' name='Data' id='date' onBlur='checkDate();'>
+                <input type='date' name='Data' id='date' placeholder='AAAA-MM-GG' tabindex='12' onBlur='checkDate();'>
 
                 <label for='email'> E-mail: </label>
-                <input type='text' id='email' name='Email' placeholder='Email' onBlur='checkEmail();'>   
+                <input type='text' id='email' name='Email' placeholder='Email' tabindex='13' onBlur='checkEmail();'>   
                     
                 <label for='username'> Username: </label>
-                <input type='text' id='username' name='Username' placeholder='Username' onBlur='checkUsername();'>
+                <input type='text' id='username' name='Username' placeholder='Username' tabindex='13' onBlur='checkUsername();'>
 
                 <label for='password'> Password: </label>
-                <input type='password' id='password' name='Password' placeholder='Password' onBlur='checkPassword();'>
+                <input type='password' id='password' name='Password' placeholder='Password' tabindex='14' onBlur='checkPassword();'>
 
                 <label for='rippw'> Ripeti password: </label>
-                <input type='password' id='rippw' name='RipPassword' placeholder='Password' onBlur='checkRipPassword();'>
+                <input type='password' id='rippw' name='RipPassword' placeholder='Password' tabindex='15' onBlur='checkRipPassword();'>
 
             </div>
 

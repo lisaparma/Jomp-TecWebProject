@@ -5,6 +5,7 @@ require_once("functionHome.php");
 require_once("connect.php");
 require_once("classUtente.php");
 require_once("classAzienda.php");
+require_once("classAdmin.php");
 
 session_start();
 
