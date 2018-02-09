@@ -84,38 +84,58 @@ function printWorkType($id) {
 			echo "<option value='".$row['CodLavoro']."' $selected>".$row['Lavoro']."</option>";
     	}		
 	}
-	echo $id;
-	echo "ciao";
     echo "</select>";
 }
 
-  //funzioni di verifica di specifici campi dati
-  function checkName($name) {
-      $result = mysqli_query(openDB(),"SELECT Codice FROM Aziende WHERE Nome='".$name."'");
 
-      $num_rows = mysqli_num_rows($result);
+function printTimeType($id) {
+  $result = mysqli_query(openDB(), "SELECT * FROM OrarioLavoro");
 
-      if($num_rows == 0) {
-          return true;
-      }
-      return false;
+  echo "<label for='Timetype'> Orario: </label>
+              <select id='Timetype' name='TimeType' required>";
+  if($id == 'null') {
+    while($row = $result->fetch_array(MYSQLI_ASSOC)) {
+      echo "<option value=".$row['CodOrario'].">".$row['TipoOrario']."</option>";
+      } 
   }
+  else {
+    while($row = $result->fetch_array(MYSQLI_ASSOC)) {
+      $selected = ($id == $row['CodOrario']) ? 'selected' : '';
 
-
-  function checkPIva($pIva) {
-      $result = mysqli_query(openDB(),"SELECT Codice FROM Aziende WHERE PIva='".$pIva."'");
-
-      $num_rows = mysqli_num_rows($result);
-
-      if($num_rows == 0) {
-          return true;
-      }
-      return false;   
+      echo "<option value='".$row['CodOrario']."' $selected>".$row['TipoOrario']."</option>";
+      }   
   }
+    echo "</select>";
+}
 
-  function checkEmail($email) {
-    $result = mysqli_query(openDB(),"SELECT Email FROM Aziende WHERE Email='$email'");
+
+function printContractType($id) {
+  $result = mysqli_query(openDB(), "SELECT * FROM ContrattoLavoro");
+
+  echo "<label for='contractType'> Contratto: </label>
+              <select id='contractType' name='ContractType' required>";
+  if($id == 'null') {
+    while($row = $result->fetch_array(MYSQLI_ASSOC)) {
+      echo "<option value=".$row['CodContratto'].">".$row['TipoContratto']."</option>";
+      } 
+  }
+  else {
+    while($row = $result->fetch_array(MYSQLI_ASSOC)) {
+      $selected = ($id == $row['CodContratto']) ? 'selected' : '';
+
+      echo "<option value='".$row['CodContratto']."' $selected>".$row['TipoContratto']."</option>";
+      }   
+  }
+    echo "</select>";
+}
+
+
+//funzioni di verifica di specifici campi dati
+function checkName($name) {
+    $result = mysqli_query(openDB(),"SELECT Codice FROM Aziende WHERE Nome='".$name."'");
+
     $num_rows = mysqli_num_rows($result);
+
     if($num_rows == 0) {
         return true;
     }
@@ -123,32 +143,53 @@ function printWorkType($id) {
 }
 
 
-  function checkLengthPIva($pIva) {
-    if(strlen($pIva) == 11) {
+function checkPIva($pIva) {
+    $result = mysqli_query(openDB(),"SELECT Codice FROM Aziende WHERE PIva='".$pIva."'");
+
+    $num_rows = mysqli_num_rows($result);
+
+    if($num_rows == 0) {
+        return true;
+    }
+    return false;   
+}
+
+function checkEmail($email) {
+  $result = mysqli_query(openDB(),"SELECT Email FROM Aziende WHERE Email='$email'");
+  $num_rows = mysqli_num_rows($result);
+  if($num_rows == 0) {
       return true;
-    }
-    else {
-      return false;
-    }    
   }
+  return false;
+}
 
 
-  function checkLengthPassword($password) {
-    if(strlen($password) > 7) {
-      return true;
-    }
-    else {
-      return false;
-    }
+function checkLengthPIva($pIva) {
+  if(strlen($pIva) == 11) {
+    return true;
   }
+  else {
+    return false;
+  }    
+}
 
 
-  function checkRepeatPassword($password, $ripPassword) {
-      if($password == $ripPassword) {
-          return true;
-      }
-      return false;
+function checkLengthPassword($password) {
+  if(strlen($password) > 7) {
+    return true;
   }
+  else {
+    return false;
+  }
+}
+
+
+function checkRepeatPassword($password, $ripPassword) {
+    if($password == $ripPassword) {
+        return true;
+    }
+    return false;
+}
 
 
 ?>
