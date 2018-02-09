@@ -26,7 +26,7 @@ html, body, .formMod input[type="submit"], .formMod button, #annuncio.formMod la
 .sectionCompany h3, #contenuto h3, #foglio h3 {
     font-size: 17pt;
 }
-#footer, #ricerca {
+#footer, #ricerca, #contenuto {
     align-content: center;
 }
 #bc li a, #page, #link li, #fogli, #foglio {
@@ -287,7 +287,6 @@ html, body, .formMod input[type="submit"], .formMod button, #annuncio.formMod la
     padding:0.1cm;
 }
 #fogli {    
-    margin-top: 0.5cm;
     margin-bottom: 0.5cm;
 }
 /* Foglio che viene in primo piano rispetto agli altri*/
