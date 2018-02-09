@@ -37,7 +37,7 @@ if(isset($_POST['submit'])) {
             $ad = "INSERT INTO Annunci(Azienda, Titolo, Tipologia, Orario, Contratto, Descrizione) VALUES ('$name', '$title', '$type', '$time', '$contract', '$description')";          
 
             if (mysqli_query(openDB(), $ad)) {
-                header("location: AzResocontoAnnunci.php");
+                echo "Annuncio pubblicato con successo!";
             } 
             else {
                 echo "Errore";
