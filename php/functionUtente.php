@@ -158,6 +158,17 @@ function checkUsername($username) {
   }
 
 
+  function checkLengthName($name) {
+    if(strlen($name) > 0 && strlen($name) < 40) {
+      return true;
+    }
+    else {
+      return false;
+    }
+
+  }
+
+
   function checkLengthPassword($password) {
     if(strlen($password) > 7) {
       return true;

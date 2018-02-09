@@ -38,7 +38,7 @@ if(isset($_POST['submit'])){
         $sito = $_POST['sito'];
 
         //verifico i dati inseriti
-        if(checkName($name) && checkPIva($pIva) && checkLengthPIva($pIva) && checkLengthPassword($password) && checkRepeatPassword($password, $repPassword) && checkEmail($email) && $name && $pIva && $email && $citta && $password && $repPassword && $description && $sito) {
+        if(checkName($name) && checkPIva($pIva) && checkLengthPIva($pIva) && checkLengthPassword($password) && checkRepeatPassword($password, $repPassword) && checkEmail($email) && checkLengthName($name) && $name && $pIva && $email && $citta && $password && $repPassword && $description && $sito) {
             $sql = "INSERT INTO Aziende (Nome, PIva, Email, Citta, Password, Descrizione, Sito) VALUES ('$name', '$pIva', '$email', '$citta', '$password', '$description', '$sito')";
 
             if (mysqli_query(openDB(), $sql)) {
@@ -60,8 +60,12 @@ if(isset($_POST['submit'])){
                 echo "<li>Azienda già presente, controlla di non essere già registrato</li>";
             }
 
+            if(!checkLengthName($name)) {
+                echo "<li>Nome dell'azienda troppo lungo</li>";
+            }
+
             if(!checkEmail($email)) {
-                echo "<li>E-mail già presente, controlla di non essere già registrato</li><";
+                echo "<li>E-mail già presente, controlla di non essere già registrato</li>";
             }
 
             if(!checkPIva($pIva)) {

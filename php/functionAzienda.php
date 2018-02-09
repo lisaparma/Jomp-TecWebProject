@@ -143,6 +143,17 @@ function checkName($name) {
 }
 
 
+function checkLengthName($name) {
+  if(strlen($name) > 0 && strlen($name) < 40) {
+    return true;
+  }
+  else {
+    return false;
+  }
+
+}
+
+
 function checkPIva($pIva) {
     $result = mysqli_query(openDB(),"SELECT Codice FROM Aziende WHERE PIva='".$pIva."'");
 

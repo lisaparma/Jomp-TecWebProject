@@ -48,7 +48,7 @@ if(isset($_POST['submit'])){
         }
 
         //verifico i dati inseriti
-        if(checkEmail($email) && checkUsername($username) && checkRepeatPassword($password, $ripPassword) && $username && $password && $ripPassword && $nome && $cognome && $email && $data) {
+        if(checkEmail($email) && checkUsername($username) && checkRepeatPassword($password, $ripPassword) && checkLengthName($name) && checkLengthName($surname) && $username && $password && $ripPassword && $nome && $cognome && $email && $data) {
             $sql = "INSERT INTO Utenti(Username, Password, Nome, Cognome, Email, Nascita, Sesso) VALUES ('$username', '$password', '$nome', '$cognome', '$email', '$data', '$sex')";
             if (mysqli_query(openDB(), $sql)) {
                 session_start();
@@ -83,6 +83,14 @@ if(isset($_POST['submit'])){
 
             if(!checkRepeatPassword($password, $ripPassword)) {
                 echo "<li>La password di verifica non corrisponde alla password scelta</li>";
+            }
+
+            if(!checkLengthName($nome)) {
+                echo "<li>Nome troppo lungo</li>";
+            }
+
+            if(!checkLengthName($cognome)) {
+                echo "<li>Cognome troppo lungo</li>";
             }
 
             if(!$username || !$password || !$ripPassword || !$nome || !$cognome || !$email || !$data) {
