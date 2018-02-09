@@ -49,24 +49,24 @@ if(mysqli_num_rows($result) == 0) {
 
 else {
 	echo "<h3>Ecco gli utenti che si sono registrati:</h3>
-		<ul>";
+		<ul id='ModUtenti'>";
 	
 	while($row = $result->fetch_array(MYSQLI_ASSOC)) {
 		echo "<li class='formMod'>
-				<div class='inner-wrap'>
 				<ul>
-					<li>Nome: ".$row['Cognome']." ".$row['Nome'].";</li>
-					<li>Data di nascita: ".$row['Nascita'].";</li>
-					<li>Email: ".$row['Email'].";</li>
-					<li>Iscritto il ".$row['Iscrizione'].";</li>
-					<li>Username scelto: ".$row['Username'].";</li>
-					</div>
-						<div id='options'>
-							<form method='post' action='AdminModUtenti.php'>
-				            	<button value=".$row['Username']." name='delete'>Rimuovi</button>
-			            	</form>
-		            	</div>
+				<div class='inner-wrap'>
+					<li><strong>Nome</strong>: ".$row['Cognome']." ".$row['Nome']."</li>
+					<li><strong>Data di nascita</strong>: ".$row['Nascita']."</li>
+					<li><strong>Email</strong>: ".$row['Email']."</li>
+					<li><strong>Username</strong>: ".$row['Username']."</li>
+					<li>Iscritto il ".$row['Iscrizione']."</li>
+				</div>
 				</ul>
+				<div id='options'>
+					<form method='post' action='AdminModUtenti.php'>
+		            	<button value=".$row['Username']." name='delete'>Rimuovi</button>
+	            	</form>
+            	</div>
 			</li>";
 	}
 	echo"</ul>";

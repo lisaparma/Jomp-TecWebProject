@@ -49,23 +49,24 @@ if(mysqli_num_rows($result) == 0) {
 
 else {
 	echo "<h3>Ecco le aziende che stanno usando il servizio:</h3>
-		<ul>";
+		<ul id='ModAziende'>";
 	
 	while($row = $result->fetch_array(MYSQLI_ASSOC)) {
-		echo "<li class=''>
+		echo "<li class='formMod'>
 				<ul>
-					<li id='title'>Nome: ".$row['Nome'].";</li>
-					<li>Partita Iva: ".$row['PIva'].";</li>
-					<li>Email: ".$row['Email'].";</li>
-					<li>Iscritto il ".$row['Iscrizione'].";</li>
-					<li>Descrizione: ".$row['Descrizione'].";</li>
-					
+				<div class='inner-wrap'>
+					<li><strong>Nome</strong>: ".$row['Nome'].";</li>
+					<li><strong>Partita Iva</strong>: ".$row['PIva'].";</li>
+					<li><strong>Email</strong>: ".$row['Email'].";</li>
+					<li><strong>Iscritto il</strong>: ".$row['Iscrizione'].";</li>
+					<li><strong>Descrizione</strong>: ".$row['Descrizione'].";</li>
+				</div>
+				</ul>
 						<div id='options'>
 							<form method='post' action='AdminModAziende.php'>
 				            	<button value=".$row['Codice']." name='delete'>Rimuovi</button>
 			            	</form>
 		            	</div>
-				</ul>
 			</li>";
 	}
 	echo"</ul>";

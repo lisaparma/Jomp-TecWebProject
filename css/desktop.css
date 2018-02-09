@@ -1225,6 +1225,23 @@ body {
     border:1px solid #B0CFE0;
 }
 
+/* ---------- ADMIN ------- */
+
+#ModUtenti ul {
+    padding: 0.5em;
+}
+
+#ModAziende ul {
+    padding:0.5em;
+}
+
+#ModAziende li{
+    max-width: 90%;
+}
+
+#ModAziende li{
+    margin: 0;
+}
 
 
 /* --------------------- SUCCESS AND ERROR MESSAGE ----------------------*/
