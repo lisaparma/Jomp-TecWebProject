@@ -27,19 +27,13 @@ if(isset($_POST['delete'])) {
 
 	$delete = "DELETE FROM Utenti WHERE Username='".$username."'";
 
-	if(mysqli_query(openDB(), $delete)) {
-		header("location: AdminModUtenti.php?msg");
+	if(!mysqli_query(openDB(), $delete)) {
+		echo "<div class='errorMsg'> Problemi con l'eliminizione dell'utente</div>";
 	}
 	else {
-		echo "Problemi con l'eliminizione dell'utente";
+		echo "<div class='successMsg'> Rimozione dell'utente avvenuta con successo!</div>";
 	}
 }
-
-//the messagge will show if the record has been successfully deleted
-if(isset($_GET['msg'])){
-    echo "Rimozione dell'utente avvenuta con successo!";
-}
-
 
 $result = mysqli_query(openDB(), "SELECT * FROM Utenti WHERE Uso='utente' ORDER BY Cognome");
 
@@ -64,7 +58,7 @@ else {
 				</ul>
 				<div id='options'>
 					<form method='post' action='AdminModUtenti.php'>
-		            	<button value=".$row['Username']." name='delete'>Rimuovi</button>
+		            	<button value='".$row['Username']."'' name='delete'>Rimuovi</button>
 	            	</form>
             	</div>
 			</li>";

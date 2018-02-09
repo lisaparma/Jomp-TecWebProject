@@ -29,18 +29,12 @@ if(isset($_POST['delete'])) {
 	$delete = "DELETE FROM Annunci WHERE Codice='".$ad."'";
 
 	if(mysqli_query(openDB(), $delete)) {
-		header("location: AdminModAnnunci.php?msg");
+		echo "<div class='successMsg'>Rimozione dell'annuncio avvenuto con successo!</div>";
 	}
 	else {
-		echo "Problemi con l'eliminizione dell'annuncio";
+		echo "<div class='errorMsg'>Problemi con l'eliminizione dell'annuncio</div>";
 	}
 }
-
-//the messagge will show if the record has been successfully deleted
-if(isset($_GET['msg'])){
-    echo "Rimozione dell'annuncio avvenuto con successo!";
-}
-
 
 $result = mysqli_query(openDB(), "SELECT * FROM Annunci ORDER BY Titolo");
 
@@ -64,7 +58,7 @@ else {
 					<li><strong>Descrizione</strong>: ".$row['Descrizione'].";</li>
 					
 						<div id='options'>
-							<form method='post' action='AdminModAziende.php'>
+							<form method='post' action='AdminModAnnunci.php'>
 				            	<button value=".$row['Codice']." name='delete'>Rimuovi</button>
 			            	</form>
 		            	</div>

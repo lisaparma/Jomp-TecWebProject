@@ -27,19 +27,13 @@ if(isset($_POST['delete'])) {
 
 	$delete = "DELETE FROM Aziende WHERE Codice='".$company."'";
 
-	if(mysqli_query(openDB(), $delete)) {
-		header("location: AdminModAziende.php?msg");
+	if(!mysqli_query(openDB(), $delete)) {
+		echo "<div class='errorMsg'> Problemi con l'eliminizione dell'utente</div>";
 	}
 	else {
-		echo "Problemi con l'eliminizione dell'azienda";
+		echo "<div class='successMsg'>Rimozione dell'azienda avvenuta con successo!</div>";
 	}
 }
-
-//the messagge will show if the record has been successfully deleted
-if(isset($_GET['msg'])){
-    echo "Rimozione dell'azienda avvenuta con successo!";
-}
-
 
 $result = mysqli_query(openDB(), "SELECT * FROM Aziende ORDER BY Nome");
 
@@ -64,7 +58,7 @@ else {
 				</ul>
 						<div id='options'>
 							<form method='post' action='AdminModAziende.php'>
-				            	<button value=".$row['Codice']." name='delete'>Rimuovi</button>
+				            	<button value='".$row['Codice']."' name='delete'>Rimuovi</button>
 			            	</form>
 		            	</div>
 			</li>";
