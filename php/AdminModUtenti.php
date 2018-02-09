@@ -52,14 +52,15 @@ else {
 		<ul>";
 	
 	while($row = $result->fetch_array(MYSQLI_ASSOC)) {
-		echo "<li class=''>
+		echo "<li class='formMod'>
+				<div class='inner-wrap'>
 				<ul>
 					<li>Nome: ".$row['Cognome']." ".$row['Nome'].";</li>
 					<li>Data di nascita: ".$row['Nascita'].";</li>
 					<li>Email: ".$row['Email'].";</li>
 					<li>Iscritto il ".$row['Iscrizione'].";</li>
 					<li>Username scelto: ".$row['Username'].";</li>
-					
+					</div>
 						<div id='options'>
 							<form method='post' action='AdminModUtenti.php'>
 				            	<button value=".$row['Username']." name='delete'>Rimuovi</button>

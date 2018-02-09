@@ -99,7 +99,7 @@ if(!isset($_POST['submit'])) {
 
 //Mettere i tab index nei form e nei link
 echo "<div class='form'>
-        <h1>Sign Up Now!</h1>
+        <h1>Registrati subito!</h1>
         <form name='formSign' method='post' action='UserSignIn.php' onsubmit='return validateForm()'> 
             <div id='listImp' class='inner-wrap'>
                 <label for='nome'> Nome: </label> 

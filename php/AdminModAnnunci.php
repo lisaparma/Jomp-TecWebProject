@@ -53,15 +53,15 @@ else {
 		<ul>";
 	
 	while($row = $result->fetch_array(MYSQLI_ASSOC)) {
-		echo "<li class=''>
+		echo "<li class='ResAnn'>
 				<ul>
-					<li id='title'>Titolo: ".$row['Titolo'].";</li>
-					<li>Tipologia: ".$row['Tipologia'].";</li>
-					<li>Con contratto: ".$row['Contratto'].";</li>
-					<li>Con orario: ".$row['Orario'].";</li>
-					<li>Dall'azienda: ".$row['Azienda'].";</li>
-					<li>Il giorno: ".$row['Data'].";</li>
-					<li>Descrizione: ".$row['Descrizione'].";</li>
+					<li id='title'> ".$row['Titolo'].";</li>
+					<li><strong>Tipologia</strong>: ".$row['Tipologia'].";</li>
+					<li><strong>Con contratto</strong>: ".$row['Contratto'].";</li>
+					<li><strong>Con orario</strong>: ".$row['Orario'].";</li>
+					<li><strong>Dall'azienda</strong>: ".$row['Azienda'].";</li>
+					<li><strong>Il giorno</strong>: ".$row['Data'].";</li>
+					<li><strong>Descrizione</strong>: ".$row['Descrizione'].";</li>
 					
 						<div id='options'>
 							<form method='post' action='AdminModAziende.php'>

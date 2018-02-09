@@ -11,7 +11,7 @@ head($title);
 
 headers();
 
-$page='Registrazione azienda - Jomp';
+$page='Registrazione azienda';
 breadcrumb(array($page));
 
 echo "<div id='intro'>
@@ -96,7 +96,7 @@ if(!isset($_POST['submit'])) {
 }
 
 echo "<div class='form'>
-        <h1>Sign Up Now!</h1>
+        <h1>Registrati subito!</h1>
         <form method='post' action='CompanySignIn.php' onsubmit='return validateFormCompany()'> 
             <div id='listImp' class='inner-wrap'>
                 <label for='nome'> Nome: </label>
