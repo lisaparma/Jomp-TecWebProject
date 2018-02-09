@@ -4,6 +4,7 @@ require_once("structure.php");
 require_once("functionHome.php");
 require_once("connect.php");
 require_once("functionUtente.php");
+require_once("classUtente.php");
 
 $title = "Registrazione Utente - Jomp";
 head($title);
@@ -37,16 +38,28 @@ if(isset($_POST['submit'])){
         $sex = $_POST['button'];
         $data = $_POST['Data'];
 
-        if($sex==='m') 
+        if($sex==='m'){
             $check1='checked';
-        else 
+            $check2='';
+        }
+        else {
             $check2='checked';
+            $check1='';
+        }
 
         //verifico i dati inseriti
-        if(checkEmail($email) && checkUsername($username) && checkRepeatPassword($password, $ripPassword)) {
-            $sql = "INSERT INTO Utenti(Username, Password, Nome, Cognome, Email, Nascita, Sesso) VALUES ('$username', '$password', '$nome', '$cognome', '$email', '$data', $sex')";
-            $db -> query($sql);
-            header("location: login.php");
+        if(checkEmail($email) && checkUsername($username) && checkRepeatPassword($password, $ripPassword) && $username && $password && $ripPassword && $nome && $cognome && $email && $data) {
+            $sql = "INSERT INTO Utenti(Username, Password, Nome, Cognome, Email, Nascita, Sesso) VALUES ('$username', '$password', '$nome', '$cognome', '$email', '$data', '$sex')";
+            if (mysqli_query(openDB(), $sql)) {
+                session_start();
+                $user = mysqli_query(openDB(), "SELECT * FROM Utenti WHERE Email='".$email."'");
+                $login = $user->fetch_array(MYSQLI_ASSOC);
+                $_SESSION['login'] = new Utente($login);
+                header("location: UtDashboard.php");
+            } 
+            else {
+                echo "<div class='errorMsg'>Errore nell'inserire i dati nel database. Riprova.</div>";
+            }
 
         }
         else {
@@ -71,8 +84,11 @@ if(isset($_POST['submit'])){
             if(!checkRepeatPassword($password, $ripPassword)) {
                 echo "<li>La password di verifica non corrisponde alla password scelta</li>";
             }
-            echo "</ul></div>";
 
+            if(!$username || !$password || !$ripPassword || !$nome || !$cognome || !$email || !$data) {
+                echo "<li>Compilare tutti i dati</li>";
+            }
+            echo "</ul></div>";
         }
 
         closeDB($db);
@@ -93,20 +109,20 @@ if(!isset($_POST['submit'])) {
     $cognome = "";
     $email = "";
     $data = "";
-    $check1='';
-    $check2='';
+    $check1 = " ";
+    $check2 = " ";
 }
 
 //Mettere i tab index nei form e nei link
 echo "<div class='form'>
-        <h1>Sign Up Now!</h1>
+        <h1>Registrati subito!</h1>
         <form name='formSign' method='post' action='UserSignIn.php' onsubmit='return validateForm()'> 
             <div id='listImp' class='inner-wrap'>
                 <label for='nome'> Nome: </label> 
                 <input type='text' id='nome' name='Nome' placeholder='Nome' value='$nome' tabindex='10' onBlur='checkName();'>
 
                 <label for='cognome'> Cognome </label>
-                <input type='text' id='cognome' name='Cognome' placeholder='Cognome' value='$cognome' tabindex='11' onBlur='checkSurname();'>
+                <input type='text' id='cognome' name='Cognome' placeholder='Cognome' value='$cognome' tabindex='11'  onBlur='checkSurname();'>
 
                 <div class='radio'>
                 <label> Sesso: </label>
@@ -115,10 +131,10 @@ echo "<div class='form'>
                 </div>
 
                 <label for='date'> Data di nascita: </label>
-                <input type='date' name='Data' id='date' placeholder='AAAA-MM-GG' value='$data' tabindex='12' onBlur='checkDate();'>
+                <input type='date' name='Data' id='date' placeholder='AAAA-MM-GG' value='$data' tabindex='12'  onBlur='checkDate();'>
 
                 <label for='email'> E-mail: </label>
-                <input type='text' id='email' name='Email' placeholder='Email' value='$email' tabindex='13' onBlur='checkEmail();'>   
+                <input type='text' id='email' name='Email' placeholder='Email' value='$email' tabindex='13'  onBlur='checkEmail();'>   
                     
                 <label for='username'> Username: </label>
                 <input type='text' id='username' name='Username' placeholder='Username' value='$username' tabindex='13' onBlur='checkUsername();'>

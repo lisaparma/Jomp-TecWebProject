@@ -29,7 +29,7 @@ function getCompany() {
 		while($row = $result->fetch_array(MYSQLI_ASSOC)) {
 			echo "<li class='sectionCompany'>
 					<hr>
-					<h3>".$row['Nome']."</strong></h3>
+					<h3><strong>".$row['Nome']."</strong></h3>
 					<ul>
 						<li> <strong>Sede:</strong> ".$row['Citta']."</li>
 						<li> <strong>Contatto:</strong> ".$row['Email']."</li>

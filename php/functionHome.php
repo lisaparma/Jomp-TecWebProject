@@ -30,17 +30,17 @@ function searchForm($pagephp) {
 
 					<div id='titolo'> 
                         <label for='boxtitolo'>Cosa cerchi?<br/></label>
-						<input type='text' id='boxtitolo' name='Title' placeholder='Inserisci parole chiave' tabindex=''> <!--</input>-->
+						<input type='text' id='boxtitolo' name='Title' placeholder='Inserisci parole chiave' tabindex='11'> 
 					</div>
 
 					<div id='regione'>
                         <label for='boxcitta'>Dove?<br/></label>
-						<input type='text' id='boxcitta' name='City' placeholder='Città' tabindex=''> <!--</input>-->
+						<input type='text' id='boxcitta' name='City' placeholder='Città' tabindex='12'>
 					</div>
 
 					<div id='tipologia'> 
 						<label for='boxvalue'>Di che tipo?<br/></label>  
-                            <select id='boxvalue' name='Type'>
+                            <select id='boxvalue' name='Type' tabindex='13'>
 							<option value='all' selected> Tipologia: ";
                             $result = mysqli_query(openDB(), "SELECT * FROM Tipo");
 	                        while($row = $result->fetch_array(MYSQLI_ASSOC)) {
@@ -50,7 +50,7 @@ function searchForm($pagephp) {
 	                    </select>
 	                </div>
 
-	            <input type='submit' id='cerca' value='Cerca' tabindex='' name='cerca'>
+	            <input type='submit' id='cerca' value='Cerca' tabindex='13' name='cerca'>
 	            </fieldset>
 
 	        </form>
@@ -79,8 +79,8 @@ function lastAds() {
 function printAdsHome($result) { //se si modifica questa cambiare anche printAds() in functionUtente.php
     while($row = $result->fetch_array(MYSQLI_ASSOC)) {
 			echo "
-                <li id='fogli'>
-                    <div id='foglio'>
+                <li class='fogli'>
+                    <div class='foglio'>
                         <h3>".$row['Titolo']."</h3>
 						<small>Pubblicato il: ".$row['Data']." </small>
 						<p><strong> Descrizione:</strong><br/>".$row['Descrizione']."</p>

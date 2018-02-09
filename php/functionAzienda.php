@@ -7,13 +7,13 @@ function menu($page) {
 	            <li> "; 
                 if($page === 'Dashboard') 
                        echo "<a id='this'> 
-                                <img class='logo' src='../IMG/dashboard.svg'>
+                                <img class='logo' alt='dashboard' src='../IMG/dashboard.svg'>
 					           <p>Dashboard</p>
                             </a>
                        </li>"; 
                    else 
                        echo "<a href='AzDashboard.php'>
-                                <img class='logo' src='../IMG/dashboard.svg'>
+                                <img class='logo' alt='dashboard' src='../IMG/dashboard.svg'>
 					           <p>Dashboard</p>
                             </a>
                        </li>"; 
@@ -21,13 +21,13 @@ function menu($page) {
 	            echo"<li>";
                 if($page === 'Pubblica annuncio') 
                        echo "<a id='this'> 
-                            <img class='logo' src='../IMG/annunci.svg'>
+                            <img class='logo' alt='pubblica un annuncio' src='../IMG/annunci.svg'>
 					           <p>Pubblica annuncio</p>
                             </a>
                        </li>"; 
                    else 
                        echo "<a href='AzPubblicaAnnuncio.php'> 
-                                <img class='logo' src='../IMG/annunci.svg'>
+                                <img class='logo' alt='pubblica un annuncio' src='../IMG/annunci.svg'>
 					           <p>Pubblica annuncio</p>
                             </a>
                        </li>"; 
@@ -35,13 +35,13 @@ function menu($page) {
 	            echo "<li>";
                 if($page === 'Resoconto annunci') 
                        echo "<a id='this'> 
-                                <img class='logo' src='../IMG/list.svg'>
+                                <img class='logo' alt='lista annunci azienda' src='../IMG/list.svg'>
 					           <p>Resoconto annunci</p>
                             </a>
                        </li>"; 
                    else 
                        echo "<a href='AzResocontoAnnunci.php'> 
-                                <img class='logo' src='../IMG/list.svg'>
+                                <img class='logo' alt='lista annunci azienda' src='../IMG/list.svg'>
 					           <p>Resoconti annunci</p>
                             </a>
                        </li>"; 
@@ -49,13 +49,13 @@ function menu($page) {
 	            echo "<li>";
                 if($page === 'Modifica dati') 
                        echo "<a id='this'> 
-                                <img class='logo' src='../IMG/edit.svg'>
+                                <img class='logo' alt='modifica dati' src='../IMG/edit.svg'>
 					           <p>Modifica dati</p>
                             </a>
                        </li>"; 
                    else 
                        echo "<a href='AzModificaDati.php'> 
-                                <img class='logo' src='../IMG/edit.svg'>
+                                <img class='logo' alt='modifica dati' src='../IMG/edit.svg'>
 					           <p>Modifica Dati</p>
                             </a>
                        </li>"; 

@@ -5,7 +5,7 @@ function head($title) {
 
 			<head> 
 			    <title> $title </title>
-			    <meta http-equiv='Content-Type' content='text/html; charset=utf-8' /> 
+			    <meta charset='utf-8' />
 			    <meta name='title' content='$title'/>
 			    <meta name='description' content='Descrizione'/>
 			    <meta name='keywords' content='----'/>
@@ -20,7 +20,7 @@ function head($title) {
 			    <link href='../IMG/job.png' rel='icon' type='image/x-icon'/>
 			    <link href='../IMG/job.png' rel='shortcut icon' type='image/x-icon'/>
                 
-                <script language='JavaScript' type='text/javascript' src='../JavaScript/javascript.js'></script>
+                <script src='../JavaScript/javascript.js'></script>
 			    
 			</head>
             <body onLoad='whereIam();' onscroll='reduceHeader();'>";
@@ -30,7 +30,7 @@ function headers() {
     echo "<div id='header'>
             <div id='fascia'>
             <a href='home.php'>
-                <img id='logo' src='../IMG/jomp2.png' title='Logo Jomp' alt='logo scritta jomp con lente d&rsquo;ingrandimento'>
+                <img id='logo' src='../IMG/jomp2.png' title='Logo Jomp - Home' alt='Logo del sito Jomp'>
             </a>
             <div id='primarymenu'>"; 
                 primaryMenu(); 
@@ -97,10 +97,10 @@ function primaryMenu(){
 
 function breadcrumb($pages){
     echo "<ul id='bc'>
-            <li><a href='home.php'> <img class='icon' src='../IMG/home.svg'></img> </a></li>";
+            <li><a href='home.php'> <img class='icon' src='../IMG/home.svg' alt='Home' title='Home'/> </a></li>";
     for ($i = 0, $n = count($pages) ; $i < $n ; $i++)
     {
-        echo "<li><a><span class='icon'> </span> $pages[$i]</a></li>";
+        echo "<li><a> $pages[$i]</a></li>";
     }
     echo "</ul>";
 }
@@ -118,10 +118,10 @@ function footer() {
         </div>
         <div id='social'>
             <ul>
-                <li><a href='http://www.facebook.com'><div id='fb'></div></a></li> 
-                <li><a href='http://www.instagram.com'><div id='ig'></div></a></li> 
-                <li><a href='http://www.plus.google.com'><div id='gg'></div></a></li> 
-                <li><a href='http://www.twitter.com'><div id='tw'></div></a></li> 
+                <li><a href='http://www.facebook.com'><div id='fb'><img src='../IMG/facebook.svg' alt='Link facebook' title='Facebook'/></div></a></li> 
+                <li><a href='http://www.instagram.com'><div id='ig'><img src='../IMG/instagram.svg' alt='Link instagram' title='Instagram'/></div></a></li> 
+                <li><a href='http://www.plus.google.com'><div id='gg'><img src='../IMG/google+.svg' alt='Link google plus' title='Google +'/></div></a></li> 
+                <li><a href='http://www.twitter.com'><div id='tw'><img src='../IMG/twitter.svg' alt='Link twitter' title='Twitter'/></div></a></li> 
             </ul> 
         </div> 
         <p> SLS Group <br/> Sede legale: Via Trieste 63, 35121 Padova (Italy) <br/> Contatti: sara.feltrin.2@studenti.unipd.it, lisa.parma@studenti.unipd.it, silvia.bazzeato@studenti.unipd.it</p> 
