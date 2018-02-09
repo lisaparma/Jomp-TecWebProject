@@ -111,9 +111,9 @@ function footer() {
         <hr>
         <div id='link'>
             <ul> 
-                <li><a href=''>Chi siamo</a></li> 
-                <li><a href=''>Privacy/Policy</a></li> 
-                <li><a href=''>Termini e condizioni</a></li> 
+                <li><a href='sectionChiSiamo.php'>Chi siamo</a></li> 
+                <li><a href='sectionPrivacy.php'>Privacy/Policy</a></li> 
+                <li><a href='sectionTermCond.php'>Termini e condizioni</a></li> 
             </ul> 
         </div>
         <div id='social'>
