@@ -78,7 +78,6 @@ if(isset($_SESSION['login'])){ // Solo se in sessione vedi questo
                 $user->setSex($newSex);
                 $user->setBirth($newNascita);
                 
-                header("location: UtModificaDati.php");
             }
 
         } 

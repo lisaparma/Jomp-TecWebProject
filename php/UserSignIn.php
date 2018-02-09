@@ -4,6 +4,7 @@ require_once("structure.php");
 require_once("functionHome.php");
 require_once("connect.php");
 require_once("functionUtente.php");
+require_once("classUtente.php");
 
 $title = "Registrazione Utente - Jomp";
 head($title);
@@ -37,16 +38,28 @@ if(isset($_POST['submit'])){
         $sex = $_POST['button'];
         $data = $_POST['Data'];
 
-        if($sex==='m') 
+        if($sex==='m'){
             $check1='checked';
-        else 
+            $check2='';
+        }
+        else {
             $check2='checked';
+            $check1='';
+        }
 
         //verifico i dati inseriti
         if(checkEmail($email) && checkUsername($username) && checkRepeatPassword($password, $ripPassword)) {
-            $sql = "INSERT INTO Utenti(Username, Password, Nome, Cognome, Email, Nascita, Sesso) VALUES ('$username', '$password', '$nome', '$cognome', '$email', '$data', $sex')";
-            $db -> query($sql);
-            header("location: login.php");
+            $sql = "INSERT INTO Utenti(Username, Password, Nome, Cognome, Email, Nascita, Sesso) VALUES ('$username', '$password', '$nome', '$cognome', '$email', '$data', '$sex')";
+            if (mysqli_query(openDB(), $sql)) {
+                session_start();
+                $user = mysqli_query(openDB(), "SELECT * FROM Utenti WHERE Email='".$email."'");
+                $login = $user->fetch_array(MYSQLI_ASSOC);
+                $_SESSION['login'] = new Utente($login);
+                header("location: UtDashboard.php");
+            } 
+            else {
+                echo "<div class='errorMsg'>Errore nell'inserire i dati nel database. Riprova.</div>";
+            }
 
         }
         else {
@@ -93,8 +106,8 @@ if(!isset($_POST['submit'])) {
     $cognome = "";
     $email = "";
     $data = "";
-    $check1='';
-    $check2='';
+    $check1 = " ";
+    $check2 = " ";
 }
 
 //Mettere i tab index nei form e nei link

@@ -4,6 +4,7 @@ require_once("structure.php");
 require_once("functionHome.php");
 require_once("connect.php");
 require_once("functionAzienda.php");
+require_once("classAzienda.php");
 
 
 $title = "Registrazione Azienda - Jomp";
@@ -41,7 +42,11 @@ if(isset($_POST['submit'])){
             $sql = "INSERT INTO Aziende (Nome, PIva, Email, Citta, Password, Descrizione, Sito) VALUES ('$name', '$pIva', '$email', '$citta', '$password', '$description', '$sito')";
 
             if (mysqli_query(openDB(), $sql)) {
-                header("location: login.php?msg");
+                session_start();
+                $company = mysqli_query(openDB(), "SELECT * FROM Aziende WHERE Email='".$email."'"); 
+                $login = $company->fetch_array(MYSQLI_ASSOC);
+                $_SESSION['login'] = new Azienda($login);
+                header("location: AzDashboard.php");
             } 
             else {
                 echo "<div class='errorMsg'>Errore nell'inserire i dati nel database. Riprova.</div>";
