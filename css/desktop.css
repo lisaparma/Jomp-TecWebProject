@@ -16,34 +16,10 @@ html, body {
     align-content: center;
 }
 
-#page, #primarymenu ul li, #bc li a, #social li, #link li, .ap-menu li a, .ap-menu li #this, .card, #fogli, #foglio {
-    position: relative;
-}
-
-#primarymenu, #primarymenu ul ul, #mobilemenu.show ul, #bc li a, #footer, .form, #contenuto h2, .ap-menu li a p, #fieldset h2, #fogli, #foglio, #foglio h3, .formMod, {
-    text-align: center;
-}
-
-#fascia, #primarymenu ul li:hover > ul, #mobilemenu.show, #bc, #bc li a, .form input[type="text"], .form input[type="password"], #date, #description, #contenuto, .container-menu, .ap-menu li a, #fogli:after, #fogli:before, #foglio .click, #annuncio.formMod #tit, #annuncio.formMod textarea {
-    display: block;
-}
-
-#primarymenu ul li, #social, #link, #link li, .ap-menu li a p, .ap-menu li a .logo, #ricerca input[type="submit"], #titolo, #regione, #tipologia, .ResAnn button, .formMod input[type="text"], .formMod input[type="password"], .formMod #date, .formMod #description {
-    display: inline-block;
-}
-
-#fb, #ig, #gg, #tw{   
-    background-repeat: no-repeat;
-    background-size: 2.5em 2.5em;
-    width: 2.5em;
-    height: 2.5em;
-}
-
-.sectionCompany hr, #footer hr{ 
-    background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
-    background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
-    background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
-    background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0); 
+body {
+    background-color: #EFEFEF;
+    height: auto;
+    min-height: 100%;
 }
 
 #page {
@@ -52,6 +28,7 @@ html, body {
     margin: auto;
     min-height: 100%;
     height: auto !important;
+    position: relative;
     background-color: #ffffff;
 }
 
@@ -62,6 +39,7 @@ html, body {
     position: fixed;
     top: 0;
     z-index: 1000;
+    height: 7em;
     transition-property: height;
     transition-duration: 1s;
     transition-timing-function: initial;
@@ -70,6 +48,7 @@ html, body {
 
 #fascia {
     background-color: #029cc7;
+    display: block;
     height: 7em;
     transition-property: height;
     transition-duration: 1s;
@@ -142,7 +121,9 @@ html, body {
 
 #primarymenu
 {
+    height: 5em;
     display: inline;
+    text-align: center;
     transition-duration: 1s;
     transition-timing-function: initial;
     transition-delay: initial;
@@ -191,8 +172,10 @@ html, body {
 /* ogni voce di menu*/
 #primarymenu ul li
 {
+    position:relative;
     margin:auto;
     padding:0;
+    display: inline-block;
     vertical-align: top;
 }
 
@@ -226,6 +209,7 @@ html, body {
     width: 100%;
     font-size: 0.8em;
     z-index: 3;
+    text-align: center;
 }
 
 
@@ -257,6 +241,11 @@ html, body {
 #primarymenu ul li:hover ul li:hover a{
     color: #ffffff;
     text-shadow: 0px 0 15px #000000;
+}
+
+#primarymenu ul li:hover > ul
+{
+    display:block;
 }
 
 #primarymenu ul li:hover ul li.here {
@@ -292,12 +281,14 @@ html, body {
 
 /* ------ menu mobile --------- */
 #mobilemenu.show {
+    display: block;
     font-size: 1.5em;
 }
 
 #mobilemenu.show ul {
     list-style: none;
     width: 100%;
+    text-align: center;
     background-color: #029cc7; 
 }
 
@@ -371,7 +362,9 @@ html, body {
 #bc{
     padding: 0.3em 0em 0em 0.3em;
     list-style:none;
+    display: block;
     height: 40px;
+    z-index: 2000;
 }
 
 #bc .icon{
@@ -384,11 +377,14 @@ html, body {
 
 #bc li a{
   color:#FFF;
+  display:block;
   background: #3498db;
   text-decoration: none;
+  position:relative;
   height: 40px;
   line-height:40px;
   padding: 0 10px 0 5px;
+  text-align: center;
   margin-right: 23px;
   cursor: default;
 }
@@ -469,6 +465,7 @@ html, body {
 
 #footer {
     height: auto; 
+    text-align: center;
     font-size: 0.7em;
     width: 100%;
     padding: 1em 0em 2em 0em;
@@ -486,14 +483,20 @@ html, body {
 #footer hr{ 
     border: 0; 
     height: 1px; 
+    background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+    background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+    background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+    background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0); 
 }
  
 #social {
+    display: inline-block;
     margin: auto;
 }
 
 #social li { 
     list-style:none; 
+    position:relative; 
     float:right; 
     margin: 0; 
     margin:1em;
@@ -501,29 +504,47 @@ html, body {
 
 #social #fb{
     background-image: url(../IMG/facebook.svg);
-    
+    background-repeat: no-repeat;
+    background-size: 2.5em 2.5em;
+    width: 2.5em;
+    height: 2.5em;
 }
 
 #social #ig{
     background-image: url(../IMG/instagram.svg);
+    background-repeat: no-repeat;
+    background-size: 2.5em 2.5em;
+    width: 2.5em;
+    height: 2.5em;
 }
 
 #social #gg{
     background-image: url(../IMG/google+.svg); 
+    background-repeat: no-repeat;
+    background-size: 2.5em 2.5em;
+    width: 2.5em;
+    height: 2.5em;
 }
 
 #social #tw{
     background-image: url(../IMG/twitter.svg);
+    background-repeat: no-repeat;
+    background-size: 2.5em 2.5em;
+    width: 2.5em;
+    height: 2.5em;
 }
 
 #link {
+    display: inline-block;
     width: 100%;
     margin: auto;
     padding-top: 1em;
 }
 
 #link li{ 
+    display: inline-block;
     list-style:none; 
+    position:relative; 
     margin:0; 
     padding:1em; 
 } 
@@ -586,6 +607,10 @@ html, body {
 .sectionCompany hr{ 
   border: 0; 
   height: 1px; 
+  background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0); 
 }
 
 
@@ -597,6 +622,7 @@ html, body {
     margin: auto;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
+    text-align: center;
     margin-top: 1em;
     margin-bottom: 3em;
 }
@@ -617,6 +643,7 @@ html, body {
 }
 
 .form input[type="text"], .form input[type="password"], #date, #description{
+    display: block;
     box-sizing: border-box;
     width: 100%;
     padding: 8px;
@@ -678,6 +705,7 @@ html, body {
 /* -------------------------------------- CONTENUTO pagine Utente e Azienda ---------------------------------*/
 
 #contenuto {
+    display:block;
     margin-right: 5px;
     padding-left: 29%;   
     min-height: 20em;
@@ -685,6 +713,10 @@ html, body {
 
 #contenuto form {
     padding:0.5em;
+}
+
+#contenuto h2 {
+    text-align: center;
 }
 
 #contenuto h3{
@@ -724,6 +756,7 @@ html, body {
 .container-menu {
     padding-left: 4px;
     margin-top: 0.4%;
+    display: block;
     width: 25%;
     float: left;
 }
@@ -738,19 +771,24 @@ html, body {
 }
 
 .ap-menu li a {
+    display: block;
     text-decoration: none;
     padding: 8px 15px;
     color: #777;
     height: 36px;
+    position: relative;
     border-bottom: 1px solid #EEE;
 }
 
 .ap-menu li a p {
+    display: inline-block;
     text-transform: uppercase;
+    text-align:center;
     padding-left: 1%;
 }
 
 .ap-menu li a .logo {
+    display: inline-block;
     padding-right: 5%;
 }
 
@@ -762,6 +800,7 @@ html, body {
 
 /* bordo nella pagina in cui sono*/
 .ap-menu li #this { 
+    position: relative;
     color: #e67e22;
     border:0;
     box-shadow: 0 0 1% #DDD;
@@ -822,6 +861,7 @@ html, body {
     background-image: url(../IMG/front.jpg);
     overflow: hidden;
     height: auto;
+    background-repeat: no-repeat;
 }
 
 #ricerca {
@@ -863,6 +903,7 @@ html, body {
     box-shadow: inset 0px 1px 0px 0px #3985B1;
     background-color: #216288;
     border: 1px solid #17445E;
+    display: inline-block;
     cursor: pointer;
     color: #FFFFFF;
     padding: 8px 18px;
@@ -881,11 +922,13 @@ html, body {
 }
 
 #fieldset h2 {
+    text-align: center;
     padding: 10px;
 }
 
 #titolo, #regione, #tipologia {
     padding: 30px 0.8em;
+    display: inline-block;
     margin: auto;
 }
 
@@ -905,11 +948,14 @@ html, body {
 
 .card {
     margin: 25px auto; 
+    position: relative; 
     width: 900px;
 } 
 
 #fogli {
     border: 0px solid #c4c6ca;
+    position: relative;
+    text-align: center;
     text-shadow: 0 1px 0 #fff;
     margin-top: 5em;
     margin-bottom: 5em;
@@ -919,6 +965,7 @@ html, body {
     border: 1px solid #c4c6ca;
     background: #FFFFFF;
     content: "";
+    display: block;
     height: 100%;
     left: -1px;
     position: absolute;
@@ -943,6 +990,8 @@ html, body {
     border: 1px solid #c4c6ca;
     margin: 0 auto;
     padding: 3em;
+    position: relative;
+    text-align: center;
     text-shadow: 0 1px 0 #fff;
   z-index: 3;
 }
@@ -950,10 +999,15 @@ html, body {
 #foglio h3 {
     font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
     font-size: 25px;
+    text-align: center;
     text-transform: uppercase;
     text-rendering: optimizeLegibility;
     color: #131313;
     letter-spacing: .15em;
+    text-shadow: 
+      1px -1px 0 #D2D2D2, 
+      -1px 2px 1px #D2D2D2, 
+      -2px 4px 1px  #D2D2D2;
     margin-bottom: 5px;
 }
 
@@ -997,6 +1051,7 @@ html, body {
 }
 #foglio .click {
     font-weight: 600;
+    display: block;
     cursor: pointer;
 }
 #foglio button {
@@ -1008,12 +1063,11 @@ html, body {
 .ResAnn {
     list-style: none;
     margin: 2em;
-
+    border-radius: 15px;
     border: 1px;
     border-style: solid;
     border-color: #808080;
-
-    padding: 0.5em;
+    padding: 2em 2em 2em 1em;
 }
 
 .ResAnn li{
@@ -1023,6 +1077,7 @@ html, body {
 }
 
 .ResAnn #title {
+    text-align: center;
     padding-left: 0em;
     font-weight: bold;
     font-size: 1.3em;
@@ -1032,16 +1087,22 @@ html, body {
     box-shadow: inset 0px 1px 0px 0px #3985B1;
     background-color: #216288;
     border: 1px solid #17445E;
+    display: inline-block;
     cursor: pointer;
     color: #FFFFFF;
     padding: 8px 18px;
     text-decoration: none;
     font: 12px Arial, Helvetica, sans-serif;
+    align-self: center;
 }
 
 .ResAnn button:hover {
     background: linear-gradient(to bottom, #2D77A2 5%, #337DA8 100%);
     background-color: #28739E;
+}
+
+#options {
+    text-align: center;
 }
 
 /* ------      FORM MODIFICA     --------*/
@@ -1051,6 +1112,7 @@ html, body {
     margin: auto;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
+    text-align: center;
     margin-bottom: 2em;
 }
 
@@ -1061,6 +1123,7 @@ html, body {
 }
 
 .formMod input[type="text"], .formMod input[type="password"], .formMod #date, .formMod #description{
+    display: inline-block;
     box-sizing: border-box;
     width: 60%;
     padding: 8px;
@@ -1137,6 +1200,7 @@ html, body {
 }
 
 #annuncio.formMod #tit {
+    display: block;
     width: 100%;
 }
 
@@ -1145,6 +1209,7 @@ html, body {
 }
 
 #annuncio.formMod textarea {
+    display: block;
     box-sizing: border-box;
     width: 100%;
     padding: 8px;
@@ -1165,21 +1230,24 @@ html, body {
 
 /* --------------------- SUCCESS AND ERROR MESSAGE ----------------------*/
 
-.successMsg, .errorMsg {
+.successMsg {
+    color: green;
     text-align: center;
     font-size: 1.2em;
     font-weight: bold;
     padding: 1em;
 }
-.successMsg, .okForm {
-    color: green;
-}
 
-.errorMsg, #errorList, .erroreDati, .errorForm {
+.errorMsg {
     color: red;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 1em;
 }
 
 #errorList {
+    color: red;
     font-size: 0.9em;
     font-weight: normal;
     padding-left: 4em;
@@ -1193,16 +1261,19 @@ html, body {
 }
 
 .erroreDati {
+    color: red;
     padding: 0em 2em;
 }
 
 .errorForm {
     font-size: 0.8em;
+    color: red; 
     padding-left: 1em;
 }
 
 .okForm {
     font-size: 0.8em;
+    color: green; 
     padding-left: 1em;
 }
 
