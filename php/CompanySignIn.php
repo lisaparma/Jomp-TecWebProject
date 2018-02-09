@@ -38,7 +38,7 @@ if(isset($_POST['submit'])){
         $sito = $_POST['sito'];
 
         //verifico i dati inseriti
-        if(checkName($name) && checkPIva($pIva) && checkLengthPIva($pIva) && checkLengthPassword($password) && checkRepeatPassword($password, $repPassword) && checkEmail($email)) {
+        if(checkName($name) && checkPIva($pIva) && checkLengthPIva($pIva) && checkLengthPassword($password) && checkRepeatPassword($password, $repPassword) && checkEmail($email) && $name && $pIva && $email && $citta && $password && $repPassword && $description && $sito) {
             $sql = "INSERT INTO Aziende (Nome, PIva, Email, Citta, Password, Descrizione, Sito) VALUES ('$name', '$pIva', '$email', '$citta', '$password', '$description', '$sito')";
 
             if (mysqli_query(openDB(), $sql)) {
@@ -54,31 +54,36 @@ if(isset($_POST['submit'])){
 
         }
         else {
-            echo "<div><p class='errorMsg'>Tentativo di registrazione fallito, sono sorti i seguenti errori:</p><br/>";
+            echo "<div><p class='errorMsg'>Tentativo di registrazione fallito, sono sorti i seguenti errori:</p>";
             echo "<ul id='errorList'>";
             if(!checkName($name)) {
-                echo "<li>Azienda già presente, controlla di non essere già registrato</li><br/>";
+                echo "<li>Azienda già presente, controlla di non essere già registrato</li>";
             }
 
             if(!checkEmail($email)) {
-                echo "<li>E-mail già presente, controlla di non essere già registrato</li><br/>";
+                echo "<li>E-mail già presente, controlla di non essere già registrato</li><";
             }
 
             if(!checkPIva($pIva)) {
-                echo "<li>Partita IVA già presente, controlla di non essere già registrato o di avere inserito corretamente la sequenza di cifre</li><br/>";
+                echo "<li>Partita IVA già presente, controlla di non essere già registrato o di avere inserito corretamente la sequenza di cifre</li>";
             }
 
             if(!checkLengthPIva($pIva)) {
-                echo "<li>Partita IVA non valida</li><br/>";    
+                echo "<li>Partita IVA non valida</li>";    
             }
 
             if(!checkLengthPassword($password)) {
-                echo "<li>Password troppo corta</li><br/>";   
+                echo "<li>Password troppo corta</li>";   
             }
 
             if(!checkRepeatPassword($password, $repPassword)) {
-                echo "<li>La password di verifica non corrisponde alla password scelta</li><br/>";
+                echo "<li>La password di verifica non corrisponde alla password scelta</li>";
             }
+
+            if(!$name || !$pIva || !$email || !$citta || !$password || !$repPassword || !$description || !$sito) {
+                echo "<li>Compilare tutti i dati</li>";
+            }
+
             echo "</ul></div>";
 
         }
@@ -126,7 +131,7 @@ echo "<div class='form'>
                 <input type='password' id='rippw' name='repPassword' placeholder='Password' tabindex='16' onBlur='checkRipPassword();'/>
 
                 <label for='description'> Descrivi la tua azienda: </label>
-                <textarea id='description' name='description' rows='15' cols='45' tabindex='17' placeholder='Cosa vuoi raccontare della tua azienda?' onBlur='checkDesc();'>$description</textarea>
+                <textarea id='description' name='description' rows='15' cols='45' tabindex='17' placeholder='Cosa vuoi raccontare della tua azienda?' onBlur='checkDesc();'>$description </textarea>
             </div>
             
             <input type='submit' value='Registrati' name='submit'>

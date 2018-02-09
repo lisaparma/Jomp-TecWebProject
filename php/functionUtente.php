@@ -116,6 +116,7 @@ function printAd($result, $username, $page){
                     </li>";
             }	
 }
+
 function liked($username, $ad) {
     $query="SELECT * from Consultazioni WHERE CodAnnuncio='$ad' AND Utente='$username'";
     $result=mysqli_query(openDB(), $query);

@@ -48,7 +48,7 @@ if(isset($_POST['submit'])){
         }
 
         //verifico i dati inseriti
-        if(checkEmail($email) && checkUsername($username) && checkRepeatPassword($password, $ripPassword)) {
+        if(checkEmail($email) && checkUsername($username) && checkRepeatPassword($password, $ripPassword) && $username && $password && $ripPassword && $nome && $cognome && $email && $data) {
             $sql = "INSERT INTO Utenti(Username, Password, Nome, Cognome, Email, Nascita, Sesso) VALUES ('$username', '$password', '$nome', '$cognome', '$email', '$data', '$sex')";
             if (mysqli_query(openDB(), $sql)) {
                 session_start();
@@ -84,8 +84,11 @@ if(isset($_POST['submit'])){
             if(!checkRepeatPassword($password, $ripPassword)) {
                 echo "<li>La password di verifica non corrisponde alla password scelta</li>";
             }
-            echo "</ul></div>";
 
+            if(!$username || !$password || !$ripPassword || !$nome || !$cognome || !$email || !$data) {
+                echo "<li>Compilare tutti i dati</li>";
+            }
+            echo "</ul></div>";
         }
 
         closeDB($db);
@@ -119,7 +122,7 @@ echo "<div class='form'>
                 <input type='text' id='nome' name='Nome' placeholder='Nome' value='$nome' tabindex='10' onBlur='checkName();'>
 
                 <label for='cognome'> Cognome </label>
-                <input type='text' id='cognome' name='Cognome' placeholder='Cognome' value='$cognome' tabindex='11' onBlur='checkSurname();'>
+                <input type='text' id='cognome' name='Cognome' placeholder='Cognome' value='$cognome' tabindex='11'  onBlur='checkSurname();'>
 
                 <div class='radio'>
                 <label> Sesso: </label>
@@ -128,10 +131,10 @@ echo "<div class='form'>
                 </div>
 
                 <label for='date'> Data di nascita: </label>
-                <input type='date' name='Data' id='date' placeholder='AAAA-MM-GG' value='$data' tabindex='12' onBlur='checkDate();'>
+                <input type='date' name='Data' id='date' placeholder='AAAA-MM-GG' value='$data' tabindex='12'  onBlur='checkDate();'>
 
                 <label for='email'> E-mail: </label>
-                <input type='text' id='email' name='Email' placeholder='Email' value='$email' tabindex='13' onBlur='checkEmail();'>   
+                <input type='text' id='email' name='Email' placeholder='Email' value='$email' tabindex='13'  onBlur='checkEmail();'>   
                     
                 <label for='username'> Username: </label>
                 <input type='text' id='username' name='Username' placeholder='Username' value='$username' tabindex='13' onBlur='checkUsername();'>
