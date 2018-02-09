@@ -9,8 +9,8 @@ DROP TABLE IF EXISTS ContrattoLavoro;
 
 
 CREATE TABLE Utenti (
-Nome char(10) NOT NULL, 
-Cognome char(10) NOT NULL, 
+Nome char(40) NOT NULL, 
+Cognome char(40) NOT NULL, 
 Sesso char(1) NOT NULL,
 Email char(255) NOT NULL,
 Username char(20) PRIMARY KEY,
@@ -45,7 +45,7 @@ PRIMARY kEY(CodContratto)
 
 CREATE TABLE Aziende (
 Codice int(10) AUTO_INCREMENT,
-Nome char(100) NOT NULL,
+Nome char(40) NOT NULL,
 PIva int(11) ZEROFILL NOT NULL, 
 Email char(255) NOT NULL,
 Citta char(20) NOT NULL,
