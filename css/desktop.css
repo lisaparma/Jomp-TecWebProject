@@ -500,8 +500,36 @@ body {
     margin:1em;
 } 
 
-#social img{
-    width: 2.5em;
+#social #fb{ 
+    background-image: url(../IMG/facebook.png); 
+    background-repeat: no-repeat; 
+    background-size: 2.5em 2.5em; 
+    width: 2.5em; 
+    height: 2.5em; 
+} 
+ 
+#social #ig{ 
+    background-image: url(../IMG/instagram.png); 
+    background-repeat: no-repeat; 
+    background-size: 2.5em 2.5em; 
+    width: 2.5em; 
+    height: 2.5em; 
+} 
+
+#social #gg{ 
+    background-image: url(../IMG/google+.png);  
+    background-repeat: no-repeat; 
+    background-size: 2.5em 2.5em; 
+    width: 2.5em; 
+    height: 2.5em; 
+} 
+ 
+#social #tw{ 
+    background-image: url(../IMG/twitter.png); 
+    background-repeat: no-repeat; 
+    background-size: 2.5em 2.5em; 
+    width: 2.5em; 
+    height: 2.5em; 
 }
 
 
