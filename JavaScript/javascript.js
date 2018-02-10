@@ -1,6 +1,7 @@
 // Funzione per evidenziare nel menù dove sono
 function whereIam() {
-	var lista = document.getElementsByTagName("li");
+	var menu = document.getElementById("fascia");
+	var lista = menu.getElementsByTagName("li");
 	for(i=0; i < lista.length; i++) {
 		var el = lista.item(i).firstElementChild;
 		if(el.href == document.URL){
