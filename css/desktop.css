@@ -84,11 +84,6 @@ body {
     width: 50px;
 }
 
-#mobilemenu {
-    display: none;
-}
-
-
 #fascia.small{
     height: 4em;
     transition-property: height;
