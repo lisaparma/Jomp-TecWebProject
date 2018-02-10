@@ -2,21 +2,24 @@
 	\subsection{PHP}
 	rvaefvafdgvaergvaergvae
 	 \subsubsection{Norchiuiuhhiu}
-	\subsection{Javascript}
+	\subsection{JavaScript}
 	 Il linguaggio di scripting JavaScript è stato utilizzato per migliorare l'usabilità del sito. Si è tenuto conto del fatto che JavaScript può non funzionare su tutti i dispositivi che possono accedere al sito web (per non compatibilità o per preferenze dell'utente) così sono state assicurate funzioni equivalente server side con PHP.\\
 	 In particolare con JavaScript sono state aggiunte le seguenti funzionalità:
 		\subsubsection{Validazione form registrazione utenti e aziende}
+		Prima di inviare i dati raccolti al server per controllarli con PHP, sono stati aggiungi dei controlli campo per campo che se non soddisfatti non permettono di inviare i dati al server.
+		I controlli sono eseguiti \emph{onBlur} su ogni input dei form e permettono di controllare lunghezza massima e minima di un dato, se un certo dato soddisfa un'espressione regolare (per e-mail e sito internet aziende) e se la ripetizione della password corrisponde alla prima inserita.\\
+		Oltre all'utilità per l'utente di sapere subito se i dati inseriti corrispondono alla richiesta, il controllo JavaScript è servito nella gestione dell'input type \emph{data}, tipo di input di HTML5 non gestito correttamente in tutti i browser. Nei browser in cui si vede l'input come stringa preformata (\emph{gg/mm/aaaa}) o come calendario viene effettuato un controllo solo per vedere se l'input è stato immesso, negli altri browser dove invece si vede un normale input di testo viene eseguito il controllo anche sul formato dei dati immessi, che deve essere del tipo \emph{aaaa/mm/gg} per aderire al type data.
 		
 		\subsubsection{Ridimensionamento header}
-		Quando avviene uno scroll nelle pagine del sito, l'header (che per proprietà CSS risulta fissato) viene ridimensionato così da occupare meno spazio nella pagina visibile. \\
-		Per fare ciò attraverso JavaScript viene aggiunta dinamicamente la classe \emph{small} all'header quando l'offset verticale della pagina risulta maggiore dell'offset iniziale cambiandone le proprietà grafiche.
-		Quando si torna ad inizio pagina questa classe viene tolta facendo tornare l'header con le proprietà iniziali.
+		Quando avviene uno scroll nelle pagine del sito, l'\emph{header} (che per proprietà CSS risulta fissato) viene ridimensionato così da occupare meno spazio nella pagina visibile. \\
+		Per fare ciò attraverso JavaScript viene aggiunta dinamicamente la classe \emph{small} all'\emph{header} quando l'offset verticale della pagina risulta maggiore dell'offset iniziale cambiandone le proprietà grafiche.
+		Quando si torna ad inizio pagina questa classe viene tolta facendo tornare l'\emph{header} con le proprietà iniziali.
 		
 		\subsubsection{Evidenziare nel menù la pagina in cui sono}
 		Nel menù principale è stato scelto di evidenziare la pagina in cui ci si trova attraverso JavaScript così da evidenziare le differenze che ci sono state tra questa tecnica e quella che è stata fatta per i menù dentro le pagine personale in cui viene evidenziato ciò tramite PHP.\\
 		La funzione, molto semplice, prevede solamente un confronto tra l'attributo \emph{href} dentro i tag \emph{li} del menù e l'URL della pagina corrente. Quando viene trovata una corrispondenza viene aggiunta una classe.
 		Rispetto alla soluzione PHP di passare una variabile con la pagina corrente alla funzione che stampa il menù e di gestire molti sottocasi (uno per pagina) risulta una soluzione molto più veloce e semplice. Il suo limite però è nel fatto che JavaScript può essere disabilitato/non andare, mentre PHP no.\\
-		Dato che sotto l'header è presente il \emph{breadcrumb} con la pagina corrente, anche in caso di disattivazione di JavaScript non si rischia che l'utente non capisca più in che pagina si trova.
+		Dato che sotto l'\emph{header} è presente il \emph{breadcrumb} con la pagina corrente, anche in caso di disattivazione di JavaScript non si rischia che l'utente non capisca più in che pagina si trova.
 		
 		\subsubsection{Menù ad hamburger per mobile}
 		
