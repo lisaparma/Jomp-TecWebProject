@@ -29,7 +29,8 @@ try {
 		$email = $company->getEmail();
 		$city = $company->getCity();
 		$password = $company->getPassword();
-		$description = $company->getDescription();
+		$strDescription = $company->getDescription();
+		$description = str_replace("'", ' ', $strDescription);
 		$sito = $company->getSito();
 
 		echo "<div id='contenuto'>

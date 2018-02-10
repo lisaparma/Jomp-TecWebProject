@@ -30,8 +30,8 @@ if(isset($_POST['submit'])) {
             $type = $_POST['Type']; 
             $time = $_POST['TimeType'];
             $contract = $_POST['ContractType'];
-
-            $description = $_POST['Description'];
+            $strDescription = $_POST['Description'];
+            $description = str_replace("'", ' ', $strDescription);
             $name = $company->getName();
 
             $ad = "INSERT INTO Annunci(Azienda, Titolo, Tipologia, Orario, Contratto, Descrizione) VALUES ('$name', '$title', '$type', '$time', '$contract', '$description')";          
