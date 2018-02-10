@@ -1193,9 +1193,30 @@ body {
     max-width: 80%;
 }
 
-#annuncio.formMod label, #annuncio.formMod select {
+@media only screen and (max-width: 699px) {
+    #annuncio.formMod {
+    max-width: 99%;
+    }
+}
+
+
+.sel{
+    width: 100%;
+    margin: 0.5em;
+}
+
+#annuncio.formMod label { 
     font-size: 15px;
-    margin: 0.5em 0em 0.5em 0em;
+    margin: 0.5em 0em
+}
+
+#annuncio.formMod select {
+    font-size: 12px;
+    margin: 0.5em 0em;
+    box-sizing: border-box; 
+    padding: 8px;
+    outline: none;
+    border: 1px solid #B0CFE0;
 }
 
 #annuncio.formMod #tit {

@@ -60,7 +60,7 @@ echo "<div id='contenuto'>
     	<form method='post' id='annuncio' class='formMod' action='AzPubblicaAnnuncio.php' accept-charset='utf-8'>
         <div class='inner-wrap'>
     		<label for='title'> Titolo: </label>
-            <input type='text' id='title' name='Title' placeholder='Titolo' required><br/>";
+            <input type='text' id='title' name='Title' placeholder='Titolo' required>";
 
         	printWorkType('null');   
 
@@ -68,8 +68,8 @@ echo "<div id='contenuto'>
 
             printContractType('null');  
 echo "			
-            <label id='descrAz'> Inserisci una breve descrizione del lavoro (max 300 caratteri): </label>
-            <textarea name='Description' rows='5' cols='70' required></textarea><br/>
+            <label id='descrAz' for='desAz'> Inserisci una breve descrizione del lavoro (max 300 caratteri): </label>
+            <textarea id='desAz' name='Description' rows='5' cols='70' required></textarea><br/>
         </div>
             <input type='submit' value='Inserisci' name='submit'>
     	</form>

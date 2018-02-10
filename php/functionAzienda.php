@@ -70,7 +70,8 @@ function menu($page) {
 function printWorkType($id) {
 	$result = mysqli_query(openDB(), "SELECT * FROM Tipo");
 
-	echo "<label for='type'> Tipologia: </label>
+	echo "<div class='sel'>
+        <label for='type'> Tipologia: </label>
 	            <select id='type' name='Type' required>";
 	if($id == 'null') {
 		while($row = $result->fetch_array(MYSQLI_ASSOC)) {
@@ -84,14 +85,15 @@ function printWorkType($id) {
 			echo "<option value='".$row['CodLavoro']."' $selected>".$row['Lavoro']."</option>";
     	}		
 	}
-    echo "</select>";
+    echo "</select>
+          </div>";
 }
 
 
 function printTimeType($id) {
   $result = mysqli_query(openDB(), "SELECT * FROM OrarioLavoro");
 
-  echo "<label for='Timetype'> Orario: </label>
+  echo "<div class='sel'><label for='Timetype'> Orario: </label>
               <select id='Timetype' name='TimeType' required>";
   if($id == 'null') {
     while($row = $result->fetch_array(MYSQLI_ASSOC)) {
@@ -105,14 +107,14 @@ function printTimeType($id) {
       echo "<option value='".$row['CodOrario']."' $selected>".$row['TipoOrario']."</option>";
       }   
   }
-    echo "</select>";
+    echo "</select></div>";
 }
 
 
 function printContractType($id) {
   $result = mysqli_query(openDB(), "SELECT * FROM ContrattoLavoro");
 
-  echo "<label for='contractType'> Contratto: </label>
+  echo "<div class='sel'><label for='contractType'> Contratto: </label>
               <select id='contractType' name='ContractType' required>";
   if($id == 'null') {
     while($row = $result->fetch_array(MYSQLI_ASSOC)) {
@@ -126,7 +128,7 @@ function printContractType($id) {
       echo "<option value='".$row['CodContratto']."' $selected>".$row['TipoContratto']."</option>";
       }   
   }
-    echo "</select>";
+    echo "</select></div>";
 }
 
 
