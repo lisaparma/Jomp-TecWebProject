@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500) (preloaded format=pdflatex 2017.12.4)  10 FEB 2018 18:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500) (preloaded format=pdflatex 2017.12.4)  10 FEB 2018 23:17
 entering extended mode
 **./Relazione.tex
 (Relazione.tex
@@ -1364,14 +1364,7 @@ LaTeX Info: Redefining \nameref on input line 7.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<Images/uni.png, id=126, 943.525pt x 949.5475pt>
-File: Images/uni.png Graphic file (type png)
-<use Images/uni.png>
-Package pdftex.def Info: Images/uni.png  used on input line 8. on input line 8.
-
-Package pdftex.def Info: Requested size: 66.0535pt x 66.47511pt on input line 8
-.
-<Images/logo.png, id=127, 502.2765pt x 273.4215pt>
+<Images/logo.png, id=126, 502.2765pt x 273.4215pt>
 File: Images/logo.png Graphic file (type png)
 <use Images/logo.png>
 Package pdftex.def Info: Images/logo.png  used on input line 8. on input line 8
@@ -1390,8 +1383,8 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 
-{/Users/Lisa/.miktex/texmfs/data/pdftex/config/pdftex.map} <./Images/uni.png> <
-./Images/logo.png>] (Relazione.toc)
+{/Users/Lisa/.miktex/texmfs/data/pdftex/config/pdftex.map} <./Images/logo.png>]
+ (Relazione.toc)
 \tf@toc=\write5
 \openout5 = `Relazione.toc'.
 
@@ -1510,10 +1503,10 @@ Package rerunfilecheck Info: File `Relazione.out' has not changed.
 (rerunfilecheck)             Checksum: 5E60334B614CF201B4451C217CEC2778;2013.
  ) 
 Here is how much of TeX's memory you used:
- 23647 strings out of 495212
- 433215 string characters out of 3181609
- 542951 words of memory out of 3000000
- 26419 multiletter control sequences out of 15000+200000
+ 23642 strings out of 495212
+ 433133 string characters out of 3181609
+ 542945 words of memory out of 3000000
+ 26415 multiletter control sequences out of 15000+200000
  15143 words of font info for 41 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
  61i,16n,122p,800b,526s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1526,9 +1519,9 @@ ecrm1440.pk> </Users/Lisa/.miktex/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi60
 0/ecbx2488.pk> </Users/Lisa/.miktex/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi
 600/ecbx1200.pk></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/c
 msy10.pfb>
-Output written on Relazione.pdf (7 pages, 515125 bytes).
+Output written on Relazione.pdf (7 pages, 396867 bytes).
 PDF statistics:
- 496 PDF objects out of 1000 (max. 8388607)
+ 502 PDF objects out of 1000 (max. 8388607)
  37 named destinations out of 1000 (max. 500000)
- 263 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 258 words of extra memory for PDF output out of 10000 (max. 10000000)
 
