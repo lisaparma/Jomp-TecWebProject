@@ -40,7 +40,7 @@ if(isset($_POST['submit'])){
         //verifico i dati inseriti
         if(checkName($name) && checkPIva($pIva) && checkLengthPIva($pIva) && checkLengthPassword($password) && checkRepeatPassword($password, $repPassword) && checkEmail($email) && checkLengthName($name) && $name && $pIva && $email && $citta && $password && $repPassword && $description && $sito) {
             $sql = "INSERT INTO Aziende (Nome, PIva, Email, Citta, Password, Descrizione, Sito) VALUES ('$name', '$pIva', '$email', '$citta', '$password', '$description', '$sito')";
-
+            echo $sql;
             if (mysqli_query(openDB(), $sql)) {
                 session_start();
                 $company = mysqli_query(openDB(), "SELECT * FROM Aziende WHERE Email='".$email."'"); 
