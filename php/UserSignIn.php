@@ -48,7 +48,7 @@ if(isset($_POST['submit'])){
         }
 
         //verifico i dati inseriti
-        if(checkEmail($email) && checkUsername($username) && checkRepeatPassword($password, $ripPassword) && checkLengthName($name) && checkLengthName($surname) && $username && $password && $ripPassword && $nome && $cognome && $email && $data) {
+        if(checkEmail($email) && checkUsername($username) && checkRepeatPassword($password, $ripPassword) && checkLengthName($nome) && checkLengthName($cognome) && $username && $password && $ripPassword && $nome && $cognome && $email && $data) {
             $sql = "INSERT INTO Utenti(Username, Password, Nome, Cognome, Email, Nascita, Sesso) VALUES ('$username', '$password', '$nome', '$cognome', '$email', '$data', '$sex')";
             if (mysqli_query(openDB(), $sql)) {
                 session_start();
