@@ -58,7 +58,7 @@ else {
 				</ul>
 				<div id='options'>
 					<form method='post' action='AdminModUtenti.php'>
-		            	<button value='".$row['Username']."'' name='delete'>Rimuovi</button>
+		            	<button value=".$row['Username']." name='delete'>Rimuovi</button>
 	            	</form>
             	</div>
 			</li>";
