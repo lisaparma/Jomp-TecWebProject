@@ -35,7 +35,7 @@ function checkName() {
 		var errPrec = document.getElementById("errNom");
 		if(!errPrec){ // se ho già segnato errore ...
 			var qui = document.getElementById("nome");
-			list.insertBefore(err, qui)
+			list.insertBefore(err, qui);
 		}
 	}
 	else { // se è giusto e ho l'errore...
@@ -43,7 +43,6 @@ function checkName() {
 		var errPrec = document.getElementById("errNom");
 		if(errPrec){ 
 			errPrec.parentNode.removeChild(errPrec);
-
 		}
 		valido = true;
 	}
@@ -61,7 +60,7 @@ function checkSurname() {
 		var errPrec = document.getElementById("errCog");
 		if(!errPrec){ // se ho già segnato errore ...
 			var qui = document.getElementById("cognome");
-			list.insertBefore(err, qui)
+			list.insertBefore(err, qui);
 		}
 	}
 	else { // se è giusto e ho l'errore...
@@ -69,7 +68,6 @@ function checkSurname() {
 		var errPrec = document.getElementById("errCog");
 		if(errPrec){ 
 			errPrec.parentNode.removeChild(errPrec);
-
 		}
 		valido = true;
 	}
@@ -79,16 +77,24 @@ function checkSurname() {
 function checkDate() {
 	var valido = false;
 	var ExpReg = /^[0-9]{4}\-[0-9]{1,2}\-[0-9]{1,2}/;
-	if(!ExpReg.test(document.getElementById("date").value) ) {
+	if(!ExpReg.test(document.getElementById("date").value) || !document.getElementById("date").value) {
 		// elemento da inserire da inserire 
 		var err = document.createElement("p");
-		err.innerHTML = "<div id='errDa' class='errorForm'> Formato data non valido! <br/> Deve essere del tipo: AAAA-MM-GG</div>";
+		if(!document.getElementById("date").value)
+			err.innerHTML = "<div id='errDa' class='errorForm'> Inserire dato";
+		else 
+			err.innerHTML = "<div id='errDa' class='errorForm'> Formato data non valido! <br/> Deve essere del tipo: AAAA-MM-GG</div>";
 
 		var list = document.getElementById("listImp");
 		var errPrec = document.getElementById("errDa");
-		if(!errPrec){ // se ho già segnato errore ...
+		if(!errPrec){
 			var qui = document.getElementById("date");
-			list.insertBefore(err, qui)
+			list.insertBefore(err, qui);
+		}
+		else {
+			errPrec.parentNode.removeChild(errDa);
+			var qui = document.getElementById("date");
+			list.insertBefore(err, qui);
 		}
 	}
 	else { // se è giusto e ho l'errore...
@@ -96,7 +102,6 @@ function checkDate() {
 		var errPrec = document.getElementById("errDa");
 		if(errPrec){ 
 			errPrec.parentNode.removeChild(errPrec);
-
 		}
 		valido = true;
 	}
@@ -115,7 +120,7 @@ function checkEmail() {
 		var errPrec = document.getElementById("errEm");
 		if(!errPrec){ // se ho già segnato errore ...
 			var qui = document.getElementById("email");
-			list.insertBefore(err, qui)
+			list.insertBefore(err, qui);
 		}
 	}
 	else { // se è giusto e ho l'errore...
@@ -123,7 +128,6 @@ function checkEmail() {
 		var errPrec = document.getElementById("errEm");
 		if(errPrec){ 
 			errPrec.parentNode.removeChild(errPrec);
-
 		}
 		valido = true;
 	}
@@ -144,12 +148,12 @@ function checkUsername() {
 		var errPrec = document.getElementById("errSN");
 		if(!errPrec){ // se non ho già segnato errore ...
 			var qui = document.getElementById("username");
-			list.insertBefore(err, qui)
+			list.insertBefore(err, qui);
 		}
 		else {
 			errPrec.parentNode.removeChild(errPrec);
 			var qui = document.getElementById("username");
-			list.insertBefore(err, qui)
+			list.insertBefore(err, qui);
 		}
 	}
 	else { // se è giusto e ho l'errore...
@@ -157,7 +161,6 @@ function checkUsername() {
 		var errPrec = document.getElementById("errSN");
 		if(errPrec){ 
 			errPrec.parentNode.removeChild(errPrec);
-
 		}
 		valido = true;
 	}
@@ -178,14 +181,14 @@ function checkPassword() {
 
 		var list = document.getElementById("listImp");
 		var errPrec = document.getElementById("errPa");
-		if(!errPrec){ // se non ho già segnato errore ...
+		if(!errPrec){ 
 			var qui = document.getElementById("password");
 			list.insertBefore(err, qui)
 		}
 		else {
 			errPrec.parentNode.removeChild(errPrec);
 			var qui = document.getElementById("password");
-			list.insertBefore(err, qui)
+			list.insertBefore(err, qui);
 		}
 	}
 	else { // se è giusto e ho l'errore...
@@ -216,12 +219,12 @@ var valido = false;
 		var errPrec = document.getElementById("errRP");
 		if(!errPrec){ // se non ho già segnato errore ...
 			var qui = document.getElementById("rippw");
-			list.insertBefore(err, qui)
+			list.insertBefore(err, qui);
 		}
 		else {
 			errPrec.parentNode.removeChild(errPrec);
 			var qui = document.getElementById("rippw");
-			list.insertBefore(err, qui)
+			list.insertBefore(err, qui);
 		}
 	}
 	else { // se è giusto e ho l'errore...
@@ -262,12 +265,12 @@ function checkPiva() {
 		var errPrec = document.getElementById("errPI");
 		if(!errPrec){ // se non ho già segnato errore ...
 			var qui = document.getElementById("pIva");
-			list.insertBefore(err, qui)
+			list.insertBefore(err, qui);
 		}
 		else {
 			errPrec.parentNode.removeChild(errPrec);
 			var qui = document.getElementById("pIva");
-			list.insertBefore(err, qui)
+			list.insertBefore(err, qui);
 		}
 	}
 	else { // se è giusto e ho l'errore...
@@ -291,9 +294,9 @@ function checkSito() {
 
 		var list = document.getElementById("listImp");
 		var errPrec = document.getElementById("errSi");
-		if(!errPrec){ // se ho già segnato errore ...
+		if(!errPrec){ // se non ho già segnato errore ...
 			var qui = document.getElementById("sito");
-			list.insertBefore(err, qui)
+			list.insertBefore(err, qui);
 		}
 	}
 	else { // se è giusto e ho l'errore...
@@ -301,7 +304,6 @@ function checkSito() {
 		var errPrec = document.getElementById("errSi");
 		if(errPrec){ 
 			errPrec.parentNode.removeChild(errPrec);
-
 		}
 		valido = true;
 	}
@@ -317,9 +319,9 @@ function checkCitta() {
 
 		var list = document.getElementById("listImp");
 		var errPrec = document.getElementById("errCi");
-		if(!errPrec){ // se ho già segnato errore ...
+		if(!errPrec){ // se non ho già segnato errore ...
 			var qui = document.getElementById("city");
-			list.insertBefore(err, qui)
+			list.insertBefore(err, qui);
 		}
 	}
 	else { // se è giusto e ho l'errore...
@@ -349,12 +351,12 @@ function checkDesc() {
 		var errPrec = document.getElementById("errDe");
 		if(!errPrec){ // se non ho già segnato errore ...
 			var qui = document.getElementById("description");
-			list.insertBefore(err, qui)
+			list.insertBefore(err, qui);
 		}
 		else {
 			errPrec.parentNode.removeChild(errPrec);
 			var qui = document.getElementById("description");
-			list.insertBefore(err, qui)
+			list.insertBefore(err, qui);
 		}
 	}
 	else { // se è giusto e ho l'errore...
@@ -370,7 +372,7 @@ function checkDesc() {
 
 function validateFormCompany() {
 	if(checkEmail() & checkName() & checkPassword() & checkRipPassword() & checkPiva() & checkSito() & checkCitta() & checkDesc())
-			return true;
+		return true;
 	else 
 		return false;
 }
