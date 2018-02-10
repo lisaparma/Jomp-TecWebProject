@@ -43,7 +43,7 @@ body {
     transition-duration: 1s;
     transition-timing-function: initial;
     transition-delay: initial;
-    height: 7em;
+    height: 4em;
 }
 
 #fascia {
@@ -57,7 +57,7 @@ body {
 }
 
 #logo {
-    padding-left: 4em;
+    padding-left: 2em;
     height: 6.5em;
     float: left;
     transition-property: height;
@@ -444,6 +444,22 @@ body {
     border-left-color:#1abc9c;
 }
 
+
+
+#bc li:last-child a:hover{
+    background-color: #3498db;
+}  
+
+#bc li:last-child a:hover::before{
+    border-color:#3498db;
+    border-left-color:transparent;
+}
+
+#bc li:last-child a:hover::after{
+    border-left-color:#3498db;
+}
+
+
 /* più scuro quando lo clicco*/
 #bc li a:active{
     background-color: #16a085;
@@ -458,6 +474,11 @@ body {
     border-left-color:#16a085;
 }
 
+@media only screen and (max-width: 400px){
+    #bc {
+        display: none;
+    }
+}
 
 /* --------------    FOOTER    ---------------- */
 
@@ -750,6 +771,16 @@ body {
     padding-bottom: 0.5em;
 }
 
+@media only screen and (max-width: 700px) {
+    #contenuto{
+        padding: 0.5em;
+    }
+
+    #contenuto ul {
+        padding: 0em;
+    }
+}
+
 /* ----------------------- MENU area personale ----------------------*/
  
 .container-menu {
@@ -938,6 +969,12 @@ body {
 #listannunci {
     margin: 1em 7%;
     padding: 0.5em 10%;
+}
+
+@media only screen and (max-width: 700px) {
+    #listannunci {
+        margin: 0em;
+    }
 }
 
 #annunci {
