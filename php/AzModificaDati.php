@@ -66,7 +66,8 @@ try {
 	                $company->setPassword($newPassword);
 	                $company->setDescription($newDescription);
 	                $company->setSito($newSito);
-	                echo"<div class='successMsg'>Dati aggiornati con successo! Torna nella tua <a href='AzDashboard.php'>bacheca</a>.</div>";            	}
+	                echo"<div class='successMsg'>Dati aggiornati con successo!</div>";     
+	          	}
             	else {
             		echo "<div class='errorMsg'>Errore nell'aggiornare i propri dati.</div>";
             	}

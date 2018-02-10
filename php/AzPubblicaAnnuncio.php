@@ -27,7 +27,7 @@ if(isset($_POST['submit'])) {
             $company = $_SESSION['login'];
 
             $title = $_POST['Title'];
-            $type = $_POST['Type'];
+            $type = $_POST['Type']; 
             $time = $_POST['TimeType'];
             $contract = $_POST['ContractType'];
 
@@ -37,7 +37,7 @@ if(isset($_POST['submit'])) {
             $ad = "INSERT INTO Annunci(Azienda, Titolo, Tipologia, Orario, Contratto, Descrizione) VALUES ('$name', '$title', '$type', '$time', '$contract', '$description')";          
 
             if (mysqli_query(openDB(), $ad)) {
-                echo "Annuncio pubblicato con successo!";
+                echo"<div class='successMsg'>Annuncio pubblicato con successo!</div>"; 
             } 
             else {
                 echo "Errore";
@@ -53,9 +53,6 @@ if(isset($_POST['submit'])) {
         die();
     }
 } 
-
-
-
 
 
 echo "<div id='contenuto'>

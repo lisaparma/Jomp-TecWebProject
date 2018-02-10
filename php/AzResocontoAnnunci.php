@@ -19,14 +19,21 @@ menu($page);
 
 
 # ------------------------------------------------------
+
+if(isset($_GET['msg'])){
+    echo"<div class='successMsg'>Annuncio rimosso con successo!</div>";
+}
+
 echo"<div id='contenuto'>";
 if(isset($_POST['update'])) {
 	$ad = $_POST['update']; 
 	$newTitle = $_POST['Title'];
 	$newType = $_POST['Type'];
+	$newContract = $_POST['ContractType'];
+	$newTime = $_POST['TimeType'];
 	$newDescr = $_POST['Description'];
 
-	$up = "UPDATE Annunci SET Titolo = '".$newTitle."', Tipologia = '".$newType."', Descrizione ='".$newDescr."'  WHERE Codice='".$ad."'";
+	$up = "UPDATE Annunci SET Titolo = '".$newTitle."', Tipologia = '".$newType."', Orario = '".$newTime."', Contratto = '".$newContract."', Descrizione = '".$newDescr."'  WHERE Codice='".$ad."'";
 
 	if(mysqli_query(openDB(), $up)) {
 		echo "<div class='successMsg'>Annuncio modificato con successo!</div>";
@@ -42,7 +49,7 @@ if(isset($_SESSION['login'])) {
 	$name = $company->getName();
 
 	//annunci elencati dal più recente al meno
-	$result = mysqli_query(openDB(), "SELECT * FROM Annunci WHERE Azienda='".$name."' ORDER BY Data DESC");
+	$result = mysqli_query(openDB(), "SELECT * FROM Annunci JOIN Tipo ON Tipo.CodLavoro=Annunci.Tipologia JOIN OrarioLavoro ON OrarioLavoro.CodOrario=Annunci.Orario JOIN ContrattoLavoro ON ContrattoLavoro.CodContratto=Annunci.Contratto WHERE Azienda='".$name."' ORDER BY Data DESC");
 
 	if(mysqli_num_rows($result) == 0) {
 		echo "<div class='NoData'>Nessun annuncio ancora inserito.</div>";
@@ -58,6 +65,9 @@ if(isset($_SESSION['login'])) {
 					<ul>
 						<li id='title'>".$row['Titolo']."</li>
 						<li>Pubblicato il ".$row['Data']."</li>
+						<li>Categoria: ".$row['Lavoro']."</li>
+						<li>Contratto: ".$row['TipoContratto']."</li>
+						<li>Orario: ".$row['TipoOrario']."</li>
 						<li>".$row['Descrizione']."</li>
 							<div id='options'>
 								<form method='post' action='AzModificaAnnuncio.php'>

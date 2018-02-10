@@ -77,7 +77,8 @@ if(isset($_SESSION['login'])){ // Solo se in sessione vedi questo
                 $user->setPassword($newPassword);
                 $user->setSex($newSex);
                 $user->setBirth($newNascita);
-                
+
+                echo"<div class='successMsg'>Dati aggiornati con successo!</div>";                 
             }
 
         } 
