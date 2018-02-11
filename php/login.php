@@ -30,8 +30,12 @@ if(isset($_POST['submit'])){
 
         $db=openDB();
         
-        $email=trim($_POST['Email']);
-        $password=trim($_POST['Password']);
+        $e1=trim($_POST['Email']);
+        $e2 = str_replace("'", 'NO', $e1);
+        $email = str_replace('"', 'NO', $e2);
+        $p1=trim($_POST['Password']);
+        $p2 = str_replace("'", 'NO', $p1);
+        $password = str_replace('"', 'NO', $p2);
 
         //login per l'utente
         if(checkDataUser($email, $password)) {

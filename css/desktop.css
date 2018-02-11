@@ -67,7 +67,7 @@ body {
 }
 
 #hamburger {
-    visibility: hidden;
+    display: none;
     float: right;
     padding: 2.2em 2.3em 0em 0em;
     transition: 1s;
@@ -270,7 +270,7 @@ body {
     }
 
     #hamburger {
-        visibility: visible;
+        display: inline;
     }
 
     #mobilemenu.show {
@@ -896,6 +896,7 @@ body {
 
 #ricerca {
     margin: auto;
+    margin-top: 1em;
     align-content: center;
     width: 60%;
     padding: 1em;
