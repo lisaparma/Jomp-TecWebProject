@@ -27,6 +27,8 @@
 \contentsline {subsubsection}{\numberline {5.2.3}Evidenziare la pagina in cui ci si trova nel men\IeC {\`u}}{9}{subsubsection.5.2.3}
 \contentsline {subsubsection}{\numberline {5.2.4}Men\IeC {\`u} a tendina}{10}{subsubsection.5.2.4}
 \contentsline {section}{\numberline {6}Accessibilit\IeC {\`a}}{11}{section.6}
-\contentsline {subsection}{\numberline {6.1}scjdissd}{11}{subsection.6.1}
-\contentsline {subsubsection}{\numberline {6.1.1}Nor chiu iuhhiu}{11}{subsubsection.6.1.1}
-\contentsline {section}{\numberline {7}Divisione del lavoro}{12}{section.7}
+\contentsline {subsection}{\numberline {6.1}Schema colori}{11}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.2}Utilizzo dei tag}{11}{subsection.6.2}
+\contentsline {subsection}{\numberline {6.3}Screen reader}{11}{subsection.6.3}
+\contentsline {subsection}{\numberline {6.4}Aiuti per la navigazione}{11}{subsection.6.4}
+\contentsline {section}{\numberline {7}Divisione del lavoro}{13}{section.7}
