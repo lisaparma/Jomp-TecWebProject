@@ -8,7 +8,8 @@ require_once("classUtente.php");
 session_start();
 
 $title = "Annunci salvati - Jomp";
-head($title);
+$desc = "Visualizza tutti gli annunci pubblicati dalle aziende precedentemente salvati in base ai tuoi interessi.";
+head($title, $desc);
 
 headers();
 

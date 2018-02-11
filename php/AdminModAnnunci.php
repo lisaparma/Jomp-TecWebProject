@@ -8,7 +8,8 @@ require_once("functionAdmin.php");
 session_start();
 
 $title = "Sezione Annunci - Jomp";
-head($title);
+$desc = "Pagina amministrazione dedicata alla moderazione degli annunci pubblicati dalle aziende nel sito";
+head($title, $desc);
 
 
 headers();

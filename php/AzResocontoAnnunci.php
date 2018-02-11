@@ -8,7 +8,8 @@ require_once("classAzienda.php");
 session_start();
 
 $title = "Resoconto annunci - Jomp";
-head($title);
+$desc = "Visualizza tutti gli annunci pubblicati da un'azienda e amministrali.";
+head($title, $desc);
 
 headers();
 

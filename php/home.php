@@ -10,7 +10,8 @@ require_once("classAdmin.php");
 session_start();
 
 $title = "Home - Jomp";
-head($title);
+$desc = "Pagina principale del sito Jomp, un salto nel lavoro che si occupa di raggruppare annunci di lavoro provenienti da aziende del territorio per farle visualizzare a utenti interessati registrati.";
+head($title, $desc);
 
 headers();
 

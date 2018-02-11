@@ -8,7 +8,8 @@ require_once("functionAdmin.php");
 session_start();
 
 $title = "Sezione Aziende - Jomp";
-head($title);
+$desc = "Pagina amministrazione dedicata alla moderazione delle aziende registrate al sito";
+head($title, $desc);
 
 headers();
 

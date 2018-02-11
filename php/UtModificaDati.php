@@ -8,7 +8,8 @@ require_once("classUtente.php");
 session_start();
 
 $title = "Modifica dati - Jomp";
-head($title);
+$desc = "Visualizza e modifica i dati con cui ti sei registrato.";
+head($title, $desc);
 
 headers();
 

@@ -5,7 +5,8 @@ require_once("functionHome.php");
 require_once("connect.php");
 
 $title="Sign In - Jomp";
-head($title);
+$desc = "Pagina di registrazione utente e azienda.";
+head($title, $desc);
 
 headers();
 

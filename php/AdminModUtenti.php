@@ -8,7 +8,8 @@ require_once("functionAdmin.php");
 session_start();
 
 $title = "Sezione Utenti- Jomp";
-head($title);
+$desc = "Pagina amministrazione dedicata alla moderazione degli utenti registrati al sito";
+head($title, $desc);
 
 headers();
 

@@ -10,7 +10,8 @@ require_once("classAdmin.php");
 session_start();
 
 $title = "Aziende partner - Jomp";
-head($title);
+$desc = "Visualizzazione di tutte le aziende registrate nel sito che offrono lavoro tranite annunci.";
+head($title, $desc);
 
 headers();
 

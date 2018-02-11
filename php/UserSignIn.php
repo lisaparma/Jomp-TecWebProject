@@ -7,7 +7,8 @@ require_once("functionUtente.php");
 require_once("classUtente.php");
 
 $title = "Registrazione Utente - Jomp";
-head($title);
+$desc = "Pagina di registrazione utente.";
+head($title, $desc);
 
 
 headers();

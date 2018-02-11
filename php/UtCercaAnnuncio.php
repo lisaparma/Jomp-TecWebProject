@@ -9,7 +9,8 @@ require_once("classUtente.php");
 session_start();
 
 $title = "Cerca annuncio - Jomp";
-head($title);
+$desc = "Visualizza tutti gli annunci pubblicati dalle aziende e filtrale in base ai tuoi interessi.";
+head($title, $desc);
 
 headers();
 

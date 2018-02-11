@@ -7,10 +7,12 @@ require_once("connect.php");
 require_once("classUtente.php");
 require_once("classAzienda.php");
 require_once("classAdmin.php");
+
 session_start();
 
 $title = "Termini e condizioni - Jomp";
-head($title);
+$desc = "Pagina di spiegazione dei termini e delle condizioni del sito Jomp.";
+head($title, $desc);
 
 
 headers();

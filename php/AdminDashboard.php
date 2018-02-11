@@ -8,7 +8,8 @@ require_once("functionAdmin.php");
 session_start();
 
 $title = "Dashboard Admin - Jomp";
-head($title);
+$desc = "Pagina amministrazione dedicata alla visualizzazione generale dei dati.";
+head($title, $desc);
 
 headers();
 

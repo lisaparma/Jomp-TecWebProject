@@ -10,7 +10,8 @@ require_once("classAdmin.php");
 session_start();
 
 $title = "Chi siamo - Jomp";
-head($title);
+$desc = "Pagina di presentazione del sito.";
+head($title, $desc);
 
 
 headers();

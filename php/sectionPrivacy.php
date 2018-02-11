@@ -10,7 +10,8 @@ require_once("classAdmin.php");
 session_start();
 
 $title = "Privacy - Jomp";
-head($title);
+$desc = "Pagina di spiegazione delle politiche di privacy nel sito Jomp.";
+head($title, $desc);
 
 
 headers();

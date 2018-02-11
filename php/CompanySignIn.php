@@ -8,7 +8,8 @@ require_once("classAzienda.php");
 
 
 $title = "Registrazione Azienda - Jomp";
-head($title);
+$desc = "Pagina di registrazione per le aziende.";
+head($title, $desc);
 
 headers();
 

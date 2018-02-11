@@ -8,7 +8,8 @@ session_start();
 
 
 $title = "Modifica annuncio - Jomp";
-head($title);
+$desc = "Modifica un'annuncio pubblicato dalla tua azienda in precedenza.";
+head($title, $desc);
 
 
 headers();

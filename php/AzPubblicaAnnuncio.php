@@ -9,7 +9,8 @@ $title = "Pubblica Annuncio - Jomp";
 
 session_start();
 
-head($title);
+$desc = "Pubblica un annuncio da parte della tua azienda per ricercare nuovo personale.";
+head($title, $desc);
 
 headers();
 

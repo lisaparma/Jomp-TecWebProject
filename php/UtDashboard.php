@@ -7,7 +7,8 @@ require_once("classUtente.php");
 session_start();
 
 $title = "Dashboard Utente - Jomp";
-head($title);
+$desc = "Riepilogo delle attività dell'utente e delle informazioni utili per amministrare il proprio account.";
+head($title, $desc);
 
 
 headers();

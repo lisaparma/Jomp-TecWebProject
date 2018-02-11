@@ -1,14 +1,14 @@
 <?php
 
-function head($title) {
+function head($title, $description) {
 	echo "<!DOCTYPE html>
 
 			<head> 
 			    <title> $title </title>
 			    <meta charset='utf-8' />
 			    <meta name='title' content='$title'/>
-			    <meta name='description' content='Descrizione'/>
-			    <meta name='keywords' content='----'/>
+			    <meta name='description' content='$description/>
+			    <meta name='keywords' content='lavoro, annuncio, ricerca, aziende, utenti'/>
 			    <meta name='author' content='Lisa Parma, Sara Feltrin, Silvia Bazzeato'/>
 			    <meta name='language' content='italian it'/>
 			    <meta name='title' content='$title'/>

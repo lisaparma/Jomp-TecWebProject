@@ -8,7 +8,8 @@ require_once("classAzienda.php");
 session_start();
 
 $title="Jomp - Modifica dati";
-head($title);
+$desc = "Visualizza e modifica i dati con cui ti sei registrato.";
+head($title, $desc);
 
 
 headers();

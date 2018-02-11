@@ -8,7 +8,8 @@ require_once("classAzienda.php");
 session_start();
 
 $title = "Dashboard Azienda - Jomp";
-head($title);
+$desc = "Riepilogo delle attività dell'azienda e informazioni utili per amministrare il proprio account.";
+head($title, $desc);
 
 
 headers();

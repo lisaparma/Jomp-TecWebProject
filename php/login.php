@@ -7,11 +7,11 @@ require_once("classUtente.php");
 require_once("classAzienda.php");
 require_once("classAdmin.php");
 
-$title="Jomp - Log In ";
-
 session_start();
 
-head($title);
+$title="Jomp - Log In ";
+$desc = "Pagina di login per gli utenti e le aziende registrate.";
+head($title, $desc);
 
 headers();
 
