@@ -20,32 +20,30 @@ menu($page);
 
 
 # ------------------------------------------------------
-
-if(isset($_GET['msg'])){
-    echo"<div class='successMsg'>Annuncio rimosso con successo!</div>";
-}
-
-echo"<div id='contenuto'>";
-if(isset($_POST['update'])) {
-	$ad = $_POST['update']; 
-	$newTitle = $_POST['Title'];
-	$newType = $_POST['Type'];
-	$newContract = $_POST['ContractType'];
-	$newTime = $_POST['TimeType'];
-	$newDescr = $_POST['Description'];
-
-	$up = "UPDATE Annunci SET Titolo = '".$newTitle."', Tipologia = '".$newType."', Orario = '".$newTime."', Contratto = '".$newContract."', Descrizione = '".$newDescr."'  WHERE Codice='".$ad."'";
-
-	if(mysqli_query(openDB(), $up)) {
-		echo "<div class='successMsg'>Annuncio modificato con successo!</div>";
-	}
-	else {
-		echo "<div class='errorMsg'>Errore nell'aggiornare i propri dati.</div>";
-	}
-}
-
-
 if(isset($_SESSION['login'])) {
+	if(isset($_GET['msg'])){
+	    echo"<div class='successMsg'>Annuncio rimosso con successo!</div>";
+	}
+
+	echo"<div id='contenuto'>";
+	if(isset($_POST['update'])) {
+		$ad = $_POST['update']; 
+		$newTitle = $_POST['Title'];
+		$newType = $_POST['Type'];
+		$newContract = $_POST['ContractType'];
+		$newTime = $_POST['TimeType'];
+		$newDescr = $_POST['Description'];
+
+		$up = "UPDATE Annunci SET Titolo = '".$newTitle."', Tipologia = '".$newType."', Orario = '".$newTime."', Contratto = '".$newContract."', Descrizione = '".$newDescr."'  WHERE Codice='".$ad."'";
+
+		if(mysqli_query(openDB(), $up)) {
+			echo "<div class='successMsg'>Annuncio modificato con successo!</div>";
+		}
+		else {
+			echo "<div class='errorMsg'>Errore nell'aggiornare i propri dati.</div>";
+		}
+	}
+
 	$company = $_SESSION['login'];
 	$name = $company->getName();
 
@@ -82,6 +80,11 @@ if(isset($_SESSION['login'])) {
 		echo"</ul>";
 
 	}
+}
+else{
+    echo " <div id='contenuto'>
+	           <div class='errorMsg'>Sessione scaduta, procedere con la riutenticazione.</div>
+	       </div>";
 }
 
 echo"</div>";

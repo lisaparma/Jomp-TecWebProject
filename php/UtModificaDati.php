@@ -12,15 +12,14 @@ $desc = "Visualizza e modifica i dati con cui ti sei registrato.";
 head($title, $desc);
 
 headers();
-
+$page = "Modifica dati";
+breadcrumb(array('Area Personale', $page));
+menu($page);
 
 # -----------------------------------------
 
 
 if(isset($_SESSION['login'])){ // Solo se in sessione vedi questo 
-    $page = "Modifica dati";
-    breadcrumb(array('Area Personale', $page));
-    menu($page);
     
     $user = &$_SESSION['login'];
     
@@ -128,7 +127,7 @@ if(isset($_SESSION['login'])){ // Solo se in sessione vedi questo
 }
 else{
     echo " <div id='contenuto'>
-	           <p>Sessione scaduta, procedere con la riutenticazione.</p>
+	           <div class='errorMsg'>Sessione scaduta, procedere con la riutenticazione.</div>
 	       </div>";
 }
 

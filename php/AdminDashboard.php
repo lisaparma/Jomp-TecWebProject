@@ -20,16 +20,23 @@ menu($page);
 
 # ------------------------------------------------------
 
-$admin = &$_SESSION['login'];
-echo"<div id='contenuto'>";
-echo "<h2>Buongiorno amministratore ".$admin->getName()."!</h2> 
-		
-		<h4>Dati relativi al sito:</h4>
-		<ul>
-            <li><strong>Numero utenti registrati: </strong>".registeredUsers()."</li> 
-            <li><strong>Numero aziende registrate: </strong>".registeredCompanies()."</li> 
-            <li><strong>Numero annunci pubblicati: </strong>".publishedAdds()."</li> 
-        </ul>";
+if(isset($_SESSION['login'])){
+	$admin = &$_SESSION['login'];
+	echo"<div id='contenuto'>";
+	echo "<h2>Buongiorno amministratore ".$admin->getName()."!</h2> 
+			
+			<h4>Dati relativi al sito:</h4>
+			<ul>
+	            <li><strong>Numero utenti registrati: </strong>".registeredUsers()."</li> 
+	            <li><strong>Numero aziende registrate: </strong>".registeredCompanies()."</li> 
+	            <li><strong>Numero annunci pubblicati: </strong>".publishedAdds()."</li> 
+	        </ul>";
+}
+else{
+    echo " <div id='contenuto'>
+	           <div class='errorMsg'>Sessione scaduta, procedere con la riutenticazione.</div>
+	       </div>";
+}
 
 
 # ------------------------------------------------------
