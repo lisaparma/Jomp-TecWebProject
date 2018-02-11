@@ -1,17 +1,26 @@
 \section{Presentazione}
 	La presentazione è stata fatta in CSS3 tenendo completamente separata la struttura attraverso due file esterni: uno per gestire la visualizzazione in un qualsiasi schermo e un altro per gestire la stampa.
 	\subsection{Scelta CCS 3}
+<<<<<<< HEAD:Relazione/Res/Sezioni/4-Presentazione.tex
 	È stato deciso di utilizzare l'ultimo standard di CSS poichè, essendo uscito nel 2008, tutte le sue caratteristiche aggiuntive rispetto al CSS2 sono ben supportate in tutti i browser. \\ In particolare, le novità a cui abbiamo usufruito sono state:
+=======
+	È stato deciso di utilizzare l'ultimo standard di CSS dato che, essendo uscito nel 2008, le  caratteristiche aggiuntive rispetto al CSS2 sono ben supportate in tutti i browser. \\ In particolare le novità che sono state utili sono:
+>>>>>>> 3883d67ce33fe0e56f9b5cd5801cfcf3039cfdfc:Relazione/Res/Sezioni/5-Presentazione.tex
 	\begin{itemize}
 		\item \textbf{Nuove pseudo-classi}: \emph{:first-child}, \emph{:last-child}, e \emph{:nth-child(n)} sono state usate per gestire il breadcrumb;
 		\item \textbf{Nuove proprietà}: sono state largamente impiegate la nuove proprietà \emph{border-radius} e \emph{box-shadow};
 		\item \textbf{Transizioni}: sono state modificate delle transizioni con \emph{transition-property} e \emph{transition-duration} per rendere meno forte il cambio di visualizzazione per l'utente;
 	\end{itemize}
 	\subsection{desktop.css}
-	Questo file raccoglie tutte le regole di stile utilizzate per la corretta presentazione di ogni elemento delle pagine web del sito. Sono stati sviluppati gerarchicamente tutti gli elementi in modo da non dover ripetere regole di stile per i discendenti. \\
+	Questo file raccoglie tutte le regole di stile utilizzate per la corretta presentazione di ogni elemento delle pagine web del sito. Sono stati sviluppati gerarchicamente tutti gli elementi in modo da non dover ripetere regole di stile comuni per i discendenti. \\
 	Inizialmente sono state applicate delle regole per "azzerare" i valori di default del box-model che, per ogni browser, possono risultare diversi.\\
+<<<<<<< HEAD:Relazione/Res/Sezioni/4-Presentazione.tex
 	Come buona prassi, sono state individuate delle \emph{classi} standard per elementi simili che ritroviamo in diverse pagine (come i form) e sono stati successivamente specializzati attraverso i diversi \emph{id} per ottenere strutturazione simile ma stile diverso (form per registrazione, form per modifica dati, form per ricerca ecc..).\\
 	Per adattare la visualizzazione del sito a tutti i dispositivi e a tutti gli schermi è stato deciso di avvalersi delle media query con dei determinati break-point per adattare il contenuto sia a schermi molto grande sia a schermi piccoli come quelli degli smartphone. Questa soluzione è stata preferita all'utilizzare un secondo file solo per i cellulari in quando il sito è stato costruito in maniera responsive utilizzando gr ???????????????
+=======
+	Come buona prassi, sono state individuate delle \emph{classi} standard per elementi simili che ritroviamo in diverse pagine (come i form) e sono stati successivamente specializzati attraverso i diversi \emph{id} per ottenere strutturazione simile ma stile diverso (form per registrazione, form per modifica dati, form per ricerca, ecc..).\\
+	Per adattare la visualizzazione del sito a tutti i dispositivi e a tutti gli schermi è stato deciso di utilizzare delle media query con dei determinati break-point per adattare il contenuto sia a schermi molto grandi sia a schermi piccoli come gli smartphone. Questa soluzione è stata preferita all'utilizzare un secondo file solo per i cellulari in quando il sito è stato costruito in maniera responsive usando grandezze relative come \emph{em} per gli elementi la cui dimensione dipendeva dal testo e percentuali per gli altri. In questo modo il sito risulta naturalmente molto più flessibile rispetto alle dimensioni dello schermo e le uniche differenze da apportare in una versione mobile sono cambiamenti di posizione di intere strutture o la loro eliminazione, cambiamenti facilmente attuabili in poche righe attraverso le media query.
+>>>>>>> 3883d67ce33fe0e56f9b5cd5801cfcf3039cfdfc:Relazione/Res/Sezioni/5-Presentazione.tex
 	
 	\subsection{print.css}
 	Questo foglio di stile si applica automaticamente quando un utente vuole
