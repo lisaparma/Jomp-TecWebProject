@@ -35,7 +35,7 @@ function headers() {
                 <div id='primarymenu'>"; 
                     primaryMenu(); 
     echo "      </div>    
-                <form method='post' action='";echo $_SERVER['PHP_SELF']; echo"'id='hamburger'> 
+                <form method='post' action='";echo $_SERVER['PHP_SELF']; echo"'id='hamburger' onsubmit='return menuHamburger();'> 
                     <label for='sub'> <img src='../IMG/hamburger.svg' title='Menu' alt='menu'> </label>";
                     if(isset($_POST['hamb']))
                         echo"<input id='sub' type='submit' name='null'>";
@@ -44,12 +44,13 @@ function headers() {
                     
             echo"    </form>
             </div>";
-            if(isset($_POST['hamb'])){
+            if(isset($_POST['hamb']))
                 echo"<div id='mobilemenu'>"; 
-                    primarymenu(); 
-                echo"</div>";
-            }
+            else 
+                echo"<div id='mobilemenu' class='hidden'>"; 
+            primarymenu(); 
     echo"   </div>
+            </div>
      <div id='page'>";
 }
 

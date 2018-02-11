@@ -282,6 +282,10 @@ body {
     font-size: 1.5em;
 }
 
+#mobilemenu.hidden{
+    visibility: hidden;
+}
+
 #fascia input[type="submit"]{
     display: none;
 }

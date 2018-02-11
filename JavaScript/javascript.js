@@ -377,5 +377,16 @@ function validateFormCompany() {
 		return false;
 }
 
+// Menu a tendina
+function menuHamburger() {
+    var menu = document.getElementById("mobilemenu");
+    if(menu.classList.contains("hidden")) {
+        menu.classList.remove("hidden");
+    }
+    else {
+        menu.classList.add("hidden");
+    }
+    return false;
+}
 
 
