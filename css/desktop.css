@@ -74,16 +74,13 @@ body {
     cursor: pointer;
 }
 
+
 #mobilemenu {
     visibility: hidden;
 }
 
 #hamburger img {
     width: 50px;
-}
-
-#mobilemenu {
-    display: none;
 }
 
 #fascia.small{
@@ -273,55 +270,60 @@ body {
         display: inline;
     }
 
-    #mobilemenu.show {
+    #mobilemenu {
         visibility: visible;
     }
 }
 
 /* ------ menu mobile --------- */
-#mobilemenu.show {
+
+#mobilemenu {
     display: block;
     font-size: 1.5em;
 }
 
-#mobilemenu.show ul {
+#fascia input[type="submit"]{
+    display: none;
+}
+
+#mobilemenu ul {
     list-style: none;
     width: 100%;
     text-align: center;
     background-color: #029cc7; 
 }
 
-#mobilemenu.show ul li {
+#mobilemenu ul li {
     padding: 0.5em 0em;
     border-bottom:2px;
     border-style: solid;
     border-color: black;
 }
 /*quando ci passo sopra*/
-#mobilemenu.show ul li:hover a
+#mobilemenu ul li:hover a
 {
     color: #ffffff;
     text-shadow: 0px 0 15px #000000;
 }
 
-#mobilemenu.show ul li a {
+#mobilemenu ul li a {
     color: lightgray;
     text-decoration:none;
 }
 
 /* Pagina corrente*/
-#mobilemenu.show ul li.here {
+#mobilemenu ul li.here {
     font-weight: bold;
 }
 
-#mobilemenu.show ul li.here a{
+#mobilemenu ul li.here a{
     color: #ffffff;
     cursor: default;
     text-shadow: 0px 0 15px #000000;
 }
 
 /* elenco pagine dentro una pagina*/
-#mobilemenu.show ul ul
+#mobilemenu ul ul
 {
     padding:0;
     width: 100%;
@@ -331,26 +333,26 @@ body {
 
 
 /*pagine secondarie*/
-#mobilemenu.show ul li:hover ul li a{
+#mobilemenu ul li:hover ul li a{
     text-shadow: none;
     color:lightgrey;
     width: 100%;
     height: 100%;
 }
 
-#mobilemenu.show ul li ul li {
+#mobilemenu ul li ul li {
     font-size: 0.9em;
     padding: 0.5em;
     margin: auto;
     border:0;
 }
 
-#mobilemenu.show ul li:hover ul li:hover a{
+#mobilemenu ul li:hover ul li:hover a{
     color: #ffffff;
     text-shadow: 0px 0 15px #000000;
 }
 
-#mobilemenu.show ul li:hover ul li.here a{
+#mobilemenu ul li:hover ul li.here a{
     color: #ffffff;
     text-shadow: 0px 0 15px #000000;
 }

@@ -110,7 +110,6 @@ function printAd($result, $username, $page){
                             <form method='post' action=$page>
                                 <label for='$id'> $img </label>
                                 <button type='submit' id='$id' name='$like' value='$id'>$like</button>
-                                
                             </form>
                         </div>
                     </li>";

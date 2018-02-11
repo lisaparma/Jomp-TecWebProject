@@ -1,6 +1,6 @@
 // Funzione per evidenziare nel menù dove sono
 function whereIam() {
-	var menu = document.getElementById("fascia");
+	var menu = document.getElementById("header");
 	var lista = menu.getElementsByTagName("li");
 	for(i=0; i < lista.length; i++) {
 		var el = lista.item(i).firstElementChild;
@@ -375,18 +375,6 @@ function validateFormCompany() {
 		return true;
 	else 
 		return false;
-}
-
-
-// Menu a tendina
-function menuHamburger() {
-	var menu = document.getElementById("mobilemenu");
-	if(menu.classList.contains("show")) {
-		menu.classList.remove("show");
-	}
-	else {
-		menu.classList.add("show");
-	}
 }
 
 

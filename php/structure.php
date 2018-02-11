@@ -29,19 +29,27 @@ function head($title) {
 function headers() {
     echo "<div id='header'>
             <div id='fascia'>
-            <a href='home.php'>
-                <img id='logo' src='../IMG/jomp2.png' title='Logo Jomp - Home' alt='Logo del sito Jomp'>
-            </a>
-            <div id='primarymenu'>"; 
-                primaryMenu(); 
-    echo "</div> 
-            <div id='hamburger' onClick='menuHamburger();'> <img src='../IMG/hamburger.svg' title='Menu' alt='menu'/> 
-            </div>
-            </div>
-            <div id='mobilemenu'>"; 
-                primarymenu(); 
-     echo" </div> 
-        </div>
+                <a href='home.php'>
+                    <img id='logo' src='../IMG/jomp2.png' title='Logo Jomp - Home' alt='Logo del sito Jomp'>
+                </a>
+                <div id='primarymenu'>"; 
+                    primaryMenu(); 
+    echo "      </div>    
+                <form method='post' action='";echo $_SERVER['PHP_SELF']; echo"'id='hamburger'> 
+                    <label for='sub'> <img src='../IMG/hamburger.svg' title='Menu' alt='menu'> </label>";
+                    if(isset($_POST['hamb']))
+                        echo"<input id='sub' type='submit' name='null'>";
+                    else
+                        echo"<input id='sub' type='submit' name='hamb'>";
+                    
+            echo"    </form>
+            </div>";
+            if(isset($_POST['hamb'])){
+                echo"<div id='mobilemenu'>"; 
+                    primarymenu(); 
+                echo"</div>";
+            }
+    echo"   </div>
      <div id='page'>";
 }
 
