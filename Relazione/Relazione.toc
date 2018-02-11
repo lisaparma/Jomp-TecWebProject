@@ -28,7 +28,7 @@
 \contentsline {subsubsection}{\numberline {5.2.4}Men\IeC {\`u} a tendina}{10}{subsubsection.5.2.4}
 \contentsline {section}{\numberline {6}Accessibilit\IeC {\`a}}{11}{section.6}
 \contentsline {subsection}{\numberline {6.1}Schema colori}{11}{subsection.6.1}
-\contentsline {subsection}{\numberline {6.2}Utilizzo dei tag}{11}{subsection.6.2}
-\contentsline {subsection}{\numberline {6.3}Screen reader}{11}{subsection.6.3}
-\contentsline {subsection}{\numberline {6.4}Aiuti per la navigazione}{11}{subsection.6.4}
+\contentsline {subsection}{\numberline {6.2}Tag meta}{12}{subsection.6.2}
+\contentsline {subsection}{\numberline {6.3}Screen reader}{12}{subsection.6.3}
+\contentsline {subsection}{\numberline {6.4}Aiuti per la navigazione}{12}{subsection.6.4}
 \contentsline {section}{\numberline {7}Divisione del lavoro}{13}{section.7}
