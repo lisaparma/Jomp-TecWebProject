@@ -9,8 +9,14 @@
 \contentsline {subsection}{\numberline {3.1}scjdissd}{3}{subsection.3.1}
 \contentsline {subsubsection}{\numberline {3.1.1}Nor chiu iuhhiu}{3}{subsubsection.3.1.1}
 \contentsline {section}{\numberline {4}Presentazione}{3}{section.4}
+<<<<<<< Updated upstream
 \contentsline {subsection}{\numberline {4.1}desktop.css}{3}{subsection.4.1}
 \contentsline {subsection}{\numberline {4.2}print.css}{3}{subsection.4.2}
+=======
+\contentsline {subsection}{\numberline {4.1}Scelta CCS 3}{3}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}desktop.css}{3}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}print.css}{3}{subsection.4.3}
+>>>>>>> Stashed changes
 \contentsline {section}{\numberline {5}Comportamento}{3}{section.5}
 \contentsline {subsection}{\numberline {5.1}PHP}{3}{subsection.5.1}
 \contentsline {subsubsection}{\numberline {5.1.1}Strutturazione pagine}{3}{subsubsection.5.1.1}
