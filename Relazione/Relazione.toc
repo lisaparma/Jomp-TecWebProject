@@ -9,17 +9,12 @@
 \contentsline {subsection}{\numberline {3.1}scjdissd}{3}{subsection.3.1}
 \contentsline {subsubsection}{\numberline {3.1.1}Nor chiu iuhhiu}{3}{subsubsection.3.1.1}
 \contentsline {section}{\numberline {4}Presentazione}{3}{section.4}
-<<<<<<< Updated upstream
-\contentsline {subsection}{\numberline {4.1}desktop.css}{3}{subsection.4.1}
-\contentsline {subsection}{\numberline {4.2}print.css}{3}{subsection.4.2}
-=======
 \contentsline {subsection}{\numberline {4.1}Scelta CCS 3}{3}{subsection.4.1}
 \contentsline {subsection}{\numberline {4.2}desktop.css}{3}{subsection.4.2}
-\contentsline {subsection}{\numberline {4.3}print.css}{3}{subsection.4.3}
->>>>>>> Stashed changes
-\contentsline {section}{\numberline {5}Comportamento}{3}{section.5}
-\contentsline {subsection}{\numberline {5.1}PHP}{3}{subsection.5.1}
-\contentsline {subsubsection}{\numberline {5.1.1}Strutturazione pagine}{3}{subsubsection.5.1.1}
+\contentsline {subsection}{\numberline {4.3}print.css}{4}{subsection.4.3}
+\contentsline {section}{\numberline {5}Comportamento}{4}{section.5}
+\contentsline {subsection}{\numberline {5.1}PHP}{4}{subsection.5.1}
+\contentsline {subsubsection}{\numberline {5.1.1}Strutturazione pagine}{4}{subsubsection.5.1.1}
 \contentsline {subsubsection}{\numberline {5.1.2}Ricerca}{4}{subsubsection.5.1.2}
 \contentsline {subsubsection}{\numberline {5.1.3}Registrazione}{4}{subsubsection.5.1.3}
 \contentsline {subsubsection}{\numberline {5.1.4}Login}{4}{subsubsection.5.1.4}
@@ -27,11 +22,11 @@
 \contentsline {subsubsection}{\numberline {5.1.6}Area personale aziende}{4}{subsubsection.5.1.6}
 \contentsline {subsubsection}{\numberline {5.1.7}Area personale amministratore}{4}{subsubsection.5.1.7}
 \contentsline {subsection}{\numberline {5.2}JavaScript}{4}{subsection.5.2}
-\contentsline {subsubsection}{\numberline {5.2.1}Validazione form registrazione utenti e aziende}{4}{subsubsection.5.2.1}
-\contentsline {subsubsection}{\numberline {5.2.2}Ridimensionamento header}{4}{subsubsection.5.2.2}
+\contentsline {subsubsection}{\numberline {5.2.1}Validazione form registrazione utenti e aziende}{5}{subsubsection.5.2.1}
+\contentsline {subsubsection}{\numberline {5.2.2}Ridimensionamento header}{5}{subsubsection.5.2.2}
 \contentsline {subsubsection}{\numberline {5.2.3}Evidenziare la pagina in cui ci si trova nel men\IeC {\`u}}{5}{subsubsection.5.2.3}
-\contentsline {subsubsection}{\numberline {5.2.4}Men\IeC {\`u} a tendina}{5}{subsubsection.5.2.4}
-\contentsline {section}{\numberline {6}Accessibilit\IeC {\`a}}{5}{section.6}
-\contentsline {subsection}{\numberline {6.1}scjdissd}{5}{subsection.6.1}
-\contentsline {subsubsection}{\numberline {6.1.1}Nor chiu iuhhiu}{5}{subsubsection.6.1.1}
-\contentsline {section}{\numberline {7}Divisione del lavoro}{5}{section.7}
+\contentsline {subsubsection}{\numberline {5.2.4}Men\IeC {\`u} a tendina}{6}{subsubsection.5.2.4}
+\contentsline {section}{\numberline {6}Accessibilit\IeC {\`a}}{6}{section.6}
+\contentsline {subsection}{\numberline {6.1}scjdissd}{6}{subsection.6.1}
+\contentsline {subsubsection}{\numberline {6.1.1}Nor chiu iuhhiu}{6}{subsubsection.6.1.1}
+\contentsline {section}{\numberline {7}Divisione del lavoro}{6}{section.7}
