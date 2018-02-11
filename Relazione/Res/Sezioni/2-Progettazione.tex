@@ -3,4 +3,14 @@
 Il sito, per funzionare correttamente, è connesso ad un database costruito in linguaggio SQL. È stato scelto questo linguaggio in quanto tutti i componenti del gruppo lo conoscono e ne hanno dimestichezza. 
 All'interno del database vi sono diverse tabelle: le principali sono Utenti, Aziende e Annunci, e ognuna di esse si appoggia ad altre tabelle minori come Consultazioni, Tipo, OrarioLavoro, ContrattoLavoro. Le ultime tre, in particolare, raccolgono la tipologia di lavoro, orario e contratto che un impiego può avere e si è scelto di inserirle in una tabella per evitare che l'utente possa modificare la voce nel menù a tendina.   
 
+\subsection{Gerarchia dei file}
+I file che contengono il sito sono organizzate in 4 cartelle: 
+\begin{itemize}
+	\item \textbf{css}: contiene il foglio di stile a cui fanno riferimento le pagine .php;
+	\item \textbf{IMG}: contiene le immagini presenti nel sito;
+	\item \textbf{JavaScript}: contiene i vari script realizzati in JavaScript;
+	\item \textbf{php}: contiene i file .php che generano le pagine del sito con codice html;
+\end{itemize}
+Sono inoltre presenti il file database.sql, utilizzato per creare il database del sito, e popolamento.txt, che con contiene i dati di prova che popolano il database.
+
 

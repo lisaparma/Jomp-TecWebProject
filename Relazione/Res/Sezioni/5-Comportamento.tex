@@ -1,8 +1,18 @@
 \section{Comportamento}
 	\subsection{PHP}
-	Come annunciato precedentemente, le pagine del sito vengono generate dai file .php per gestire la visualizzazione e la gestione delle informazioni dinamiche.
+	Come annunciato precedentemente, tutte le pagine del sito vengono generate dinamicamente da file .php per gestire la visualizzazione e la gestione delle informazioni.
+	
 		\subsubsection{Strutturazione pagine}
+		Ogni pagina possiede dei richiami a delle funzioni definite nel file \emph{structure.php} che definisce gli elementi principali che ogni pagina deve avere:
+		\begin{itemize}
+			\item \textbf{head}: la stampa dell'head è standard tranne per titolo e descrizione che vengono cambiati in ogni pagina attraverso due variabili;
+			\item \textbf{header}: la stampa di questa parte della pagina varia invece a seconda che ci sia o meno una sessione attiva e, in caso positivo, in base a quale tipologia di variabile ti sessione ci sia (può essere di classe Utente, classe Azienda o classe Admin);
+			\item \textbf{breadcrumb}: viene passato un array con il percorso da visualizzare;
+			\item \textbf{footer}: codice uguale per ogni pagina;
+		\end{itemize}
+		\subsubsection{Navigazione generica}
 		L'utente non registrato può visualizzare in modo generico gli annunci presenti nella home, accedere alle pagine "Chi siamo" per conoscere l'organizzazione che gestisce il sito, "Azienda partner" per consultare e avere più notizie delle aziende iscritte, "Login" per accedere ai servizi dedicati del sito inserendo le proprie credenziali e a "Registrati" per compilare il form di iscrizione e diventare un utente attivo del sito.
+		
 		\subsubsection{Home}
 		Nella home è possibile utilizzare la barra di ricerca: in "Cosa cerchi?" si possono inserire le parole chiave che sono all'interno del titolo di un annuncio di lavoro, in "Dove?" vengono filtrati gli annunci per la città scelta e infine in "Di che tipo?" si seleziona la categoria di lavoro a cui si è interessati.
 		Poichè un utente potrebbe avere sia un'idea ben chiara del lavoro da ricercare, compilando quindi tutti e tre i box, sia un'idea generale, ovvero vuole cercare una determinata categoria di lavoro senza filtrare per la città in cui viene proposto il lavoro, si è scelto di abilitare la ricerca sia con tutti le caselle compilate sia che c'è ne sia una soltato impostata.
@@ -35,6 +45,11 @@
 			\item \textbf{Sezione aziende}: viene presentata la lista di aziende registrate in quel momento con l'opzione di eliminazione
 			\item \textbf{Sezione annunci}: viene presentata la lista di annunci pubblicati presenti in quel momento con l'opzione di eliminazione;
 		\end{itemize}
+	
+		\subsubsection{Menù a tendina}
+		Il menù per mobile è gestito in JavaScript ma è prevista la sua completa funzionalità anche se questo non dovesse essere attivo. Si è preferito evitare la soluzione di creare un collegamento in fondo al sito dove il menù poteva già essere presente per evitare di "sporcare" la presentazione" anche se questa soluzione sarebbe stata molto leggera e semplice. Inoltre si voleva utilizzare una soluzione in alternativa a JavaScript e non in sostituzione.\\
+		Per fare ciò è stato creato un form con un solo input di tipo submit collegato all'icona del menù ad hamburger. Quando avviene il submit viene ricaricata la pagina visualizzando il menù, se si riclicca viene ricaricata senza. Se invece JavaScript è attivato l'action del form non viene attivata.
+		Il limite di questa soluzione è il dover ricaricare la pagina ogni volta che si vuole visualizzare il menù ma si spera che venga utilizzata molto più spesso la soluzione con JavaScript.
 	 
 	\subsection{JavaScript}
 	 Il linguaggio di scripting JavaScript è stato utilizzato per migliorare l'usabilità del sito. Si è tenuto conto del fatto che JavaScript può non funzionare su tutti i dispositivi che possono accedere al sito web (per non compatibilità o per preferenze dell'utente) così sono state assicurate funzioni equivalente server side con PHP.\\
@@ -57,7 +72,7 @@
 		Dato che sotto l'\emph{header} è presente il \emph{breadcrumb} con la pagina corrente, anche in caso di disattivazione di JavaScript non si rischia che l'utente non capisca più in che pagina si trova.
 		
 		\subsubsection{Menù a tendina}
-		Anche per il menù a tendina si è utilizzata la tecnica di aggiungere una classe ad un secondo menù che permettesse di cambiare l'attributo \emph{display}. L'aggiunta di questa classe è data dall'evento \emph{onClick} di un elemento (immagine menu ad hamburger) che è resa visibile da una media query solamente sotto gli 840px, quindi non solamente per mobile ma anche per finestre browser ristrette.
+		Anche per il menù a tendina si è utilizzata la tecnica di aggiungere una classe ad un secondo menù che permettesse di cambiare l'attributo \emph{display}. L'aggiunta di questa classe è data dall'evento \emph{onSubmit} di un elemento (che non scatena il submit e la soluzione solo PHP se JavaScript va) che è resa visibile da una media query solamente sotto gli 840px, quindi non solamente per mobile ma anche per finestre browser ristrette.
 		
 
 		
