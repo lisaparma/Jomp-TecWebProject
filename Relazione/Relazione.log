@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500) (preloaded format=pdflatex 2017.12.4)  11 FEB 2018 12:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500) (preloaded format=pdflatex 2017.12.4)  11 FEB 2018 15:41
 entering extended mode
 **./Relazione.tex
 (Relazione.tex
@@ -1451,10 +1451,10 @@ n-sizioni con \T1/cmr/m/it/12 transition-property \T1/cmr/m/n/12 e \T1/cmr/m/it
 
 File: Images/logo.png Graphic file (type png)
 <use Images/logo.png>
-Package pdftex.def Info: Images/logo.png  used on input line 18. on input line 
-18.
+Package pdftex.def Info: Images/logo.png  used on input line 15. on input line 
+15.
 Package pdftex.def Info: Requested size: 56.9055pt x 30.97345pt on input line 1
-8.
+5.
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 35.32349pt.
@@ -1464,10 +1464,10 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 [3]) (Res/Sezioni/6-Comportamento.tex
 File: Images/logo.png Graphic file (type png)
 <use Images/logo.png>
-Package pdftex.def Info: Images/logo.png  used on input line 21. on input line 
-21.
-Package pdftex.def Info: Requested size: 56.9055pt x 30.97345pt on input line 2
-1.
+Package pdftex.def Info: Images/logo.png  used on input line 16. on input line 
+16.
+Package pdftex.def Info: Requested size: 56.9055pt x 30.97345pt on input line 1
+6.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1478,10 +1478,10 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 [4]
 File: Images/logo.png Graphic file (type png)
 <use Images/logo.png>
-Package pdftex.def Info: Images/logo.png  used on input line 35. on input line 
-35.
+Package pdftex.def Info: Images/logo.png  used on input line 32. on input line 
+32.
 Package pdftex.def Info: Requested size: 56.9055pt x 30.97345pt on input line 3
-5.
+2.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1492,10 +1492,10 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 [5]) (Res/Sezioni/7-Accessibilita.tex) (Res/Sezioni/8-Divisione.tex
 File: Images/logo.png Graphic file (type png)
 <use Images/logo.png>
-Package pdftex.def Info: Images/logo.png  used on input line 25. on input line 
-25.
-Package pdftex.def Info: Requested size: 56.9055pt x 30.97345pt on input line 2
-5.
+Package pdftex.def Info: Images/logo.png  used on input line 10. on input line 
+10.
+Package pdftex.def Info: Requested size: 56.9055pt x 30.97345pt on input line 1
+0.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1534,7 +1534,7 @@ Here is how much of TeX's memory you used:
  26419 multiletter control sequences out of 15000+200000
  15143 words of font info for 41 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 61i,16n,122p,800b,526s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 61i,16n,122p,866b,526s stack positions out of 5000i,500n,10000p,200000b,50000s
  </Users/Lisa/.miktex/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1440
 .pk> </Users/Lisa/.miktex/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecti12
 00.pk> </Users/Lisa/.miktex/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx
@@ -1544,9 +1544,9 @@ ecrm1440.pk> </Users/Lisa/.miktex/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi60
 0/ecbx2488.pk> </Users/Lisa/.miktex/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi
 600/ecbx1200.pk></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/c
 msy10.pfb>
-Output written on Relazione.pdf (8 pages, 525843 bytes).
+Output written on Relazione.pdf (8 pages, 526784 bytes).
 PDF statistics:
- 521 PDF objects out of 1000 (max. 8388607)
+ 522 PDF objects out of 1000 (max. 8388607)
  38 named destinations out of 1000 (max. 500000)
  263 words of extra memory for PDF output out of 10000 (max. 10000000)
 
