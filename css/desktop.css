@@ -311,6 +311,8 @@ body {
 }
 
 #mobilemenu ul li a {
+	display: block;
+	width: 100%;
     color: lightgray;
     text-decoration:none;
 }
@@ -724,6 +726,11 @@ body {
     box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
 }
 
+@media only screen and (max-width: 439px) {
+	.form {
+		margin:1em 0.5em;
+	}
+}
 
 
 
@@ -846,14 +853,6 @@ body {
     border-right: 4px solid #e67e22;
     margin: 0 -4px;
 }
-
-
-/* media queries per farlo responsive */
-/*@media only screen and (min-width: 980px) {
-  .ap-menu {
-        margin-left:10px;
-    }
-}*/
 
 @media only screen and (min-width: 700px) and (max-width: 979px) {
     .ap-menu {
