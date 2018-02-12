@@ -1,0 +1,80 @@
+\section{Comportamento}
+	\subsection{PHP}
+	Come annunciato precedentemente, tutte le pagine del sito vengono generate dinamicamente da file .php per gestire la visualizzazione e la gestione delle informazioni.
+	
+		\subsubsection{Strutturazione pagine}
+		Ogni pagina possiede dei richiami a delle funzioni definite nel file \emph{structure.php} che definisce gli elementi principali che ogni pagina deve avere:
+		\begin{itemize}
+			\item \textbf{head}: la stampa dell'head è standard tranne per titolo e descrizione che vengono cambiati in ogni pagina attraverso due variabili;
+			\item \textbf{header}: la stampa di questa parte della pagina varia invece a seconda che ci sia o meno una sessione attiva e, in caso positivo, in base a quale tipologia di variabile ti sessione ci sia (può essere di classe Utente, classe Azienda o classe Admin);
+			\item \textbf{breadcrumb}: viene passato un array con il percorso da visualizzare;
+			\item \textbf{footer}: codice uguale per ogni pagina;
+		\end{itemize}
+		\subsubsection{Navigazione generica}
+		L'utente non registrato può visualizzare in modo generico gli annunci presenti nella home, accedere alle pagine "Chi siamo" per conoscere l'organizzazione che gestisce il sito, "Azienda partner" per consultare e avere più notizie delle aziende iscritte, "Login" per accedere ai servizi dedicati del sito inserendo le proprie credenziali e a "Registrati" per compilare il form di iscrizione e diventare un utente attivo del sito.
+		
+		\subsubsection{Home}
+		Nella home è possibile utilizzare la barra di ricerca: in "Cosa cerchi?" si possono inserire le parole chiave che sono all'interno del titolo di un annuncio di lavoro, in "Dove?" vengono filtrati gli annunci per la città scelta e infine in "Di che tipo?" si seleziona la categoria di lavoro a cui si è interessati.
+		Poichè un utente potrebbe avere sia un'idea ben chiara del lavoro da ricercare, compilando quindi tutti e tre i box, sia un'idea generale, ovvero vuole cercare una determinata categoria di lavoro senza filtrare per la città in cui viene proposto il lavoro, si è scelto di abilitare la ricerca sia con tutti le caselle compilate sia che c'è ne sia una soltato impostata.
+		\subsubsection{Registrazione}
+		Dalla home, quando ci si indirizza nell'area di registrazione, è possibile scegliere il tipo do registrazione da effettuare: utente o azienda. Infatti sono previsti due diversi form di registrazione a seconda della categoria di appartenza. Una volta che l'utente o l'azienda compila correttamente il form con i suo dati, questo viene reindirizzato nella pagina di login per immettere le proprie credenziali e accedere così alla propria pagina personale.
+		\subsubsection{Login}
+		La pagina di login si presenta uguale sia per gli utenti che per le aziende: ad entrambi vengono chiesti email e password. Se le credenziali inserite sono corrette, si verrà indirizzati nella proprio area personale in cui verrà fatto il punto della situazione mostrando dei dati di interesse sia per l'utente che per l'azienda. Nel caso in cui i dati inseriti sia errati, comparirà un messaggio di errore che inviterà l'utente a riprovare l'accesso.
+		\subsubsection{Area personale utente}
+		Nell'area personale dell'utente, sono presenti 4 pagine:
+		\begin{itemize}
+			\item \textbf{Dashboard}: in cui vengono mostrati i dati relativi e di interesse all'utente (i dati con cui si è registrato, quanti annunci ha salvato e quanti annunci sono stati inseriti nella città in cui ha salvato gli annunci interessanti);
+			\item \textbf{Cerca annuncio}: (non mi va il bottone);
+			\item \textbf{Annunci salvati}: presenta la lista di annunci a cui si è messo mi piace;
+			\item \textbf{Modifica dati}: l'utente può quando vuole modificare i dati inseriti al momento della registrazione; 
+		\end{itemize}
+
+		\subsubsection{Area personale aziende}
+		Nell'area personale dell'azienda, sono presenti 4 pagine:
+		\begin{itemize}
+			\item \textbf{Dashboard}: in cui vengono mostrati i dati relativi e di interesse all'azienda (i dati con cui si è registrata, quanti annunci ha inserito, quando ha inserito l'ultimo annuncio e quanti utenti sono interessati ai suoi annunci);
+			\item \textbf{Pubblica annuncio}: presenta un form da compilare con i dati relativi alla proposta di lavoro da inserire;
+			\item \textbf{Resoconto annunci}: viene generata la lista degli annunci ancora attivi della azienda loggata in cui per ogni annuncio si può decidere se modificare o eliminare;
+			\item \textbf{Modifica dati}: presenta i dati dell'azienda che ha usato per registrati e che può liberamente modificare;
+		\end{itemize}
+		\subsubsection{Area personale amministratore}
+		Nell'area personale dell'azienda, sono presenti 4 pagine:
+		\begin{itemize}
+			\item \textbf{Dashboard}: in cui vengono mostrati i dati relativi al sito (numero di utenti registrati, numero di aziende registrate e numero di annunci presenti attualmente nel sito);
+			\item \textbf{Sezione utenti}: viene presentata la lista di utenti registrati in quel momento con l'opzione di eliminazione;
+			\item \textbf{Sezione aziende}: viene presentata la lista di aziende registrate in quel momento con l'opzione di eliminazione
+			\item \textbf{Sezione annunci}: viene presentata la lista di annunci pubblicati presenti in quel momento con l'opzione di eliminazione;
+		\end{itemize}
+	
+		\subsubsection{Menù a tendina}
+		Il menù per mobile è gestito in JavaScript ma è prevista la sua completa funzionalità anche se questo non dovesse essere attivo. Si è preferito evitare la soluzione di creare un collegamento in fondo al sito dove il menù poteva già essere presente per evitare di "sporcare" la presentazione" anche se questa soluzione sarebbe stata molto leggera e semplice. Inoltre si voleva utilizzare una soluzione in alternativa a JavaScript e non in sostituzione.\\
+		Per fare ciò è stato creato un form con un solo input di tipo submit collegato all'icona del menù ad hamburger. Quando avviene il submit viene ricaricata la pagina visualizzando il menù, se si riclicca viene ricaricata senza. Se invece JavaScript è attivato l'action del form non viene attivata.
+		Il limite di questa soluzione è il dover ricaricare la pagina ogni volta che si vuole visualizzare il menù ma si spera che venga utilizzata molto più spesso la soluzione con JavaScript.
+	 
+	\subsection{JavaScript}
+	 Il linguaggio di scripting JavaScript è stato utilizzato per migliorare l'usabilità del sito. Si è tenuto conto del fatto che JavaScript può non funzionare su tutti i dispositivi che possono accedere al sito web (per non compatibilità o per preferenze dell'utente) così sono state assicurate funzioni equivalente server side con PHP.\\
+	 In particolare con JavaScript sono state aggiunte le seguenti funzionalità:
+	 
+		\subsubsection{Validazione form registrazione utenti e aziende}
+		Prima di inviare i dati raccolti al server per controllarli con PHP, sono stati aggiungi dei controlli campo per campo che se non soddisfatti non permettono di inviare i dati al server.
+		I controlli sono eseguiti \emph{onBlur} su ogni input e permettono di controllare lunghezza massima e minima, se un certo dato soddisfa una certa espressione regolare (definite per e-mail e sito internet aziende) e se la ripetizione della password corrisponde alla prima inserita.Questi controlli real-time sono di grande aiuto all'utente per sapere subito se i dati inseriti corrispondono alla richiesta o c'è la necessità di modificarli.\\
+		Inoltre è servito anche un controllo per la gestione dell'input type \emph{data}, tipo di input di HTML5 non gestito correttamente in tutti i browser. Nei browser in cui si vede l'input come stringa preformata (\emph{gg/mm/aaaa}) o come calendario viene effettuato un controllo solo per vedere se l'input è stato immesso, negli altri browser dove invece si vede un normale input di testo viene eseguito il controllo anche sul formato dei dati immessi, che deve essere del tipo \emph{aaaa/mm/gg} per aderire al type data.
+		
+		\subsubsection{Ridimensionamento header}
+		Quando avviene uno scroll nelle pagine del sito, l'\emph{header} (che per proprietà CSS risulta fissato) viene ridimensionato così da occupare meno spazio nella pagina visibile. \\
+		Per fare ciò attraverso JavaScript viene aggiunta dinamicamente la classe \emph{small} all'\emph{header} quando l'offset verticale della pagina risulta maggiore dell'offset iniziale cambiandone le proprietà grafiche.
+		Quando si torna ad inizio pagina questa classe viene tolta facendo tornare l'\emph{header} con le proprietà iniziali.
+		
+		\subsubsection{Evidenziare  la pagina in cui ci si trova nel menù}
+		Nel menù principale è stato scelto di evidenziare la pagina in cui ci si trova attraverso JavaScript così da evidenziare le differenze che ci sono state tra questa tecnica e quella che è stata fatta per i menù dentro le pagine personale in cui viene evidenziato ciò tramite PHP.\\
+		La funzione, molto semplice, prevede solamente un confronto tra l'attributo \emph{href} dentro i tag \emph{li} del menù e l'URL della pagina corrente. Quando viene trovata una corrispondenza viene aggiunta una classe che ne modifica le proprietà grafiche tramite CSS.
+		Rispetto alla soluzione PHP di passare una variabile con la pagina corrente alla funzione che stampa il menù e di gestire molti sottocasi (uno per pagina) risulta una soluzione molto più veloce e semplice. Il suo limite però è nel fatto che JavaScript può essere disabilitato/non andare, mentre PHP no.\\
+		Dato che sotto l'\emph{header} è presente il \emph{breadcrumb} con la pagina corrente, anche in caso di disattivazione di JavaScript non si rischia che l'utente non capisca più in che pagina si trova.
+		
+		\subsubsection{Menù a tendina}
+		Anche per il menù a tendina si è utilizzata la tecnica di aggiungere una classe ad un secondo menù che permettesse di cambiare l'attributo \emph{display}. L'aggiunta di questa classe è data dall'evento \emph{onSubmit} di un elemento (che non scatena il submit e la soluzione solo PHP se JavaScript va) che è resa visibile da una media query solamente sotto gli 840px, quindi non solamente per mobile ma anche per finestre browser ristrette.
+		
+
+		
+
+

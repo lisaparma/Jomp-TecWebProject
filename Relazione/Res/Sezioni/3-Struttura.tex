@@ -1,0 +1,13 @@
+\section{Struttura}
+	\subsection{Scelta HTML5}
+	È stato deciso di utilizzare il linguaggio HTML5 per la struttura dei file. Non è ancora uno standard e per questo non è dotato di una validazione da parte del W3C ed alcune sue funzionalità aggiuntive rispetto all'XHTML non sono bene implementate in tutti i browser.\\
+	Il suo utilizzo infatti si è limitato ad una struttura base uguale a come sarebbe stata usando l'XHTML più alcuni tag e funzionalità la cui funzionalità e utilità è stata valutata attentamente. \\In particolare i cambiamenti rispetto ad XHTML utilizzati nel sito sono:
+	\begin{itemize}
+		\item attributo \emph{placeholder}: aiuta l'utente nella compilazione dei form;
+		\item \emph{pattern}: attributo per gli input nei form che controlla che l'inserimento di un campo soddisfi un determinato pattern;
+		\item tipo \emph{data}: nei browser in cui è supportato permette di inserire input in formato data. Tuttavia non è ancora supportato da diversi browser utilizzati per i test (es. Safari) e in questi viene visualizzato un semplice input di testo in cui non vengono eseguiti controlli. Per risolvere questo problema abbiamo deciso di aggiungere un controllo sul formato della data che viene sempre soddisfatto quando un browser visualizza correttamente l'input, mentre controlla che sia nel formato \emph{aaaa/mm/gg} nel caso contrario.
+	\end{itemize}	
+
+		
+
+
