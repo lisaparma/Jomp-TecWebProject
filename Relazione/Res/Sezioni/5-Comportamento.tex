@@ -6,7 +6,7 @@
 		Ogni pagina possiede dei richiami a delle funzioni definite nel file \emph{structure.php} che definisce gli elementi principali che ogni pagina deve avere:
 		\begin{itemize}
 			\item \textbf{head}: la stampa dell'head è standard tranne per titolo e descrizione che vengono cambiati in ogni pagina attraverso due variabili;
-			\item \textbf{header}: la stampa di questa parte della pagina varia invece a seconda che ci sia o meno una sessione attiva e, in caso positivo, in base a quale tipologia di variabile ti sessione ci sia (può essere di classe Utente, classe Azienda o classe Admin);
+			\item \textbf{header}: la stampa di questa parte della pagina varia invece a seconda che ci sia o meno una sessione attiva e, in caso positivo, in base a quale tipologia di variabile di sessione ci sia (può essere di classe Utente, classe Azienda o classe Admin);
 			\item \textbf{breadcrumb}: viene passato un array con il percorso da visualizzare;
 			\item \textbf{footer}: codice uguale per ogni pagina;
 		\end{itemize}
@@ -20,7 +20,7 @@
 		Dalla home, quando ci si indirizza nell'area di registrazione, è possibile scegliere il tipo di registrazione da effettuare: utente o azienda. Infatti sono previsti due diversi form di registrazione a seconda della categoria di appartenenza. Una volta che l'utente o l'azienda compila correttamente il form con i suo dati, questo viene reindirizzato nella dashboard personale.\\
 		I controlli sui campi sono effettuati su ogni campo al submit e, oltre ai controlli che possono essere effettuati anche con JavaScript, si controlla che e-mail, username e Partita Iva non siano già presenti nel database.
 		\subsubsection{Login}
-		La pagina di login si presenta uguale sia per gli utenti che per le aziende: ad entrambi vengono richiesti email e password. Se le credenziali inserite sono corrette, si verrà indirizzati nella proprio area personale in cui verrà fatto il punto della situazione mostrando dei dati di interesse sia per l'utente che per l'azienda. Nel caso in cui i dati inseriti sia errati, comparirà un messaggio di errore che inviterà l'utente a riprovare l'accesso.
+		La pagina di login si presenta uguale sia per gli utenti che per le aziende: ad entrambi vengono richiesti email e password. Se le credenziali inserite sono corrette, si verrà indirizzati nella proprio area personale in cui verrà fatto il punto della situazione mostrando dei dati di interesse sia per l'utente che per l'azienda. Nel caso in cui i dati inseriti siano errati, comparirà un messaggio di errore che inviterà l'utente a riprovare l'accesso.
 		\subsubsection{Area personale utente}
 		Nell'area personale dell'utente, sono presenti 4 pagine:
 		\begin{itemize}
